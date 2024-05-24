@@ -1,2 +1,8 @@
-# hypr
-My hyprland config
+# Hyprland configs
+- Uses
+  - rofi
+  - waybar
+  - swaybg
+  - hypridle
+  - swaync
+  - polkit-gnome
