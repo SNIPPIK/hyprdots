@@ -6,6 +6,7 @@
         "cpu",
         "memory",
         "custom/media",
+        "custom/pacman",
         "tray"
     ],
     "modules-center": [
@@ -136,24 +137,37 @@
         "on-click": "bash ~/.config/hypr/.scripts/wallpaper/reload.sh"
     },
 
-	"custom/notification": {
-    "tooltip": false,
-    "format": "{icon}",
-    "format-icons": {
-      "notification": "<span foreground='red'><sup></sup></span>",
-      "none": "",
-      "dnd-notification": "<span foreground='red'><sup></sup></span>",
-      "dnd-none": "",
-      "inhibited-notification": "<span foreground='red'><sup></sup></span>",
-      "inhibited-none": "",
-      "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
-      "dnd-inhibited-none": ""
+    "custom/notification": {
+        "tooltip": false,
+        "format": "{icon}",
+        "format-icons": {
+            "notification": "<span foreground='red'><sup></sup></span>",
+            "none": "",
+            "dnd-notification": "<span foreground='red'><sup></sup></span>",
+            "dnd-none": "",
+            "inhibited-notification": "<span foreground='red'><sup></sup></span>",
+            "inhibited-none": "",
+            "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
+            "dnd-inhibited-none": ""
+        },
+        "return-type": "json",
+        "exec-if": "which swaync-client",
+        "exec": "swaync-client -swb",
+        "on-click": "swaync-client -t -sw",
+        "on-click-right": "swaync-client -d -sw",
+        "escape": true
     },
-    "return-type": "json",
-    "exec-if": "which swaync-client",
-    "exec": "swaync-client -swb",
-    "on-click": "swaync-client -t -sw",
-    "on-click-right": "swaync-client -d -sw",
-    "escape": true
-  }
+    
+    "custom/pacman": {
+        "format": "{icon}{}",
+        "return-type": "json",
+        "format-icons": {
+            "pending-updates": " ",
+            "updated": ""
+        },
+        "exec-if": "which waybar-updates",
+        "exec": "waybar-updates",
+        
+        "on-click": "alacritty -e sudo pacman -Syu",
+    }
 }
