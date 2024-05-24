@@ -1,5 +1,5 @@
 # Hyprland configs
-- Uses
+- Used
   - rofi
   - waybar
   - swaybg
