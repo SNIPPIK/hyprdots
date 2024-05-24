@@ -1,7 +1,7 @@
 # Hyprland configs
 - Used
   - rofi
-  - waybar
+  - waybar & waybar-updates
   - swaybg
   - hypridle
   - swaync
