@@ -28,37 +28,96 @@ window#waybar.hidden {
     background: transparent;
 }
 
-#workspaces {
-	margin-top: 6px;
-	margin-left: 12px;
-	font-size: 4px;
-	margin-bottom: 0px;
-	border-radius: 2px;
-	background: #2b2c2b;
-	transition: none;
+/* BUTTONs */
+#memory, #custom-pacman, #cpu, #tray,
+#custom-wallpaper, #custom-media, #network,
+#custom-notification, #pulseaudio, #clock,
+#bluetooth, #custom-power
+{
+    margin-top: 6px;
+    margin-left: 8px;
+    padding-left: 10px;
+    margin-bottom: 0px;
+    padding-right: 10px;
+    border-radius: 10px;
+    transition: none;
 }
 
-#workspaces button {
-	transition: none;
+/* LEFT */
+#memory, #cpu {
+    color: #161320;
+    background: #96CDFB;
+}
+#tray {
     color: #B5E8E0;
-	background: transparent;
-	font-size: 16px;
-	border-radius: 2px;
+    background: #161320;
+}
+#custom-wallpaper {
+    color: #161320;
+    background: #C9CBFF;
+}
+#custom-media {
+    color: #161320;
+    background: #F2CDCD;
 }
 
+/* RIGHT */
+#network {
+    color: #161320;
+    background: #bd93f9;
+}
+#custom-notification {
+    color: #161320;
+    background: #bd93f9;
+}
+#pulseaudio {
+    color: #1A1826;
+    background: #FAE3B0;
+}
+#clock {
+    color: #161320;
+    background: #ABE9B3;
+}
+#bluetooth {
+    color: #161320;
+    background: #96CDFB;
+}
+#custom-power {
+    font-size: 20px;
+    margin-right: 8px;
+    padding-right: 5px;
+    color: #161320;
+    background: #F28FAD;
+}
+
+/* CENTER */
+#workspaces {
+    margin-top: 6px;
+    margin-left: 12px;
+    font-size: 4px;
+    margin-bottom: 0px;
+    border-radius: 2px;
+    background: #2b2c2b;
+    transition: none;
+}
+#workspaces button {
+    transition: none;
+    color: #B5E8E0;
+    background: transparent;
+    font-size: 16px;
+    border-radius: 2px;
+}
 #workspaces button.occupied {
-	transition: none;
-	color: #f8f6f6;
-	background: transparent;
-	font-size: 4px;
+    transition: none;
+    color: #f8f6f6;
+    background: transparent;
+    font-size: 4px;
 }
-
 #workspaces button.focused {
-	color: #F5F5F5;
+    color: #F5F5F5;
     border-top: 2px solid #ABE9B3;
     border-bottom: 2px solid #ABE9B3;
 }
-
 #workspaces button.active {
     margin-left: 3px;
     padding-left: 12px;
@@ -71,157 +130,13 @@ window#waybar.hidden {
     border-top: 2px solid #ABE9B3;
     border-bottom: 2px solid #ABE9B3;
 }
-
 #workspaces button:hover {
-	transition: none;
-	box-shadow: inherit;
-	text-shadow: inherit;
-	color: #F5F5F5;
+    transition: none;
+    box-shadow: inherit;
+    text-shadow: inherit;
+    color: #F5F5F5;
     border-color: #F5F5F5;
 }
-
 #workspaces button.focused:hover {
     color: #F5F5F5;
-}
-
-#network {
-    margin-top: 6px;
-    margin-left: 8px;
-    padding-left: 10px;
-    padding-right: 10px;
-    margin-bottom: 0px;
-    border-radius: 10px;
-    transition: none;
-    color: #161320;
-    background: #bd93f9;
-}
-
-#custom-notification {
-    margin-top: 6px;
-    margin-left: 8px;
-    padding-left: 10px;
-    padding-right: 10px;
-    margin-bottom: 0px;
-    border-radius: 10px;
-    transition: none;
-    color: #161320;
-    background: #bd93f9;
-}
-
-#pulseaudio {
-    margin-top: 6px;
-    margin-left: 8px;
-    padding-left: 10px;
-    padding-right: 10px;
-    margin-bottom: 0px;
-    border-radius: 10px;
-    transition: none;
-    color: #1A1826;
-    background: #FAE3B0;
-}
-
-@keyframes blink {
-    to {
-        background-color: #BF616A;
-        color: #B5E8E0;
-    }
-}
-
-#clock {
-    margin-top: 6px;
-    margin-left: 8px;
-    padding-left: 10px;
-    padding-right: 10px;
-    margin-bottom: 0px;
-    border-radius: 10px;
-    transition: none;
-    color: #161320;
-    background: #ABE9B3;
-    /*background: #1A1826;*/
-}
-
-#memory {
-    margin-top: 6px;
-    margin-left: 8px;
-    padding-left: 10px;
-    margin-bottom: 0px;
-    padding-right: 10px;
-    border-radius: 10px;
-    transition: none;
-    color: #161320;
-    background: #DDB6F2;
-}
-#custom-pacman,
-#cpu {
-    margin-top: 6px;
-    margin-left: 8px;
-    padding-left: 10px;
-    margin-bottom: 0px;
-    padding-right: 10px;
-    border-radius: 10px;
-    transition: none;
-    color: #161320;
-    background: #96CDFB;
-}
-
-#bluetooth {
-    margin-top: 6px;
-    margin-left: 8px;
-    padding-left: 10px;
-    margin-bottom: 0px;
-    padding-right: 10px;
-    border-radius: 10px;
-    transition: none;
-    color: #161320;
-    background: #96CDFB;
-}
-
-#tray {
-    margin-top: 6px;
-    margin-left: 8px;
-    padding-left: 10px;
-    margin-bottom: 0px;
-    padding-right: 10px;
-    border-radius: 10px;
-    transition: none;
-    color: #B5E8E0;
-    background: #161320;
-}
-
-#custom-power {
-    font-size: 20px;
-    margin-top: 6px;
-    margin-left: 8px;
-    margin-right: 8px;
-    padding-left: 10px;
-    padding-right: 5px;
-    margin-bottom: 0px;
-    border-radius: 10px;
-    transition: none;
-    color: #161320;
-    background: #F28FAD;
-}
-
-#custom-wallpaper {
-    margin-top: 6px;
-    margin-left: 8px;
-    padding-left: 10px;
-    padding-right: 10px;
-    margin-bottom: 0px;
-    border-radius: 10px;
-    transition: none;
-    color: #161320;
-    background: #C9CBFF;
-}
-
-#custom-media {
-    margin-top: 6px;
-    margin-left: 8px;
-    padding-left: 10px;
-    padding-right: 10px;
-    margin-bottom: 0px;
-    border-radius: 10px;
-    transition: none;
-    color: #161320;
-    background: #F2CDCD;
 }
