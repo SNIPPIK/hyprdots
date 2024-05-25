@@ -19,4 +19,5 @@ options nvidia NVreg_UsePageAttributeTable=1 NVreg_InitializeSystemMemoryAllocat
 options nvidia_drm modeset=1 fbdev=1
 ```
 
-https://github.com/SNIPPIK/hypr/assets/55327334/1f3268a7-37ca-4b22-b58c-a18f27b9fd61
+https://github.com/SNIPPIK/hypr/assets/55327334/8974acd6-3414-4e40-8881-17074f717693
+
