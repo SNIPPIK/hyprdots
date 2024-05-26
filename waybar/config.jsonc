@@ -3,10 +3,10 @@
     "height": 30,
     "modules-left": [
         "custom/wallpaper",
+        "idle_inhibitor",
         "cpu",
         "memory",
         "custom/media",
-        "custom/pacman",
         "tray"
     ],
     "modules-center": [
@@ -16,7 +16,7 @@
         "bluetooth",
         "pulseaudio",
         "clock",
-	    "custom/notification",
+        "custom/notification",
         "network",
         "custom/power"
     ],
@@ -44,10 +44,9 @@
         },
         "on-click": "pavucontrol"
     },
-    
     //Рабочие столы
     "hyprland/workspaces": {
-        "format": "{name}: {icon}",
+        "format": "{icon}",
         "format-icons": {
             "1": "",
             "2": "",
@@ -64,7 +63,6 @@
             // but only three on HDMI-A-1
         }
     },
-
     //Управление bluetooth
     "bluetooth": {
         "format": " {status}",
@@ -81,27 +79,22 @@
         "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
         "on-click": "blueberry"
     },
-
     //
     "network": {
         "format-wifi": "",
         "format-ethernet": "",
         "format-disconnected": "⚠",
-
         "max-length": 50,
         "tooltip-format": "{ifname} via {gwaddr} 󰊗",
         "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
         "tooltip-format-ethernet": "{ifname} ",
         "tooltip-format-disconnected": "Disconnected",
-
         "on-click": "nm-connection-editor"
     },
-
     "tray": {
         "icon-size": 18,
         "spacing": 10
     },
-
     "clock": {
         "format": "{:%H:%M}  ",
         "format-alt": "{:L%A, %B %d, %Y (%R)} \uF017",
@@ -136,7 +129,6 @@
         "format": "",
         "on-click": "bash ~/.config/hypr/.scripts/wallpaper/reload.sh"
     },
-
     "custom/notification": {
         "tooltip": false,
         "format": "{icon}",
@@ -157,17 +149,11 @@
         "on-click-right": "swaync-client -d -sw",
         "escape": true
     },
-    
-    "custom/pacman": {
-        "format": "{icon}{}",
-        "return-type": "json",
+    "idle_inhibitor": {
+        "format": "{icon}",
         "format-icons": {
-            "pending-updates": " ",
-            "updated": ""
-        },
-        "exec-if": "which waybar-updates",
-        "exec": "waybar-updates",
-        
-        "on-click": "alacritty -e sudo pacman -Syu",
+            "activated": "",
+            "deactivated": ""
+        }
     }
 }
