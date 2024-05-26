@@ -32,7 +32,7 @@ window#waybar.hidden {
 #memory, #custom-pacman, #cpu, #tray,
 #custom-wallpaper, #custom-media, #network,
 #custom-notification, #pulseaudio, #clock,
-#bluetooth, #custom-power
+#bluetooth, #custom-power, #idle_inhibitor
 {
     margin-top: 6px;
     margin-left: 8px;
@@ -54,7 +54,7 @@ window#waybar.hidden {
     color: #B5E8E0;
     background: #161320;
 }
-#custom-wallpaper {
+#custom-wallpaper, #idle_inhibitor {
     color: #161320;
     background: #C9CBFF;
 }
@@ -104,7 +104,7 @@ window#waybar.hidden {
 }
 #workspaces button {
     transition: none;
-    color: #B5E8E0;
+    color: #83f6e2;
     background: transparent;
     font-size: 16px;
     border-radius: 2px;
@@ -128,7 +128,7 @@ window#waybar.hidden {
     animation: gradient_f 20s ease-in infinite;
     transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682);
     
-    color: @green;
+    color: #ffffff;
     border-top: 2px solid #ABE9B3;
     border-bottom: 2px solid #ABE9B3;
 }
