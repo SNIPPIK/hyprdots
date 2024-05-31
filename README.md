@@ -2,12 +2,11 @@
 Packages for use
   - rofi
   - waybar
-  - swaybg
-  - hypridle
+  - hypridle & hyprpaper
   - swaync
   - polkit-gnome
 
-## NVIDIA (nvidia-beta-dkms)
+## NVIDIA (nvidia-beta or dkms)
 Run servises nvidia-suspend.service, nvidia-hibernate.service, and nvidia-resume.service
 ```
 sudo systemctl enable service
