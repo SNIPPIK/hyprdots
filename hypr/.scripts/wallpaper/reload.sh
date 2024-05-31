@@ -8,5 +8,7 @@
 process_id=`/bin/ps -fu $USER| grep "background-changer" | grep -v "grep" | awk '{print $2}'`
 kill $process_id
 
+pkill swaybg
+
 #-- Now freshly start the process in the background --#
 bash ~/.config/hypr/.scripts/wallpaper/background-changer &
