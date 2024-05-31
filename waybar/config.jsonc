@@ -127,7 +127,7 @@
     },
     "custom/wallpaper": {
         "format": "",
-        "on-click": "bash ~/.config/hypr/.scripts/wallpaper/reload.sh"
+        "on-click": "bash ~/.config/hypr/.scripts/wallpaper.sh"
     },
     "custom/notification": {
         "tooltip": false,
