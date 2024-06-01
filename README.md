@@ -5,6 +5,8 @@ Packages for use
   - hypridle & hyprpaper
   - swaync
   - polkit-gnome
+  - pipewire-pulse
+  - blueberry
 
 ## NVIDIA (nvidia-beta or dkms)
 Run servises nvidia-suspend.service, nvidia-hibernate.service, and nvidia-resume.service
