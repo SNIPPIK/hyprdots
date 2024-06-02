@@ -2,11 +2,11 @@
     border: none;
     border-radius: 0px;
     font-family: Font Awesome, Roboto, Arial, sans-serif;
-    
+
     font-weight: bold;
     font-size: 14px;
     min-height: 10px;
-    
+
     border-radius: 20px;
 }
 
@@ -127,7 +127,7 @@ window#waybar.hidden {
     margin-right: 3px;
     animation: gradient_f 20s ease-in infinite;
     transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682);
-    
+
     color: #ffffff;
     border-top: 2px solid #ABE9B3;
     border-bottom: 2px solid #ABE9B3;
