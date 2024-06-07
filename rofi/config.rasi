@@ -1,101 +1,133 @@
+
+/**
+ * ROFI Color Theme
+ *
+ * Fullscreen theme with switchable PREVIEW option.
+ * 
+ * User: Dave Davenport
+ * Copyright: Dave Davenport
+ */
+
 * {
-    font: "Figtree 13";
-    g-spacing: 10px;
-    g-margin: 0;
-    b-color: #000000FF;
-    fg-color: #FFFFFFFF;
-    fgp-color: #888888FF;
-    b-radius: 8px;
-    g-padding: 8px;
-    hl-color: #FFFFFFFF;
-    hlt-color: #000000FF;
-    alt-color: #111111FF;
-    wbg-color: #000000CC;
-    w-border: 2px solid;
-    w-border-color: #FFFFFFFF;
-    w-padding: 12px;
-}
-
-configuration {
-    modi: "drun";
-    show-icons: true;
-    display-drun: "";
-}
-
-listview {
-    columns: 1;
-    lines: 7;
-    fixed-height: true;
-    fixed-columns: true;
-    cycle: false;
-    scrollbar: false;
-    border: 0px solid;
+	background-color: transparent;
+	text-color:       white;
 }
 
 window {
-    transparency: "real";
-    width: 450px;
-    border-radius: @b-radius;
-    background-color: @wbg-color;
-    border: @w-border;
-    border-color: @w-border-color;
-    padding: @w-padding;
+	fullscreen:       true;
+	background-color: black/80%;
+	padding:          4em;
+	children:         [ wrap, listview-split];
+	spacing:          1em;
 }
 
-prompt {
-    text-color: @fg-color;
+
+/** We add an extra child to this is PREVIEW=true */
+listview-split {
+  orientation: horizontal;
+  spacing: 0.4em;
+  children: [listview];
 }
 
+wrap {
+	expand: false;
+	orientation: vertical;
+	children: [ inputbar, message ];
+	background-image: linear-gradient(white/5%, white/40%);
+	border-color: lightblue;
+	border: 3px;
+	border-radius: 0.4em;
+}
+
+icon-ib {
+	expand: false;
+	filename: "system-search";
+	vertical-align: 0.5;
+	horizontal-align: 0.5;
+	size: 1em;
+}
 inputbar {
-    children: ["prompt", "entry"];
-    spacing: @g-spacing;
+	spacing: 0.4em;
+	padding: 0.4em;
+	children: [ icon-ib, entry ];
 }
-
 entry {
-    placeholder: "Search Apps";
-    text-color: @fg-color;
-    placeholder-color: @fgp-color;
+	placeholder: "Search";
+	placeholder-color: grey;
+}
+message {
+	background-color: red/20%;
+	border-color: lightsalmon;
+	border: 3px 0px 0px 0px;
+	padding: 0.4em;
+	spacing: 0.4em;
 }
 
-mainbox {
-    spacing: @g-spacing;
-    margin: @g-margin;
-    padding: @g-padding;
-    children: ["inputbar", "listview", "message"];
+listview {
+	flow: horizontal;
+	fixed-columns: true;
+	columns: 7;
+	lines: 5;
+	spacing: 1.0em;
 }
 
 element {
-    spacing: @g-spacing;
-    margin: @g-margin;
-    padding: @g-padding;
-    border: 0px solid;
-    border-radius: @b-radius;
-    border-color: @b-color;
-    background-color: transparent;
-    text-color: @fg-color;
+	orientation: vertical;
+	padding: 0.1em;
+
+	background-image: linear-gradient(white/5%, white/20%);
+	border-color: lightblue /15%;
+	border: 3px;
+	border-radius: 0.4em;
+
+  children: [element-icon, element-text ];
+}
+element-icon {
+	size: calc(((100% - 8em) / 7 ));
+	horizontal-align: 0.5;
+	vertical-align: 0.5;
+}
+element-text {
+	horizontal-align: 0.5;
+	vertical-align: 0.5;
+  padding: 0.2em;
 }
 
-element normal.normal {
-	background-color: transparent;
-	text-color: @fg-color;
+element selected {
+	background-image: linear-gradient(white/25%, white/10%);
+	border-color: lightblue;
+	border: 3px;
+	border-radius: 0.4em;
 }
 
-element alternate.normal {
-	background-color: @alt-color;
-	text-color: @fg-color;
+/**
+ * Launching rofi with environment PREVIEW set to true
+ * will split the screen and show a preview widget.
+ */
+@media ( enabled: env(PREVIEW, false)) {
+  /** preview widget */
+  icon-current-entry {
+    expand:          true;
+    size:            80%;
+  }
+  listview-split {
+    children: [listview, icon-current-entry];
+  }
+  listview {
+  columns: 4;
+  }
+
 }
 
-element selected.active {
-	background-color: @hl-color;
-	text-color: @hlt-color;
-}
-
-element selected.normal {
-	background-color: @hl-color;
-	text-color: @hlt-color;
-}
-
-message {
-    background-color: red;
-    border: 0px solid;
+@media ( enabled: env(NO_IMAGE, false)) {
+	listview {
+		columns: 1;
+		spacing: 0.4em;
+	}
+	element {
+		children: [ element-text ];
+	}
+	element-text {
+		horizontal-align: 0.0;
+	}
 }
