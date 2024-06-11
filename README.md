@@ -1,17 +1,23 @@
 # Hyprland configs
 Packages for use
-  - rofi
-  - waybar
-  - hypridle & hyprpaper
-  - swaync
-  - polkit-gnome
-  - pipewire-pulse
-  - blueberry
-  - grim
-  - pavucontrol
-  - nm-connection-editor
+  - General
+    - hypridle & hyprpaper
+    - waybar
+    - rofi
+    - nm-connection-editor
+  - Audio, bluetooth
+    - wireplumber & pipewire-pulse
+    - blueberry, bluez
+    - pavucontrol
+  - Polkit
+    - polkit-gnome
+  - Notifications
+    - swaync
+   - Screanshoot tool
+     - grim 
+  
 
-## NVIDIA (nvidia-beta or dkms)
+## For [NVIDIA (nvidia-beta or dkms)](https://wiki.hyprland.org/Nvidia/)
 Run servises nvidia-suspend.service, nvidia-hibernate.service, and nvidia-resume.service
 ```
 sudo systemctl enable service
