@@ -2,7 +2,7 @@
 Packages for use
   - General
     - hypridle & hyprpaper
-    - waybar
+    - waybar & otf-font-awesome & noto-fonts-emoji
     - rofi
     - nm-connection-editor
   - Audio, bluetooth
