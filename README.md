@@ -8,6 +8,8 @@ Packages for use
   - pipewire-pulse
   - blueberry
   - grim
+  - pavucontrol
+  - nm-connection-editor
 
 ## NVIDIA (nvidia-beta or dkms)
 Run servises nvidia-suspend.service, nvidia-hibernate.service, and nvidia-resume.service
