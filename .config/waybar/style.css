@@ -1,0 +1,144 @@
+* {
+    border: none;
+    border-radius: 0px;
+    font-family: Font Awesome, Roboto, Arial, sans-serif;
+
+    font-weight: bold;
+    font-size: 14px;
+    min-height: 10px;
+
+    border-radius: 20px;
+}
+
+window#waybar {
+    background: transparent;
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+#window {
+    margin-top: 6px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 10px;
+    transition: none;
+    color: transparent;
+    background: transparent;
+}
+
+/* BUTTONs */
+#memory, #custom-pacman, #cpu, #tray,
+#custom-wallpaper, #custom-media, #network,
+#custom-notification, #pulseaudio, #clock,
+#bluetooth, #custom-power, #idle_inhibitor
+{
+    margin-top: 6px;
+    margin-left: 8px;
+    padding-left: 10px;
+    margin-bottom: 0px;
+    padding-right: 10px;
+    border-radius: 10px;
+    transition: none;
+    color: transparent;
+    background: transparent;
+}
+
+/* LEFT */
+#memory, #cpu {
+    color: #161320;
+    background: #96CDFB;
+}
+#tray {
+    color: #B5E8E0;
+    background: #161320;
+}
+#custom-wallpaper, #idle_inhibitor {
+    color: #161320;
+    background: #C9CBFF;
+}
+#custom-media {
+    color: #161320;
+    background: #F2CDCD;
+}
+
+/* RIGHT */
+#network {
+    color: #161320;
+    background: #66FFFF;
+}
+#custom-notification {
+    color: #161320;
+    background: #FFFF00;
+}
+#pulseaudio {
+    color: #1A1826;
+    background: #FAE3B0;
+}
+#clock {
+    color: #161320;
+    background: #ABE9B3;
+}
+#bluetooth {
+    color: #161320;
+    background: #96CDFB;
+}
+#custom-power {
+    font-size: 20px;
+    margin-right: 8px;
+    padding-right: 5px;
+    color: #161320;
+    background: #F28FAD;
+}
+
+/* CENTER */
+#workspaces {
+    margin-top: 6px;
+    margin-left: 12px;
+    font-size: 4px;
+    margin-bottom: 0px;
+    border-radius: 2px;
+    background: #2b2c2b;
+    transition: none;
+}
+#workspaces button {
+    transition: none;
+    color: #83f6e2;
+    background: transparent;
+    font-size: 16px;
+    border-radius: 2px;
+}
+#workspaces button.occupied {
+    transition: none;
+    color: #f8f6f6;
+    background: transparent;
+    font-size: 4px;
+}
+#workspaces button.focused {
+    color: #F5F5F5;
+    border-top: 2px solid #ABE9B3;
+    border-bottom: 2px solid #ABE9B3;
+}
+#workspaces button.active {
+    margin-left: 3px;
+    padding-left: 12px;
+    padding-right: 12px;
+    margin-right: 3px;
+    animation: gradient_f 20s ease-in infinite;
+    transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682);
+
+    color: #ffffff;
+    border-top: 2px solid #ABE9B3;
+    border-bottom: 2px solid #ABE9B3;
+}
+#workspaces button:hover {
+    transition: none;
+    box-shadow: inherit;
+    text-shadow: inherit;
+    color: #F5F5F5;
+    border-color: #F5F5F5;
+}
+#workspaces button.focused:hover {
+    color: #F5F5F5;
+}
