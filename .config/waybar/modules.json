@@ -1,0 +1,31 @@
+{
+  "group/settings": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 300,
+      "children-class": "not-memory",
+      "transition-left-to-right": true
+    },
+    "modules": [
+      "custom/settings",
+      "pulseaudio",
+      "bluetooth",
+      "network"
+    ]
+  },
+
+  "group/system": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 300,
+      "children-class": "not-memory",
+      "transition-left-to-right": true
+    },
+    "modules": [
+      "custom/system",
+      "cpu",
+      "memory",
+      "custom/updates"
+    ]
+  }
+}
