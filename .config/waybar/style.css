@@ -32,7 +32,9 @@ window#waybar.hidden {
 #memory, #custom-pacman, #cpu, #tray,
 #custom-wallpaper, #custom-media, #network,
 #custom-notification, #pulseaudio, #clock,
-#bluetooth, #custom-power, #idle_inhibitor
+#bluetooth, #custom-power, #custom-hypridle,
+#custom-settings, #custom-system, #language,
+#custom-updates
 {
     margin-top: 6px;
     margin-left: 8px;
@@ -46,6 +48,12 @@ window#waybar.hidden {
 }
 
 /* LEFT */
+#custom-settings, #custom-system, #language,
+#custom-updates {
+    color: #161320;
+    background: #96CDFB;
+}
+
 #memory, #cpu {
     color: #161320;
     background: #96CDFB;
@@ -54,7 +62,7 @@ window#waybar.hidden {
     color: #B5E8E0;
     background: #161320;
 }
-#custom-wallpaper, #idle_inhibitor {
+#custom-wallpaper, #custom-hypridle {
     color: #161320;
     background: #C9CBFF;
 }
