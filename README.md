@@ -1,7 +1,7 @@
 # Hyprland configs
 Packages for use
   - General
-    - hypridle & hyprpaper
+    - hyprpaper
     - waybar & otf-font-awesome & noto-fonts-emoji
     - rofi
     - nm-connection-editor
@@ -29,5 +29,6 @@ options nvidia NVreg_UsePageAttributeTable=1 NVreg_InitializeSystemMemoryAllocat
 options nvidia_drm modeset=1 fbdev=1
 ```
 
+### Old video
 https://github.com/SNIPPIK/hypr/assets/55327334/8974acd6-3414-4e40-8881-17074f717693
 
