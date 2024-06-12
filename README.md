@@ -14,7 +14,7 @@ Packages for use
   - Notifications
     - swaync
    - Screanshoot tool
-     - grim 
+     - grim & slurp
   
 
 ## For [NVIDIA (nvidia-beta or dkms)](https://wiki.hyprland.org/Nvidia/)
