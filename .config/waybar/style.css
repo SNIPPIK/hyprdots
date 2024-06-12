@@ -1,34 +1,39 @@
+
+/* -----------------------------------------------------
+ * General
+ * ----------------------------------------------------- */
 * {
     border: none;
-    border-radius: 0px;
-    font-family: Font Awesome, Roboto, Arial, sans-serif;
+    border-radius: 20px;
 
     font-weight: bold;
     font-size: 14px;
     min-height: 10px;
 
-    border-radius: 20px;
+    font-family: Font Awesome, Roboto, Arial, sans-serif;
 }
 
-window#waybar {
-    background: transparent;
-}
-
-window#waybar.hidden {
-    opacity: 0.2;
-}
+/* -----------------------------------------------------
+ * Window
+ * ----------------------------------------------------- */
 
 #window {
-    margin-top: 6px;
-    padding-left: 10px;
-    padding-right: 10px;
-    border-radius: 10px;
-    transition: none;
-    color: transparent;
     background: transparent;
+    margin: 5px 15px 5px 0px;
+    padding: 2px 10px 0px 10px;
+    border-radius: 12px;
+    color: #ffffff;
+    font-size:16px;
+    font-weight:normal;
+    opacity:0.8;
 }
+window#waybar { background: transparent; }
+window#waybar.hidden { opacity: 0.2; }
+window#waybar.empty #window { background-color: transparent; }
 
-/* BUTTONs */
+/* -----------------------------------------------------
+ * BUTTONs
+ * ----------------------------------------------------- */
 #memory, #custom-pacman, #cpu, #tray,
 #custom-wallpaper, #custom-media, #network,
 #custom-notification, #pulseaudio, #clock,
@@ -47,7 +52,9 @@ window#waybar.hidden {
     background: transparent;
 }
 
-/* LEFT */
+/* -----------------------------------------------------
+ * LEFT
+ * ----------------------------------------------------- */
 #custom-settings, #custom-system, #language,
 #custom-updates {
     color: #161320;
@@ -71,7 +78,9 @@ window#waybar.hidden {
     background: #F2CDCD;
 }
 
-/* RIGHT */
+/* -----------------------------------------------------
+ * RIGHT
+ * ----------------------------------------------------- */
 #network {
     color: #161320;
     background: #66FFFF;
@@ -100,7 +109,9 @@ window#waybar.hidden {
     background: #F28FAD;
 }
 
-/* CENTER */
+/* -----------------------------------------------------
+ * CENTER
+ * ----------------------------------------------------- */
 #workspaces {
     margin-top: 6px;
     margin-left: 12px;
@@ -149,4 +160,17 @@ window#waybar.hidden {
 }
 #workspaces button.focused:hover {
     color: #F5F5F5;
+}
+
+/* -----------------------------------------------------
+ * Updates
+ * ----------------------------------------------------- */
+#custom-updates.green { background-color: #51f400; }
+#custom-updates.yellow {
+    background-color: #ff9a3c;
+    color: #FFFFFF;
+}
+#custom-updates.red {
+    background-color: #dc2f2f;
+    color: #FFFFFF;
 }
