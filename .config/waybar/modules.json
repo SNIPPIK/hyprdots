@@ -23,9 +23,9 @@
     },
     "modules": [
       "custom/system",
+      "custom/updates",
       "cpu",
-      "memory",
-      "custom/updates"
+      "memory"
     ]
   }
 }
