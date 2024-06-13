@@ -23,7 +23,7 @@
     "format": "   {}",
     "escape": true,
     "return-type": "json",
-    "exec": "~/.config/hypr/.scripts/updates.sh",
+    "exec": "bash ~/.config/hypr/.scripts/updates.sh",
     "restart-interval": 300,
     "on-click": "alacritty -e sudo pacman -Syu"
   },
