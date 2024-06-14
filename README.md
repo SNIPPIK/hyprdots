@@ -30,5 +30,9 @@ options nvidia NVreg_UsePageAttributeTable=1 NVreg_InitializeSystemMemoryAllocat
 options nvidia_drm modeset=1 fbdev=1
 ```
 
+### New video
+https://github.com/SNIPPIK/hypr/assets/55327334/82e32e37-a3f0-43ed-8316-4a1910d2dd88
+
+### Old video
 https://github.com/SNIPPIK/hypr/assets/55327334/8974acd6-3414-4e40-8881-17074f717693
 
