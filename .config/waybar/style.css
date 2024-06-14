@@ -120,11 +120,15 @@ window#waybar.empty #window { background-color: transparent; }
  * CENTER
  * ----------------------------------------------------- */
 #workspaces {
-    margin-top: 6px;
-    margin-left: 12px;
-    font-size: 4px;
-    margin-bottom: 0px;
-    border-radius: 2px;
+    padding-left: 10px;
+    padding-right: 10px;
+
+    margin-top: 0px;
+    margin-left: 0px;
+
+    margin-bottom: 1px;
+    border-radius: 15px;
+
     background: @background-global;
     transition: none;
 }
@@ -150,8 +154,8 @@ window#waybar.empty #window { background-color: transparent; }
 
     color: @color-text;
     font-weight: bolder;
-    border-top: 1px solid #ABE9B3;
-    border-bottom: 1px solid #ABE9B3;
+    border-top: 2px solid #ABE9B3;
+    border-bottom: 2px solid #ABE9B3;
 }
 
 /* -----------------------------------------------------
