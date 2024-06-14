@@ -1,144 +1,172 @@
+/* -----------------------------------------------------
+ * General Colors
+ * ----------------------------------------------------- */
+@define-color background-global rgba(43, 44, 43, 0.6);
+@define-color background-tray rgba(43, 44, 43, 0.6);
+
+@define-color background-up-green rgba(94, 214, 33, 0.6);
+@define-color background-up-yellow rgba(255, 234, 0, 0.6);
+@define-color background-up-red rgba(250, 3, 3, 0.6);
+
+@define-color color-text #ffffff;
+
+
+/* -----------------------------------------------------
+ * General
+ * ----------------------------------------------------- */
 * {
     border: none;
-    border-radius: 0px;
-    font-family: Font Awesome, Roboto, Arial, sans-serif;
+    border-radius: 20px;
 
     font-weight: bold;
     font-size: 14px;
     min-height: 10px;
 
-    border-radius: 20px;
+    font-family: Font Awesome, Roboto, Arial, sans-serif;
 }
 
-window#waybar {
-    background: transparent;
-}
-
-window#waybar.hidden {
-    opacity: 0.2;
-}
-
+/* -----------------------------------------------------
+ * Window
+ * ----------------------------------------------------- */
 #window {
-    margin-top: 6px;
-    padding-left: 10px;
-    padding-right: 10px;
-    border-radius: 10px;
-    transition: none;
-    color: transparent;
     background: transparent;
+    margin: 5px 15px 5px 0px;
+    padding: 2px 10px 0px 10px;
+    border-radius: 12px;
+    color: @color-text;
+    font-size:16px;
+    font-weight:normal;
+    opacity:0.8;
 }
+window#waybar { background: transparent; }
+window#waybar.hidden { opacity: 0.2; }
+window#waybar.empty #window { background-color: transparent; }
 
-/* BUTTONs */
+/* -----------------------------------------------------
+ * BUTTONs
+ * ----------------------------------------------------- */
 #memory, #custom-pacman, #cpu, #tray,
-#custom-wallpaper, #custom-media, #network,
+#custom-wallpaper, #network, #custom-gamemode,
 #custom-notification, #pulseaudio, #clock,
-#bluetooth, #custom-power, #idle_inhibitor
+#bluetooth, #custom-power, #custom-settings,
+#custom-system, #language, #custom-updates,
+#custom-appmenu
 {
-    margin-top: 6px;
-    margin-left: 8px;
     padding-left: 10px;
-    margin-bottom: 0px;
     padding-right: 10px;
-    border-radius: 10px;
+
+    margin-top: 0px;
+    margin-left: 0px;
+
+    margin-bottom: 1px;
+    border-radius: 0px;
+
     transition: none;
-    color: transparent;
-    background: transparent;
+    color: @color-text;
+    background: @background-global;
 }
 
-/* LEFT */
-#memory, #cpu {
-    color: #161320;
-    background: #96CDFB;
-}
-#tray {
-    color: #B5E8E0;
-    background: #161320;
-}
-#custom-wallpaper, #idle_inhibitor {
-    color: #161320;
-    background: #C9CBFF;
-}
-#custom-media {
-    color: #161320;
-    background: #F2CDCD;
-}
 
-/* RIGHT */
-#network {
-    color: #161320;
-    background: #66FFFF;
+/* -----------------------------------------------------
+ * Border
+ * ----------------------------------------------------- */
+#custom-system {
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
 }
-#custom-notification {
-    color: #161320;
-    background: #FFFF00;
+#memory {
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
 }
-#pulseaudio {
-    color: #1A1826;
-    background: #FAE3B0;
-}
-#clock {
-    color: #161320;
-    background: #ABE9B3;
-}
-#bluetooth {
-    color: #161320;
-    background: #96CDFB;
+#language {
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
 }
 #custom-power {
-    font-size: 20px;
-    margin-right: 8px;
-    padding-right: 5px;
-    color: #161320;
-    background: #F28FAD;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
 }
 
-/* CENTER */
+
+/* -----------------------------------------------------
+ * Padding power menu
+ * ----------------------------------------------------- */
+#custom-power {
+    margin-right: 8px;
+}
+
+/* -----------------------------------------------------
+ * Tray
+ * ----------------------------------------------------- */
+#tray {
+    background: @background-tray;
+}
+
+/* -----------------------------------------------------
+ * Updates
+ * ----------------------------------------------------- */
+#custom-updates.green {
+    background-color: @background-up-green;
+}
+#custom-updates.yellow {
+    background-color: @background-up-yellow;
+}
+#custom-updates.red {
+    background-color: @background-up-red;
+}
+
+
+/* -----------------------------------------------------
+ * CENTER
+ * ----------------------------------------------------- */
 #workspaces {
     margin-top: 6px;
     margin-left: 12px;
     font-size: 4px;
     margin-bottom: 0px;
     border-radius: 2px;
-    background: #2b2c2b;
+    background: @background-global;
     transition: none;
 }
+/* -----------------------------------------------------
+ * Any button
+ * ----------------------------------------------------- */
 #workspaces button {
     transition: none;
-    color: #83f6e2;
+    color: @color-text;
     background: transparent;
     font-size: 16px;
     border-radius: 2px;
 }
-#workspaces button.occupied {
-    transition: none;
-    color: #f8f6f6;
-    background: transparent;
-    font-size: 4px;
-}
-#workspaces button.focused {
-    color: #F5F5F5;
-    border-top: 2px solid #ABE9B3;
-    border-bottom: 2px solid #ABE9B3;
-}
+
+/* -----------------------------------------------------
+ * Active button
+ * ----------------------------------------------------- */
 #workspaces button.active {
-    margin-left: 3px;
     padding-left: 12px;
     padding-right: 12px;
-    margin-right: 3px;
     animation: gradient_f 20s ease-in infinite;
     transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682);
 
-    color: #ffffff;
-    border-top: 2px solid #ABE9B3;
-    border-bottom: 2px solid #ABE9B3;
+    color: @color-text;
+    font-weight: bolder;
+    border-top: 1px solid #ABE9B3;
+    border-bottom: 1px solid #ABE9B3;
 }
+
+/* -----------------------------------------------------
+ * Selected button
+ * ----------------------------------------------------- */
 #workspaces button:hover {
-    transition: none;
+    margin-left: 3px;
+    padding-left: 12px;
+    padding-right: 12px;
+    margin-right: 2px;
+    animation: gradient_f 20s ease-in infinite;
+    transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682);
+
     box-shadow: inherit;
     text-shadow: inherit;
-    color: #F5F5F5;
-    border-color: #F5F5F5;
-}
-#workspaces button.focused:hover {
-    color: #F5F5F5;
+    color: @color-text;
+    border-color: @color-text;
 }

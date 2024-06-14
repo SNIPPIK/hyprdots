@@ -1,0 +1,46 @@
+{
+  "group/manage": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 300,
+      "children-class": "not-memory",
+      "transition-left-to-right": true
+    },
+    "modules": [
+        "custom/wallpaper",
+        "custom/gamemode",
+        "custom/updates"
+    ]
+  },       
+
+  "group/settings": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 300,
+      "children-class": "not-memory",
+      "transition-left-to-right": true
+    },
+    "modules": [
+      "custom/settings",
+      "custom/gamemode",
+      "pulseaudio",
+      "bluetooth",
+      "network"
+    ]
+  },
+
+  "group/system": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 300,
+      "children-class": "not-memory",
+      "transition-left-to-right": true
+    },
+    "modules": [  
+      "custom/system",
+      "custom/updates",
+      "cpu",
+      "memory"
+    ]
+  }
+}

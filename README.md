@@ -1,10 +1,11 @@
 # Hyprland configs
 Packages for use
   - General
-    - hypridle & hyprpaper
+    - hyprpaper
     - waybar & otf-font-awesome & noto-fonts-emoji
     - rofi
     - nm-connection-editor
+    - wlogout (AUR)
   - Audio, bluetooth
     - wireplumber & pipewire-pulse
     - blueberry, bluez

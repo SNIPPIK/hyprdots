@@ -1,0 +1,72 @@
+{
+  // Settings
+  "custom/settings": {
+    "format": "",
+    "tooltip-format": "Settings tray"
+  },
+
+  // System
+  "custom/system": {
+    "format": "",
+    "tooltip-format": "System info tray"
+  },
+  
+  // Gamemode
+  "custom/gamemode": {
+    "format": "",
+    "tooltip-format": "Gaming mode",
+    "on-click": "bash ~/.config/hypr/scripts/gamemode.sh"
+  },
+
+  // Power Menu
+  "custom/power": {
+    "format": "",
+    "on-click": "wlogout",
+    "tooltip-format": "Power Menu"
+  },
+
+  // Updates Count
+  "custom/updates": {
+    "format": "   {}",
+    "escape": true,
+    "return-type": "json",
+    "exec": "bash ~/.config/hypr/scripts/updates.sh",
+    "restart-interval": 300,
+    "on-click": "bash ~/.config/hypr/scripts/update.sh"
+  },
+
+  // Wallpaper
+  "custom/wallpaper": {
+    "format": "",
+    "on-click": "bash ~/.config/hypr/scripts/wallpaper.sh"
+  },
+
+  // Notification
+  "custom/notification": {
+    "tooltip": false,
+    "format": "{icon}",
+    "format-icons": {
+      "notification": "<span foreground='red'><sup></sup></span>",
+      "none": "",
+      "dnd-notification": "<span foreground='red'><sup></sup></span>",
+      "dnd-none": "",
+      "inhibited-notification": "<span foreground='red'><sup></sup></span>",
+      "inhibited-none": "",
+      "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
+      "dnd-inhibited-none": ""
+    },
+    "return-type": "json",
+    "exec-if": "which swaync-client",
+    "exec": "swaync-client -swb",
+    "on-click": "swaync-client -t -sw",
+    "on-click-right": "swaync-client -d -sw",
+    "escape": true
+  },
+
+  // Rofi Application Launcher
+  "custom/appmenu": {
+    "format": " ",
+    "on-click": "rofi -show drun -replace",
+    "tooltip-format": "Left: Open the application launcher"
+  }
+}
