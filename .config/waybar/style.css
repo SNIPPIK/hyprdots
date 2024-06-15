@@ -16,7 +16,6 @@
  * ----------------------------------------------------- */
 * {
     border: none;
-    border-radius: 20px;
 
     font-weight: bold;
     font-size: 14px;
@@ -29,18 +28,20 @@
  * Window
  * ----------------------------------------------------- */
 #window {
+    padding-left: 20px;
+    padding-right: 10px;
     background: transparent;
-    margin: 5px 15px 5px 0px;
-    padding: 2px 10px 0px 10px;
-    border-radius: 12px;
     color: @color-text;
     font-size:16px;
     font-weight:normal;
     opacity:0.8;
 }
+
 window#waybar { background: transparent; }
 window#waybar.hidden { opacity: 0.2; }
-window#waybar.empty #window { background-color: transparent; }
+window#waybar.empty {
+    background-color: transparent;
+}
 
 /* -----------------------------------------------------
  * BUTTONs

@@ -23,11 +23,11 @@ if [ "$1" == "wallpaper" ]; then
   if [ -d "$directory" ]; then
       random_background=$(ls $directory/* | shuf -n 1)
 
+      hyprctl hyprpaper unload all
+
+      sleep 1
       hyprctl hyprpaper preload $random_background
       hyprctl hyprpaper wallpaper "$monitor, $random_background"
-
-      sleep 0.2
-      hyprctl hyprpaper unload all
   fi
 fi
 
