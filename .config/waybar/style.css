@@ -78,11 +78,7 @@ window#waybar.empty #window { background-color: transparent; }
 /* -----------------------------------------------------
  * Border
  * ----------------------------------------------------- */
-#custom-system {
-    border-bottom-right-radius: 10px;
-    border-top-right-radius: 10px;
-}
-#memory {
+#custom-wallpaper {
     border-bottom-right-radius: 10px;
     border-top-right-radius: 10px;
 }

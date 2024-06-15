@@ -27,9 +27,9 @@
     // Modules Left
     "modules-left": [
         "custom/logo",
-        "custom/wallpaper",
         "group/settings",
         "group/system",
+        "custom/wallpaper",
         "hyprland/window"
     ],
 
