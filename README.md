@@ -29,10 +29,12 @@ Write in `/etc/modprobe.d/nvidia.conf`
 options nvidia NVreg_UsePageAttributeTable=1 NVreg_InitializeSystemMemoryAllocations=0 NVreg_DynamicPowerManagement=0x02 NVreg_EnableGpuFireware=0
 options nvidia_drm modeset=1 fbdev=1
 ```
+### v3
+https://github.com/SNIPPIK/hypr/assets/55327334/a507a715-4059-43d5-9527-70f0326013bc
 
-### New video
+### v2
 https://github.com/SNIPPIK/hypr/assets/55327334/82e32e37-a3f0-43ed-8316-4a1910d2dd88
 
-### Old video
+### v1
 https://github.com/SNIPPIK/hypr/assets/55327334/8974acd6-3414-4e40-8881-17074f717693
 
