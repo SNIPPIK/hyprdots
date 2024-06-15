@@ -1,9 +1,11 @@
+[<img align="right" alt="Avatar" width="200px" src="https://raw.githubusercontent.com/SNIPPIK/hypr/main/logo.png" />]()
+
 # Hyprland configs
 Packages for use
   - General
     - hyprpaper
     - waybar & otf-font-awesome & noto-fonts-emoji
-    - rofi
+    - rofi-wayland
     - nm-connection-editor
     - wlogout (AUR)
   - Audio, bluetooth

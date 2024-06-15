@@ -2,7 +2,8 @@
   // Settings
   "custom/settings": {
     "format": "",
-    "tooltip-format": "Settings tray"
+    "tooltip-format": "Settings tray\nRight: Restart waybar",
+    "on-click-right": "bash ~/.config/hypr/scripts/utils.sh restart-waybar"
   },
 
   // System
@@ -15,7 +16,7 @@
   "custom/gamemode": {
     "format": "",
     "tooltip-format": "Gaming mode",
-    "on-click": "bash ~/.config/hypr/scripts/gamemode.sh"
+    "on-click": "bash ~/.config/hypr/scripts/utils.sh gamemode"
   },
 
   // Power Menu
@@ -32,13 +33,14 @@
     "return-type": "json",
     "exec": "bash ~/.config/hypr/scripts/updates.sh",
     "restart-interval": 300,
-    "on-click": "bash ~/.config/hypr/scripts/update.sh"
+    "on-click": "bash ~/.config/hypr/scripts/utils.sh update-packages",
+    "on-click-right": "bash ~/.config/hypr/scripts/utils.sh remove-packages"
   },
 
   // Wallpaper
   "custom/wallpaper": {
     "format": "",
-    "on-click": "bash ~/.config/hypr/scripts/wallpaper.sh"
+    "on-click": "bash ~/.config/hypr/scripts/utils.sh wallpaper"
   },
 
   // Notification
@@ -64,9 +66,9 @@
   },
 
   // Rofi Application Launcher
-  "custom/appmenu": {
-    "format": " ",
-    "on-click": "rofi -show drun -replace",
+  "custom/logo": {
+    "format": " ",
+    "on-click": "rofi -show drun -theme ~/.config/rofi/fullscreen.rasi",
     "tooltip-format": "Left: Open the application launcher"
   }
 }

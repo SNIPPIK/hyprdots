@@ -50,7 +50,7 @@ window#waybar.empty #window { background-color: transparent; }
 #custom-notification, #pulseaudio, #clock,
 #bluetooth, #custom-power, #custom-settings,
 #custom-system, #language, #custom-updates,
-#custom-appmenu
+#custom-logo
 {
     padding-left: 10px;
     padding-right: 10px;
@@ -64,6 +64,14 @@ window#waybar.empty #window { background-color: transparent; }
     transition: none;
     color: @color-text;
     background: @background-global;
+}
+
+#custom-logo {
+    background-image: url("https://raw.githubusercontent.com/SNIPPIK/hypr/main/logo.png");
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding-left: 20px;
 }
 
 
