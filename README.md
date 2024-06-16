@@ -1,3 +1,7 @@
+
+
+https://github.com/SNIPPIK/hypr/assets/55327334/ee8311fa-9d7b-44ff-8cad-7f1664d6b64b
+
 [<img align="right" alt="Avatar" width="200px" src="https://raw.githubusercontent.com/SNIPPIK/hypr/main/logo.png" />]()
 
 # Hyprland configs
@@ -32,6 +36,9 @@ Write in `/etc/modprobe.d/nvidia.conf`
 options nvidia NVreg_UsePageAttributeTable=1 NVreg_InitializeSystemMemoryAllocations=0 NVreg_DynamicPowerManagement=0x02 NVreg_EnableGpuFireware=0
 options nvidia_drm modeset=1 fbdev=1
 ```
+
+### v3.5
+https://github.com/SNIPPIK/hypr/assets/55327334/ee8311fa-9d7b-44ff-8cad-7f1664d6b64b
 
 ### v3.1
 https://github.com/SNIPPIK/hypr/assets/55327334/d90cdc7d-e17b-44e9-92fe-cbd23974aeef
