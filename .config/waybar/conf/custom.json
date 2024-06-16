@@ -69,6 +69,7 @@
   "custom/logo": {
     "format": " ",
     "on-click": "rofi -show drun -theme ~/.config/rofi/fullscreen.rasi",
-    "tooltip-format": "Left: Open the application launcher"
+    "on-click-right": "alacritty -e bash ~/.config/hypr/scripts/utils.sh remove-packages",
+    "tooltip-format": "Left: Open the application launcher\nRight: Remove unused packages"
   }
 }

@@ -9,7 +9,7 @@
   },
   // Hyprland Window
   "hyprland/window": {
-    "format": "{class} - {title}",
+    "format": "{title}",
     "icon": true,
     "separate-outputs": true
   },

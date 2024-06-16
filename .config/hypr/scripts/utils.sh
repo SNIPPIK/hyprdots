@@ -24,8 +24,6 @@ if [ "$1" == "wallpaper" ]; then
       random_background=$(ls $directory/* | shuf -n 1)
 
       hyprctl hyprpaper unload all
-
-      sleep 1
       hyprctl hyprpaper preload $random_background
       hyprctl hyprpaper wallpaper "$monitor, $random_background"
   fi
@@ -50,7 +48,16 @@ fi
 
 #Remove unused packages
 if [ "$1" == "remove-packages" ]; then
-  alacritty -e sudo pacman -Qdtq & sudo pacman -Rns -
+  packages=`sudo pacman -Qdtq`
+
+  if [ -z "$packages" ]; then
+    echo "Not find packages for remove"
+  else
+    sudo pacman -Rns "$packages"
+  fi
+
+  sleep 5
+  exit 1
 fi
 
 #Update packages
