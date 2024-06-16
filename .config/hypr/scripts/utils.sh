@@ -20,22 +20,27 @@ fi
 
 #Change wallpaper
 if [ "$1" == "wallpaper" ]; then
+  monitor=`hyprctl monitors | grep Monitor | awk '{print $2}'`
+
+  #Directory wallpapers
   directory=~/Pictures/Wallpapers
   directory_quality=~/Pictures/Wallpapers/Quality
+  random_background=""
 
+  #Find image wallpaper
   if [ -d "$directory_quality" ]; then
-    random_background="$(find $directory_quality | shuf -n 1)"
-
-    hyprctl hyprpaper unload all
-    hyprctl hyprpaper preload $random_background
-    hyprctl hyprpaper wallpaper ", $random_background"
+    random_background=`find -L $directory_quality -type f | shuf -n 1`
   elif [ -d "$directory" ]; then
     random_background=$(ls $directory/* | shuf -n 1)
-
-    hyprctl hyprpaper unload all
-    hyprctl hyprpaper preload $random_background
-    hyprctl hyprpaper wallpaper ", $random_background"
   fi
+
+  #Change wallpaper image
+  hyprctl hyprpaper preload $random_background
+  hyprctl hyprpaper wallpaper "$monitor, $random_background"
+
+  #Unload wallpaper image
+  sleep 2
+  hyprctl hyprpaper unload all
 
   echo "OK - wallpaper"
   exit 1

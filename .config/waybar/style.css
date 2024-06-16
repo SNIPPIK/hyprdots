@@ -9,6 +9,7 @@
 @define-color background-up-red rgba(250, 3, 3, 0.6);
 
 @define-color color-text #ffffff;
+@define-color color-accent #ABE9B3;
 
 
 /* -----------------------------------------------------
@@ -159,8 +160,8 @@ window#waybar.empty {
 
     color: @color-text;
     font-weight: bolder;
-    border-top: 2px solid #ABE9B3;
-    border-bottom: 2px solid #ABE9B3;
+    border-top: 2px solid @color-accent;
+    border-bottom: 2px solid @color-accent;
 }
 
 /* -----------------------------------------------------
