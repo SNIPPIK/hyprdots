@@ -18,7 +18,6 @@ Packages for use
     - swaync
 - Screanshoot tool
     - grim & slurp
- 
 - [wallpapers](https://drive.google.com/file/d/12c7wgWHIAVtFP9TloSiHun5OWWA5OVtm/view?usp=sharing)
 
 

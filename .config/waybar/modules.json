@@ -1,5 +1,5 @@
 {
-  "group/manage": {
+  "group/logo": {
     "orientation": "inherit",
     "drawer": {
       "transition-duration": 300,
@@ -7,8 +7,8 @@
       "transition-left-to-right": true
     },
     "modules": [
-        "custom/wallpaper",
-        "custom/gamemode",
+        "custom/logo",
+        "custom/kernel",
         "custom/updates"
     ]
   },       
@@ -38,7 +38,6 @@
     },
     "modules": [  
       "custom/system",
-      "custom/updates",
       "cpu",
       "memory"
     ]

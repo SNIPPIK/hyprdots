@@ -26,7 +26,7 @@
 
     // Modules Left
     "modules-left": [
-        "custom/logo",
+        "group/logo",
         "group/settings",
         "group/system",
         "custom/wallpaper",

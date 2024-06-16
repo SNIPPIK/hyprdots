@@ -52,7 +52,7 @@ window#waybar.empty {
 #custom-notification, #pulseaudio, #clock,
 #bluetooth, #custom-power, #custom-settings,
 #custom-system, #language, #custom-updates,
-#custom-logo
+#custom-logo, #custom-kernel
 {
     padding-left: 10px;
     padding-right: 10px;
