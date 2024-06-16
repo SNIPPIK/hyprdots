@@ -1,7 +1,3 @@
-
-
-https://github.com/SNIPPIK/hypr/assets/55327334/ee8311fa-9d7b-44ff-8cad-7f1664d6b64b
-
 [<img align="right" alt="Avatar" width="200px" src="https://raw.githubusercontent.com/SNIPPIK/hypr/main/logo.png" />]()
 
 # Hyprland configs
