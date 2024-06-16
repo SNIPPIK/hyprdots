@@ -2,23 +2,23 @@
 
 # Hyprland configs
 Packages for use
-  - General
+- General
     - hyprpaper
     - waybar & otf-font-awesome & noto-fonts-emoji
     - rofi-wayland
     - nm-connection-editor
     - wlogout (AUR)
-  - Audio, bluetooth
+- Audio, bluetooth
     - wireplumber & pipewire-pulse
     - blueberry, bluez
     - pavucontrol
-  - Polkit
+- Polkit
     - polkit-gnome
-  - Notifications
+- Notifications
     - swaync
-   - Screanshoot tool
-     - grim & slurp
-  
+- Screanshoot tool
+    - grim & slurp
+
 
 ## For [NVIDIA (nvidia-beta or dkms)](https://wiki.hyprland.org/Nvidia/)
 Run servises nvidia-suspend.service, nvidia-hibernate.service, and nvidia-resume.service
@@ -31,6 +31,10 @@ Write in `/etc/modprobe.d/nvidia.conf`
 options nvidia NVreg_UsePageAttributeTable=1 NVreg_InitializeSystemMemoryAllocations=0 NVreg_DynamicPowerManagement=0x02 NVreg_EnableGpuFireware=0
 options nvidia_drm modeset=1 fbdev=1
 ```
+
+### v3.1
+https://github.com/SNIPPIK/hypr/assets/55327334/d90cdc7d-e17b-44e9-92fe-cbd23974aeef
+
 ### v3
 https://github.com/SNIPPIK/hypr/assets/55327334/a507a715-4059-43d5-9527-70f0326013bc
 

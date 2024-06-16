@@ -12,21 +12,33 @@ if [ "$1" == "restart-waybar" ]; then
 
   sleep 0.5
   waybar
+
+  echo "OK - restart waybar"
+  exit 1
 fi
 
 
 #Change wallpaper
 if [ "$1" == "wallpaper" ]; then
   directory=~/Pictures/Wallpapers
-  monitor=`hyprctl monitors | grep Monitor | awk '{print $2}'`
+  directory_quality=~/Pictures/Wallpapers/Quality
 
-  if [ -d "$directory" ]; then
-      random_background=$(ls $directory/* | shuf -n 1)
+  if [ -d "$directory_quality" ]; then
+    random_background="$(find $directory_quality | shuf -n 1)"
 
-      hyprctl hyprpaper unload all
-      hyprctl hyprpaper preload $random_background
-      hyprctl hyprpaper wallpaper "$monitor, $random_background"
+    hyprctl hyprpaper unload all
+    hyprctl hyprpaper preload $random_background
+    hyprctl hyprpaper wallpaper ", $random_background"
+  elif [ -d "$directory" ]; then
+    random_background=$(ls $directory/* | shuf -n 1)
+
+    hyprctl hyprpaper unload all
+    hyprctl hyprpaper preload $random_background
+    hyprctl hyprpaper wallpaper ", $random_background"
   fi
+
+  echo "OK - wallpaper"
+  exit 1
 fi
 
 
@@ -43,6 +55,9 @@ if [ "$1" == "gamemode" ]; then
       echo "Gamemode enable" > ~/.cache/gamemode
       notify-send "Gamemode activated" "Animations and blur disabled"
   fi
+
+    echo "OK - gamemode"
+    exit 1
 fi
 
 
