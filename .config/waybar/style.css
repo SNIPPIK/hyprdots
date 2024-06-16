@@ -9,7 +9,7 @@
 @define-color background-up-red rgba(250, 3, 3, 0.6);
 
 @define-color color-text #ffffff;
-@define-color color-accent #ABE9B3;
+@define-color color-accent rgba(255, 255, 255, 0.75);
 
 
 /* -----------------------------------------------------
@@ -66,6 +66,8 @@ window#waybar.empty {
     transition: none;
     color: @color-text;
     background: @background-global;
+
+    border-bottom: 1px solid @color-accent;
 }
 
 #custom-logo {

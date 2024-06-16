@@ -3,7 +3,7 @@
 # Hyprland configs
 Packages for use
 - General
-    - hyprpaper
+    - hyprpaper & hypridle
     - waybar & otf-font-awesome & noto-fonts-emoji
     - rofi-wayland
     - nm-connection-editor
