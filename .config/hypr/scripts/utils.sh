@@ -53,25 +53,6 @@ if [ "$1" == "wallpaper" ]; then
 fi
 
 
-#Gamemode
-if [ "$1" == "gamemode" ]; then
-  if [ -f ~/.cache/gamemode ]; then
-      hyprctl keyword animations:enabled true
-      hyprctl keyword decoration:blur:enabled true
-      rm ~/.cache/gamemode
-      notify-send "Gamemode deactivated" "Animations and blur enabled"
-  else
-      hyprctl keyword animations:enabled false
-      hyprctl keyword decoration:blur:enabled false
-      echo "Gamemode enable" > ~/.cache/gamemode
-      notify-send "Gamemode activated" "Animations and blur disabled"
-  fi
-
-    echo "OK - gamemode"
-    exit 1
-fi
-
-
 #Remove unused packages
 if [ "$1" == "remove-packages" ]; then
   packages=`sudo pacman -Qdtq`
@@ -79,7 +60,7 @@ if [ "$1" == "remove-packages" ]; then
   if [ -z "$packages" ]; then
     echo "Not find packages for remove"
   else
-    sudo pacman -Rns "$packages"
+    sudo pacman -Qdtq | sudo pacman -Rsc -
   fi
 
   sleep 5

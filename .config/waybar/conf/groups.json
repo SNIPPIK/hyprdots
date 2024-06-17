@@ -1,4 +1,19 @@
 {
+  "group/power": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 300,
+      "children-class": "not-memory",
+      "transition-left-to-right": false
+    },
+    "modules": [
+      "custom/power",
+      "custom/lock",
+      "custom/logout",
+      "custom/reboot"
+    ]
+  },
+
   "group/logo": {
     "orientation": "inherit",
     "drawer": {
@@ -9,12 +24,13 @@
     "modules": [
         "custom/logo",
         "custom/kernel",
+        "custom/gamemode",
         "custom/updates"
     ]
-  },       
+  },
 
   "group/settings": {
-    "orientation": "inherit",
+    "orientation": "horizontal",
     "drawer": {
       "transition-duration": 300,
       "children-class": "not-memory",
@@ -22,7 +38,6 @@
     },
     "modules": [
       "custom/settings",
-      "custom/gamemode",
       "pulseaudio",
       "bluetooth",
       "network"
@@ -30,7 +45,7 @@
   },
 
   "group/system": {
-    "orientation": "inherit",
+    "orientation": "horizontal",
     "drawer": {
       "transition-duration": 300,
       "children-class": "not-memory",
@@ -39,7 +54,8 @@
     "modules": [  
       "custom/system",
       "cpu",
-      "memory"
+      "memory",
+      "disk"
     ]
   }
 }

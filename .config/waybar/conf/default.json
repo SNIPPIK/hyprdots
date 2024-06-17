@@ -1,38 +1,22 @@
 {
-  //Рабочие столы
-  "hyprland/workspaces": {
-    "format": "{icon}",
-    "format-icons": {
-      "1": "1", "2": "2", "3": "3", "4": "4", "5": "5", "6": "6", "7": "7", "8": "8", "9": "9", "10": "10"
-    },
-    "sort-by-number": true
+  //System Info group
+  "cpu": {      // CPU
+    "interval": 10,
+    "format": " {usage:2}%"
   },
-  // Hyprland Window
-  "hyprland/window": {
-    "format": "{title}",
-    "icon": true,
-    "separate-outputs": true
+  "memory": {   // RAM
+    "interval": 15,
+    "format": " {}%"
   },
-
-  // Lang
-  "hyprland/language": {
-    "format": " {short}"
-  },
-  // Keyboard State
-  "keyboard-state": {
-    "numlock": true,
-    "capslock": true,
-    "format": "{name} {icon}",
-    "format-icons": {
-      "locked": "",
-      "unlocked": ""
-    }
+  "disk": {     //Disk
+    "interval": 30,
+    "format": " {percentage_used}%",
+    "path": "/"
   },
 
 
-  // Pulseaudio
-  "pulseaudio": {
-    // "scroll-step": 1, // %, can be a float
+  //Settings group
+  "pulseaudio": {   // Pulseaudio
     "format": "{icon}   {volume}%",
     "format-bluetooth": "{volume}%  {icon} {format_source}",
     "format-bluetooth-muted": " {icon} {format_source}",
@@ -50,8 +34,7 @@
     },
     "on-click": "pavucontrol"
   },
-  // Bluetooth
-  "bluetooth": {
+  "bluetooth": {    // Bluetooth
     "format": " {status}",
     "format-connected": " {device_alias}",
     "format-connected-battery": " {device_alias} {device_battery_percentage}%",
@@ -66,24 +49,55 @@
     "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
     "on-click": "blueberry"
   },
+  "network": {   // Network
+    "format": "{ifname}",
+    "format-wifi": "   {signalStrength}%",
+    "format-ethernet": "  {ifname}",
+    "format-disconnected": "Disconnected",
+    "tooltip-format": " {ifname} via {gwaddri}",
+    "tooltip-format-wifi": "  {ifname} @ {essid}\nIP: {ipaddr}\nStrength: {signalStrength}%\nFreq: {frequency}MHz\nUp: {bandwidthUpBits} Down: {bandwidthDownBits}",
+    "tooltip-format-ethernet": " {ifname}\nIP: {ipaddr}\nUp: {bandwidthUpBits} Down: {bandwidthDownBits}",
+    "tooltip-format-disconnected": "Disconnected",
+    "max-length": 50,
+    "on-click": "alacritty --class dotfiles-floating -e nmtui"
+  },
 
-  // CPU
-  "cpu": {
-    "interval": 10,
-    "format": " {usage:2}%"
+
+  //Workspace
+  "hyprland/workspaces": {
+    "format": "{icon}",
+    "format-icons": {
+      "1": "1", "2": "2", "3": "3", "4": "4", "5": "5", "6": "6", "7": "7", "8": "8", "9": "9", "10": "10"
+    },
+    "sort-by-number": true
   },
-  // RAM
-  "memory": {
-    "interval": 15,
-    "format": " {}%"
+  "hyprland/window": { //Window
+    "format": "{title}",
+    "icon": true,
+    "separate-outputs": true
   },
+
+
+  // Languages
+  "hyprland/language": {
+    "format": " {short}"
+  },
+  "keyboard-state": {
+    "numlock": true,
+    "capslock": true,
+    "format": "{name} {icon}",
+    "format-icons": {
+      "locked": "",
+      "unlocked": ""
+    }
+  },
+
 
   // System tray
   "tray": {
     "icon-size": 21,
     "spacing": 10
   },
-
   // Clock
   "clock": {
     "format": "{:L%H:%M} ",
@@ -109,19 +123,6 @@
       "on-scroll-up": "shift_up",
       "on-scroll-down": "shift_down"
     }
-  },
-  // Network
-  "network": {
-    "format": "{ifname}",
-    "format-wifi": "   {signalStrength}%",
-    "format-ethernet": "  {ifname}",
-    "format-disconnected": "Disconnected",
-    "tooltip-format": " {ifname} via {gwaddri}",
-    "tooltip-format-wifi": "  {ifname} @ {essid}\nIP: {ipaddr}\nStrength: {signalStrength}%\nFreq: {frequency}MHz\nUp: {bandwidthUpBits} Down: {bandwidthDownBits}",
-    "tooltip-format-ethernet": " {ifname}\nIP: {ipaddr}\n up: {bandwidthUpBits} down: {bandwidthDownBits}",
-    "tooltip-format-disconnected": "Disconnected",
-    "max-length": 50,
-    "on-click": "alacritty --class dotfiles-floating -e nmtui"
   },
   // Battery
   "battery": {

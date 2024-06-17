@@ -1,4 +1,4 @@
-[<img align="right" alt="Avatar" width="200px" src="https://raw.githubusercontent.com/SNIPPIK/hypr/main/logo.png" />]()
+[<img align="right" alt="Avatar" width="200px" src="/.config/waybar/logo.png" />]()
 
 # Hyprland configs
 Packages for use

@@ -38,7 +38,9 @@
     opacity:0.8;
 }
 
-window#waybar { background: transparent; }
+window#waybar {
+    background: transparent;
+}
 window#waybar.hidden { opacity: 0.2; }
 window#waybar.empty {
     background-color: transparent;
@@ -47,12 +49,13 @@ window#waybar.empty {
 /* -----------------------------------------------------
  * BUTTONs
  * ----------------------------------------------------- */
-#memory, #custom-pacman, #cpu, #tray,
-#custom-wallpaper, #network, #custom-gamemode,
+#memory, #custom-pacman, #cpu, #tray, #disk,
+#custom-wallpaper, #network, #battery,
 #custom-notification, #pulseaudio, #clock,
 #bluetooth, #custom-power, #custom-settings,
 #custom-system, #language, #custom-updates,
-#custom-logo, #custom-kernel
+#custom-logo, #custom-kernel,
+#custom-lock, #custom-logout, #custom-reboot
 {
     padding-left: 10px;
     padding-right: 10px;
@@ -71,7 +74,7 @@ window#waybar.empty {
 }
 
 #custom-logo {
-    background-image: url("https://raw.githubusercontent.com/SNIPPIK/hypr/main/logo.png");
+    background-image: image(url("logo.png"));
     background-size: 20px 20px;
     background-repeat: no-repeat;
     background-position: center;
@@ -82,23 +85,23 @@ window#waybar.empty {
 /* -----------------------------------------------------
  * Border
  * ----------------------------------------------------- */
-#custom-wallpaper {
-    border-bottom-right-radius: 10px;
-    border-top-right-radius: 10px;
-}
-#language {
+#custom-logo, #language {
     border-bottom-left-radius: 10px;
     border-top-left-radius: 10px;
 }
-#custom-power {
+
+#custom-wallpaper, #custom-power {
     border-bottom-right-radius: 10px;
     border-top-right-radius: 10px;
 }
 
-
 /* -----------------------------------------------------
- * Padding power menu
+ * Padding
  * ----------------------------------------------------- */
+#custom-logo {
+    margin-left: 8px;
+}
+
 #custom-power {
     margin-right: 8px;
 }
@@ -122,7 +125,6 @@ window#waybar.empty {
 #custom-updates.red {
     background-color: @background-up-red;
 }
-
 
 /* -----------------------------------------------------
  * CENTER

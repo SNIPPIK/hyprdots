@@ -3,11 +3,8 @@
 //  \ \ /\ / / _` | | | | '_ \ / _` | '__| 
 //   \ V  V / (_| | |_| | |_) | (_| | |    
 //    \_/\_/ \__,_|\__, |_.__/ \__,_|_|    
-//                 |___/                   
-//  
-// by SNIPPIK (2024)
-// ----------------------------------------------------- 
-//
+//                 |___/
+// ---------------------------------------
 {
     // General Settings
     "layer": "top",
@@ -21,7 +18,7 @@
     "include": [
         "~/.config/waybar/conf/default.json",
         "~/.config/waybar/conf/custom.json",
-        "~/.config/waybar/modules.json"
+        "~/.config/waybar/conf/groups.json"
     ],
 
     // Modules Left
@@ -41,10 +38,11 @@
     // Modules Right    
     "modules-right": [
         "hyprland/language",
+        "custom/weather",
         "tray",
         "custom/notification",
         "clock",
         "battery",
-        "custom/power"
+        "group/power"
     ]
 }
