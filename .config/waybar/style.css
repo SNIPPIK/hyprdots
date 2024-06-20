@@ -1,27 +1,13 @@
-/* -----------------------------------------------------
- * General Colors
- * ----------------------------------------------------- */
-@define-color background-global rgba(43, 44, 43, 0.6);
-@define-color background-tray rgba(43, 44, 43, 0.6);
-
-@define-color background-up-green rgba(94, 214, 33, 0.6);
-@define-color background-up-yellow rgba(255, 234, 0, 0.6);
-@define-color background-up-red rgba(250, 3, 3, 0.6);
-
-@define-color color-text #ffffff;
-@define-color color-accent rgba(255, 255, 255, 0.75);
-
+@import "color.css";
 
 /* -----------------------------------------------------
  * General
  * ----------------------------------------------------- */
 * {
     border: none;
-
     font-weight: bold;
     font-size: 14px;
     min-height: 10px;
-
     font-family: Font Awesome, Roboto, Arial, sans-serif;
 }
 
@@ -41,21 +27,27 @@
 window#waybar {
     background: transparent;
 }
-window#waybar.hidden { opacity: 0.2; }
-window#waybar.empty {
-    background-color: transparent;
-}
 
 /* -----------------------------------------------------
  * BUTTONs
  * ----------------------------------------------------- */
-#memory, #custom-pacman, #cpu, #tray, #disk,
-#custom-wallpaper, #network, #battery,
-#custom-notification, #pulseaudio, #clock,
-#bluetooth, #custom-power, #custom-settings,
-#custom-system, #language, #custom-updates,
-#custom-logo, #custom-kernel,
-#custom-lock, #custom-logout, #custom-reboot
+/* Any */
+#custom-wallpaper, #custom-notification,
+#tray, #battery, #clock, #language,
+
+/* Logo group */
+#custom-logo, #custom-kernel, #custom-updates,
+/* Settings group */
+#custom-settings, #pulseaudio, #bluetooth, #network,
+/* System info group */
+#custom-system, #cpu, #memory, #disk,
+
+/* Power menu */
+#custom-power, #custom-lock, #custom-logout, #custom-reboot,
+
+/* Workspace */
+#workspaces
+
 {
     padding-left: 10px;
     padding-right: 10px;
@@ -70,117 +62,90 @@ window#waybar.empty {
     color: @color-text;
     background: @background-global;
 
-    border-bottom: 1px solid @color-accent;
+    border-bottom: 1px solid gray;
 }
-
-#custom-logo {
-    background-image: image(url("logo.png"));
-    background-size: 20px 20px;
-    background-repeat: no-repeat;
-    background-position: center;
-    padding-left: 20px;
-}
-
 
 /* -----------------------------------------------------
  * Border
  * ----------------------------------------------------- */
-#custom-logo, #language {
+#custom-logo, #language, #custom-settings {
     border-bottom-left-radius: 10px;
     border-top-left-radius: 10px;
 }
 
-#custom-wallpaper, #custom-power {
+#custom-wallpaper, #custom-power, #workspaces {
     border-bottom-right-radius: 10px;
     border-top-right-radius: 10px;
 }
 
+#custom-kernel, #custom-updates {
+    border-left: 1px solid gray;
+    border-right: 1px solid gray;
+}
+
+
 /* -----------------------------------------------------
  * Padding
  * ----------------------------------------------------- */
-#custom-logo {
+#custom-settings, #custom-logo {
     margin-left: 8px;
 }
 
-#custom-power {
+#custom-power, #custom-wallpaper {
     margin-right: 8px;
 }
 
 /* -----------------------------------------------------
- * Tray
- * ----------------------------------------------------- */
-#tray {
-    background: @background-tray;
-}
-
-/* -----------------------------------------------------
- * Updates
- * ----------------------------------------------------- */
-#custom-updates.green {
-    background-color: @background-up-green;
-}
-#custom-updates.yellow {
-    background-color: @background-up-yellow;
-}
-#custom-updates.red {
-    background-color: @background-up-red;
-}
-
-/* -----------------------------------------------------
- * CENTER
+ * Workspace
  * ----------------------------------------------------- */
 #workspaces {
-    padding-left: 10px;
-    padding-right: 10px;
-
-    margin-top: 0px;
-    margin-left: 0px;
-
-    margin-bottom: 1px;
-    border-radius: 15px;
-
+    padding-left: 0px;
     background: @background-global;
     transition: none;
 }
+
+/* Logo Workspace */
+#custom-logo {
+    background-image: image(url("logo.png"));
+    background-size: 15px 15px;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding-left: 20px;
+}
 /* -----------------------------------------------------
- * Any button
+ * Workspace buttons
  * ----------------------------------------------------- */
 #workspaces button {
     transition: none;
     color: @color-text;
     background: transparent;
-    font-size: 16px;
-    border-radius: 2px;
+
+    animation: ws_normal 20s ease-in-out 1;
 }
 
 /* -----------------------------------------------------
- * Active button
+ * Workspace active button
  * ----------------------------------------------------- */
 #workspaces button.active {
-    padding-left: 12px;
-    padding-right: 12px;
-    animation: gradient_f 20s ease-in infinite;
-    transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682);
+    color: @workspace-color-active;
 
-    color: @color-text;
-    font-weight: bolder;
-    border-top: 2px solid @color-accent;
-    border-bottom: 2px solid @color-accent;
+    animation: ws_active 20s ease-in-out 1;
+    transition: all 0.4s cubic-bezier(.55,-0.68,.48,1.682);
 }
 
 /* -----------------------------------------------------
- * Selected button
+ * Workspace selected button
  * ----------------------------------------------------- */
 #workspaces button:hover {
-    margin-left: 3px;
-    padding-left: 12px;
-    padding-right: 12px;
-    margin-right: 2px;
-    animation: gradient_f 20s ease-in infinite;
-    transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682);
-
-    box-shadow: inherit;
-    text-shadow: inherit;
     color: @color-text;
-    border-color: @color-text;
+
+    animation: ws_hover 20s ease-in-out 1;
+    transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682);
+}
+
+/* -----------------------------------------------------
+ * Workspace empty button
+ * ----------------------------------------------------- */
+#workspaces button.empty {
+    color: @workspace-color-not-active;
 }

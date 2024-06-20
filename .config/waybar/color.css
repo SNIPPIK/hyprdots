@@ -1,0 +1,21 @@
+/* -----------------------------------------------------
+ * Background Colors
+ * ----------------------------------------------------- */
+@define-color background-global rgba(43, 44, 43, 0.6);
+@define-color background-tray rgba(43, 44, 43, 0.6);
+
+
+
+/* -----------------------------------------------------
+ * Text Colors
+ * ----------------------------------------------------- */
+@define-color color-text #ffffff;
+@define-color color-accent rgba(255, 255, 255, 0.75);
+
+
+
+/* -----------------------------------------------------
+ * Workspace Colors
+ * ----------------------------------------------------- */
+@define-color workspace-color-active #ABE9B3;
+@define-color workspace-color-not-active gray;

@@ -21,7 +21,7 @@
   },
   // Kernel version
   "custom/kernel": {
-    "format": "| {} |",
+    "format": "{}",
     "return-type": "string",
     "exec": "uname --kernel-release"
   },

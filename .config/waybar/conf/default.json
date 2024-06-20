@@ -65,11 +65,10 @@
 
   //Workspace
   "hyprland/workspaces": {
-    "format": "{icon}",
-    "format-icons": {
-      "1": "1", "2": "2", "3": "3", "4": "4", "5": "5", "6": "6", "7": "7", "8": "8", "9": "9", "10": "10"
-    },
-    "sort-by-number": true
+    "format": "{name}",
+    "persistent-workspaces": {
+      "*": 5
+    }
   },
   "hyprland/window": { //Window
     "format": "{title}",

@@ -9,10 +9,6 @@
     // General Settings
     "layer": "top",
     "margin-top": 5,
-    "margin-bottom": 0,
-    "margin-left": 0,
-    "margin-right": 0,
-    "spacing": 0,
 
     // Load Modules
     "include": [
@@ -23,20 +19,19 @@
 
     // Modules Left
     "modules-left": [
-        "group/logo",
-        "group/settings",
-        "group/system",
-        "custom/wallpaper",
+        "group/logo", "hyprland/workspaces",
         "hyprland/window"
     ],
 
     // Modules Center
-    "modules-center": [
-        "hyprland/workspaces"
-    ],
+    //"modules-center": [],
 
     // Modules Right    
     "modules-right": [
+        "group/settings",
+        "group/system",
+        "custom/wallpaper",
+
         "hyprland/language",
         "custom/weather",
         "tray",

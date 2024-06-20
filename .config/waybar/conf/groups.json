@@ -24,7 +24,6 @@
     "modules": [
         "custom/logo",
         "custom/kernel",
-        "custom/gamemode",
         "custom/updates"
     ]
   },
