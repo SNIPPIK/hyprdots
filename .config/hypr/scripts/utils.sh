@@ -1,8 +1,6 @@
 #!/bin/bash
 # by SNIPPIK (2024)
 # -----------------------------------------------------
-isWallpaper=false
-
 
 #Restart waybar
 if [ "$1" == "restart-waybar" ]; then
@@ -41,12 +39,8 @@ if [ "$1" == "wallpaper" ]; then
   hyprctl hyprpaper wallpaper "$monitor, $random_background"
 
   #Unload wallpaper image
-  if [ -n "$isWallpaper" ]; then
-    isWallpaper=true
-    sleep 20
-    hyprctl hyprpaper unload all
-    isWallpaper=false
-  fi
+  sleep 2
+  hyprctl hyprpaper unload oldWallpaper
 
   echo "OK - wallpaper"
   exit 1
