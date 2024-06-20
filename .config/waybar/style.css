@@ -6,7 +6,7 @@
 * {
     border: none;
     font-weight: bold;
-    font-size: 14px;
+    font-size: 12px;
     min-height: 10px;
     font-family: Font Awesome, Roboto, Arial, sans-serif;
 }
@@ -62,7 +62,7 @@ window#waybar {
     color: @color-text;
     background: @background-global;
 
-    border-bottom: 1px solid gray;
+    border: 5px solid rgba(0, 0, 0, 0.25);
 }
 
 /* -----------------------------------------------------
@@ -114,8 +114,6 @@ window#waybar {
     transition: none;
     color: @color-text;
     background: transparent;
-
-    animation: ws_normal 20s ease-in-out 1;
 }
 
 /* -----------------------------------------------------
@@ -123,9 +121,6 @@ window#waybar {
  * ----------------------------------------------------- */
 #workspaces button.active {
     color: @workspace-color-active;
-
-    animation: ws_active 20s ease-in-out 1;
-    transition: all 0.4s cubic-bezier(.55,-0.68,.48,1.682);
 }
 
 /* -----------------------------------------------------
@@ -133,9 +128,6 @@ window#waybar {
  * ----------------------------------------------------- */
 #workspaces button:hover {
     color: @color-text;
-
-    animation: ws_hover 20s ease-in-out 1;
-    transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682);
 }
 
 /* -----------------------------------------------------

@@ -51,7 +51,7 @@
   },
   //Logout system
   "custom/logout": {
-    "format": " ",
+    "format": "",
     "on-click": "hyprctl dispatch exit",
     "tooltip-format": "Logout"
   },
