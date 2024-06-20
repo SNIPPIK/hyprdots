@@ -69,18 +69,13 @@ window#waybar {
  * Border
  * ----------------------------------------------------- */
 #custom-logo, #language, #custom-settings {
-    border-bottom-left-radius: 10px;
-    border-top-left-radius: 10px;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
 }
 
 #custom-wallpaper, #custom-power, #workspaces {
-    border-bottom-right-radius: 10px;
-    border-top-right-radius: 10px;
-}
-
-#custom-kernel, #custom-updates {
-    border-left: 1px solid gray;
-    border-right: 1px solid gray;
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
 }
 
 
