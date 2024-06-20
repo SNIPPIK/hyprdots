@@ -40,7 +40,7 @@ if [ "$1" == "wallpaper" ]; then
 
   #Unload wallpaper image
   sleep 2
-  hyprctl hyprpaper unload oldWallpaper
+  hyprctl hyprpaper unload $random_background
 
   echo "OK - wallpaper"
   exit 1
