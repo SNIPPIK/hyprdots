@@ -1,8 +1,8 @@
-// __        __          _                 
-// \ \      / /_ _ _   _| |__   __ _ _ __  
-//  \ \ /\ / / _` | | | | '_ \ / _` | '__| 
-//   \ V  V / (_| | |_| | |_) | (_| | |    
-//    \_/\_/ \__,_|\__, |_.__/ \__,_|_|    
+// __        __          _
+// \ \      / /_ _ _   _| |__   __ _ _ __
+//  \ \ /\ / / _` | | | | '_ \ / _` | '__|
+//   \ V  V / (_| | |_| | |_) | (_| | |
+//    \_/\_/ \__,_|\__, |_.__/ \__,_|_|
 //                 |___/
 // ---------------------------------------
 {
@@ -12,9 +12,12 @@
 
     // Load Modules
     "include": [
-        "~/.config/waybar/conf/default.json",
-        "~/.config/waybar/conf/custom.json",
-        "~/.config/waybar/conf/groups.json"
+        //workspaces-{}  | Supported type icon, num
+        "~/.config/waybar/configurations/hyprland/workspaces-num.jsonc",
+
+        "~/.config/waybar/configurations/default.jsonc",
+        "~/.config/waybar/configurations/custom.jsonc",
+        "~/.config/waybar/configurations/groups.jsonc"
     ],
 
     // Modules Left
@@ -26,7 +29,7 @@
     // Modules Center
     //"modules-center": [],
 
-    // Modules Right    
+    // Modules Right
     "modules-right": [
         "group/settings",
         "group/system",

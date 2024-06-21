@@ -1,0 +1,22 @@
+{
+  //Workspace
+  "hyprland/workspaces": {
+    "format": "{icon}",
+    "format-icons": {
+      "1": "",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "default": ""
+    },
+    "persistent-workspaces": {
+      "*": 5
+    }
+  },
+  "hyprland/window": { //Window
+    "format": "{title}",
+    "icon": true,
+    "separate-outputs": true
+  }
+}

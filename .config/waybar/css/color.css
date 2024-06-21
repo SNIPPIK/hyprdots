@@ -1,7 +1,8 @@
 /* -----------------------------------------------------
  * Background Colors
  * ----------------------------------------------------- */
-@define-color background-global rgba(43, 44, 43, 0.6);
+@define-color background-border rgba(0, 0, 0, 0.25);
+@define-color background-button rgba(43, 44, 43, 0.6);
 @define-color background-tray rgba(43, 44, 43, 0.6);
 
 

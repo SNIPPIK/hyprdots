@@ -1,0 +1,136 @@
+/* -----------------------------------------------------
+ * General
+ * ----------------------------------------------------- */
+* {
+    border: none;
+    font-weight: bold;
+    font-size: 12px;
+    min-height: 10px;
+    font-family: Font Awesome, Roboto, Arial, sans-serif;
+}
+
+/* -----------------------------------------------------
+ * Window
+ * ----------------------------------------------------- */
+#window {
+    padding-left: 20px;
+    padding-right: 10px;
+    background: transparent;
+    color: @color-text;
+    font-size:16px;
+    font-weight:normal;
+    opacity:0.8;
+}
+
+window#waybar {
+    background: transparent;
+}
+
+/* -----------------------------------------------------
+ * BUTTONs
+ * ----------------------------------------------------- */
+/* Any */
+#custom-wallpaper, #custom-notification,
+#tray, #battery, #clock, #language,
+
+    /* Logo group */
+#custom-logo, #custom-kernel, #custom-updates,
+    /* Settings group */
+#custom-settings, #pulseaudio, #bluetooth, #network,
+    /* System info group */
+#custom-system, #cpu, #memory, #disk,
+
+    /* Power menu */
+#custom-power, #custom-lock, #custom-logout, #custom-reboot,
+
+    /* Workspace */
+#workspaces
+
+{
+    padding-left: 5px;
+    padding-right: 5px;
+
+    margin-top: 0px;
+    margin-left: 0px;
+
+    margin-bottom: 1px;
+    border-radius: 0px;
+
+    transition: none;
+    color: @color-text;
+    background: @background-button;
+
+    border: 5px solid @background-border;
+}
+
+/* -----------------------------------------------------
+ * Border
+ * ----------------------------------------------------- */
+#custom-logo, #language, #custom-settings {
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+}
+
+#custom-wallpaper, #custom-power, #workspaces {
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+
+/* -----------------------------------------------------
+ * Padding
+ * ----------------------------------------------------- */
+#custom-settings, #custom-logo {
+    margin-left: 8px;
+}
+
+#custom-power, #custom-wallpaper {
+    margin-right: 8px;
+}
+
+/* -----------------------------------------------------
+ * Workspace
+ * ----------------------------------------------------- */
+#workspaces {
+    padding-left: 0px;
+    background: @background-button;
+    transition: none;
+}
+
+/* Logo Workspace */
+#custom-logo {
+    background-image: image(url("../logo.png"));
+    background-size: 15px 15px;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding-left: 20px;
+}
+/* -----------------------------------------------------
+ * Workspace buttons
+ * ----------------------------------------------------- */
+#workspaces button {
+    transition: none;
+    color: @color-text;
+    background: transparent;
+}
+
+/* -----------------------------------------------------
+ * Workspace active button
+ * ----------------------------------------------------- */
+#workspaces button.active {
+    color: @workspace-color-active;
+}
+
+/* -----------------------------------------------------
+ * Workspace selected button
+ * ----------------------------------------------------- */
+#workspaces button:hover {
+    color: @color-text;
+}
+
+/* -----------------------------------------------------
+ * Workspace empty button
+ * ----------------------------------------------------- */
+#workspaces button.empty {
+    color: @workspace-color-not-active;
+}

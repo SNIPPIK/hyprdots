@@ -34,7 +34,7 @@ fi
 updates=$(("$updates_arch"))
 
 # ----------------------------------------------------- 
-# Output in JSON format for Waybar Module conf-updates
+# Output in JSON format for Waybar Module configurations-updates
 # ----------------------------------------------------- 
 
 css_class="green"

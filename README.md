@@ -18,7 +18,12 @@ Packages for use
     - swaync
 - Screanshoot tool
     - grim & slurp
-- [wallpapers](https://drive.google.com/file/d/12c7wgWHIAVtFP9TloSiHun5OWWA5OVtm/view?usp=sharing)
+- [`Wallpaper pack`](https://drive.google.com/file/d/12c7wgWHIAVtFP9TloSiHun5OWWA5OVtm/view?usp=sharing)
+
+
+## Variants
+- [`Hyprland animations`](.config/hypr/hyprland.conf) | PATH: ~/.config/hypr/hyprland.conf
+- [`Waybar workspace`](.config/waybar/config.jsonc) | PATH: ~/.config/waybar/config.jsonc
 
 
 ## For [NVIDIA (nvidia-beta or dkms)](https://wiki.hyprland.org/Nvidia/)
