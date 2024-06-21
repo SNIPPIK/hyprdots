@@ -63,20 +63,6 @@
   },
 
 
-  //Workspace
-  "hyprland/workspaces": {
-    "format": "{name}",
-    "persistent-workspaces": {
-      "*": 5
-    }
-  },
-  "hyprland/window": { //Window
-    "format": "{title}",
-    "icon": true,
-    "separate-outputs": true
-  },
-
-
   // Languages
   "hyprland/language": {
     "format": " {short}"
