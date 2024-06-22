@@ -1,7 +1,7 @@
 [<img align="right" alt="Avatar" width="200px" src="/.config/waybar/logo.png" />]()
 
 # Hyprland configs
-Packages for use
+Packages be use
 - General
     - hyprpaper & hypridle
     - waybar & otf-font-awesome & noto-fonts-emoji
@@ -21,6 +21,14 @@ Packages for use
 - Screanshoot tool
     - grim & slurp
 - [`Wallpaper pack`](https://drive.google.com/file/d/12c7wgWHIAVtFP9TloSiHun5OWWA5OVtm/view?usp=sharing)
+
+## Binds
+- [All](.config/hypr/configuring/keyboard/binds.conf)
+- Fullscreen | WIN + F12
+- Gaming mode | WIN + F11
+- Restart hyprland | WIN + Right Control
+- Screenshot tool | WIN + PRINT
+- Restart waybar | WIN + W
 
 
 ## Variants
