@@ -12,6 +12,8 @@ Packages for use
     - wireplumber & pipewire-pulse
     - blueberry, bluez
     - pavucontrol
+- File manager
+  - nautilus 
 - Polkit
     - polkit-gnome
 - Notifications
