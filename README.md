@@ -25,10 +25,10 @@ Packages be use
 ## Binds
 - [All](.config/hypr/configuring/keyboard/binds.conf)
 - Fullscreen | WIN + F12
-- Gaming mode | WIN + F11
+- Gaming mode | WIN + G
 - Restart hyprland | WIN + Right Control
 - Screenshot tool | WIN + PRINT
-- Restart waybar | WIN + W
+- Restart waybar | WIN + F11
 
 
 ## Variants
