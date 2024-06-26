@@ -15,8 +15,8 @@
   // Arch logo
   "custom/logo": {
     "format": "{ }",
-    "on-click": "rofi -show drun -theme ~/.config/rofi/fullscreen.rasi",
-    "on-click-right": "alacritty -e bash ~/.config/hypr/scripts/utils.sh remove-packages",
+    "on-click": "sleep 0.2 && rofi -show drun -theme ~/.config/rofi/fullscreen.rasi",
+    "on-click-right": "sleep 0.2 && alacritty -e bash ~/.config/hypr/scripts/utils.sh remove-packages",
     "tooltip-format": "Left: Open the application launcher\nRight: Remove unused packages"
   },
   // Kernel version
@@ -66,7 +66,7 @@
   // Wallpaper
   "custom/wallpaper": {
     "format": "",
-    "on-click": "bash ~/.config/hypr/scripts/utils.sh wallpaper",
+    "on-click": "bash ~/.config/hypr/scripts/utils.sh wallpaper"
   },
 
   // Notification
@@ -86,8 +86,8 @@
     "return-type": "json",
     "exec-if": "which swaync-client",
     "exec": "swaync-client -swb",
-    "on-click": "swaync-client -t -sw",
-    "on-click-right": "swaync-client -d -sw",
+    "on-click": "sleep 0.2 && swaync-client -t -sw",
+    "on-click-right": "sleep 0.2 && swaync-client -d -sw",
     "escape": true
   }
 }

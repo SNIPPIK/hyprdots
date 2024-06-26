@@ -59,7 +59,8 @@
     "tooltip-format-ethernet": " {ifname}\nIP: {ipaddr}\nUp: {bandwidthUpBits} Down: {bandwidthDownBits}",
     "tooltip-format-disconnected": "Disconnected",
     "max-length": 50,
-    "on-click": "alacritty --class dotfiles-floating -e nmtui"
+    "on-click": "nm-connection-editor",
+    "on-click-right": "alacritty --class dotfiles-floating -e nmtui"
   },
 
 
