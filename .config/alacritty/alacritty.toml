@@ -1,12 +1,23 @@
 [[keyboard.bindings]]
+action = "Paste"
 key = "V"
 mods = "Control"
-action = "Paste"
 
 [[keyboard.bindings]]
+chars = "\u0016"
+key = "V"
+mods = "Control|Shift"
+
+[[keyboard.bindings]]
+action = "Copy"
 key = "C"
 mods = "Control"
-action = "Copy"
+
+[[keyboard.bindings]]
+chars = "\u0003"
+key = "C"
+mods = "Control|Shift"
+
 
 [window]
 opacity = 0.8
