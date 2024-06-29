@@ -1,4 +1,4 @@
-[<img align="right" alt="Avatar" width="200px" src="/.config/waybar/logo.png" />]()
+[<img align="right" alt="Avatar" width="200px" src="/.config/waybar/icons/arch.png" />]()
 
 # Hyprland configs
 Packages be use
