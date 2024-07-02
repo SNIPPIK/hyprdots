@@ -30,8 +30,8 @@ window#waybar {
  * BUTTONs
  * ----------------------------------------------------- */
 /* Any */
-#custom-wallpaper, #custom-notification,
-#tray, #battery, #clock, #language,
+#custom-wallpaper, #custom-notification, #temperature,
+#tray, #battery, #clock, #language, #idle_inhibitor, #custom-media,
 
     /* Logo group */
 #custom-logo, #custom-kernel, #custom-updates,
@@ -60,12 +60,12 @@ window#waybar {
 /* -----------------------------------------------------
  * Border
  * ----------------------------------------------------- */
-#custom-logo, #language, #custom-settings {
+#custom-logo, #language, #custom-settings, #custom-media {
     border-bottom-left-radius: 5px;
     border-top-left-radius: 5px;
 }
 
-#custom-wallpaper, #custom-power, #workspaces {
+#custom-wallpaper, #custom-power, #workspaces, #custom-media {
     border-bottom-right-radius: 5px;
     border-top-right-radius: 5px;
 }
@@ -91,7 +91,7 @@ window#waybar {
     transition: none;
 }
 
-/* Logo Workspace */
+/* Workspace image */
 #custom-logo {
     background-image: image(url("../icons/artics.png"));
     background-size: 15px 15px;

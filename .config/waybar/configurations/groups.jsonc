@@ -54,7 +54,8 @@
       "custom/system",
       "cpu",
       "memory",
-      "disk"
+      "disk",
+      "temperature"
     ]
   }
 }

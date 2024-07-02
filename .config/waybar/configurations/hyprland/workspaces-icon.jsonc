@@ -8,10 +8,12 @@
       "3": "",
       "4": "",
       "5": "",
-      "default": ""
+      "6": "",
+      "7": "",
+      "default": "",
     },
     "persistent-workspaces": {
-      "*": 5
+      "*": 7
     }
   },
   "hyprland/window": { //Window

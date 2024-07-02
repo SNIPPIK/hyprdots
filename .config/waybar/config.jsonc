@@ -13,7 +13,7 @@
     // Load Modules
     "include": [
         //workspaces-{}  | Supported type icon, num
-        "~/.config/waybar/configurations/hyprland/workspaces-num.jsonc",
+        "~/.config/waybar/configurations/hyprland/workspaces-icon.jsonc",
 
         "~/.config/waybar/configurations/default.jsonc",
         "~/.config/waybar/configurations/custom.jsonc",
@@ -31,8 +31,11 @@
 
     // Modules Right
     "modules-right": [
+        "custom/media",
+
         "group/settings",
         "group/system",
+        "idle_inhibitor",
         "custom/wallpaper",
 
         "hyprland/language",

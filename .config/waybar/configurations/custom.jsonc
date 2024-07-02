@@ -89,5 +89,20 @@
     "on-click": "sleep 0.2 && swaync-client -t -sw",
     "on-click-right": "sleep 0.2 && swaync-client -d -sw",
     "escape": true
+  },
+
+  //Media player
+  "custom/media": {
+    "interval": 10,
+    "return-type": "json",
+
+    "on-click": "playerctl play-pause",
+    "on-click-right": "playerctl next",
+
+    "exec": "bash ~/.config/hypr/scripts/playerctl.sh",
+
+    "max-length": 30,
+    "tooltip": true,
+    "escape": true
   }
 }
