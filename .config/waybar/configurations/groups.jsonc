@@ -24,6 +24,7 @@
     "modules": [
       "custom/logo",
       "custom/kernel",
+      "idle_inhibitor",
       "custom/updates"
     ]
   },

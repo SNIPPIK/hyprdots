@@ -93,11 +93,11 @@
 
   //Media player
   "custom/media": {
-    "interval": 10,
+    "interval": 5,
     "return-type": "json",
 
-    "on-click": "playerctl play-pause",
-    "on-click-right": "playerctl next",
+    "on-click": "sleep 0.1 && playerctl play-pause",
+    "on-click-right": "sleep 0.1 && playerctl next",
 
     "exec": "bash ~/.config/hypr/scripts/playerctl.sh",
 
