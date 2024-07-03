@@ -16,7 +16,7 @@ While installing alongside another [DE](https://wiki.archlinux.org/title/Desktop
 > See all button bindings [here](.config/hypr/configuring/keyboard/binds.conf)
 
 > [!TIP]
-> There are options for some configs
+> There are options for some configs\
 > [`Hyprland animations`](.config/hypr/hyprland.conf) | PATH: ~/.config/hypr/hyprland.conf\
 > [`Waybar workspace`](.config/waybar/config.jsonc) | PATH: ~/.config/waybar/config.jsonc
 > 
