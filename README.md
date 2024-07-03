@@ -19,7 +19,7 @@ While installing alongside another [DE](https://wiki.archlinux.org/title/Desktop
 > There are options for some configs\
 > [`Hyprland animations`](.config/hypr/hyprland.conf) | PATH: ~/.config/hypr/hyprland.conf\
 > [`Waybar workspace`](.config/waybar/config.jsonc) | PATH: ~/.config/waybar/config.jsonc
-> 
+>
 To install, execute the following commands:
 
 ```shell
@@ -34,7 +34,7 @@ To install, execute the following commands:
   <summary>Click to open</summary>
 
 ### v0.3.7
-Coming soon
+https://github.com/SNIPPIK/hyprdots/assets/55327334/d5334aea-10f4-4cae-ba45-64601710b47e
 
 ### v0.3.6
 https://github.com/SNIPPIK/hypr/assets/55327334/4f87c371-f9e6-49a0-be76-43043f0bc09d

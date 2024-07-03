@@ -31,9 +31,9 @@
     "modules-right": [
         "custom/media",
 
+        "custom/wallpaper",
         "group/settings",
         "group/system",
-        "custom/wallpaper",
 
         "hyprland/language",
         "custom/weather",

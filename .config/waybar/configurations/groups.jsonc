@@ -2,7 +2,7 @@
   "group/power": {
     "orientation": "inherit",
     "drawer": {
-      "transition-duration": 300,
+      "transition-duration": 350,
       "children-class": "not-memory",
       "transition-left-to-right": false
     },
@@ -17,7 +17,7 @@
   "group/logo": {
     "orientation": "inherit",
     "drawer": {
-      "transition-duration": 300,
+      "transition-duration": 350,
       "children-class": "not-memory",
       "transition-left-to-right": true
     },
@@ -32,13 +32,14 @@
   "group/settings": {
     "orientation": "horizontal",
     "drawer": {
-      "transition-duration": 300,
+      "transition-duration": 350,
       "children-class": "not-memory",
-      "transition-left-to-right": true
+      "transition-left-to-right": false
     },
     "modules": [
       "custom/settings",
-      "pulseaudio",
+      "pulseaudio#output",
+      "pulseaudio#input",
       "bluetooth",
       "network"
     ]
@@ -47,9 +48,9 @@
   "group/system": {
     "orientation": "horizontal",
     "drawer": {
-      "transition-duration": 300,
+      "transition-duration": 350,
       "children-class": "not-memory",
-      "transition-left-to-right": true
+      "transition-left-to-right": false
     },
     "modules": [
       "custom/system",

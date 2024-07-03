@@ -35,8 +35,10 @@ window#waybar {
 
     /* Logo group */
 #custom-logo, #custom-kernel, #custom-updates,
+
     /* Settings group */
 #custom-settings, #pulseaudio, #bluetooth, #network,
+
     /* System info group */
 #custom-system, #cpu, #memory, #disk,
 
@@ -60,12 +62,12 @@ window#waybar {
 /* -----------------------------------------------------
  * Border
  * ----------------------------------------------------- */
-#custom-logo, #language, #custom-settings, #custom-media {
+#custom-logo, #language, #custom-wallpaper, #custom-media {
     border-bottom-left-radius: 5px;
     border-top-left-radius: 5px;
 }
 
-#custom-wallpaper, #custom-power, #workspaces, #custom-media {
+#custom-system, #custom-power, #workspaces, #custom-media {
     border-bottom-right-radius: 5px;
     border-top-right-radius: 5px;
 }
@@ -74,11 +76,11 @@ window#waybar {
 /* -----------------------------------------------------
  * Padding
  * ----------------------------------------------------- */
-#custom-settings, #custom-logo {
+#custom-wallpaper, #custom-logo {
     margin-left: 8px;
 }
 
-#custom-power, #custom-wallpaper {
+#custom-power, #custom-system {
     margin-right: 8px;
 }
 

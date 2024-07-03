@@ -14,6 +14,7 @@
     "path": "/"
   },
   "temperature": {
+    "interval": 25,
     "thermal-zone": 2,
     "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
     "critical-threshold": 80,
@@ -22,14 +23,10 @@
   },
 
 
-  //Settings group
-  "pulseaudio": {   // Pulseaudio
-    "format": "{icon}   {volume}%",
-    "format-bluetooth": "{volume}%  {icon} {format_source}",
-    "format-bluetooth-muted": " {icon} {format_source}",
-    "format-muted": " {format_source}",
-    "format-source": "{volume}% ",
-    "format-source-muted": "",
+  //Output (headphone)
+  "pulseaudio#output": {
+    "format": "{icon} {volume}%",
+    "format-muted": " {volume}%",
     "format-icons": {
       "headphone": " ",
       "hands-free": " ",
@@ -39,12 +36,27 @@
       "car": " ",
       "default": [" ", " ", " "]
     },
-    "on-click": "pavucontrol"
+    "on-click": "pactl set-sink-mute 0 toggle",
+    "on-scroll-down": "pactl set-sink-volume 0 -1%",
+    "on-scroll-up": "pactl set-sink-volume 0 +1%",
+    "on-click-middle": "pavucontrol"
+  },
+  //Input (Microphone)
+  "pulseaudio#input": {
+    "format": "{format_source}",
+    "format-source": "",
+    "format-source-muted": "",
+    "tooltip-format": "{volume}% {format_source}",
+
+    "on-click": "pactl set-source-mute 0 toggle",
+    "on-scroll-up": "pactl set-source-volume 0 +1%",
+    "on-scroll-down": "pactl set-source-volume 0 -1%",
+    "on-click-middle": "pavucontrol"
   },
   "bluetooth": {    // Bluetooth
     "format": " {status}",
-    "format-connected": " {device_alias}",
-    "format-connected-battery": " {device_alias} {device_battery_percentage}%",
+    "format-connected": " {status}",
+    "format-connected-battery": " {status} {device_battery_percentage}%",
     "format-device-preference": [
       "device1",
       "device2"
