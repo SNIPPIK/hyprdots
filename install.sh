@@ -38,3 +38,12 @@ sleep 1
 #Copy wallpaper
 echo Copy default wallpaper
 cp -rf ${PWD}/Pictures ~/
+
+sleep 1
+
+#Enable services
+echo Enable services - sddm, bluetooth, NetworkManager
+
+sudo systemctl enable bluetooth
+sudo systemctl enable NetworkManager
+sudo systemctl enable sddm
