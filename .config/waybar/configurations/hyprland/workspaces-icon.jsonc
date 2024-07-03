@@ -12,7 +12,7 @@
       "default": ""
     },
     "persistent-workspaces": {
-      "*": 6
+      "*": 5
     }
   }
 }

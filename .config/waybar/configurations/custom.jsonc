@@ -23,7 +23,7 @@
   "custom/kernel": {
     "format": "{}",
     "return-type": "string",
-    "exec": "uname --kernel-release"
+    "exec": "sleep 0.1 && uname --kernel-release"
   },
   // Updates Count
   "custom/updates": {
@@ -40,25 +40,25 @@
   // Power Menu
   "custom/power": {
     "format": "",
-    "on-click": "wlogout",
+    "on-click": "sleep 0.1 && wlogout",
     "tooltip-format": "Power Menu"
   },
   // Lock system
   "custom/lock": {
     "format": "",
-    "on-click": "hyprlock",
+    "on-click": "sleep 0.1 && hyprlock",
     "tooltip-format": "Lock"
   },
   //Logout system
   "custom/logout": {
     "format": "",
-    "on-click": "hyprctl dispatch exit",
+    "on-click": "sleep 0.1 && hyprctl dispatch exit",
     "tooltip-format": "Logout"
   },
   //Reboot system
   "custom/reboot": {
     "format": "\uf0e2",
-    "on-click": "systemctl reboot",
+    "on-click": "sleep 0.1 && systemctl reboot",
     "tooltip-format": "Reboot"
   },
 
