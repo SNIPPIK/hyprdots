@@ -3,27 +3,27 @@
 # Dotfiles 
 - [`WIKI`](https://wiki.hyprland.org/)
 - [`Wallpaper pack`](https://drive.google.com/file/d/12c7wgWHIAVtFP9TloSiHun5OWWA5OVtm/view?usp=sharing)
-- ### Binds
-  - [All](.config/hypr/configuring/keyboard/binds.conf)
-  - Fullscreen | WIN + F12
-  - Gaming mode | WIN + G
-  - Restart hyprland | WIN + Right Control
-  - Screenshot tool | WIN + PRINT
-  - Restart waybar | WIN + F11
-- Install
+- `Install`
     ```
         git clone https://github.com/SNIPPIK/hypr.git
         cd hypr
         bash ./install.sh
     ```
 
+### Binds
+- [All](.config/hypr/configuring/keyboard/binds.conf)
+- Fullscreen | WIN + F12
+- Gaming mode | WIN + G
+- Restart hyprland | WIN + Right Control
+- Screenshot tool | WIN + PRINT
+- Restart waybar | WIN + F11
 
 ## Variants
 - [`Hyprland animations`](.config/hypr/hyprland.conf) | PATH: ~/.config/hypr/hyprland.conf
 - [`Waybar workspace`](.config/waybar/config.jsonc) | PATH: ~/.config/waybar/config.jsonc
 
 
-## For [NVIDIA (nvidia-beta or dkms)](https://wiki.hyprland.org/Nvidia/)
+## For [`NVIDIA` (nvidia-beta or dkms)](https://wiki.hyprland.org/Nvidia/)
 1. DRM kernel mode setting
    ```
    Since NVIDIA does not load kernel mode setting by default, enabling it is required to make Wayland compositors function properly. To enable it, the NVIDIA driver modules need to be added to the initramfs.
