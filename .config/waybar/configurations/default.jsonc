@@ -37,9 +37,9 @@
       "default": [" ", " ", " "]
     },
     "on-click": "pactl set-sink-mute 0 toggle",
+    "on-click-right": "pavucontrol",
     "on-scroll-down": "pactl set-sink-volume 0 -1%",
-    "on-scroll-up": "pactl set-sink-volume 0 +1%",
-    "on-click-middle": "pavucontrol"
+    "on-scroll-up": "pactl set-sink-volume 0 +1%"
   },
   //Input (Microphone)
   "pulseaudio#input": {
@@ -49,9 +49,9 @@
     "tooltip-format": "{volume}% {format_source}",
 
     "on-click": "pactl set-source-mute 0 toggle",
+    "on-click-right": "pavucontrol",
     "on-scroll-up": "pactl set-source-volume 0 +1%",
-    "on-scroll-down": "pactl set-source-volume 0 -1%",
-    "on-click-middle": "pavucontrol"
+    "on-scroll-down": "pactl set-source-volume 0 -1%"
   },
   "bluetooth": {    // Bluetooth
     "format": " {status}",
