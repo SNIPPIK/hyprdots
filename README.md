@@ -24,8 +24,8 @@ To install, execute the following commands:
 
 ```shell
   sudo pacman -S git
-  git clone https://github.com/SNIPPIK/hypr.git
-  cd hypr
+  git clone https://github.com/SNIPPIK/hyprdots.git
+  cd hyprdots
   bash ./install.sh
 ```
 
