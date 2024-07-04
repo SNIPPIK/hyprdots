@@ -6,7 +6,7 @@ mods = "Control"
 [[keyboard.bindings]]
 chars = "\u0016"
 key = "V"
-mods = "Control|Shift"
+mods = "Control"
 
 [[keyboard.bindings]]
 action = "Copy"
@@ -16,7 +16,7 @@ mods = "Control"
 [[keyboard.bindings]]
 chars = "\u0003"
 key = "C"
-mods = "Control|Shift"
+mods = "Control"
 
 
 [window]
