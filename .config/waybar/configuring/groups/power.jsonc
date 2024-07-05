@@ -1,0 +1,43 @@
+{
+  // Power Menu
+  "custom/power": {
+    "format": "",
+    "on-click": "sleep 0.1 && wlogout",
+    "tooltip-format": "Power Menu"
+  },
+  // Lock system
+  "custom/lock": {
+    "format": "",
+    "on-click": "sleep 0.1 && hyprlock",
+    "tooltip-format": "Lock"
+  },
+  // Logout system
+  "custom/logout": {
+    "format": "",
+    "on-click": "sleep 0.1 && hyprctl dispatch exit",
+    "tooltip-format": "Logout"
+  },
+  // Reboot system
+  "custom/reboot": {
+    "format": "\uf0e2",
+    "on-click": "sleep 0.1 && systemctl reboot",
+    "tooltip-format": "Reboot"
+  },
+
+
+  // Group power
+  "group/power": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 350,
+      "children-class": "not-memory",
+      "transition-left-to-right": false
+    },
+    "modules": [
+      "custom/power",
+      "custom/lock",
+      "custom/logout",
+      "custom/reboot"
+    ]
+  }
+}

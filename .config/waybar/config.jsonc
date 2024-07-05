@@ -12,13 +12,20 @@
 
     // Load Modules
     "include": [
-        //workspaces-{}  | Supported type icon, num
-        "~/.config/waybar/configurations/hyprland/workspaces-icon.jsonc",
-        "~/.config/waybar/configurations/hyprland/window.jsonc",
+        //Hyprland load
+        "~/.config/waybar/configuring/hyprland/all.jsonc",
+        "~/.config/waybar/configuring/hyprland/workspaces/numbers.jsonc", //workspaces/{}.jsonc  | Supported type icons, numbers
 
-        "~/.config/waybar/configurations/default.jsonc",
-        "~/.config/waybar/configurations/custom.jsonc",
-        "~/.config/waybar/configurations/groups.jsonc"
+        // Default load
+        "~/.config/waybar/configuring/audio.jsonc",
+        "~/.config/waybar/configuring/custom.jsonc",
+        "~/.config/waybar/configuring/network.jsonc",
+
+        // Group load
+        "~/.config/waybar/configuring/groups/logo.jsonc",
+        "~/.config/waybar/configuring/groups/power.jsonc",
+        "~/.config/waybar/configuring/groups/settings.jsonc",
+        "~/.config/waybar/configuring/groups/system.jsonc"
     ],
 
     // Modules Left

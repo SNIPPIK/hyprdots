@@ -1,0 +1,43 @@
+{
+  // Arch logo
+  "custom/logo": {
+    "format": "{ }",
+    "on-click": "sleep 0.2 && rofi -show drun -theme ~/.config/rofi/fullscreen.rasi",
+    "on-click-right": "sleep 0.2 && alacritty -e bash ~/.config/hypr/scripts/utils.sh remove-packages",
+    "tooltip-format": "Left: Open the application launcher\nRight: Remove unused packages"
+  },
+
+  // Kernel version
+  "custom/kernel": {
+    "format": "{}",
+    "return-type": "string",
+    "exec": "sleep 0.1 && uname --kernel-release"
+  },
+
+  // Updates Count
+  "custom/updates": {
+    "format": " {}",
+    "escape": true,
+    "return-type": "json",
+    "exec": "bash ~/.config/hypr/scripts/updates.sh",
+    "restart-interval": 300,
+    "on-click": "bash ~/.config/hypr/scripts/utils.sh update-packages",
+    "on-click-right": "bash ~/.config/hypr/scripts/utils.sh remove-packages"
+  },
+
+  // Group logo
+  "group/logo": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 350,
+      "children-class": "not-memory",
+      "transition-left-to-right": true
+    },
+    "modules": [
+      "custom/logo",
+      "custom/kernel",
+      "idle_inhibitor",
+      "custom/updates"
+    ]
+  }
+}

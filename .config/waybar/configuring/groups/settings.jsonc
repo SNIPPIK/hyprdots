@@ -1,0 +1,24 @@
+{
+  "group/settings": {
+    "orientation": "horizontal",
+    "drawer": {
+      "transition-duration": 350,
+      "children-class": "not-memory",
+      "transition-left-to-right": false
+    },
+    "modules": [
+      "custom/settings",
+      "pulseaudio#output",
+      "pulseaudio#input",
+      "bluetooth",
+      "network"
+    ]
+  },
+
+  // Settings
+  "custom/settings": {
+    "format": "",
+    "tooltip-format": "Settings tray\nRight: Restart waybar",
+    "on-click-right": "bash ~/.config/hypr/scripts/utils.sh restart-waybar"
+  }
+}
