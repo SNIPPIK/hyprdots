@@ -10,8 +10,7 @@
       "custom/settings",
       "pulseaudio#output",
       "pulseaudio#input",
-      "bluetooth",
-      "network"
+      "bluetooth"
     ]
   },
 

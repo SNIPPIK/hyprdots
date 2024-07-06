@@ -1,8 +1,12 @@
 {
   "network": {   // Network
-    "format": "{ifname}",
-    "format-wifi": "   {signalStrength}%",
-    "format-ethernet": "  {ifname}",
+    "format": "{icon}",
+    "format-icons": {
+      "wifi": ["", "" ,""],
+      "ethernet": [""],
+      "disconnected": [""]
+    },
+
     "format-disconnected": "Disconnected",
     "tooltip-format": " {ifname} via {gwaddri}",
     "tooltip-format-wifi": "  {ifname} @ {essid}\nIP: {ipaddr}\nStrength: {signalStrength}%\nFreq: {frequency}MHz\nUp: {bandwidthUpBits} Down: {bandwidthDownBits}",

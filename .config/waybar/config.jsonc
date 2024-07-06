@@ -43,7 +43,7 @@
         "group/system",
 
         "hyprland/language",
-        "custom/weather",
+        "network",
         "tray",
         "custom/notification",
         "clock",
