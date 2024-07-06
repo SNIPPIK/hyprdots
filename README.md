@@ -34,6 +34,9 @@ To install, execute the following commands:
 <details close>
   <summary>Click to open</summary>
 
+### v0.4.0
+https://github.com/SNIPPIK/hyprdots/assets/55327334/b422217b-093d-4c3b-a794-107f338bf57f
+
 ### v0.3.7
 https://github.com/SNIPPIK/hyprdots/assets/55327334/d5334aea-10f4-4cae-ba45-64601710b47e
 
