@@ -22,10 +22,11 @@ configuration {
 /*****----- Main Window -----*****/
 window {
     transparency:                "real";
-    location:                    north;
-    anchor:                      north;
+    location:                    west;
+    anchor:                      west;
     fullscreen:                  false;
-    width:                       750px;
+    width:                       450px;
+    height:                      100%;
     x-offset:                    0px;
     y-offset:                    0px;
 
@@ -33,7 +34,7 @@ window {
     margin:                      0px;
     padding:                     0px;
     border:                      0px solid;
-    border-radius:               5px;
+    border-radius:               0px;
     border-color:                @selected;
     background-color:            @background;
     cursor:                      "default";
@@ -42,9 +43,9 @@ window {
 /*****----- Main Box -----*****/
 mainbox {
     enabled:                     true;
-    spacing:                     10px;
+    spacing:                     0px;
     margin:                      0px;
-    padding:                     10px;
+    padding:                     0px;
     border:                      0px solid;
     border-radius:               0px 0px 0px 0px;
     border-color:                @selected;
@@ -57,12 +58,12 @@ inputbar {
     enabled:                     true;
     spacing:                     10px;
     margin:                      0px;
-    padding:                     10px;
-    border:                      1px solid;
-    border-radius:               4px;
+    padding:                     12px;
+    border:                      0px solid;
+    border-radius:               0px;
     border-color:                @selected;
-    background-color:            @background;
-    text-color:                  @foreground;
+    background-color:            @selected;
+    text-color:                  @background;
     children:                    [ "prompt", "entry" ];
 }
 
@@ -83,7 +84,7 @@ entry {
     background-color:            inherit;
     text-color:                  inherit;
     cursor:                      text;
-    placeholder:                 "Search";
+    placeholder:                 "Search...";
     placeholder-color:           inherit;
 }
 
@@ -91,7 +92,7 @@ entry {
 listview {
     enabled:                     true;
     columns:                     1;
-    lines:                       7;
+    lines:                       6;
     cycle:                       true;
     dynamic:                     true;
     scrollbar:                   false;
@@ -100,7 +101,7 @@ listview {
     fixed-height:                true;
     fixed-columns:               true;
 
-    spacing:                     0px;
+    spacing:                     5px;
     margin:                      0px;
     padding:                     0px;
     border:                      0px solid;
@@ -122,24 +123,20 @@ element {
     enabled:                     true;
     spacing:                     10px;
     margin:                      0px;
-    padding:                     5px;
+    padding:                     6px;
     border:                      0px solid;
     border-radius:               0px;
     border-color:                @selected;
     background-color:            transparent;
     text-color:                  @foreground;
-    orientation:                 horizontal;
     cursor:                      pointer;
 }
 element normal.normal {
-    background-color:            transparent;
+    background-color:            @background;
     text-color:                  @foreground;
 }
 element selected.normal {
-    border:                      1px solid;
-    border-radius:               4px;
-    border-color:                @selected;
-    background-color:            @background;
+    background-color:            @background-alt;
     text-color:                  @foreground;
 }
 element-icon {
@@ -159,15 +156,15 @@ element-text {
 
 /*****----- Message -----*****/
 error-message {
-    padding:                     10px;
+    padding:                     15px;
     border:                      0px solid;
     border-radius:               0px;
     border-color:                @selected;
-    background-color:            black / 10%;
+    background-color:            @background;
     text-color:                  @foreground;
 }
 textbox {
-    background-color:            transparent;
+    background-color:            @background;
     text-color:                  @foreground;
     vertical-align:              0.5;
     horizontal-align:            0.0;

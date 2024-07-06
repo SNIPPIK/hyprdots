@@ -18,7 +18,8 @@ While installing alongside another [DE](https://wiki.archlinux.org/title/Desktop
 > [!TIP]
 > There are options for some configs\
 > [`Hyprland animations`](.config/hypr/hyprland.conf) | PATH: ~/.config/hypr/hyprland.conf\
-> [`Waybar workspace`](.config/waybar/config.jsonc) | PATH: ~/.config/waybar/config.jsonc
+> [`Waybar workspace`](.config/waybar/config.jsonc) | PATH: ~/.config/waybar/config.jsonc\
+> View a current playing track in waybar, need to [enable](https://github.com/SNIPPIK/hyprdots/blob/main/.config/waybar/config.jsonc#L39) 
 >
 To install, execute the following commands:
 
