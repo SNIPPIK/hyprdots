@@ -1,6 +1,6 @@
 {
   "group/settings": {
-    "orientation": "horizontal",
+    "orientation": "inherit",
     "drawer": {
       "transition-duration": 350,
       "children-class": "not-memory",

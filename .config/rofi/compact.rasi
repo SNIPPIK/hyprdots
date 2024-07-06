@@ -31,10 +31,10 @@ window {
     y-offset:                    0px;
 
     enabled:                     true;
-    margin:                      0px;
-    padding:                     0px;
+    margin:                      5px;
+    padding:                     5px;
     border:                      0px solid;
-    border-radius:               0px;
+    border-radius:               5px;
     border-color:                @selected;
     background-color:            @background;
     cursor:                      "default";

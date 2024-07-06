@@ -9,7 +9,6 @@
 # by SNIPPIK (2024)
 # -----------------------------------------------------
 # Requires pacman-contrib, aurutils
-
 check() {
   command -v "$1" 1>/dev/null
 }
@@ -26,7 +25,7 @@ stringToLen() {
   STRING="$1"
   LEN="$2"
   if [ ${#STRING} -gt "$LEN" ]; then
-    echo "${STRING:0:$((LEN - 2))}.."
+    printf "%-21s" "${STRING:0:$((LEN - 2))}..."
   else
     printf "%-20s" "$STRING"
   fi
@@ -63,18 +62,20 @@ killall -q checkupdates
 mapfile -t updates < <(cup)
 text=${#updates[@]}
 tooltip="<b>$text updates (arch+aur) </b>\n"
-tooltip+="\n<b>$(stringToLen "Current" 20) $(stringToLen "New" 20) $(stringToLen "Package" 20)</b>\n"
+tooltip+="<b>$(stringToLen "Package" 20) # $(stringToLen "Current" 20) # $(stringToLen "Next" 20)</b>\n"
 
 for i in "${updates[@]}"; do
-  curr="$(stringToLen $(echo "$i" | awk '{print $1}') 30)"
+  update="$(stringToLen $(echo "$i" | awk '{print $1}') 20)"
   prev="$(stringToLen $(echo "$i" | awk '{print $2}') 20)"
   next="$(stringToLen $(echo "$i" | awk '{print $4}') 20)"
 
-  tooltip+="$prev    $next <b>$curr</b>\n"
+  tooltip+="<b>$update</b> # $prev # $next\n"
 done
+
+tooltip="$(echo "$tooltip" | column -t -s '  #  ')"
 tooltip=${tooltip::-2}
 
 # Output data
 cat <<EOF
-{ "text":"$text", "tooltip":"$tooltip"} "$updates" "$updates" "$updates"
+{ "text":"$text", "tooltip":"$tooltip"}
 EOF
