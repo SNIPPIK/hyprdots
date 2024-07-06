@@ -26,8 +26,6 @@ echo Install 7zip
 sudo pacman -S p7zip
 echo Unpack Fluent
 7z x ${PWD}/.themes/Fluent.zip -o${HOME}/.themes
-rm -rd ${HOME}/.themes/.themes
-bash ~/.themes/Fluent/install.sh --tweaks compact
 
 sleep 1
 
