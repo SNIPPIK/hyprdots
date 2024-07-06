@@ -3,7 +3,6 @@
   "custom/logo": {
     "format": "{ }",
     "on-click": "sleep 0.2 && rofi -show drun -theme ~/.config/rofi/fullscreen.rasi",
-    "on-click-right": "sleep 0.2 && alacritty -e bash ~/.config/hypr/scripts/utils.sh remove-packages",
     "tooltip-format": "Left: Open the application launcher\nRight: Remove unused packages"
   },
 
@@ -17,10 +16,11 @@
   // Updates Count
   "custom/updates": {
     "format": " {}",
-    "escape": true,
-    "return-type": "json",
+    "restart-interval": 400,
     "exec": "bash ~/.config/hypr/scripts/updates.sh",
-    "restart-interval": 300,
+    "return-type": "json",
+    "signal": 8,
+
     "on-click": "bash ~/.config/hypr/scripts/utils.sh update-packages",
     "on-click-right": "bash ~/.config/hypr/scripts/utils.sh remove-packages"
   },

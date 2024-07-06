@@ -2,7 +2,7 @@
   "network": {   // Network
     "format": "{icon}",
     "format-icons": {
-      "wifi": ["", "" ,""],
+      "wifi": [""], //"", "", ""
       "ethernet": [""],
       "disconnected": [""]
     },

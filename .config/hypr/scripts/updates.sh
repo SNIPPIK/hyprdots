@@ -1,54 +1,80 @@
 #!/bin/bash
-#  _   _           _       _             
-# | | | |_ __   __| | __ _| |_ ___  ___  
-# | | | | '_ \ / _` |/ _` | __/ _ \/ __| 
-# | |_| | |_) | (_| | (_| | ||  __/\__ \ 
-#  \___/| .__/ \__,_|\__,_|\__\___||___/ 
-#       |_|                              
-#  
+#  _   _           _       _
+# | | | |_ __   __| | __ _| |_ ___  ___
+# | | | | '_ \ / _` |/ _` | __/ _ \/ __|
+# | |_| | |_) | (_| | (_| | ||  __/\__ \
+#  \___/| .__/ \__,_|\__,_|\__\___||___/
+#       |_|
+#
 # by SNIPPIK (2024)
-# ----------------------------------------------------- 
-# Requires pacman-contrib, trizen
-
 # -----------------------------------------------------
-# Define threshholds for color indicators
+# Requires pacman-contrib, aurutils
+
+check() {
+  command -v "$1" 1>/dev/null
+}
+
+notify() {
+  check notify-send && {
+    notify-send -a "UpdateCheck Waybar" "$@"
+    return
+  }
+  echo "$@"
+}
+
+stringToLen() {
+  STRING="$1"
+  LEN="$2"
+  if [ ${#STRING} -gt "$LEN" ]; then
+    echo "${STRING:0:$((LEN - 2))}.."
+  else
+    printf "%-20s" "$STRING"
+  fi
+}
+
+cup() {
+  checkupdates --nocolor
+  pacman -Qm | aur vercmp
+}
 # -----------------------------------------------------
 
-threshhold_green=0
-threshhold_yellow=25
-threshhold_red=100
+# Check aur packages
+#check aur || {
+#  notify "Ensure aurutils is installed"
+#  cat <<EOF
+#  {"text":"ERR","tooltip":"aurutils is not installed"}
+#EOF
+#  exit 1
+#}
 
-# -----------------------------------------------------
-# Calculate available updates pacman and aur (with trizen)
-# -----------------------------------------------------
+# Check arch packages
+check checkupdates || {
+  notify "Ensure pacman-contrib is installed"
+  cat <<EOF
+  {"text":"ERR","tooltip":"pacman-contrib is not installed"}
+EOF
+  exit 1
+}
+IFS=$'\n'$'\r'
 
-if ! updates_arch=$(checkupdates 2> /dev/null | wc -l ); then
-    updates_arch=0
-fi
+killall -q checkupdates
 
-#if ! updates_aur=$(trizen -Su --aur --quiet | wc -l); then
-#    updates_aur=0
-#fi
-#updates=$(("$updates_arch" + "$updates_aur"))
+# Crete list packages
+mapfile -t updates < <(cup)
+text=${#updates[@]}
+tooltip="<b>$text updates (arch+aur) </b>\n"
+tooltip+="\n<b>$(stringToLen "Current" 20) $(stringToLen "New" 20) $(stringToLen "Package" 20)</b>\n"
 
-updates=$(("$updates_arch"))
+for i in "${updates[@]}"; do
+  curr="$(stringToLen $(echo "$i" | awk '{print $1}') 30)"
+  prev="$(stringToLen $(echo "$i" | awk '{print $2}') 20)"
+  next="$(stringToLen $(echo "$i" | awk '{print $4}') 20)"
 
-# -----------------------------------------------------
-# Output in JSON format for Waybar Module configuring-updates
-# -----------------------------------------------------
+  tooltip+="$prev    $next <b>$curr</b>\n"
+done
+tooltip=${tooltip::-2}
 
-css_class="green"
-
-if [ "$updates" -gt $threshhold_yellow ]; then
-    css_class="yellow"
-fi
-
-if [ "$updates" -gt $threshhold_red ]; then
-    css_class="red"
-fi
-
-if [ "$updates" -gt $threshhold_green ]; then
-    printf '{"text": "%s", "alt": "%s", "tooltip": "Click to update your system", "class": "%s"}' "$updates" "$updates" "$updates" "$css_class"
-else
-    printf '{"text": "0", "alt": "0", "tooltip": "No updates available", "class": "green"}'
-fi
+# Output data
+cat <<EOF
+{ "text":"$text", "tooltip":"$tooltip"} "$updates" "$updates" "$updates"
+EOF

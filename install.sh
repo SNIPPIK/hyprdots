@@ -2,7 +2,7 @@
 
 # Install arch packages
 echo Install need packages...
-sudo pacman -S hyprland hyprpaper hypridle waybar otf-font-awesome noto-fonts-emoji rofi-wayland nm-connection-editor pipewire-pulse wireplumber bluez blueberry pavucontrol nautilus polkit-gnome swaync grim slurp pacman-contrib
+sudo pacman -S hyprland hyprpaper hypridle waybar otf-font-awesome noto-fonts-emoji rofi-wayland nm-connection-editor pipewire-pulse wireplumber bluez blueberry pavucontrol nautilus polkit-gnome swaync grim slurp pacman-contrib sddm
 
 sleep 1
 
@@ -24,8 +24,10 @@ sleep 1
 #Unpack theme
 echo Install 7zip
 sudo pacman -S p7zip
-echo Unpack to .themes/
-7z a ${PWD}/.themes/Fluent-Dark.zip ~/.themes
+echo Unpack Fluent
+7z x ${PWD}/.themes/Fluent.zip -o${HOME}/.themes
+rm -rd ${HOME}/.themes/.themes
+bash ~/.themes/Fluent/install.sh --tweaks compact
 
 sleep 1
 
@@ -44,6 +46,6 @@ sleep 1
 #Enable services
 echo Enable services - sddm, bluetooth, NetworkManager
 
-sudo systemctl enable bluetooth
-sudo systemctl enable NetworkManager
-sudo systemctl enable sddm
+sudo systemctl enable bluetooth.service
+sudo systemctl enable NetworkManager.service
+sudo systemctl enable sddm.service
