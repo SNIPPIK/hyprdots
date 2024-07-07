@@ -33,139 +33,136 @@ echo WARNING backap your .config
 read -p "Press enter to continue"
 
 # Link hyprdots
-if [ -f ~/hyprdots ]; then
-    rm -rd ~/hyprdots
-    ln -s ${PWD} ~/
-else
+if [ ! -d ~/hyprdots ]; then
     ln -s ${PWD} ~/
 fi
 
 echo Create a links
 # Link to alacritty
-if [ -f ~/.config/alacritty ]; then
+if [ -d ~/.config/alacritty ]; then
     rm -rd ~/.config/alacritty
-    ln -s ${PWD}/.config/alacritty ~/.config
+    ln -s ~/hyprdots/.config/alacritty ~/.config
 else
-    ln -s ${PWD}/.config/alacritty ~/.config
+    ln -s ~/hyprdots/.config/alacritty ~/.config
 fi
 
 # Link to fastfetch
-if [ -f ~/.config/fastfetch ]; then
+if [ -d ~/.config/fastfetch ]; then
     rm -rd ~/.config/fastfetch
-    ln -s ${PWD}/.config/fastfetch ~/.config
+    ln -s ~/hyprdots/.config/fastfetch ~/.config
 else
-    ln -s ${PWD}/.config/fastfetch ~/.config
+    ln -s ~/hyprdots/.config/fastfetch ~/.config
 fi
 
 # Link to gtk 3
-if [ -f ~/.config/gtk-3.0 ]; then
+if [ -d ~/.config/gtk-3.0 ]; then
     rm -rd ~/.config/gtk-3.0
-    ln -s ${PWD}/.config/gtk-3.0 ~/.config
+    ln -s ~/hyprdots/.config/gtk-3.0 ~/.config
 else
-    ln -s ${PWD}/.config/gtk-3.0 ~/.config
+    ln -s ~/hyprdots/.config/gtk-3.0 ~/.config
 fi
 
 # Link to gtk 4
-if [ -f ~/.config/gtk-4.0 ]; then
+if [ -d ~/.config/gtk-4.0 ]; then
     rm -rd ~/.config/gtk-4.0
-    ln -s ${PWD}/.config/gtk-4.0 ~/.config
+    ln -s ~/hyprdots/.config/gtk-4.0 ~/.config
 else
-    ln -s ${PWD}/.config/gtk-4.0 ~/.config
+    ln -s ~/hyprdots/.config/gtk-4.0 ~/.config
 fi
 
 # Link to hypr
-if [ -f ~/.config/hypr ]; then
+if [ -d ~/.config/hypr ]; then
     rm -rd ~/.config/hypr
-    ln -s ${PWD}/.config/hypr ~/.config
+    ln -s ~/hyprdots/.config/hypr ~/.config
 else
-    ln -s ${PWD}/.config/hypr ~/.config
+    ln -s ~/hyprdots/.config/hypr ~/.config
 fi
 
 # Link to qt5ct
-if [ -f ~/.config/qt5ct ]; then
+if [ -d ~/.config/qt5ct ]; then
     rm -rd ~/.config/qt5ct
-    ln -s ${PWD}/.config/qt5ct ~/.config
+    ln -s ~/hyprdots/.config/qt5ct ~/.config
 else
-    ln -s ${PWD}/.config/qt5ct ~/.config
+    ln -s ~/hyprdots/.config/qt5ct ~/.config
 fi
 
 # Link to qt6ct
-if [ -f ~/.config/qt6ct ]; then
+if [ -d ~/.config/qt6ct ]; then
     rm -rd ~/.config/qt6ct
-    ln -s ${PWD}/.config/qt6ct ~/.config
+    ln -s ~/hyprdots/.config/qt6ct ~/.config
 else
-    ln -s ${PWD}/.config/qt6ct ~/.config
+    ln -s ~/hyprdots/.config/qt6ct ~/.config
 fi
 
 # Link to rofi
-if [ -f ~/.config/rofi ]; then
+if [ -d ~/.config/rofi ]; then
     rm -rd ~/.config/rofi
-    ln -s ${PWD}/.config/rofi ~/.config
+    ln -s ~/hyprdots/.config/rofi ~/.config
 else
-    ln -s ${PWD}/.config/rofi ~/.config
+    ln -s ~/hyprdots/.config/rofi ~/.config
 fi
 
 # Link to sddm
-if [ -f ~/.config/sddm ]; then
+if [ -d ~/.config/sddm ]; then
     rm -rd ~/.config/sddm
-    ln -s ${PWD}/.config/sddm ~/.config
+    ln -s ~/hyprdots/.config/sddm ~/.config
 else
-    ln -s ${PWD}/.config/sddm ~/.config
+    ln -s ~/hyprdots/.config/sddm ~/.config
 fi
 
 # Link to swaync
-if [ -f ~/.config/swaync ]; then
+if [ -d ~/.config/swaync ]; then
     rm -rd ~/.config/swaync
-    ln -s ${PWD}/.config/swaync ~/.config
+    ln -s ~/hyprdots/.config/swaync ~/.config
 else
-    ln -s ${PWD}/.config/swaync ~/.config
+    ln -s ~/hyprdots/.config/swaync ~/.config
 fi
 
 # Link to waybar
-if [ -f ~/.config/waybar ]; then
+if [ -d ~/.config/waybar ]; then
     rm -rd ~/.config/waybar
-    ln -s ${PWD}/.config/waybar ~/.config
+    ln -s ~/hyprdots/.config/waybar ~/.config
 else
-    ln -s ${PWD}/.config/waybar ~/.config
+    ln -s ~/hyprdots/.config/waybar ~/.config
 fi
 
 # Link to wlogout
-if [ -f ~/.config/wlogout ]; then
+if [ -d ~/.config/wlogout ]; then
     rm -rd ~/.config/wlogout
-    ln -s ${PWD}/.config/wlogout ~/.config
+    ln -s ~/hyprdots/.config/wlogout ~/.config
 else
-    ln -s ${PWD}/.config/wlogout ~/.config
+    ln -s ~/hyprdots/.config/wlogout ~/.config
 fi
 
 # Link to waypaper
-if [ -f ~/.config/waypaper ]; then
+if [ -d ~/.config/waypaper ]; then
     rm -rd ~/.config/waypaper
-    ln -s ${PWD}/.config/waypaper ~/.config
+    ln -s ~/hyprdots/.config/waypaper ~/.config
 else
-    ln -s ${PWD}/.config/waypaper ~/.config
+    ln -s ~/hyprdots/.config/waypaper ~/.config
 fi
 
 # Link to starship
-if [ -f ~/.config/starship ]; then
+if [ -d ~/.config/starship ]; then
     rm -rd ~/.config/starship
-    ln -s ${PWD}/.config/starship ~/.config
+    ln -s ~/hyprdots/.config/starship ~/.config
 else
-    ln -s ${PWD}/.config/starship ~/.config
+    ln -s ~/hyprdots/.config/starship ~/.config
 fi
 
 # Link to bashrc
-if [ -f ~/.bashrc ]; then
+if [ -d ~/.bashrc ]; then
     rm -r ~/.bashrc
-    ln -s ${PWD}/.bashrc ~/
+    ln -s ~/hyprdots/.bashrc ~/
 else
-    ln -s ${PWD}/.bashrc ~/
+    ln -s ~/hyprdots/.bashrc ~/
 fi
 
 # Create link to Pictures
-ln -s ${PWD}/Pictures/Wallpapers ~/Pictures
+ln -s ~/hyprdots/Pictures/Wallpapers ~/Pictures
 
 #Unpack theme
 echo Install 7zip
 sudo pacman -S p7zip
 echo Unpack Fluent
-7z x ${PWD}/.themes/Fluent.zip -o${HOME}/.themes
+7z x ${HOME}/hyprdots/.themes/Fluent.zip -o${HOME}/.themes
