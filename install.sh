@@ -14,7 +14,8 @@ sudo pacman -S hyprland hyprpaper hypridle waybar otf-font-awesome noto-fonts-em
 sleep 1
 
 # Install from yay
-if [ yay ]; then
+if yay
+then
   echo Install from aur
   yay -S wlogout waypaper
 else
