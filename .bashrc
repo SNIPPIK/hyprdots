@@ -34,7 +34,6 @@ alias hypr-board="nano ~/.config/hypr/configuring/keyboard/keyboard.conf"
 # -----------------------------------------------------
 alias cd-waybar="cd ~/.config/waybar"
 alias wb="nano ~/.config/waybar/config.jsonc"
-alias wb-workspace="nano ~/.config/waybar/config.jsonc"
 
 alias player="nano ~/.config/hypr/scripts/playerctl.sh"
 
