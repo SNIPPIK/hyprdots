@@ -29,6 +29,7 @@ sudo pacman -S git
 git clone https://github.com/SNIPPIK/hyprdots.git
 cd hyprdots
 bash ./install.sh
+sudo systemctl enable sddm && sudo systemctl enable bluetooth
 ```
 
 To update, execute the following command:
