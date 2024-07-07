@@ -2,21 +2,21 @@
 
 # Install arch packages
 echo Install need packages...
-sudo pacman -S hyprland hyprpaper hypridle waybar otf-font-awesome noto-fonts-emoji rofi-wayland nm-connection-editor pipewire-pulse wireplumber bluez blueberry pavucontrol nautilus polkit-gnome swaync grim slurp pacman-contrib sddm
+sudo pacman -S hyprland hyprpaper hypridle waybar otf-font-awesome noto-fonts-emoji rofi-wayland nm-connection-editor pipewire-pulse wireplumber bluez blueberry pavucontrol nautilus polkit-gnome swaync grim slurp pacman-contrib sddm fastfetch
 
 sleep 1
 
 # Install from yay
 if [ yay ]; then
   echo Install from aur
-  yay -S wlogout
+  yay -S wlogout waypaper
 else
   sudo pacman -S --needed git base-devel
   git clone https://aur.archlinux.org/yay.git
   cd yay
   makepkg -si
 
-  yay -S wlogout
+  yay -S wlogout waypaper
 fi
 
 sleep 1
@@ -120,6 +120,14 @@ if [ -f ~/.config/wlogout ]; then
     ln -s ${PWD}/.config/wlogout ~/.config
 else
     ln -s ${PWD}/.config/wlogout ~/.config
+fi
+
+# Link to waypaper
+if [ -f ~/.config/waypaper ]; then
+    rm -rd ~/.config/waypaper
+    ln -s ${PWD}/.config/waypaper ~/.config
+else
+    ln -s ${PWD}/.config/waypaper ~/.config
 fi
 
 # Create link to Pictures

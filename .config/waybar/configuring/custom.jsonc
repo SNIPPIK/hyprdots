@@ -2,7 +2,10 @@
   // Wallpaper
   "custom/wallpaper": {
     "format": "",
-    "on-click": "bash ~/.config/hypr/scripts/utils.sh wallpaper"
+    "on-click": "bash ~/.config/hypr/scripts/wallpaper.sh random",
+    "on-click-middle": "bash ~/.config/hypr/scripts/wallpaper.sh restart",
+    "on-click-right": "sleep 0.2 && waypaper",
+    "tooltip-format": "Left: Select random\nRight: Select wallpaper\nMiddle: Restart wallpaper engine"
   },
 
   // Notification

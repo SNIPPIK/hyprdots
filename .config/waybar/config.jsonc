@@ -36,7 +36,7 @@
 
     // Modules Right
     "modules-right": [
-        //"custom/media",
+        "custom/media",
 
         "custom/wallpaper",
         "group/settings",

@@ -18,35 +18,6 @@ if [ "$1" == "restart-waybar" ]; then
 fi
 
 
-#Change wallpaper
-if [ "$1" == "wallpaper" ]; then
-  monitor=`hyprctl monitors | grep Monitor | awk '{print $2}'`
-
-  #Directory wallpapers
-  directory=~/Pictures/Wallpapers
-  directory_quality=~/Pictures/Wallpapers/Quality
-  random_background=""
-
-  #Find image wallpaper
-  if [ -d "$directory_quality" ]; then
-    random_background=`find -L $directory_quality -type f | shuf -n 1`
-  elif [ -d "$directory" ]; then
-    random_background=$(ls $directory/* | shuf -n 1)
-  fi
-
-  #Change wallpaper image
-  hyprctl hyprpaper preload $random_background
-  hyprctl hyprpaper wallpaper "$monitor, $random_background"
-
-  #Unload wallpaper image
-  sleep 2
-  hyprctl hyprpaper unload $random_background
-
-  echo "OK - wallpaper"
-  exit 1
-fi
-
-
 #Remove unused packages
 if [ "$1" == "remove-packages" ]; then
   packages=`sudo pacman -Qdtq`
