@@ -1,8 +1,18 @@
 #!/bin/sh
 
+# Check root user
+if [ $USER = "root" ]; then
+    echo "Do not use root in this script, log in with another account"
+    sleep 2
+    exit -1
+fi
+
+# Cd HOME
+cd ~
+
 # Install arch packages
 echo Install need packages...
-sudo pacman -S hyprland hyprpaper hypridle waybar otf-font-awesome noto-fonts-emoji rofi-wayland nm-connection-editor pipewire-pulse wireplumber bluez blueberry pavucontrol nautilus polkit-gnome swaync grim slurp pacman-contrib sddm fastfetch
+sudo pacman -S hyprland hyprpaper hypridle waybar otf-font-awesome noto-fonts-emoji rofi-wayland nm-connection-editor pipewire-pulse wireplumber bluez blueberry pavucontrol nautilus polkit-gnome swaync grim slurp pacman-contrib sddm fastfetch starship
 
 sleep 1
 
@@ -128,6 +138,22 @@ if [ -f ~/.config/waypaper ]; then
     ln -s ${PWD}/.config/waypaper ~/.config
 else
     ln -s ${PWD}/.config/waypaper ~/.config
+fi
+
+# Link to starship
+if [ -f ~/.config/starship ]; then
+    rm -rd ~/.config/starship
+    ln -s ${PWD}/.config/starship ~/.config
+else
+    ln -s ${PWD}/.config/starship ~/.config
+fi
+
+# Link to bashrc
+if [ -f ~/.bashrc ]; then
+    rm -rd ~/.bashrc
+    ln -s ${PWD}/.bashrc ~/
+else
+    ln -s ${PWD}/.bashrc ~/
 fi
 
 # Create link to Pictures
