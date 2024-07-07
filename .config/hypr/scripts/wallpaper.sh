@@ -14,7 +14,6 @@ selected() {
     hyprctl hyprpaper unload "$1"
 }
 
-
 #Restart hyprpaper
 if [ "$1" == "restart" ]; then
   # Terminate already running bar instances
