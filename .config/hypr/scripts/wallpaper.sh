@@ -6,12 +6,12 @@ selected() {
     monitor=`hyprctl monitors | grep Monitor | awk '{print $2}'`
 
     #Change wallpaper image
-    hyprctl hyprpaper preload $1
+    hyprctl hyprpaper preload "$1"
     hyprctl hyprpaper wallpaper "$monitor, $1"
 
     #Unload wallpaper image
     sleep 2
-    hyprctl hyprpaper unload $1
+    hyprctl hyprpaper unload "$1"
 }
 
 
@@ -26,33 +26,27 @@ if [ "$1" == "restart" ]; then
   sleep 0.5
   hyprpaper
 
-  echo "OK - restart hyprpaper"
   exit 1
 fi
 
 #Restart hyprpaper
 if [ "$1" == "select" ]; then
-  selected $2
-  echo "OK - select wallpaper"
+  selected "$2"
   exit 1
 fi
 
 #Change wallpaper
 if [ "$1" == "random" ]; then
   #Directory wallpapers
-  directory=~/Pictures/Wallpapers
-  directory_quality=~/Pictures/Wallpapers/Quality
+  directory=~/Pictures/Wallpapers/
   random_background=""
 
   #Find image wallpaper
-  if [ -d "$directory_quality" ]; then
-    random_background=`find -L $directory_quality -type f | shuf -n 1`
-  elif [ -d "$directory" ]; then
-    random_background=$(ls $directory/* | shuf -n 1)
+  if [ -d "$directory" ]; then
+    random_background="$(find -L $directory -type f | shuf -n 1)"
   fi
 
   #Apply image
-  selected $random_background
-  echo "OK - wallpaper"
+  selected "$random_background"
   exit 1
 fi
