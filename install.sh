@@ -7,9 +7,6 @@ if [ $USER = "root" ]; then
     exit -1
 fi
 
-# Cd HOME
-cd ~
-
 # Install arch packages
 echo Install need packages...
 sudo pacman -S hyprland hyprpaper hypridle waybar otf-font-awesome noto-fonts-emoji rofi-wayland nm-connection-editor pipewire-pulse wireplumber bluez blueberry pavucontrol nautilus polkit-gnome swaync grim slurp pacman-contrib sddm fastfetch starship
@@ -34,6 +31,14 @@ sleep 1
 # Create link to source
 echo WARNING backap your .config
 read -p "Press enter to continue"
+
+# Link hyprdots
+if [ -f ~/hyprdots ]; then
+    rm -rd ~/hyprdots
+    ln -s ${PWD} ~/.cache
+else
+    ln -s ${PWD} ~/.cache
+fi
 
 echo Create a links
 # Link to alacritty
@@ -150,7 +155,7 @@ fi
 
 # Link to bashrc
 if [ -f ~/.bashrc ]; then
-    rm -rd ~/.bashrc
+    rm -r ~/.bashrc
     ln -s ${PWD}/.bashrc ~/
 else
     ln -s ${PWD}/.bashrc ~/

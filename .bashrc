@@ -13,11 +13,12 @@ alias c='clear'
 alias nf='fastfetch'
 alias pf='fastfetch'
 alias ff='fastfetch'
-alias od='~/hyprdots/onedrive.sh'
 
 # -----------------------------------------------------
 # HYPRDOTS
 # -----------------------------------------------------
+alias cd-hyprdots="cd ~/.cache/hyprdots"
+
 alias cd-hypr="cd ~/.config/hypr"
 alias hypr="nano ~/.config/hypr/hyprland.conf"
 alias hypr-env="nano ~/.config/hypr/configuring/environment.conf"
@@ -44,7 +45,7 @@ alias wifi='nmtui'
 # -----------------------------------------------------
 # DEVELOPMENT
 # -----------------------------------------------------
-alias dotsync="~/hyprdots/sync.sh"
+alias dotsync="bash ~/.cache/hyprdots/sync.sh"
 
 # -----------------------------------------------------
 # START STARSHIP
