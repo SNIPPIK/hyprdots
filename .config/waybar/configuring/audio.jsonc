@@ -58,7 +58,6 @@
 
     "on-click": "sleep 0.1 && playerctl play-pause",
     "on-click-right": "sleep 0.1 && playerctl next",
-
     "exec": "bash ~/.config/hypr/scripts/playerctl.sh",
 
     "max-length": 30,

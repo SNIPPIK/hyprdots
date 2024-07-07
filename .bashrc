@@ -17,9 +17,11 @@ alias ff='fastfetch'
 # -----------------------------------------------------
 # HYPRDOTS
 # -----------------------------------------------------
-alias cd-hyprdots="cd ~/.cache/hyprdots"
-
+alias cd-hyprdots="cd ~//hyprdots"
 alias cd-hypr="cd ~/.config/hypr"
+
+alias hypr-anims="nano ~/.config/hypr/hyprland.conf"
+
 alias hypr="nano ~/.config/hypr/hyprland.conf"
 alias hypr-env="nano ~/.config/hypr/configuring/environment.conf"
 alias hypr-start="nano ~/.config/hypr/configuring/autostart.conf"
@@ -32,6 +34,9 @@ alias hypr-board="nano ~/.config/hypr/configuring/keyboard/keyboard.conf"
 # -----------------------------------------------------
 alias cd-waybar="cd ~/.config/waybar"
 alias wb="nano ~/.config/waybar/config.jsonc"
+alias wb-workspace="nano ~/.config/waybar/config.jsonc"
+
+alias player="nano ~/.config/hypr/scripts/playerctl.sh"
 
 # -----------------------------------------------------
 # SYSTEM

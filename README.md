@@ -13,21 +13,27 @@ While installing alongside another [DE](https://wiki.archlinux.org/title/Desktop
 > Please ensure that your NVIDIA card supports dkms drivers in the list provided [here](https://wiki.archlinux.org/title/NVIDIA).
 
 > [!CAUTION]
-> See all button bindings [here](.config/hypr/configuring/keyboard/binds.conf)
+> See all button bindings in terminal `hypr-binds`\
+> All files are linked, deleting the directory can lead to serious consequences 
 
 > [!TIP]
 > There are options for some configs\
-> [`Hyprland animations`](.config/hypr/hyprland.conf) | PATH: ~/.config/hypr/hyprland.conf\
-> [`Waybar workspace`](.config/waybar/config.jsonc) | PATH: ~/.config/waybar/config.jsonc\
-> View a current playing track in waybar, need to [enable](https://github.com/SNIPPIK/hyprdots/blob/main/.config/waybar/config.jsonc#L39) 
+> Change a hyprland animation -> in terminal `hypr-anims`\
+> Change a waybar workspace icons -> in terminal `wb-workspace`\
+> View a current playing track in waybar, need to enable -> in terminal `player`
 >
 To install, execute the following commands:
 
 ```shell
-  sudo pacman -S git
-  git clone https://github.com/SNIPPIK/hyprdots.git
-  cd hyprdots
-  bash ./install.sh
+sudo pacman -S git
+git clone https://github.com/SNIPPIK/hyprdots.git
+cd hyprdots
+bash ./install.sh
+```
+
+To update, execute the following command:
+```shell
+dotsync
 ```
 
 ### Demo

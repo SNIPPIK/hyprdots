@@ -1,15 +1,15 @@
 #!/bin/sh
 
 # Check root user
-if [ $USER = "root" ]; then
+if [ "$USER" = "root" ]; then
     echo "Do not use root in this script, log in with another account"
     sleep 2
-    exit -1
+    exit 1
 fi
 
 # Install arch packages
 echo Install need packages...
-sudo pacman -S hyprland hyprpaper hypridle waybar otf-font-awesome noto-fonts-emoji rofi-wayland nm-connection-editor pipewire-pulse wireplumber bluez blueberry pavucontrol nautilus polkit-gnome swaync grim slurp pacman-contrib sddm fastfetch starship
+sudo pacman -S hyprland hyprpaper hypridle waybar otf-font-awesome noto-fonts-emoji rofi-wayland nm-connection-editor pipewire-pulse wireplumber bluez blueberry pavucontrol nautilus polkit-gnome swaync grim slurp pacman-contrib sddm fastfetch starship keychain
 
 sleep 1
 
@@ -35,9 +35,9 @@ read -p "Press enter to continue"
 # Link hyprdots
 if [ -f ~/hyprdots ]; then
     rm -rd ~/hyprdots
-    ln -s ${PWD} ~/.cache
+    ln -s ${PWD} ~/
 else
-    ln -s ${PWD} ~/.cache
+    ln -s ${PWD} ~/
 fi
 
 echo Create a links
