@@ -17,7 +17,7 @@ alias ff='fastfetch'
 # -----------------------------------------------------
 # HYPRDOTS
 # -----------------------------------------------------
-alias cd-hyprdots="cd ~//hyprdots"
+alias cd-hyprdots="cd ~/hyprdots"
 alias cd-hypr="cd ~/.config/hypr"
 
 alias hypr-anims="nano ~/.config/hypr/hyprland.conf"
