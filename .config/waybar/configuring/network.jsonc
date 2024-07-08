@@ -14,6 +14,6 @@
     "tooltip-format-disconnected": "Disconnected",
     "max-length": 50,
     "on-click": "nm-connection-editor",
-    "on-click-right": "alacritty --class dotfiles-floating -e nmtui"
+    "on-click-right": "alacritty --class hyprdots-floating -e nmtui"
   }
 }

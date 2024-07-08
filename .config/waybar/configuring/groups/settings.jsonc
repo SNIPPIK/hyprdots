@@ -17,7 +17,7 @@
   // Settings
   "custom/settings": {
     "format": "",
-    "tooltip-format": "Settings tray\nRight: Restart waybar",
-    "on-click-right": "bash ~/.config/hypr/scripts/utils.sh restart-waybar"
+    "tooltip-format": "Settings tray\nLeft: Open settings cli",
+    "on-click": "bash ~/.config/hypr/scripts/dialog.sh settings"
   }
 }

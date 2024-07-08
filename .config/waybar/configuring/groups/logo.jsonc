@@ -17,12 +17,12 @@
   "custom/updates": {
     "format": " {}",
     "restart-interval": 400,
-    "exec": "bash ~/.config/hypr/scripts/updates.sh",
+    "exec": "bash ~/.config/hypr/scripts/updates.sh check",
     "return-type": "json",
     "signal": 8,
 
-    "on-click": "bash ~/.config/hypr/scripts/utils.sh update-packages",
-    "on-click-right": "bash ~/.config/hypr/scripts/utils.sh remove-packages"
+    "on-click": "bash ~/.config/hypr/scripts/dialog.sh update",
+    "on-click-right": "bash ~/.config/hypr/scripts/dialog.sh unused"
   },
 
   // Group logo
