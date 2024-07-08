@@ -7,31 +7,13 @@ if [ "$USER" = "root" ]; then
     exit 1
 fi
 
-# Install arch packages
-echo Install need packages...
-sudo pacman -S hyprland hyprpaper hypridle waybar otf-font-awesome noto-fonts-emoji rofi-wayland nm-connection-editor pipewire-pulse wireplumber bluez blueberry pavucontrol nautilus polkit-gnome swaync grim slurp pacman-contrib sddm fastfetch starship gnome-keyring
-
-sleep 1
-
-# Install from yay
-if yay
-then
-  echo Install from aur
-  yay -S wlogout waypaper
-else
-  sudo pacman -S --needed git base-devel
-  git clone https://aur.archlinux.org/yay.git
-  cd yay
-  makepkg -si
-
-  yay -S wlogout waypaper
-fi
-
-sleep 1
-
-# Create link to source
-echo WARNING backap your .config
-read -p "Press enter to continue"
+echo WARNING backup your .config directory
+read -p "Continue (y/n)?" choice
+case "$choice" in
+  y|Y ) echo "Continue to installing";;
+  n|N ) exit 1;;
+  * ) echo "Continue to installing";;
+esac
 
 # Link hyprdots
 if [ ! -d ~/hyprdots ]; then
@@ -161,6 +143,9 @@ fi
 
 # Create link to Pictures
 ln -s ~/hyprdots/Pictures/Wallpapers ~/Pictures
+
+# Install packages and yay
+bash ~/hyprdots/.installer/packages.sh
 
 #Unpack theme
 echo Install 7zip
