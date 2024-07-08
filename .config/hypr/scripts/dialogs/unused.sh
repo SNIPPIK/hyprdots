@@ -9,4 +9,4 @@ else
     sudo pacman -Qdtq | sudo pacman -Rsc -
 fi
 echo " "
-read -p "Press to close"
+read -p "Press enter to close"

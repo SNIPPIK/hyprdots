@@ -6,8 +6,9 @@
 #  \___/| .__/ \__,_|\__,_|\__\___||___/
 #       |_|
 # -----------------------------------------------------
-
 # Requires pacman-contrib, aur
+
+# Added a space in text and shorten it
 stringToLen() {
   STRING="$1"
   LEN="$2"
@@ -18,7 +19,8 @@ stringToLen() {
   fi
 }
 
-cup() {
+# Get list packages
+packages() {
   checkupdates --nocolor
   pacman -Qm | aur vercmp
 }
@@ -26,8 +28,8 @@ cup() {
 
 # Check updates
 if [ "$1" == "check" ]; then
-  # Crete list packages
-  mapfile -t updates < <(cup)
+  # Crete list a packages
+  mapfile -t updates < <(packages)
   text=${#updates[@]}
   tooltip="<b>$text updates (arch+aur) </b>\n"
   tooltip+="<b>$(stringToLen "Package" 20) # $(stringToLen "Current" 20) # $(stringToLen "Next" 20)</b>\n"

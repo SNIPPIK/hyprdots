@@ -5,4 +5,4 @@ echo "Update system"
 sudo pacman -Syu
 
 echo " "
-read -p "Press to close"
+read -p "Press enter to close"

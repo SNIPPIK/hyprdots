@@ -2,6 +2,7 @@
 # -----------------------------------------------------
 cache_file="$HOME/.cache/current_wallpaper"
 
+# Apply image in hyprctl
 selected() {
     monitor=$(hyprctl monitors | grep Monitor | awk '{print $2}')
 
@@ -22,6 +23,7 @@ selected() {
     hyprctl hyprpaper unload "$1"
 }
 
+# Apply last image
 last() {
     if [ -f "$cache_file" ]; then
        file=$(cat "$cache_file")
@@ -32,6 +34,7 @@ last() {
     fi
 }
 
+# Notification a change wallpaper
 notify() {
   notify-send "Hyprpaper" "$1" --icon="$2" --expire-time=700
 }
@@ -40,7 +43,7 @@ notify() {
 # -----------------------------------------------------
 # -----------------------------------------------------
 
-#Load last wallpaper
+# Load last wallpaper
 if [ "$1" == "last" ]; then
   last
   exit 1
@@ -48,7 +51,7 @@ fi
 
 # -----------------------------------------------------
 
-#Restart hyprpaper
+# Restart hyprpaper
 if [ "$1" == "restart" ]; then
   # Terminate already running bar instances
   killall -q hyprpaper
@@ -63,7 +66,7 @@ fi
 
 # -----------------------------------------------------
 
-#Restart hyprpaper
+# Select wallpaper in waypaper
 if [ "$1" == "select" ]; then
   selected "$2"
   notify "Select wallpaper" "$2"
@@ -72,7 +75,7 @@ fi
 
 # -----------------------------------------------------
 
-#Change wallpaper
+# Change random wallpaper
 if [ "$1" == "random" ]; then
   directory=~/Pictures/Wallpapers/
   random_background=""
