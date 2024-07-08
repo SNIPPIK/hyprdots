@@ -19,7 +19,7 @@ then
   echo Install from aur
   yay -S wlogout waypaper
 else
-  sudo pacman -S --needed git base-devel
+  sudo pacman -S --needed base-devel
   git clone https://aur.archlinux.org/yay.git
   cd yay
   makepkg -si
