@@ -3,3 +3,6 @@
 echo "Update system"
 
 sudo pacman -Syu
+
+echo " "
+read -p "Press to close"
