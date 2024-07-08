@@ -16,3 +16,7 @@ else
 
   yay -S wlogout waypaper
 fi
+
+# Run systemctl services
+echo Run sddm service and bluetooth service
+sudo systemctl enable sddm && sudo systemctl enable bluetooth

@@ -18,16 +18,14 @@ alias ff='fastfetch'
 # HYPRDOTS
 # -----------------------------------------------------
 alias cd-hyprdots="cd ~/hyprdots"
-alias cd-hypr="cd ~/.config/hypr"
+alias cd-hyprland="cd ~/.config/hypr"
 
-alias hypr-anims="nano ~/.config/hypr/hyprland.conf"
+alias hyprland="nano ~/.config/hypr/hyprland.conf"
+alias hyprland-env="nano ~/.config/hypr/configuring/environment.conf"
+alias hyprland-start="nano ~/.config/hypr/configuring/autostart.conf"
 
-alias hypr="nano ~/.config/hypr/hyprland.conf"
-alias hypr-env="nano ~/.config/hypr/configuring/environment.conf"
-alias hypr-start="nano ~/.config/hypr/configuring/autostart.conf"
-
-alias hypr-binds="nano ~/.config/hypr/configuring/keyboard/binds.conf"
-alias hypr-board="nano ~/.config/hypr/configuring/keyboard/keyboard.conf"
+alias hyprland-binds="nano ~/.config/hypr/configuring/keyboard/binds.conf"
+alias hyprland-board="nano ~/.config/hypr/configuring/keyboard/keyboard.conf"
 
 # -----------------------------------------------------
 # Waybar
@@ -50,6 +48,8 @@ alias wifi='nmtui'
 # DEVELOPMENT
 # -----------------------------------------------------
 alias dotsync="bash ~/.cache/hyprdots/sync.sh"
+alias update="sudo pacman -Syu"
+alias unused="sudo pacman -Qdtq | sudo pacman -Rsc -"
 
 # -----------------------------------------------------
 # START STARSHIP
