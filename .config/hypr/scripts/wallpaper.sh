@@ -60,7 +60,6 @@ fi
 
 # Select wallpaper in waypaper
 if [ "$1" == "select" ]; then
-  notify "Select wallpaper" "$2"
   selected "$2"
   exit 1
 fi
