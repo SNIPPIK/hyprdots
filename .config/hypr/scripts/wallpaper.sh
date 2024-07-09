@@ -51,7 +51,6 @@ if [ "$1" == "last" ]; then
       if [ -f "$cache_file" ]; then
          file=$(cat "$cache_file")
 
-         sleep 5
          notify "Load last wallpaper" "$file"
          selected "$file"
      fi
