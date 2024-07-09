@@ -3,19 +3,25 @@
 # Player toggle
 WAYBAR_PLAYER=1
 # -----------------------------------------------------
+icon=""
+space="-----------------------------------------------------------------------"
+# -----------------------------------------------------
 
 # Playerctl
 if [ $WAYBAR_PLAYER = 1 ]; then
   class=$(playerctl metadata --format '{{lc(status)}}')
-  icon=""
 
   if [ "$class" = "playing" ] || [ "$class" = "paused" ]; then
-    info=$(playerctl metadata --format '{{artist}} - {{title}}')
+    title=$icon" "$(playerctl metadata --format '{{title}}')
+    tooltip="$space\n"
+    tooltip+=$(playerctl metadata --format '🎶: {{ playerName }}\n👤: {{ artist }}\n💽: {{ title }}\n🕐: {{ duration(position) }} - {{ duration(mpris:length) }}')
+    tooltip+="\n$space"
 
-    text=$icon" "$info
   elif [ "$class" = "stopped" ]; then
-    text=
+    title=
   fi
 
-  echo -e "{\"text\":\""$text"\", \"class\":\""$class"\"}"
+cat <<EOF
+{ "text":"$title", "tooltip":"$tooltip", "class": "$class"}
+EOF
 fi
