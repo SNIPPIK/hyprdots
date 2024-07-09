@@ -47,7 +47,7 @@ do
 done
 
 # Link to bashrc
-if [ -d ~/.bashrc ]; then
+if [ -f ~/.bashrc ]; then
     rm -r ~/.bashrc
     ln -s ~/hyprdots/.bashrc ~/
 else
