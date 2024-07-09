@@ -1,7 +1,7 @@
 #!/bin/bash
 # -----------------------------------------------------
 cache_file="$HOME/.cache/current_wallpaper"
-
+# -----------------------------------------------------
 # Apply image in hyprctl
 selected() {
     monitor=$(hyprctl monitors | grep Monitor | awk '{print $2}')
@@ -11,24 +11,41 @@ selected() {
     hyprctl hyprpaper wallpaper "$monitor, $1"
 
     # Create cache file
-    if [ ! -f "$cache_file" ]; then
-       touch "$cache_file"
-       echo "$1" > "$cache_file"
-    else
-       echo "$1" > "$cache_file"
-    fi
+    save "$1"
 
     #Unload wallpaper image
     sleep 2
     hyprctl hyprpaper unload "$1"
 }
+# -----------------------------------------------------
+# Create cache file
+save() {
+   if [ ! -f "$cache_file" ]; then
+      touch "$cache_file"
+      echo "$1" > "$cache_file"
+   else
+      echo "$1" > "$cache_file"
+   fi
+}
+# -----------------------------------------------------
+# Load last wallpaper
+last() {
+     if [ -f "$cache_file" ]; then
+         file=$(cat "$cache_file")
 
+         sleep 5
+         notify "Load last wallpaper" "$file"
+         selected "$file"
+     fi
+}
+# -----------------------------------------------------
 # Notification a change wallpaper
 notify() {
   notify-send "Hyprpaper" "$1" --icon="$2" --expire-time=700
 }
-# -----------------------------------------------------
 
+
+# -----------------------------------------------------
 # Load last wallpaper
 if [ "$1" == "last" ]; then
       if [ -f "$cache_file" ]; then
@@ -37,12 +54,10 @@ if [ "$1" == "last" ]; then
          sleep 5
          notify "Load last wallpaper" "$file"
          selected "$file"
-      fi
-  exit 1
+     fi
 fi
 
 # -----------------------------------------------------
-
 # Restart hyprpaper
 if [ "$1" == "restart" ]; then
   # Terminate already running bar instances
@@ -57,15 +72,13 @@ if [ "$1" == "restart" ]; then
 fi
 
 # -----------------------------------------------------
-
-# Select wallpaper in waypaper
-if [ "$1" == "select" ]; then
-  selected "$2"
+# Save wallpaper in waypaper
+if [ "$1" == "save" ]; then
+  save "$2"
   exit 1
 fi
 
 # -----------------------------------------------------
-
 # Change random wallpaper
 if [ "$1" == "random" ]; then
   directory=~/Pictures/Wallpapers/
