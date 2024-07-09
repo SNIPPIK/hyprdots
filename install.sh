@@ -5,9 +5,9 @@ link() {
   if [ -d ~/.config/"$1" ]; then
       rm -rd ~/.config/"$1"
       ln -s ~/hyprdots/.config/"$1" ~/.config
-      echo Created link to "$1"
+      echo Created link to "$1", file exists, remove and create
   else
-      echo Fail a created link to "$1", file exists
+      echo Created link to "$1"
       ln -s ~/hyprdots/.config/"$1" ~/.config
   fi
 }
