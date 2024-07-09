@@ -47,7 +47,7 @@ alias wifi='nmtui'
 # -----------------------------------------------------
 # DEVELOPMENT
 # -----------------------------------------------------
-alias dotsync="bash ~/.cache/hyprdots/sync.sh"
+alias dotsync="bash ~/hyprdots/sync.sh"
 alias update="sudo pacman -Syu"
 alias unused="sudo pacman -Qdtq | sudo pacman -Rsc -"
 
