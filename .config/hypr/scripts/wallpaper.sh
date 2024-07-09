@@ -49,8 +49,9 @@ notify() {
 # Load last wallpaper
 if [ "$1" == "last" ]; then
       if [ -f "$cache_file" ]; then
-         file=$(cat "$cache_file")
+         sleep 5
 
+         file=$(cat "$cache_file")
          notify "Load last wallpaper" "$file"
          selected "$file"
      fi
@@ -66,8 +67,7 @@ if [ "$1" == "restart" ]; then
   while pgrep -x hyprpaper >/dev/null; do sleep 1; done
 
   hyprpaper
-  sleep 5
-  last
+  last "$1"
   exit 1
 fi
 
