@@ -66,6 +66,7 @@ if [ "$1" == "restart" ]; then
   while pgrep -x hyprpaper >/dev/null; do sleep 1; done
 
   hyprpaper
+  sleep 5
   last
   exit 1
 fi
