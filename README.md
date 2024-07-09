@@ -14,7 +14,7 @@ While installing alongside another [DE](https://wiki.archlinux.org/title/Desktop
 
 > [!CAUTION]
 > See all button bindings in terminal `hyprland-binds`\
-> All files are linked, deleting the directory can lead to serious consequences 
+> All files are linked, deleting the directory hyprdots can lead to serious consequences
 
 > [!TIP]
 > There are options for some configs\
