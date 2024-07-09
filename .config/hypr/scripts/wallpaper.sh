@@ -23,29 +23,21 @@ selected() {
     hyprctl hyprpaper unload "$1"
 }
 
-# Apply last image
-last() {
-    if [ -f "$cache_file" ]; then
-       file=$(cat "$cache_file")
-
-       sleep 2
-       notify "Load last wallpaper" "$file"
-       selected "$file"
-    fi
-}
-
 # Notification a change wallpaper
 notify() {
   notify-send "Hyprpaper" "$1" --icon="$2" --expire-time=700
 }
-
-# -----------------------------------------------------
-# -----------------------------------------------------
 # -----------------------------------------------------
 
 # Load last wallpaper
 if [ "$1" == "last" ]; then
-  last
+      if [ -f "$cache_file" ]; then
+         file=$(cat "$cache_file")
+
+         sleep 5
+         notify "Load last wallpaper" "$file"
+         selected "$file"
+      fi
   exit 1
 fi
 
