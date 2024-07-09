@@ -1,7 +1,7 @@
 #!/bin/sh
 # -----------------------------------------------------
 # Create link to directory
-link() {
+linkConfig() {
   if [ -d ~/.config/"$1" ]; then
       rm -rd ~/.config/"$1"
       ln -s ~/hyprdots/.config/"$1" ~/.config
@@ -9,6 +9,18 @@ link() {
   else
       echo Created link to "$1"
       ln -s ~/hyprdots/.config/"$1" ~/.config
+  fi
+}
+
+# Create link to directory
+link() {
+  if [ -f ~/.files/"$1" ]; then
+      rm -rd ~/.files/"$1"
+      ln -s ~/hyprdots/.files/"$1" ~/
+      echo Created link to "$1", file exists, remove and create
+  else
+      echo Created link to "$1"
+      ln -s ~/hyprdots/.files/"$1" ~/
   fi
 }
 
@@ -43,16 +55,15 @@ fi
 # shellcheck disable=SC2045
 for path in $(ls ~/hyprdots/.config)
 do
-  link "$path"
+  linkConfig "$path"
 done
 
-# Link to bashrc
-if [ -f ~/.bashrc ]; then
-    rm -r ~/.bashrc
-    ln -s ~/hyprdots/.bashrc ~/
-else
-    ln -s ~/hyprdots/.bashrc ~/
-fi
+# Linking files
+# shellcheck disable=SC2045
+for file in ".bashrc" ".gtkrc-2.0"
+do
+  link "$file"
+done
 
 # Create link to Pictures
 ln -s ~/hyprdots/Pictures/Wallpapers ~/Pictures
