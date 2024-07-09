@@ -20,7 +20,7 @@ While installing alongside another [DE](https://wiki.archlinux.org/title/Desktop
 > There are options for some configs\
 > Change a hyprland animation -> in terminal `hyprland`\
 > Change a waybar workspace icons -> in terminal `wb`\
-> View a current playing track in waybar, need to enable -> in terminal `player`
+> View a current playing track in waybar, need to enable -> in terminal `player`\
 > If not icons in terminal install "ttf-inconsolata-nerd" package
 >
 To install, execute the following commands:
