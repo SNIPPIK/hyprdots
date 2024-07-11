@@ -4,11 +4,11 @@
 linkConfig() {
   if [ -d ~/.config/"$1" ]; then
       rm -rd ~/.config/"$1"
-      ln -s ~/hyprdots/.config/"$1" ~/.config
+      ln -s ~/hyprdots/.config/"$1" ~/.config/
       echo Created link to "$1", file exists, remove and create
   else
       echo Created link to "$1"
-      ln -s ~/hyprdots/.config/"$1" ~/.config
+      ln -s ~/hyprdots/.config/"$1" ~/.config/
   fi
 }
 
@@ -41,6 +41,10 @@ if [ "$USER" = "root" ]; then
     exit 1
 fi
 
+# If not directory .config
+if [ ! -d ~/.config ]; then
+  mkdir ~/.config
+fi
 
 # -----------------------------------------------------
 echo WARNING backup your .config directory
@@ -55,14 +59,18 @@ fi
 # shellcheck disable=SC2045
 for path in $(ls ~/hyprdots/.config)
 do
-  linkConfig "$path"
+  if [ "$path" ]; then
+    linkConfig "$path"
+  fi
 done
 
 # Linking files
 # shellcheck disable=SC2045
 for file in ".bashrc" ".gtkrc-2.0"
 do
-  link "$file"
+   if [ "$file" ]; then
+      link "$file"
+   fi
 done
 
 # Create link to Pictures
