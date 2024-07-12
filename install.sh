@@ -14,8 +14,8 @@ linkConfig() {
 
 # Create link to directory
 link() {
-  if [ -f ~/.files/"$1" ]; then
-      rm -rd ~/.files/"$1"
+  if [ -f ~/"$1" ]; then
+      rm -r ~/"$1"
       ln -s ~/hyprdots/.files/"$1" ~/
       echo Created link to "$1", file exists, remove and create
   else
