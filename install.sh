@@ -2,25 +2,25 @@
 # -----------------------------------------------------
 # Create link to directory
 linkConfig() {
-  if [ -d ~/.config/"$1" ]; then
+  if [ -h ~/.config/"$1" ] || [ -d ~/.config/"$1" ]; then
       rm -rd ~/.config/"$1"
-      ln -s ~/hyprdots/.config/"$1" ~/.config/
+      ln -s ~/hyprdots/Files/Configs/"$1" ~/.config/
       echo Created link to "$1", file exists, remove and create
   else
       echo Created link to "$1"
-      ln -s ~/hyprdots/.config/"$1" ~/.config/
+      ln -s ~/hyprdots/Files/Configs/"$1" ~/.config/
   fi
 }
 
 # Create link to directory
 link() {
-  if [ -f ~/"$1" ]; then
+  if [ -h ~/"$1" ] || [ -f ~/"$1" ]; then
       rm -r ~/"$1"
-      ln -s ~/hyprdots/.files/"$1" ~/
+      ln -s ~/hyprdots/Files/Additions/"$1" ~/
       echo Created link to "$1", file exists, remove and create
   else
       echo Created link to "$1"
-      ln -s ~/hyprdots/.files/"$1" ~/
+      ln -s ~/hyprdots/Files/Additions/"$1" ~/
   fi
 }
 
@@ -28,9 +28,9 @@ link() {
 choice() {
   read -p "Continue (y/n)? " choice
   case "$choice" in
-    y|Y|н|Н ) echo "next";;
+    y|Y|н|Н ) echo "Continue...";;
     n|N|т|Т ) exit 0;;
-    * ) echo "next";;
+    * ) echo "Continue...";;
   esac
 }
 # -----------------------------------------------------
@@ -41,7 +41,7 @@ if [ "$USER" = "root" ]; then
     exit 1
 fi
 
-# If not directory .config
+# If not directory Configs
 if [ ! -d ~/.config ]; then
   mkdir ~/.config
 fi
@@ -57,7 +57,7 @@ fi
 
 # Linking directories
 # shellcheck disable=SC2045
-for path in $(ls ~/hyprdots/.config)
+for path in $(ls ~/hyprdots/Files/Configs)
 do
   if [ "$path" ]; then
     linkConfig "$path"
@@ -93,5 +93,5 @@ choice
 echo Install 7zip
 sudo pacman -S p7zip
 echo Unpack Fluent
-7z x "${HOME}"/hyprdots/.themes/Fluent.zip -o"${HOME}"/.themes
+7z x "${HOME}"/hyprdots/Files/Theme/Fluent.zip -o"${HOME}"/.themes
 # -----------------------------------------------------
