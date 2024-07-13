@@ -33,7 +33,7 @@ last() {
      if [ -f "$cache_file" ]; then
          file=$(cat "$cache_file")
 
-         sleep 5
+         sleep 1
          notify "Load last wallpaper" "$file"
          selected "$file"
      fi
@@ -48,28 +48,18 @@ notify() {
 # -----------------------------------------------------
 # Load last wallpaper
 if [ "$1" == "last" ]; then
-      if [ -f "$cache_file" ]; then
-         sleep 1
-
-         file=$(cat "$cache_file")
-         notify "Load last wallpaper" "$file"
-         selected "$file"
-     fi
+  last "$1"
 fi
 
 # -----------------------------------------------------
 # Restart hyprpaper
 if [ "$1" == "restart" ]; then
-  # Terminate already running bar instances
-  killall -q hyprpaper
-
-  # Wait until the processes have been shut down
-  while pgrep -x hyprpaper >/dev/null; do sleep 1; done
+  pkill hyprpaper
+  sleep 1
 
   hyprpaper
-
-  sleep 5
   last "$1"
+
   exit 1
 fi
 

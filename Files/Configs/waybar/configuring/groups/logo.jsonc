@@ -17,7 +17,7 @@
   "custom/updates": {
     "format": " {}",
     "restart-interval": 400,
-    "exec": "bash ~/.config/hypr/scripts/updates.sh check",
+    "exec": "bash ~/.config/hypr/scripts/toolbox/updates.sh check",
     "return-type": "json",
     "signal": 8,
 
