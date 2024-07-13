@@ -1,10 +1,11 @@
-@import                          "shared/colors.rasi"
-@import                          "shared/fonts.rasi"
-
 /*****----- Configuration -----*****/
 configuration {
     show-icons:                 true;
 }
+
+/*****----- Global Properties -----*****/
+@import                          "shared/colors.rasi"
+@import                          "shared/fonts.rasi"
 
 /*****----- Main Window -----*****/
 window {
@@ -71,12 +72,11 @@ listview {
     margin:                      0px;
     padding:                     0px;
     border:                      0px solid;
-    border-radius:               0px;
+    border-radius:               15px;
     border-color:                @selected;
     background-color:            transparent;
     text-color:                  @foreground;
     cursor:                      "default";
-
 }
 scrollbar {
     handle-width:                5px ;
@@ -101,13 +101,28 @@ element {
 }
 
 element normal.normal {
-    background-color:            @background;
+    background-color:            inherit;
+    text-color:                  inherit;
+}
+element normal.urgent {
+    background-color:            @urgent;
     text-color:                  @foreground;
 }
-
+element normal.active {
+    background-color:            @active;
+    text-color:                  @foreground;
+}
 element selected.normal {
     background-color:            @selected;
-    text-color:                  @background;
+    text-color:                  @foreground;
+}
+element selected.urgent {
+    background-color:            @urgent;
+    text-color:                  @foreground;
+}
+element selected.active {
+    background-color:            @urgent;
+    text-color:                  @foreground;
 }
 
 element-icon {
