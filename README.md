@@ -1,4 +1,4 @@
-[<img align="right" alt="Avatar" width="px" src="/.config/waybar/icons/artics.png" />]()
+[<img align="right" alt="Avatar" width="px" src="/Files/Configs/waybar/icons/artics.png" />]()
 
 # hyprdots
 - [`WIKI`](https://wiki.hyprland.org/)
@@ -40,6 +40,12 @@ dotsync
 ### Demo
 <details close>
   <summary>Click to open</summary>
+
+### v0.4.2
+Coming soon
+
+### v0.4.1
+https://github.com/SNIPPIK/hyprdots/assets/55327334/6c2cb8af-4925-4a5f-8c30-fa2e0ff5645b
 
 ### v0.4.0
 https://github.com/SNIPPIK/hyprdots/assets/55327334/b422217b-093d-4c3b-a794-107f338bf57f
