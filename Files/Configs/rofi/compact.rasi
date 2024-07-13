@@ -31,13 +31,13 @@ window {
     anchor:                      west;
     fullscreen:                  false;
     width:                       500px;
-    height:                      95%;
+    height:                      100%;
     x-offset:                    5px;
     y-offset:                    0px;
 
     /* properties for all widgets */
     enabled:                     true;
-    border-radius:               15px;
+    border-radius:               5px;
     cursor:                      "default";
     background-color:            @background;
 }

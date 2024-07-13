@@ -12,21 +12,16 @@ selected() {
     hyprctl hyprpaper wallpaper "$monitor, $1"
 
     # Create cache file
-    save "$1"
+    if [ ! -f "$cache_file" ]; then
+        touch "$cache_file"
+        echo "$1" > "$cache_file"
+    else
+        echo "$1" > "$cache_file"
+    fi
 
     #Unload wallpaper image
     sleep 2
     hyprctl hyprpaper unload "$1"
-}
-# -----------------------------------------------------
-# Create cache file
-save() {
-   if [ ! -f "$cache_file" ]; then
-      touch "$cache_file"
-      echo "$1" > "$cache_file"
-   else
-      echo "$1" > "$cache_file"
-   fi
 }
 # -----------------------------------------------------
 # Load last wallpaper
@@ -55,7 +50,6 @@ rofi_cmd() {
 # -----------------------------------------------------
 
 
-
 # -----------------------------------------------------
 # Load last wallpaper
 if [ "$1" == "last" ]; then
@@ -65,19 +59,10 @@ fi
 # -----------------------------------------------------
 # Restart hyprpaper
 if [ "$1" == "restart" ]; then
-  pkill hyprpaper
-  sleep 1
+  bash ~/.config/hypr/scripts/utils/reload.sh hyprpaper
 
-  hyprpaper
+  sleep 2
   last "$1"
-
-  exit 1
-fi
-
-# -----------------------------------------------------
-# Save wallpaper in waypaper
-if [ "$1" == "save" ]; then
-  save "$2"
   exit 1
 fi
 
