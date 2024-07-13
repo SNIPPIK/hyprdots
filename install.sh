@@ -4,11 +4,11 @@
 linkConfig() {
   if [ -h ~/.config/"$1" ] || [ -d ~/.config/"$1" ]; then
       rm -rd ~/.config/"$1"
-      ln -s ~/hyprdots/Files/Configs/"$1" ~/.config/
+      ln -s ~/hyprdots/Files/Configs/"$1" ~/.config
       echo Created link to "$1", file exists, remove and create
   else
       echo Created link to "$1"
-      ln -s ~/hyprdots/Files/Configs/"$1" ~/.config/
+      ln -s ~/hyprdots/Files/Configs/"$1" ~/.config
   fi
 }
 
@@ -76,6 +76,17 @@ done
 # Create link to Pictures
 ln -s ~/hyprdots/Pictures/Wallpapers ~/Pictures
 
+echo Install fonts for waybar
+choice
+
+# Create dir fonts
+if [ ! -h ~/.fonts ]; then
+  mkdir ~/.fonts
+fi
+
+# Create link to wifi font
+cp ~/hyprdots/Files/Fonts/DejaVuSansMono-wifi-ramp.ttf ~/.fonts
+fc-cache -f -v
 
 # -----------------------------------------------------
 echo Install packages
