@@ -42,7 +42,7 @@ dotsync
   <summary>Click to open</summary>
 
 ### v0.4.2
-Coming soon
+https://github.com/user-attachments/assets/5ed135e8-7f4b-4bb9-8d18-47155d76ef8a
 
 ### v0.4.1
 https://github.com/SNIPPIK/hyprdots/assets/55327334/6c2cb8af-4925-4a5f-8c30-fa2e0ff5645b
