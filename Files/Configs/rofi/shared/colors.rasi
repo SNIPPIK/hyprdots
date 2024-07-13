@@ -8,10 +8,10 @@
  **/
 
 * {
-    background:     rgb(30,33,39, 0.8);
-    background-alt: rgba(10, 0, 0, 0.70);
+    background:     rgba(43, 44, 43, 0.6);
+    background-alt: rgba(0, 0, 0, 0.25);
     foreground:     #FFFFFFFF;
-    selected:       #61AFEFFF;
-    active:         #98C379FF;
+    selected:       gray;
+    active:         rgba(255, 255, 255, 0.75);
     urgent:         #E06C75FF;
 }
