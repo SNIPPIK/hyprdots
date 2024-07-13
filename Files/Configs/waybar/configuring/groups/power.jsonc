@@ -1,4 +1,20 @@
 {
+  // Group power
+  "group/power": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 350,
+      "children-class": "not-memory",
+      "transition-left-to-right": false
+    },
+    "modules": [
+      "custom/power",
+      "custom/lock",
+      "custom/logout",
+      "custom/reboot"
+    ]
+  },
+
   // Power Menu
   "custom/power": {
     "format": "",
@@ -22,22 +38,5 @@
     "format": "\uf0e2",
     "on-click": "sleep 0.1 && systemctl reboot",
     "tooltip-format": "Reboot"
-  },
-
-
-  // Group power
-  "group/power": {
-    "orientation": "inherit",
-    "drawer": {
-      "transition-duration": 350,
-      "children-class": "not-memory",
-      "transition-left-to-right": false
-    },
-    "modules": [
-      "custom/power",
-      "custom/lock",
-      "custom/logout",
-      "custom/reboot"
-    ]
   }
 }

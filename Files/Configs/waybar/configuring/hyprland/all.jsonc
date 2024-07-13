@@ -11,17 +11,6 @@
     "format": " {short}"
   },
 
-  // Keyboard state
-  "keyboard-state": {
-    "numlock": true,
-    "capslock": true,
-    "format": "{name} {icon}",
-    "format-icons": {
-      "locked": "",
-      "unlocked": ""
-    }
-  },
-
   // hypridle switcher
   "idle_inhibitor": {
     "format": "{icon}",
