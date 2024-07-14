@@ -9,7 +9,7 @@
 
 * {
     background:     rgba(43, 44, 43, 0.6);
-    background-alt: rgba(0, 0, 0, 0.25);
+    background-alt: rgba(0, 0, 0, 0.50);
     foreground:     #FFFFFFFF;
     selected:       gray;
     active:         rgba(255, 255, 255, 0.75);
