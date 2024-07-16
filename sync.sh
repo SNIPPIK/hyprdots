@@ -13,6 +13,10 @@ if [ -d ~/hyprdots ]; then
   sleep 1
   cd ~/hyprdots
   bash ./install.sh
+
+  sleep 1
+  # Restart waybar
+  bash ~/.config/hypr/scripts/utils/reload.sh waybar
 else
   echo "Fail update, need to install! Not found ~/hyprdots!"
 fi
