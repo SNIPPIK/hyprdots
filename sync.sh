@@ -5,7 +5,7 @@ cd ~/
 
 # Update hyprdots
 if [ -d ~/hyprdots ]; then
-  rm -rd ~/hyprdots
+  sudo rm -rd ~/hyprdots
 
   sleep 1
   git clone https://github.com/SNIPPIK/hyprdots.git
