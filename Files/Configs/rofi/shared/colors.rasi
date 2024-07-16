@@ -8,8 +8,8 @@
  **/
 
 * {
-    background:     rgba(43, 44, 43, 0.6);
-    background-alt: rgba(0, 0, 0, 0.50);
+    background:     rgba(43, 44, 43, 0.8);
+    background-alt: rgba(0, 0, 0, 0.7);
     foreground:     #FFFFFFFF;
     selected:       gray;
     active:         rgba(255, 255, 255, 0.75);
