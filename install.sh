@@ -24,6 +24,9 @@ link() {
   fi
 }
 
+# Need to update hyprdots
+cp ~/hyprdots/sync.sh ~/.cache
+
 # The user's response is required
 choice() {
   read -p "Continue (y/n)? " choice
