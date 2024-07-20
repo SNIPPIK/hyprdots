@@ -4,7 +4,7 @@
 WAYBAR_PLAYER=1
 # -----------------------------------------------------
 icon=""
-space="-----------------------------------------------------------------------"
+space="                                                                           "
 # -----------------------------------------------------
 
 # Playerctl
@@ -14,7 +14,7 @@ if [ $WAYBAR_PLAYER = 1 ]; then
   if [ "$class" = "playing" ] || [ "$class" = "paused" ]; then
     title=$icon" "$(playerctl metadata --format '{{title}}')
     tooltip="$space\n"
-    tooltip+=$(playerctl metadata --format '🎶: {{ playerName }}\n👤: {{ artist }}\n💽: {{ title }}\n🕐: {{ duration(position) }} - {{ duration(mpris:length) }}')
+    tooltip+=$(playerctl metadata --format '🎶: {{ playerName }}\n👤: {{ artist }} - {{ title }}\n🕐: {{ duration(position) }} - {{ duration(mpris:length) }}')
     tooltip+="\n$space"
 
   elif [ "$class" = "stopped" ]; then

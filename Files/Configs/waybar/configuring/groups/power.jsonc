@@ -24,19 +24,19 @@
   // Lock system
   "custom/lock": {
     "format": "",
-    "on-click": "sleep 0.1 && hyprlock",
+    "on-click": "bash ~/.config/wlogout/action.sh lock",
     "tooltip-format": "Lock"
   },
   // Logout system
   "custom/logout": {
     "format": "",
-    "on-click": "sleep 0.1 && hyprctl dispatch exit",
+    "on-click": "bash ~/.config/wlogout/action.sh logout",
     "tooltip-format": "Logout"
   },
   // Reboot system
   "custom/reboot": {
     "format": "\uf0e2",
-    "on-click": "sleep 0.1 && systemctl reboot",
+    "on-click": "bash ~/.config/wlogout/action.sh logout reboot",
     "tooltip-format": "Reboot"
   }
 }

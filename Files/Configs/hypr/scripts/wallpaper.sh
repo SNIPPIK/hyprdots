@@ -30,7 +30,6 @@ last() {
          file=$(cat "$cache_file")
 
          sleep 1
-         notify "Load last wallpaper" "$file"
          selected "$file"
      fi
 }
@@ -61,7 +60,7 @@ fi
 if [ "$1" == "restart" ]; then
   bash ~/.config/hypr/scripts/utils/reload.sh hyprpaper
 
-  sleep 2
+  sleep 5
   last "$1"
   exit 1
 fi
@@ -79,7 +78,6 @@ if [ "$1" == "random" ]; then
     exit 1
   fi
 
-  notify "Select wallpaper" "$random_background"
   selected "$random_background"
   exit 1
 fi

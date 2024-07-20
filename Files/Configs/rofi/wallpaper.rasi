@@ -13,7 +13,7 @@ window {
     location:                    center;
     anchor:                      center;
     fullscreen:                  false;
-    width:                       900px;
+    width:                       1000px;
     x-offset:                    0px;
     y-offset:                    0px;
 
@@ -43,9 +43,12 @@ mainbox {
 /*****----- Inputbar -----*****/
 inputbar {
     enabled:                     true;
-    padding:                     10px 0px;
+    spacing:                     10px;
+    padding:                     20px 30px;
+    border-radius:               15px;
     background-color:            transparent;
     text-color:                  @foreground;
+    background-image:            url("~/hyprdots/Pictures/Wallpapers/hyprland.png", width);
     children:                    [ "prompt" ];
 }
 
@@ -58,8 +61,8 @@ prompt {
 /*****----- Listview -----*****/
 listview {
     enabled:                     true;
-    columns:                     4;
-    lines:                       5;
+    columns:                     5;
+    lines:                       4;
     cycle:                       true;
     dynamic:                     true;
     scrollbar:                   true;
@@ -133,10 +136,4 @@ element-icon {
 
 element-text {
     enabled:                     false;
-    background-color:            transparent;
-    text-color:                  inherit;
-    highlight:                   inherit;
-    cursor:                      inherit;
-    vertical-align:              0.0;
-    horizontal-align:            0.5;
 }

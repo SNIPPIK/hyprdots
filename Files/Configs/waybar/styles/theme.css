@@ -40,7 +40,7 @@ window#waybar {
 #custom-settings, #pulseaudio, #bluetooth, #network,
 
     /* System info group */
-#custom-system, #cpu, #memory, #disk, #power-profiles-daemon,
+#custom-system, #cpu, #memory, #disk,
 
     /* Power menu */
 #custom-power, #custom-lock, #custom-logout, #custom-reboot,

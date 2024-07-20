@@ -61,7 +61,7 @@
     "on-scroll-up": "playerctl position 5+",
     "on-scroll-down": "playerctl position 5-",
 
-    "exec": "bash ~/.config/hypr/scripts/playerctl.sh",
+    "exec": "bash ~/.config/hypr/scripts/toolbox/player.sh",
     "max-length": 30,
     "tooltip": true,
     "escape": true
