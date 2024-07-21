@@ -88,7 +88,14 @@ if [ ! -h ~/.fonts ]; then
 fi
 
 # Create link to wifi font
-cp ~/hyprdots/Files/Fonts/DejaVuSansMono-wifi-ramp.ttf ~/.fonts
+# shellcheck disable=SC2045
+for path in $(ls ~/hyprdots/Files/Fonts)
+do
+  if [ "$path" ]; then
+    cp ~/hyprdots/Files/Fonts/"$path" ~/.fonts
+  fi
+done
+
 fc-cache -f -v
 
 # -----------------------------------------------------

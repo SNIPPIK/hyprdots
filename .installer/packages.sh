@@ -7,14 +7,11 @@ sleep 1
 # Install from yay
 if yay
 then
-  echo Install from aur
-  yay -S wlogout
+  echo Find yay
 else
   git clone https://aur.archlinux.org/yay.git
   cd yay
   makepkg -si
-
-  yay -S wlogout
 fi
 
 # Run systemctl services

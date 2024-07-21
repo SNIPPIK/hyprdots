@@ -18,7 +18,8 @@
   // Power Menu
   "custom/power": {
     "format": "",
-    "on-click": "sleep 0.1 && wlogout",
+    "on-click": "~/.config/hypr/scripts/dialogs/powermenu.sh",
+    "escape": true,
     "tooltip-format": "Power Menu"
   },
   // Lock system
