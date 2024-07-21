@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 # CMDs
 uptime="`uptime -p | sed -e 's/up //g'`"
-lastlogin="`last $USER | head -n1 | tr -s ' ' | cut -d' ' -f5,6,7`"
 
 # Options
 shutdown=''
@@ -15,7 +14,7 @@ no=''
 # Rofi CMD
 rofi_cmd() {
 	rofi -dmenu \
-		-mesg " User: ${USER} |  Last Login: $lastlogin |  Uptime: $uptime" \
+		-mesg " User: ${USER} |  Uptime: $uptime" \
 		-theme power.rasi
 }
 # -----------------------------------------------------
