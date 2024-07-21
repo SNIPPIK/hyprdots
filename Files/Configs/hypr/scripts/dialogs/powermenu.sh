@@ -48,14 +48,12 @@ run_cmd() {
             systemctl reboot
         elif [[ "$1" == 'hibernate' ]]; then
             playerctl --all-players stop
-            hyprlock
             sleep 0.1s
             systemctl suspend-then-hibernate
         elif [[ "$1" == 'lock' ]]; then
             hyprlock
         elif [[ "$1" == 'suspend' ]]; then
             playerctl --all-players stop
-            hyprlock
             sleep 0.1s
             systemctl suspend
         elif [[ "$1" == 'logout' ]]; then
