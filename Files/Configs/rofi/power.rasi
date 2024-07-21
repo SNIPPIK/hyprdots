@@ -47,11 +47,11 @@ mainbox {
     enabled:                     true;
     spacing:                     15px;
     margin:                      0px;
-    padding:                     0px;
+    padding:                     20px;
     border:                      0px solid;
-    border-radius:               0px;
+    border-radius:               15px;
     border-color:                @selected;
-    background-color:            transparent;
+    background-color:            @background;
     children:                    [ "message", "listview" ];
 }
 
