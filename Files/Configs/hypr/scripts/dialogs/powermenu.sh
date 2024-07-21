@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # CMDs
 uptime="`uptime -p | sed -e 's/up //g'`"
-host=`hostname`
+lastlogin="`last $USER | head -n1 | tr -s ' ' | cut -d' ' -f5,6,7`"
 
 # Options
 shutdown=''
@@ -15,8 +15,7 @@ no=''
 # Rofi CMD
 rofi_cmd() {
 	rofi -dmenu \
-		-p "Goodbye ${USER}" \
-		-mesg "Uptime: $uptime" \
+		-mesg " User: ${USER} |  Last Login: $lastlogin |  Uptime: $uptime" \
 		-theme power.rasi
 }
 # -----------------------------------------------------
@@ -50,14 +49,14 @@ run_cmd() {
         elif [[ "$1" == 'hibernate' ]]; then
             playerctl --all-players stop
             hyprlock
-            sleep 0.5s
+            sleep 0.1s
             systemctl suspend-then-hibernate
         elif [[ "$1" == 'lock' ]]; then
             hyprlock
         elif [[ "$1" == 'suspend' ]]; then
             playerctl --all-players stop
             hyprlock
-            sleep 0.5s
+            sleep 0.1s
             systemctl suspend
         elif [[ "$1" == 'logout' ]]; then
             hyprctl dispatch exit

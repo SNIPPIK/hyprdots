@@ -24,8 +24,8 @@ USE_BUTTONS=YES
 window {
     /* properties for window widget */
     transparency:                "real";
-    location:                    south;
-    anchor:                      south;
+    location:                    center;
+    anchor:                      center;
     fullscreen:                  false;
     width:                       800px;
     x-offset:                    0px;
