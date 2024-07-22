@@ -1,18 +1,43 @@
+
+
 # Install arch packages
 echo Install need packages...
 sudo pacman -S hyprland hyprpaper hypridle hyprlock waybar otf-font-awesome noto-fonts-emoji rofi-wayland nm-connection-editor pipewire-pulse wireplumber bluez blueberry pavucontrol nautilus polkit-gnome swaync grim slurp pacman-contrib sddm fastfetch starship gnome-keyring ttf-nerd-fonts-symbols-mono ttf-dejavu yad
 
 sleep 1
 
-# Install from paru
-if paru
-then
-  echo Find paru
-else
-  git clone https://aur.archlinux.org/paru.git
-  cd paru
-  makepkg -si
-fi
+echo Select aur repository installer
+PS3='Please enter your choice: '
+options=("yay" "paru" "Quit")
+select opt in "${options[@]}"
+do
+    case $opt in
+        "yay")
+            if yay
+            then
+              echo Find yay
+            else
+              git clone https://aur.archlinux.org/yay.git
+              cd yay
+              makepkg -si
+            fi
+            ;;
+        "paru")
+            if paru
+            then
+              echo Find paru
+            else
+              git clone https://aur.archlinux.org/paru.git
+              cd paru
+              makepkg -si
+            fi
+            ;;
+        "Quit")
+            break
+            ;;
+        *) echo "invalid option $REPLY";;
+    esac
+done
 
 # Run systemctl services
 echo Run sddm service and bluetooth service
