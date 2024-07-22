@@ -1,8 +1,12 @@
-
-
 # Install arch packages
 echo Install need packages...
-sudo pacman -S hyprland hyprpaper hypridle hyprlock waybar otf-font-awesome noto-fonts-emoji rofi-wayland nm-connection-editor pipewire-pulse wireplumber bluez blueberry pavucontrol nautilus polkit-gnome swaync grim slurp pacman-contrib sddm fastfetch starship gnome-keyring ttf-nerd-fonts-symbols-mono ttf-dejavu yad
+#sudo pacman -S hyprland hyprpaper hypridle hyprlock waybar otf-font-awesome noto-fonts-emoji rofi-wayland nm-connection-editor pipewire-pulse wireplumber bluez blueberry pavucontrol nautilus polkit-gnome swaync grim slurp pacman-contrib sddm fastfetch starship gnome-keyring ttf-nerd-fonts-symbols-mono ttf-dejavu yad
+
+sleep 1
+
+# Run systemctl services
+echo Run sddm service and bluetooth service
+#sudo systemctl enable sddm && sudo systemctl enable bluetooth
 
 sleep 1
 
@@ -21,6 +25,7 @@ do
               cd yay
               makepkg -si
             fi
+            break
             ;;
         "paru")
             if paru
@@ -31,6 +36,7 @@ do
               cd paru
               makepkg -si
             fi
+            break
             ;;
         "Quit")
             break
@@ -38,7 +44,3 @@ do
         *) echo "invalid option $REPLY";;
     esac
 done
-
-# Run systemctl services
-echo Run sddm service and bluetooth service
-sudo systemctl enable sddm && sudo systemctl enable bluetooth
