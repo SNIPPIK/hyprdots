@@ -44,12 +44,15 @@ alias grub='sudo nano /boot/grub/grub.cfg && sudo grub-mkconfig -o /boot/grub/gr
 alias shutdown='systemctl poweroff'
 alias wifi='nmtui'
 
+alias update="sudo pacman -Syu"
+alias unused="sudo pacman -Qdtq | sudo pacman -Rsc -"
+
 # -----------------------------------------------------
 # DEVELOPMENT
 # -----------------------------------------------------
 alias dotsync="bash ~/.cache/sync.sh"
-alias update="sudo pacman -Syu"
-alias unused="sudo pacman -Qdtq | sudo pacman -Rsc -"
+alias hyprland-git="bash ~/hyprdots/.installer/hyprland.sh git"
+alias hyprland-stable="bash ~/hyprdots/.installer/hyprland.sh stable"
 
 # -----------------------------------------------------
 # START STARSHIP

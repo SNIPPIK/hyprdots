@@ -9,8 +9,17 @@
   // Kernel version
   "custom/kernel": {
     "format": "{}",
+    "tooltip-format": "Kernel version",
     "return-type": "string",
     "exec": "sleep 0.1 && uname --kernel-release"
+  },
+
+  // Hyprdots version
+  "custom/version": {
+    "format": "{}",
+    "tooltip-format": "Hyprdots version",
+    "return-type": "string",
+    "exec": "sleep 0.1 && cat ~/hyprdots/version"
   },
 
   // Updates Count
@@ -36,6 +45,7 @@
     "modules": [
       "custom/logo",
       "custom/kernel",
+      "custom/version",
       "idle_inhibitor",
       "custom/updates"
     ]
