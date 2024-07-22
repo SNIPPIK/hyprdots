@@ -4,13 +4,13 @@ sudo pacman -S hyprland hyprpaper hypridle hyprlock waybar otf-font-awesome noto
 
 sleep 1
 
-# Install from yay
-if yay
+# Install from paru
+if paru
 then
-  echo Find yay
+  echo Find paru
 else
-  git clone https://aur.archlinux.org/yay.git
-  cd yay
+  git clone https://aur.archlinux.org/paru.git
+  cd paru
   makepkg -si
 fi
 
