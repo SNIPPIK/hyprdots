@@ -15,14 +15,17 @@ configuration {
 /*****----- Global Properties -----*****/
 @import                          "colors.rasi"
 @import                          "fonts.rasi"
+@import                          "button.rasi"
 
 /*****----- Main Window -----*****/
 window {
+    transparency:                "real";
     location:                    center;
     anchor:                      center;
     fullscreen:                  false;
     width:                       500px;
     border-radius:               20px;
+
     cursor:                      "default";
     background-color:            transparent;
 }
@@ -69,25 +72,4 @@ listview {
     background-color:            transparent;
     text-color:                  @foreground;
     cursor:                      "default";
-}
-
-/*****----- Elements -----*****/
-element {
-    padding:                     60px 10px;
-    border-radius:               20px;
-    background-color:            @background-alt;
-    text-color:                  @foreground;
-    cursor:                      pointer;
-}
-element-text {
-    font:                        "feather 48";
-    background-color:            transparent;
-    text-color:                  inherit;
-    cursor:                      inherit;
-    vertical-align:              0.5;
-    horizontal-align:            0.5;
-}
-element selected.normal {
-    background-color:            var(selected);
-    text-color:                  var(background);
 }
