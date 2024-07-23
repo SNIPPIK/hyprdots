@@ -116,3 +116,6 @@ sudo pacman -S p7zip
 echo Unpack Fluent
 7z x "${HOME}"/hyprdots/Files/Theme/Fluent.zip -o"${HOME}"/.themes
 # -----------------------------------------------------
+
+#Install sddm theme
+bash ~/hyprdots/.installer/sddm.sh
