@@ -18,7 +18,7 @@ if [ "$1" == "git" ]; then
   fi
 
   echo Install wallpaper engine and idle manager...
-  sudo pacman -S hyprpaper hypridle libdispay-info xdg-desktop-portal-hyprland
+  sudo pacman -S hyprpaper hypridle libdisplay-info xdg-desktop-portal-hyprland
 fi
 
 # Remove git libs and install stable libs
@@ -27,5 +27,5 @@ if [ "$1" == "stable" ]; then
   sudo pacman -Rsc hyprland-git hyprutils-git hyprcursor-git hyprlang-git
 
   sleep 0.5
-  sudo pacman -S hyprland hyprutils hyprcursor hyprlang hyprpaper hypridle libdispay-info xdg-desktop-portal-hyprland
+  sudo pacman -S hyprland hyprutils hyprcursor hyprlang hyprpaper hypridle libdisplay-info xdg-desktop-portal-hyprland
 fi
