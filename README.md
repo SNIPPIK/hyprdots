@@ -21,10 +21,9 @@ While installing alongside another [DE](https://wiki.archlinux.org/title/Desktop
 > Change a hyprland animation -> in terminal `hyprland`\
 > Change a waybar workspace icons -> in terminal `wb`\
 > View a current playing track in waybar, need to enable -> in terminal `player`\
-> If not icons in terminal install "ttf-inconsolata-nerd" package
->
-To install, execute the following commands:
+> Removed auto dynamic color for border, how to enable, need enable in hyprland.conf
 
+To install, execute the following commands:
 ```shell
 sudo pacman -S git
 git clone https://github.com/SNIPPIK/hyprdots.git
@@ -40,6 +39,9 @@ dotsync
 ### Demo
 <details close>
   <summary>Click to open</summary>
+
+### v0.5.0 
+Coming soon
 
 ### v0.4.2
 https://github.com/user-attachments/assets/5ed135e8-7f4b-4bb9-8d18-47155d76ef8a

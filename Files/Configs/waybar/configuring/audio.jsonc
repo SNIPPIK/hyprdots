@@ -56,12 +56,12 @@
     "interval": 5,
     "return-type": "json",
 
-    "on-click": "sleep 0.1 && playerctl play-pause",
-    "on-click-right": "sleep 0.1 && playerctl next",
-    "on-scroll-up": "playerctl position 5+",
-    "on-scroll-down": "playerctl position 5-",
+    "on-click": "bash ~/.config/hypr/scripts/toolbox/player.sh toggle",
+    "on-click-right": "bash ~/.config/hypr/scripts/toolbox/player.sh skip",
+    "on-scroll-up": "bash ~/.config/hypr/scripts/toolbox/player.sh seek+",
+    "on-scroll-down": "bash ~/.config/hypr/scripts/toolbox/player.sh seek-",
 
-    "exec": "bash ~/.config/hypr/scripts/toolbox/player.sh",
+    "exec": "bash ~/.config/hypr/scripts/toolbox/player.sh info",
     "max-length": 30,
     "tooltip": true,
     "escape": true

@@ -50,6 +50,7 @@ run_cmd() {
             sleep 0.1s
             systemctl suspend-then-hibernate
         elif [[ "$1" == 'lock' ]]; then
+            playerctl pause
             hyprlock
         elif [[ "$1" == 'suspend' ]]; then
             playerctl --all-players stop

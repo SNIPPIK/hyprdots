@@ -8,7 +8,8 @@
 
   // Current language
   "hyprland/language": {
-    "format": " {short}"
+    "format": " {short}",
+    "on-click": "bash ~/.config/hypr/scripts/dialog.sh keybindings"
   },
 
   // hypridle switcher
