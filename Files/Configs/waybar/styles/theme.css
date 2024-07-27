@@ -99,7 +99,7 @@ window#waybar {
 
 /* Workspace image */
 #custom-logo {
-    background-image: image(url("../icons/artics.png"));
+    background-image: image(url("../icons/arch.png"));
     background-size: 15px 15px;
     background-repeat: no-repeat;
     background-position: center;

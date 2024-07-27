@@ -1,4 +1,4 @@
-[<img align="right" alt="Avatar" width="px" src="/Files/Configs/waybar/icons/artics.png" />]()
+[<img align="right" alt="Avatar" width="150px" src="/Files/Configs/waybar/icons/arch.png" />]()
 
 # hyprdots
 - [`WIKI`](https://wiki.hyprland.org/)
