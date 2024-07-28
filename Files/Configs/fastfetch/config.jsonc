@@ -3,46 +3,52 @@
   "logo": {
     "type": "small"
   },
+  "display": {
+    "separator": ">  ",
+    "color": {
+      "separator": "red"
+    },
+    "constants": [
+      "───────────────────────────────────────────────────────────────────────────",
+      "│\u001b[75C│\u001b[75D"
+    ]
+  },
   "modules": [
     {
-      "key": "██ Distro",
-      "keyColor": "38;5;210",
-      "type": "os"
+      "format": "{#1}{#keys}╭{$1}╮\u001b[76D {user-name-colored}{at-symbol-colored}{host-name-colored} 🖥  ",
+      "type": "title"
     },
     {
-      "key": "██ Kernel",
-      "keyColor": "38;5;84",
+      "key": "{$2}{#31}{icon}   ",
       "type": "kernel"
     },
     {
-      "key": "██ Shell",
-      "keyColor": "38;5;147",
-      "type": "shell"
+      "key": "{$2}{#32}{icon}   ",
+      "type": "uptime"
     },
     {
-      "key": "██ Packages",
-      "keyColor": "38;5;200",
+      "key": "{$2}{#33}{icon}   ",
       "type": "packages"
     },
     {
-      "key": "██ WM",
-      "keyColor": "38;5;44",
+      "key": "{$2}{#33}{icon}   ",
       "type": "wm"
     },
     {
-      "key": "██ CPU",
-      "keyColor": "38;5;75",
+      "key": "{$2}{#35}{icon}   ",
       "type": "cpu"
     },
     {
-      "key": "██ GPU",
-      "keyColor": "cyan",
+      "key": "{$2}{#34}{icon}   ",
       "type": "gpu"
     },
     {
-      "key": "██ Memory",
-      "keyColor": "38;5;123",
+      "key": "{$2}{#32}{icon}   ",
       "type": "memory"
+    },
+    {
+      "format": "{#1}{#keys}╰{$1}╯",
+      "type": "custom"
     }
   ]
 }
