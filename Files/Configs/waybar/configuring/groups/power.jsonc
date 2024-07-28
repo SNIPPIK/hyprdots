@@ -18,26 +18,31 @@
   // Power Menu
   "custom/power": {
     "format": "",
-    "on-click": "~/.config/hypr/scripts/dialogs/powermenu.sh",
+    "tooltip-format": "Power Menu",
     "escape": true,
-    "tooltip-format": "Power Menu"
+
+    "on-click": "~/.config/hypr/scripts/dialogs/powermenu.sh",
+    "on-click-right": "~/.config/hypr/scripts/dialogs/powermenu.sh"
   },
   // Lock system
   "custom/lock": {
     "format": "",
+    "tooltip-format": "Lock",
     "on-click": "sleep 0.1 && playerctl pause && hyprlock",
-    "tooltip-format": "Lock"
+    "on-click-right": "sleep 0.1 && playerctl pause && hyprlock"
   },
   // Logout system
   "custom/logout": {
     "format": "",
+    "tooltip-format": "Logout",
     "on-click": "sleep 0.1 && hyprctl dispatch exit",
-    "tooltip-format": "Logout"
+    "on-click-right": "sleep 0.1 && hyprctl dispatch exit"
   },
   // Reboot system
   "custom/reboot": {
     "format": "\uf0e2",
+    "tooltip-format": "Reboot",
     "on-click": "sleep 0.1 && systemctl reboot",
-    "tooltip-format": "Reboot"
+    "on-click-right": "sleep 0.1 && systemctl reboot"
   }
 }

@@ -2,33 +2,36 @@
   // Arch logo
   "custom/logo": {
     "format": "{ }",
-    "on-click": "sleep 0.2 && rofi -show drun -theme ~/.config/rofi/fullscreen.rasi",
-    "tooltip-format": "Left: Open the application launcher\nRight: Remove unused packages"
+    "on-click": "sleep 0.2 && bash ~/.config/rofi/run.sh fullscreen",
+    "on-click-right": "sleep 0.2 && bash ~/.config/rofi/run.sh fullscreen"
   },
 
   // Kernel version
   "custom/kernel": {
     "format": "{}",
-    "tooltip-format": "Kernel version",
     "return-type": "string",
-    "exec": "sleep 0.1 && uname --kernel-release"
+    "tooltip-format": "Kernel version",
+    "exec": "sleep 0.1 && uname --kernel-release",
+
+    "on-click": "sleep 0.2 && bash ~/.config/hypr/scripts/dialog.sh distro",
+    "on-click-right": "sleep 0.2 && bash ~/.config/hypr/scripts/dialog.sh distro"
   },
 
   // Hyprdots version
   "custom/version": {
     "format": "{}",
-    "tooltip-format": "Hyprdots version",
     "return-type": "string",
+    "tooltip-format": "Hyprdots version",
     "exec": "sleep 0.1 && cat ~/hyprdots/version"
   },
 
   // Updates Count
   "custom/updates": {
+    "signal": 8,
     "format": " {}",
+    "return-type": "json",
     "restart-interval": 400,
     "exec": "bash ~/.config/hypr/scripts/toolbox/updates.sh check",
-    "return-type": "json",
-    "signal": 8,
 
     "on-click": "bash ~/.config/hypr/scripts/dialog.sh update",
     "on-click-right": "bash ~/.config/hypr/scripts/dialog.sh unused"

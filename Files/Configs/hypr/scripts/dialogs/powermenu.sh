@@ -15,7 +15,7 @@ no=''
 rofi_cmd() {
 	rofi -dmenu \
 		-mesg " User: ${USER} |  Uptime: $uptime" \
-		-theme power.rasi
+		-theme windows/power.rasi
 }
 # -----------------------------------------------------
 # Confirmation CMD
@@ -23,7 +23,7 @@ confirm_cmd() {
 	rofi -dmenu \
 		-p 'Confirmation' \
 		-mesg "Are you Sure? $1?" \
-		-theme shared/confirm.rasi
+		-theme windows/confirm.rasi
 }
 # -----------------------------------------------------
 # Ask for confirmation

@@ -44,7 +44,7 @@ rofi_cmd() {
   rofi -dmenu \
   -i \
   -p "Select wallpaper to change" \
-  -theme $HOME/.config/rofi/wallpaper
+  -theme windows/wallpaper
 }
 # -----------------------------------------------------
 
