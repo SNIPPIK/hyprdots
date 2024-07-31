@@ -8,7 +8,7 @@ space="                                                                         
 # -----------------------------------------------------
 # Notification a change wallpaper
 notify() {
-  notify-send "Player | $2" "$1" --expire-time=1500
+  notify-send "Player | $2" "$1" --expire-time=1500 --transient
 }
 
 # -----------------------------------------------------

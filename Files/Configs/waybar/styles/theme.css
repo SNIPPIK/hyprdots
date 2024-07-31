@@ -115,17 +115,17 @@ window#waybar {
 }
 
 /* -----------------------------------------------------
- * Workspace active button
- * ----------------------------------------------------- */
-#workspaces button.active {
-    color: @workspace-color-active;
-}
-
-/* -----------------------------------------------------
  * Workspace selected button
  * ----------------------------------------------------- */
 #workspaces button:hover {
     color: @color-text;
+}
+
+/* -----------------------------------------------------
+ * Workspace active button
+ * ----------------------------------------------------- */
+#workspaces button.active {
+    color: @workspace-color-active;
 }
 
 /* -----------------------------------------------------

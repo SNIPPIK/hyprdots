@@ -21,8 +21,8 @@
     "tooltip-format": "Power Menu",
     "escape": true,
 
-    "on-click": "~/.config/hypr/scripts/dialogs/powermenu.sh",
-    "on-click-right": "~/.config/hypr/scripts/dialogs/powermenu.sh"
+    "on-click": "bash ~/.config/hypr/scripts/dialogs/powermenu.sh",
+    "on-click-right": "bash ~/.config/hypr/scripts/dialogs/powermenu.sh"
   },
   // Lock system
   "custom/lock": {

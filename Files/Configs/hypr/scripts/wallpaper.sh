@@ -25,9 +25,14 @@ selected() {
 }
 # -----------------------------------------------------
 # Load last wallpaper
+# shellcheck disable=SC2120
 last() {
      if [ -f "$cache_file" ]; then
          file=$(cat "$cache_file")
+
+         if [ -n "$1" ]; then
+            notify "$1" "$file"
+         fi
 
          sleep 1
          selected "$file"
@@ -36,7 +41,7 @@ last() {
 # -----------------------------------------------------
 # Notification a change wallpaper
 notify() {
-  notify-send "Hyprpaper" "$1" --icon="$2" --expire-time=700
+  notify-send "Hyprpaper" "$1" --icon="$2" --expire-time=1500 --transient
 }
 # -----------------------------------------------------
 # Run rofi
@@ -52,16 +57,15 @@ rofi_cmd() {
 # -----------------------------------------------------
 # Load last wallpaper
 if [ "$1" == "last" ]; then
-  last "$1"
+  last "Load last wallpaper"
 fi
 
 # -----------------------------------------------------
 # Restart hyprpaper
 if [ "$1" == "restart" ]; then
-  bash ~/.config/hypr/scripts/utils/reload.sh hyprpaper
+  ~/.config/hypr/scripts/utils/reload.sh hyprpaper
 
-  sleep 5
-  last "$1"
+  last "Restart wallpaper engine"
   exit 1
 fi
 
@@ -74,7 +78,7 @@ if [ "$1" == "random" ]; then
   if [ -d "$WALLPAPERS_DIR" ]; then
     random_background="$(find -L "$WALLPAPERS_DIR" -type f | shuf -n 1)"
   else
-    notify "Fail select wallpaper. Not found $WALLPAPERS_DIR" ~/.config/wlogout/icons/lock.png
+    notify "Fail select wallpaper. Not found $WALLPAPERS_DIR"
     exit 1
   fi
 
@@ -88,6 +92,7 @@ if [ "$1" == "select" ]; then
   selected_wallpaper=$(find "${WALLPAPERS_DIR}" -type f -printf "%P\n" | sort | while read -r A ; do echo -en "$A\x00icon\x1f""${WALLPAPERS_DIR}"/"$A\n" ; done | rofi_cmd)
 
   if [[ $selected_wallpaper == "" ]]; then
+    notify "Fail select wallpaper. Not found $WALLPAPERS_DIR" error_image
       exit 1
   fi
   selected "$WALLPAPERS_DIR/$selected_wallpaper"
