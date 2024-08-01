@@ -22,7 +22,7 @@ stringToLen() {
 # Get list packages
 packages() {
   checkupdates --nocolor
-  pacman -Qm #| aur vercmp
+  pacman -Qm | aur vercmp
 }
 # -----------------------------------------------------
 
