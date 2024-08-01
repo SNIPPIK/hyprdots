@@ -9,7 +9,7 @@
   // Current language
   "hyprland/language": {
     "format": " {short}",
-    "on-click": "bash ~/.config/hypr/scripts/dialog.sh keybindings"
+    "on-click": "bash ~/.config/hypr/scripts/dialog.sh float keybindings"
   },
 
   // hypridle switcher

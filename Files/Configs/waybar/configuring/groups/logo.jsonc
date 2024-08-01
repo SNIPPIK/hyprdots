@@ -11,10 +11,7 @@
     "format": "{}",
     "return-type": "string",
     "tooltip-format": "Kernel version",
-    "exec": "sleep 0.1 && uname --kernel-release",
-
-    "on-click": "sleep 0.2 && bash ~/.config/hypr/scripts/dialog.sh distro",
-    "on-click-right": "sleep 0.2 && bash ~/.config/hypr/scripts/dialog.sh distro"
+    "exec": "sleep 0.1 && uname --kernel-release"
   },
 
   // Hyprdots version
@@ -33,8 +30,8 @@
     "restart-interval": 400,
     "exec": "bash ~/.config/hypr/scripts/toolbox/updates.sh check",
 
-    "on-click": "bash ~/.config/hypr/scripts/dialog.sh update",
-    "on-click-right": "bash ~/.config/hypr/scripts/dialog.sh unused"
+    "on-click": "bash ~/.config/hypr/scripts/dialog.sh float update",
+    "on-click-right": "bash ~/.config/hypr/scripts/dialog.sh float unused"
   },
 
   // Group logo

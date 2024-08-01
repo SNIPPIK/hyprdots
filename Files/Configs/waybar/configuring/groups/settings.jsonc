@@ -17,8 +17,8 @@
   // Settings
   "custom/settings": {
     "format": "",
-    "tooltip-format": "Settings tray\nLeft: Open settings cli",
-    "on-click": "bash ~/.config/hypr/scripts/dialog.sh settings",
-    "on-click-right": "bash ~/.config/hypr/scripts/dialog.sh settings"
+    "tooltip-format": "Settings",
+    "on-click": "bash ~/.config/hypr/scripts/dialog.sh float settings",
+    "on-click-right": "bash ~/.config/hypr/scripts/dialog.sh float settings"
   }
 }

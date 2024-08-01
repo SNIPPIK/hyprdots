@@ -11,7 +11,8 @@
       "cpu",
       "memory",
       "disk",
-      "temperature"
+      "temperature",
+      "privacy"
     ]
   },
 
@@ -45,5 +46,28 @@
     "critical-threshold": 80,
     "format-critical": "{temperatureC}°C ",
     "format": "{temperatureC}°C "
+  },
+  // Privacy - screenshare, audio-out, audio-in
+  "privacy": {
+    "icon-spacing": 4,
+    "icon-size": 18,
+    "transition-duration": 250,
+    "modules": [
+      {
+        "type": "screenshare",
+        "tooltip": true,
+        "tooltip-icon-size": 24
+      },
+      {
+        "type": "audio-out",
+        "tooltip": true,
+        "tooltip-icon-size": 24
+      },
+      {
+        "type": "audio-in",
+        "tooltip": true,
+        "tooltip-icon-size": 24
+      }
+    ]
   }
 }
