@@ -92,8 +92,8 @@ if [ "$1" == "select" ]; then
   selected_wallpaper=$(find "${WALLPAPERS_DIR}" -type f -printf "%P\n" | sort | while read -r A ; do echo -en "$A\x00icon\x1f""${WALLPAPERS_DIR}"/"$A\n" ; done | rofi_cmd)
 
   if [[ $selected_wallpaper == "" ]]; then
-    notify "Fail select wallpaper. Not found $WALLPAPERS_DIR" error_image
-      exit 1
+     notify "Fail select wallpaper. Not found $WALLPAPERS_DIR" error_image
+     exit 1
   fi
   selected "$WALLPAPERS_DIR/$selected_wallpaper"
 fi

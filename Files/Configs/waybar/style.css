@@ -1,2 +1,152 @@
-@import "styles/color.css";
-@import "styles/theme.css";
+@import "colors/dark.css";
+
+/* -----------------------------------------------------
+ * General
+ * ----------------------------------------------------- */
+* {
+    border: none;
+    font-weight: bold;
+    font-size: 12px;
+    min-height: 10px;
+    font-family: Font Awesome, Roboto, Arial, sans-serif;
+}
+
+/* -----------------------------------------------------
+ * Window
+ * ----------------------------------------------------- */
+#window {
+    padding-left: 20px;
+    padding-right: 10px;
+    background: transparent;
+    color: @color-text;
+    font-size:16px;
+    font-weight:normal;
+    opacity:0.8;
+}
+
+window#waybar {
+    background: none;
+}
+
+/* -----------------------------------------------------
+ * BUTTONs
+ * ----------------------------------------------------- */
+/* Any */
+#custom-wallpaper, #custom-notification, #temperature,
+#tray, #battery, #clock, #language, #idle_inhibitor, #custom-media,
+
+    /* Logo group */
+#custom-logo, #custom-kernel, #custom-updates, #custom-version, #privacy,
+
+    /* Settings group */
+#custom-settings, #pulseaudio, #bluetooth, #network,
+
+    /* System info group */
+#custom-system, #cpu, #memory, #disk,
+
+    /* Power menu */
+#custom-power, #custom-lock, #custom-logout, #custom-reboot,
+
+    /* Workspace */
+#workspaces
+{
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-bottom: 1px;
+
+    color: @color-text;
+    background: @background-button;
+
+    border: 5px solid @background-border;
+}
+
+/* -----------------------------------------------------
+ * Border
+ * ----------------------------------------------------- */
+#custom-logo, #language, #custom-wallpaper, #custom-media {
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+}
+
+#custom-system, #custom-power, #workspaces, #custom-media {
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+
+/* -----------------------------------------------------
+ * Padding
+ * ----------------------------------------------------- */
+#custom-wallpaper, #custom-logo {
+    margin-left: 8px;
+}
+
+#custom-power, #custom-system {
+    margin-right: 8px;
+}
+
+#tray {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+/* -----------------------------------------------------
+ * Workspace
+ * ----------------------------------------------------- */
+#workspaces {
+    padding-left: 0px;
+    background: @background-button;
+    transition: none;
+}
+
+/* Workspace image */
+#custom-logo {
+    background-image: image(url("icons/arch.png"));
+    background-size: 15px 15px;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding-left: 20px;
+}
+/* -----------------------------------------------------
+ * Workspace buttons
+ * ----------------------------------------------------- */
+#workspaces button {
+    transition: none;
+    color: @color-text;
+    background: transparent;
+}
+
+/* -----------------------------------------------------
+ * Workspace selected button
+ * ----------------------------------------------------- */
+#workspaces button:hover {
+    color: @color-text;
+}
+
+/* -----------------------------------------------------
+ * Workspace active button
+ * ----------------------------------------------------- */
+#workspaces button.active {
+    color: @workspace-color-active;
+}
+
+/* -----------------------------------------------------
+ * Workspace empty button
+ * ----------------------------------------------------- */
+#workspaces button.empty {
+    color: @workspace-color-not-active;
+}
+
+
+tooltip {
+    border-radius: 5px;
+    padding: 2px;
+    border: 2px solid @background-border;
+    background: @background-button;
+    color: @color-text;
+}
+
+tooltip label {
+    font-size: 14px;
+    color: @color-text;
+}
