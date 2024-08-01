@@ -7,8 +7,8 @@ sleep 5
 sudo pacman -S qt6-5compact qt6-declarative qt6-svg
 
 echo
-echo Pls added in file /etc/sddm.conf.d/theme.conf.user
-echo [Theme]
-echo Current=neon
-sleep 5
-sudo nano /etc/sddm.conf.d/theme.conf.user
+echo Needed added sddm and create config
+su
+sudo mkdir /etc/sddm.conf.d/
+echo "[Theme]
+Current=neon" > "/etc/sddm.conf.d/theme.conf.user"

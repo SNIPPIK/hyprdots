@@ -34,7 +34,7 @@ window#waybar {
 #tray, #battery, #clock, #language, #idle_inhibitor, #custom-media,
 
     /* Logo group */
-#custom-logo, #custom-kernel, #custom-updates, #custom-version,
+#custom-logo, #custom-kernel, #custom-updates, #custom-version, #privacy,
 
     /* Settings group */
 #custom-settings, #pulseaudio, #bluetooth, #network,

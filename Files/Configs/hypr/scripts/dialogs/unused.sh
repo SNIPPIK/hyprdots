@@ -13,7 +13,6 @@ sleep 0.2
 clear
 echo "Remove unused flatpak"
 flatpak uninstall --unused
-flatpak repair
 
 echo " "
 read -p "Press enter to close"
