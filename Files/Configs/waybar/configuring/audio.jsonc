@@ -26,7 +26,7 @@
     "format-source-muted": "",
     "tooltip-format": "{volume}% {format_source}",
 
-    "on-click": "bash ~/.config/hypr/scripts/utils/volume.sh input-set+",
+    "on-click": "bash ~/.config/hypr/scripts/utils/volume.sh input-mute",
     "on-click-right": "pavucontrol",
     "on-scroll-up": "bash ~/.config/hypr/scripts/utils/volume.sh input-set+",
     "on-scroll-down": "bash ~/.config/hypr/scripts/utils/volume.sh input-set-"

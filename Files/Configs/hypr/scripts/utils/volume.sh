@@ -3,7 +3,7 @@ dir=~/.config/hypr/icons/
 # -----------------------------------------------------
 # Notification a change wallpaper
 notify() {
-  notify-send "Volume" "$1" --icon="$2" --expire-time=1500 --transient
+  notify-send "Volume" "$1" --icon="$2" --expire-time=700 --transient
 }
 # Volume output
 output_volume() {
