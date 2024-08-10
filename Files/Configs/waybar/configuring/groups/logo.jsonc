@@ -8,7 +8,7 @@
 
   // Kernel version
   "custom/kernel": {
-    "format": "{}",
+    "format": "🖥  {}",
     "return-type": "string",
     "tooltip-format": "Kernel version",
     "exec": "sleep 0.1 && uname --kernel-release"
@@ -16,7 +16,7 @@
 
   // Hyprdots version
   "custom/version": {
-    "format": "{}",
+    "format": "  {}",
     "return-type": "string",
     "tooltip-format": "Hyprdots version",
     "exec": "sleep 0.1 && cat ~/hyprdots/version"
