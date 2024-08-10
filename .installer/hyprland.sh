@@ -2,7 +2,7 @@
 # Remove current libs and install git libs
 if [ "$1" == "git" ]; then
   echo Remove current packages...
-  sudo pacman -Rsc hyprland hyprutils hyprcursor hyprlang hyprlock xdg-desktop-portal-wlr
+  sudo pacman -Rsc hyprland hyprutils hyprcursor hyprlang hyprlock
 
   sleep 0.5
 
@@ -18,7 +18,7 @@ if [ "$1" == "git" ]; then
   fi
 
   echo Install wallpaper engine and idle manager...
-  sudo pacman -S hyprpaper hypridle libdisplay-info xdg-desktop-portal-hyprland
+  sudo pacman -S hyprpaper hypridle libdisplay-info xdg-desktop-portal-hyprland xorg-xinput
 fi
 
 # Remove git libs and install stable libs
@@ -27,5 +27,5 @@ if [ "$1" == "stable" ]; then
   sudo pacman -Rsc hyprland-git hyprutils-git hyprcursor-git hyprlang-git hyprlock-git
 
   sleep 0.5
-  sudo pacman -S hyprland hyprutils hyprcursor hyprlang hyprpaper hypridle hyprlock libdisplay-info xdg-desktop-portal-hyprland
+  sudo pacman -S hyprland hyprutils hyprcursor hyprlang hyprpaper hypridle hyprlock libdisplay-info xdg-desktop-portal-hyprland xorg-xinput
 fi
