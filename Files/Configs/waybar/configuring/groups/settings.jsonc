@@ -1,4 +1,12 @@
 {
+  // Settings
+  "custom/settings": {
+    "format": "",
+    "tooltip-format": "Settings",
+    "on-click": "bash ~/.config/hypr/scripts/dialog.sh float settings",
+    "on-click-right": "bash ~/.config/hypr/scripts/dialog.sh float settings"
+  },
+
   "group/settings": {
     "orientation": "inherit",
     "drawer": {
@@ -10,15 +18,8 @@
       "custom/settings",
       "pulseaudio#output",
       "pulseaudio#input",
-      "bluetooth"
+      "bluetooth",
+      "idle_inhibitor"
     ]
-  },
-
-  // Settings
-  "custom/settings": {
-    "format": "",
-    "tooltip-format": "Settings",
-    "on-click": "bash ~/.config/hypr/scripts/dialog.sh float settings",
-    "on-click-right": "bash ~/.config/hypr/scripts/dialog.sh float settings"
   }
 }

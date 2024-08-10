@@ -36,10 +36,10 @@ window#waybar {
 #tray, #battery, #clock, #language, #idle_inhibitor, #custom-media,
 
     /* Logo group */
-#custom-logo, #custom-pacman, #custom-kernel, #custom-updates, #custom-version, #privacy,
+#custom-logo, #custom-pacman, #custom-kernel, #custom-updates, #custom-version, #custom-hyprland,
 
     /* Settings group */
-#custom-settings, #pulseaudio, #bluetooth, #network,
+#custom-settings, #pulseaudio, #bluetooth, #network, #privacy,
 
     /* System info group */
 #custom-system, #cpu, #memory, #disk,

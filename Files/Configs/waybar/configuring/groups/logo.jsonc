@@ -6,12 +6,38 @@
     "on-click-right": "sleep 0.2 && bash ~/.config/rofi/run.sh fullscreen"
   },
 
+  // Group logo
+  "group/logo": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 350,
+      "children-class": "not-memory",
+      "transition-left-to-right": true
+    },
+    "modules": [
+      "custom/logo",
+      "custom/pacman",
+      "custom/kernel",
+      "custom/version",
+      "custom/hyprland",
+      "custom/updates"
+    ]
+  },
+
   // Kernel version
   "custom/kernel": {
-    "format": "🖥  {}",
+    "format": "  {}",
     "return-type": "string",
     "tooltip-format": "Kernel version",
     "exec": "sleep 0.1 && uname --kernel-release"
+  },
+
+  // Current hyprland version
+  "custom/hyprland": {
+    "format": "🖥  {}",
+    "return-type": "string",
+    "tooltip-format": "Hyprland version",
+    "exec": "sleep 0.1 && pacman -Qe hyprland"
   },
 
   // Hyprdots version
@@ -41,23 +67,5 @@
 
     "on-click": "bash ~/.config/hypr/scripts/dialog.sh float update",
     "on-click-right": "bash ~/.config/hypr/scripts/dialog.sh float unused"
-  },
-
-  // Group logo
-  "group/logo": {
-    "orientation": "inherit",
-    "drawer": {
-      "transition-duration": 350,
-      "children-class": "not-memory",
-      "transition-left-to-right": true
-    },
-    "modules": [
-      "custom/logo",
-      "custom/pacman",
-      "custom/kernel",
-      "custom/version",
-      "idle_inhibitor",
-      "custom/updates"
-    ]
   }
 }

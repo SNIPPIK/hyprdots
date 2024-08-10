@@ -65,16 +65,16 @@
 
   // Battery
   "battery": {
-    "interval": 5,
+    "interval": 45,
     "states": {
-      "good": 95,
+      "good": 80,
       "warning": 30,
       "critical": 15
     },
     "format": "{icon}   {capacity}%",
+    "format-alt": "{icon}  {time}",
     "format-charging": "  {capacity}%",
     "format-plugged": "  {capacity}%",
-    "format-alt": "{icon}  {time}",
     "format-icons": [" ", " ", " ", " ", " "]
   }
 }

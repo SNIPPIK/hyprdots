@@ -1,4 +1,10 @@
 {
+  // System
+  "custom/system": {
+    "format": "",
+    "tooltip-format": "System info tray"
+  },
+
   "group/system": {
     "orientation": "inherit",
     "drawer": {
@@ -16,11 +22,6 @@
     ]
   },
 
-  // System
-  "custom/system": {
-    "format": "",
-    "tooltip-format": "System info tray"
-  },
   // Cpu usage
   "cpu": {      // CPU
     "interval": 10,
