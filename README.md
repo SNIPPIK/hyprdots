@@ -41,7 +41,7 @@ dotsync
   <summary>Click to open</summary>
 
 ### v0.5.0 
-Coming soon
+https://github.com/user-attachments/assets/f972c4fb-51c6-47e2-bd4a-0405a0e2ad43
 
 ### v0.4.2
 https://github.com/user-attachments/assets/5ed135e8-7f4b-4bb9-8d18-47155d76ef8a
