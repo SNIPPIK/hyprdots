@@ -22,6 +22,15 @@
     "exec": "sleep 0.1 && cat ~/hyprdots/version"
   },
 
+  // Total packages
+  "custom/pacman": {
+    "format": "󰏖  {}",
+    "return-type": "string",
+    "tooltip-format": "Total packages",
+    "restart-interval": 1500,
+    "exec": "pacman -Q | wc -l"
+  },
+
   // Updates Count
   "custom/updates": {
     "signal": 8,
@@ -44,6 +53,7 @@
     },
     "modules": [
       "custom/logo",
+      "custom/pacman",
       "custom/kernel",
       "custom/version",
       "idle_inhibitor",

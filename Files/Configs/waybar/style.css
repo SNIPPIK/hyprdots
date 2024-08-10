@@ -36,7 +36,7 @@ window#waybar {
 #tray, #battery, #clock, #language, #idle_inhibitor, #custom-media,
 
     /* Logo group */
-#custom-logo, #custom-kernel, #custom-updates, #custom-version, #privacy,
+#custom-logo, #custom-pacman, #custom-kernel, #custom-updates, #custom-version, #privacy,
 
     /* Settings group */
 #custom-settings, #pulseaudio, #bluetooth, #network,
@@ -125,10 +125,10 @@ window#waybar {
     background-position: center;
 }
 
-/* Logo Icon */
+/* Logo Button */
 #custom-logo {
-    padding-left: 17px;
-    padding-right: 17px;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 /* -----------------------------------------------------
