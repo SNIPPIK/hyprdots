@@ -17,7 +17,7 @@ if [ "$1" == "git" ]; then
       exit 1
   fi
 
-  echo Install wallpaper engine and idle manager...
+  echo Installing wallpaper engine and idle manager...
   sudo pacman -S hyprpaper hypridle libdisplay-info xdg-desktop-portal-hyprland xorg-xinput
 fi
 

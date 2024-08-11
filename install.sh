@@ -99,7 +99,7 @@ done
 fc-cache -f -v
 
 # -----------------------------------------------------
-echo Install packages
+echo Installing packages
 choice
 
 # Install packages and yay
@@ -119,3 +119,6 @@ echo Unpack Fluent
 
 #Install sddm theme
 bash ~/hyprdots/.installer/sddm.sh
+
+# Install grub theme
+bash ~/hyprdots/.installer/grub.sh
