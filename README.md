@@ -2,7 +2,8 @@
 
 # hyprdots
 - [`WIKI`](https://wiki.hyprland.org/)
-- [`Wallpaper pack`](https://drive.google.com/file/d/12c7wgWHIAVtFP9TloSiHun5OWWA5OVtm/view?usp=sharing)
+- [`My wallpaper pack`](https://github.com/SNIPPIK/wallpapers)
+- [`decaycs/wallpapers`](https://github.com/decaycs/wallpapers)
 
 ## Installation
 The installation script is designed for a minimal [Arch Linux](https://wiki.archlinux.org/title/Arch_Linux) install, but **may** work on some [Arch-based distros](https://wiki.archlinux.org/title/Arch-based_distributions).
