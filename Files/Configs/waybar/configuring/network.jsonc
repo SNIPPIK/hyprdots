@@ -1,5 +1,6 @@
 {
-  "network": {   // Network
+  // Network
+  "network": {
     "format": "{icon}",
     "format-icons": {
       "wifi": ["\uE0D5", "\uE0D6", "\uE0D7", "\uE0D9"],
