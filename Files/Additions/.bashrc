@@ -47,8 +47,6 @@ alias wifi='nmtui'
 alias update="sudo pacman -Syu"
 alias unused="sudo pacman -Qdtq | sudo pacman -Rsc -"
 
-alias dpi="bash ~/.config/hypr/scripts/utils/DPI.sh"
-
 # -----------------------------------------------------
 # DEVELOPMENT
 # -----------------------------------------------------
