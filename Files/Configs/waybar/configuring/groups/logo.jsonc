@@ -17,10 +17,9 @@
     "modules": [
       "custom/logo",
       "custom/pacman",
-      "custom/kernel",
       "custom/version",
-      "custom/hyprland",
-      "custom/updates"
+      "custom/kernel",
+      "custom/hyprland"
     ]
   },
 
@@ -48,21 +47,12 @@
     "exec": "sleep 0.1 && cat ~/hyprdots/version"
   },
 
-  // Total packages
+  // Updates Count | Total packages
   "custom/pacman": {
-    "format": "󰏖  {}",
-    "return-type": "string",
-    "tooltip-format": "Total packages",
-    "restart-interval": 1500,
-    "exec": "pacman -Q | wc -l"
-  },
-
-  // Updates Count
-  "custom/updates": {
     "signal": 8,
-    "format": " {}",
+    "format": "{}",
     "return-type": "json",
-    "restart-interval": 400,
+    "restart-interval": 600,
     "exec": "bash ~/.config/hypr/scripts/toolbox/updates.sh check",
 
     "on-click": "bash ~/.config/hypr/scripts/dialog.sh float update",

@@ -28,10 +28,12 @@ packages() {
 
 # Check updates
 if [ "$1" == "check" ]; then
-  # Crete list a packages
   mapfile -t updates < <(packages)
-  text=${#updates[@]}
-  tooltip="<b>$text updates (arch) </b>\n"
+  updated=${#updates[@]}
+  total="$(pacman -Q | wc -l)"
+
+  text=" ${updated} | 󰏖  $(pacman -Q | wc -l)"
+  tooltip=" <b>$updated updates | 󰏖 Packages $total</b>\n"
   tooltip+="<b>$(stringToLen "Package" 20) # $(stringToLen "Current" 20) # $(stringToLen "Next" 20)</b>\n"
 
   for i in "${updates[@]}"; do
