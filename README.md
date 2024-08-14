@@ -37,6 +37,15 @@ To update, execute the following command:
 dotsync
 ```
 
+[<img align="" alt="image" width="150px" src="/.images/1.png" />]()
+[<img align="" alt="image" width="150px" src="/.images/2.png" />]()
+[<img align="" alt="image" width="150px" src="/.images/3.png" />]()
+[<img align="" alt="image" width="150px" src="/.images/4.png" />]()
+[<img align="" alt="image" width="150px" src="/.images/5.png" />]()
+[<img align="" alt="image" width="150px" src="/.images/6.png" />]()
+[<img align="" alt="image" width="150px" src="/.images/7.png" />]()
+[<img align="" alt="image" width="150px" src="/.images/8.png" />]()
+
 ### Demo
 <details close>
   <summary>Click to open</summary>
