@@ -21,7 +21,7 @@ selected() {
 
     #Unload wallpaper image
     sleep 2
-    hyprctl hyprpaper unload "$1"
+    hyprctl hyprpaper unload all
 }
 # -----------------------------------------------------
 # Load last wallpaper
@@ -31,16 +31,22 @@ last() {
          file=$(cat "$cache_file")
 
          if [ -n "$1" ]; then
-            notify "$1" "$file"
+            notify_tr "$1" "$file"
          fi
 
          sleep 1
          selected "$file"
+     else
+       notify "Not found wallpaper cache file \n- $cache_file"
      fi
 }
 # -----------------------------------------------------
 # Notification a change wallpaper
 notify() {
+  notify-send "Hyprpaper" "$1" --icon="$2" --expire-time=1500
+}
+# Notification a change wallpaper
+notify_tr() {
   notify-send "Hyprpaper" "$1" --icon="$2" --expire-time=1500 --transient
 }
 # -----------------------------------------------------
