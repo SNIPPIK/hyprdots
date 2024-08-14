@@ -10,7 +10,7 @@ restart() {
 # -----------------------------------------------------
 
 # Restart waybar
-if [ "$1" == "waybar" ]; then
+if [ "$1" = "waybar" ]; then
   restart "waybar"
   sleep 0.5
   waybar
@@ -18,7 +18,7 @@ fi
 # -----------------------------------------------------
 
 # Restart hyprpaper
-if [ "$1" == "hyprpaper" ]; then
+if [ "$1" = "hyprpaper" ]; then
   restart "hyprpaper"
   sleep 0.5
   hyprpaper
