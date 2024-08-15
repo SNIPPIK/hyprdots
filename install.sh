@@ -12,7 +12,7 @@ linkConfig() {
   fi
 }
 
-# Create link to directory
+# Create link to file
 link() {
   if [ -h ~/"$1" ] || [ -f ~/"$1" ]; then
       rm -r ~/"$1"
