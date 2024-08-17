@@ -25,7 +25,7 @@ link() {
 }
 
 # Need to update hyprdots
-cp ~/hyprdots/sync.sh ~/.cache
+cp ~/hyprdots/dotfiles/sync.sh ~/.cache
 
 # The user's response is required
 choice() {

@@ -28,7 +28,7 @@ To install, execute the following commands:
 ```shell
 sudo pacman -S git
 git clone https://github.com/SNIPPIK/hyprdots.git
-cd hyprdots
+cd hyprdots/dotfiles
 bash ./install.sh
 ```
 
