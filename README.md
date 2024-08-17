@@ -46,6 +46,10 @@ dotsync
 <img align="" alt="image" width="1920" src="/assets/images/6.png" />
 <img align="" alt="image" width="1920" src="/assets/images/7.png" />
 <img align="" alt="image" width="1920" src="/assets/images/8.png" />
+<img align="" alt="image" width="1920" src="/assets/images/9.png" />
+<img align="" alt="image" width="1920" src="/assets/images/10.png" />
+<img align="" alt="image" width="1920" src="/assets/images/11.png" />
+
 
 ### Demo
 <details close>
