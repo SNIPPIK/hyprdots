@@ -1,0 +1,54 @@
+// __        __          _
+// \ \      / /_ _ _   _| |__   __ _ _ __
+//  \ \ /\ / / _` | | | | '_ \ / _` | '__|
+//   \ V  V / (_| | |_| | |_) | (_| | |
+//    \_/\_/ \__,_|\__, |_.__/ \__,_|_|
+//                 |___/
+// ---------------------------------------
+{
+    // General Settings
+    "layer": "top",
+    "margin-top": 6,
+    "height": 10,
+
+    // Load Modules
+    "include": [
+        //Hyprland load
+        "~/.config/waybar/configuring/hyprland/all.jsonc",
+        "~/.config/waybar/configuring/hyprland/workspaces/numbers.jsonc", //workspaces/{}.jsonc  | Supported type icons, numbers
+
+        // Default load
+        "~/.config/waybar/configuring/custom.jsonc",
+        "~/.config/waybar/configuring/network.jsonc",
+
+        // Group load
+        "~/.config/waybar/configuring/groups/audio.jsonc",
+        "~/.config/waybar/configuring/groups/logo.jsonc",
+        "~/.config/waybar/configuring/groups/power.jsonc",
+        "~/.config/waybar/configuring/groups/system.jsonc"
+    ],
+
+    // Modules Left
+    "modules-left": [
+        "group/logo", "hyprland/workspaces",
+        "hyprland/window"
+    ],
+
+    // Modules Right
+    "modules-right": [
+        "custom/media",
+
+        "custom/wallpaper",
+        "group/settings",
+        "group/system",
+
+        "hyprland/language",
+        "group/audio",
+        "network",
+        "tray",
+        "custom/notification",
+        "clock",
+        "battery",
+        "group/power"
+    ]
+}

@@ -1,0 +1,21 @@
+{
+  // Current window name
+  "hyprland/window": {
+    "format": "  | {initialClass} - {initialTitle}"
+  },
+
+  // Current language
+  "hyprland/language": {
+    "format": " {short}",
+    "on-click": "bash ~/.config/hypr/scripts/dialog.sh float keybindings"
+  },
+
+  // hypridle switcher
+  "idle_inhibitor": {
+    "format": "{icon}",
+    "format-icons": {
+      "activated": "",
+      "deactivated": ""
+    }
+  }
+}

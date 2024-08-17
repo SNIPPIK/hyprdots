@@ -1,0 +1,103 @@
+{
+  // Wallpaper
+  "custom/wallpaper": {
+    "format": "",
+    "on-click": "bash ~/.config/hypr/scripts/wallpaper.sh random",
+    "on-click-middle": "bash ~/.config/hypr/scripts/wallpaper.sh restart",
+    "on-click-right": "bash ~/.config/hypr/scripts/wallpaper.sh select",
+    "tooltip-format": "Left: Select random\nRight: Select wallpaper\nMiddle: Restart wallpaper engine"
+  },
+
+  "custom/separator": {
+    "format": "┃",
+    "interval": "once",
+    "tooltip": false
+  },
+
+  //Media player
+  "custom/media": {
+    "format": "<span foreground='LIGHTGREEN'>{}</span>",
+    "interval": 5,
+    "return-type": "string",
+
+    "on-click": "bash ~/.config/hypr/scripts/toolbox/player.sh toggle",
+    "on-click-right": "bash ~/.config/hypr/scripts/toolbox/player.sh skip",
+    "on-scroll-up": "bash ~/.config/hypr/scripts/toolbox/player.sh seek+",
+    "on-scroll-down": "bash ~/.config/hypr/scripts/toolbox/player.sh seek-",
+
+    "exec": "bash ~/.config/hypr/scripts/toolbox/player.sh info",
+    "max-length": 30,
+    "tooltip": true,
+    "escape": true
+  },
+
+  // Notification
+  "custom/notification": {
+    "tooltip": false,
+    "format": "{icon}",
+    "format-icons": {
+      "notification": "<span foreground='red'><sup></sup></span>",
+      "none": "",
+      "dnd-notification": "<span foreground='red'><sup></sup></span>",
+      "dnd-none": "",
+      "inhibited-notification": "<span foreground='red'><sup></sup></span>",
+      "inhibited-none": "",
+      "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
+      "dnd-inhibited-none": ""
+    },
+    "return-type": "json",
+    "exec-if": "which swaync-client",
+    "exec": "swaync-client -swb",
+    "on-click": "sleep 0.2 && swaync-client -t -sw",
+    "on-click-right": "sleep 0.2 && swaync-client -d -sw",
+    "escape": true
+  },
+
+  // System tray
+  "tray": {
+    "icon-size": 16,
+    "spacing": 10
+  },
+
+  // Clock
+  "clock": {
+    "format": "{:L%H:%M} ",
+    "format-alt": "{:L%A, %B %d, %Y (%R)} ",
+    "tooltip-format": "<tt><small>{calendar}</small></tt>",
+    "calendar": {
+      "mode"          : "year",
+      "mode-mon-col"  : 3,
+      "weeks-pos"     : "right",
+      "on-scroll"     : 1,
+      "format": {
+        "months":     "<span color='#ffead3'><b>{}</b></span>",
+        "days":       "<span color='#ecc6d9'><b>{}</b></span>",
+        "weeks":      "<span color='#99ffdd'><b>W{}</b></span>",
+        "weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
+        "today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
+      }
+    },
+    "actions":  {
+      "on-click-right": "mode",
+      "on-click-forward": "tz_up",
+      "on-click-backward": "tz_down",
+      "on-scroll-up": "shift_up",
+      "on-scroll-down": "shift_down"
+    }
+  },
+
+  // Battery
+  "battery": {
+    "interval": 45,
+    "states": {
+      "good": 80,
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "{icon}   {capacity}%",
+    "format-alt": "{icon}  {time}",
+    "format-charging": "  {capacity}%",
+    "format-plugged": "  {capacity}%",
+    "format-icons": [" ", " ", " ", " ", " "]
+  }
+}
