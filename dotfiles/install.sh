@@ -40,8 +40,7 @@ choice() {
 # Check root user
 if [ "$USER" = "root" ]; then
     echo "Do not use root in this script, log in with another account"
-    sleep 2
-    exit 1
+    exit 0
 fi
 
 # If not directory Configs
