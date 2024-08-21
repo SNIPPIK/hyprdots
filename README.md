@@ -37,7 +37,6 @@ To update, execute the following command:
 dotsync
 ```
 
-<img align="" alt="image" width="1920" src="/assets/images/0.png" />
 <img align="" alt="image" width="1920" src="/assets/images/1.png" />
 <img align="" alt="image" width="1920" src="/assets/images/2.png" />
 <img align="" alt="image" width="1920" src="/assets/images/3.png" />
