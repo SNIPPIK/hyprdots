@@ -54,9 +54,9 @@
     "format": "{}",
     "return-type": "json",
     "restart-interval": 600,
-    "exec": "bash ~/.config/hypr/scripts/toolbox/updates.sh check",
+    "exec": "bash ~/.config/hypr/scripts/toolbox/pacman.sh check",
 
-    "on-click": "bash ~/.config/hypr/scripts/dialog.sh float update",
-    "on-click-right": "bash ~/.config/hypr/scripts/dialog.sh float unused"
+    "on-click": "bash ~/.config/hypr/scripts/toolbox/pacman.sh update",
+    "on-click-right": "bash ~/.config/hypr/scripts/toolbox/pacman.sh unused"
   }
 }

@@ -27,8 +27,8 @@
     },
     "modules": [
       "pulseaudio#output",
-      "pulseaudio#input",
-      "bluetooth"
+      "bluetooth",
+      "pulseaudio#input"
     ]
   },
 

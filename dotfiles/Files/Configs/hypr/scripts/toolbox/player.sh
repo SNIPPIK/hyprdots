@@ -8,12 +8,12 @@ space="                                                                         
 # -----------------------------------------------------
 # Notification a change wallpaper
 notify() {
-  notify-send "Player | $2" "$1" --expire-time=1500 --transient
+  bash ~/.config/hypr/scripts/utils/notifications.sh "no-icon" "temp" "Player | $2" "$1" 1500
 }
 
 # -----------------------------------------------------
 # Info a current track
-if [ "$1" == "info" ] && [ $WAYBAR_PLAYER = 1 ]; then
+if [ "$1" = "info" ] && [ $WAYBAR_PLAYER = 1 ]; then
   class=$(playerctl metadata --format '{{lc(status)}}')
 
   if [ "$class" = "playing" ] || [ "$class" = "paused" ]; then

@@ -25,29 +25,24 @@ selected() {
 }
 # -----------------------------------------------------
 # Load last wallpaper
-# shellcheck disable=SC2120
 last() {
      if [ -f "$cache_file" ]; then
          file=$(cat "$cache_file")
 
          if [ -n "$1" ]; then
-            notify_tr "$1" "$file"
+            notify "temp" "$1" "$file"
          fi
 
          sleep 1
          selected "$file"
      else
-       notify "Not found wallpaper cache file \n- $cache_file"
+       notify "n" "Not found wallpaper cache file \n- $cache_file"
      fi
 }
 # -----------------------------------------------------
-# Notification a change wallpaper
+# Notification
 notify() {
-  notify-send "Hyprpaper" "$1" --icon="$2" --expire-time=1500
-}
-# Notification a change wallpaper
-notify_tr() {
-  notify-send "Hyprpaper" "$1" --icon="$2" --expire-time=1500 --transient
+  bash ~/.config/hypr/scripts/utils/notifications.sh "icon" "$1" "Hyprpaper" "$2" "$3" 1500
 }
 # -----------------------------------------------------
 # Run rofi
@@ -58,13 +53,20 @@ rofi_cmd() {
   -theme windows/wallpaper
 }
 # -----------------------------------------------------
+# Select random image
+wallpaper_random() {
+    random_background=""
 
+    #Find image wallpaper
+    if [ -d "$WALLPAPERS_DIR" ]; then
+      random_background="$(find -L "$WALLPAPERS_DIR" -type f | shuf -n 1)"
+    else
+      notify "temp" "Fail select wallpaper. Not found $WALLPAPERS_DIR"
+      exit 1
+    fi
 
-# -----------------------------------------------------
-# Load last wallpaper
-if [ "$1" == "last" ]; then
-  last "Load last wallpaper"
-fi
+    selected "$random_background"
+}
 
 # -----------------------------------------------------
 # Restart hyprpaper
@@ -73,32 +75,30 @@ if [ "$1" == "restart" ]; then
 
   last "Restart wallpaper engine"
   exit 1
-fi
-
+# -----------------------------------------------------
+# Load last wallpaper
+elif [ "$1" == "last" ]; then
+  last "Load last wallpaper"
 # -----------------------------------------------------
 # Change random wallpaper
-if [ "$1" == "random" ]; then
-  random_background=""
-
-  #Find image wallpaper
-  if [ -d "$WALLPAPERS_DIR" ]; then
-    random_background="$(find -L "$WALLPAPERS_DIR" -type f | shuf -n 1)"
-  else
-    notify "Fail select wallpaper. Not found $WALLPAPERS_DIR"
-    exit 1
-  fi
-
-  selected "$random_background"
+elif [ "$1" == "random" ]; then
+  wallpaper_random
   exit 1
-fi
-
 # -----------------------------------------------------
 # Selected image
-if [ "$1" == "select" ]; then
+elif [ "$1" == "select" ]; then
   selected_wallpaper=$(find "${WALLPAPERS_DIR}" -type f -printf "%P\n" | sort | while read -r A ; do echo -en "$A\x00icon\x1f""${WALLPAPERS_DIR}"/"$A\n" ; done | rofi_cmd)
 
   if [[ $selected_wallpaper == "" ]]; then
      exit 1
   fi
   selected "$WALLPAPERS_DIR/$selected_wallpaper"
+# -----------------------------------------------------
+# Auto switch wallpapers
+elif [ "$1" == "auto" ]; then
+  while true
+  do
+      wallpaper_random
+      sleep 2m
+  done
 fi

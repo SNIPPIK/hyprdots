@@ -1,9 +1,14 @@
 #!/bin/sh
 # -----------------------------------------------------
-
-echo Running DPI Server, need aur package - ciadpi
-echo Pls added proxy IP:127.0.0.1 Port:1080 Protocol:SOCKS5
-ciadpi -s 2 -d 2
+# DPI Server
+if ! ciadpi; then
+   bash ~/.config/hypr/scripts/utils/notifications.sh "no-icon" "temp" "System" "Not found package ciadpi. Need to install so work!" 4000
+   exit 0
+else
+  echo Running DPI Server
+  echo Your local proxy IP:127.0.0.1 Port:1080 Protocol:SOCKS5
+  ciadpi -s 2 -d 2
+fi
 
 echo " "
 read -p "Press enter to close"

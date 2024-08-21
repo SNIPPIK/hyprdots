@@ -51,3 +51,38 @@ cat <<EOF
 { "text":"$text", "tooltip":"$tooltip"}
 EOF
 fi
+
+# Update system
+if [ "$1" = "update" ]; then
+  echo "Update system"
+
+  sudo pacman -Syu
+  sleep 0.2
+
+  clear
+  echo "Update flatpak"
+  flatpak update
+
+  echo " "
+  read -p "Press enter to close"
+fi
+
+# Unused packages
+if [ "$1" = "unused" ]; then
+  echo "Remove unused packages"
+
+  packages=$(sudo pacman -Qdtq)
+  if [ -z "$packages" ]; then
+      echo "Not find packages for remove"
+  else
+      sudo pacman -Qdtq | sudo pacman -Rsc -
+  fi
+  sleep 0.2
+
+  clear
+  echo "Remove unused flatpak"
+  flatpak uninstall --unused
+
+  echo " "
+  read -p "Press enter to close"
+fi

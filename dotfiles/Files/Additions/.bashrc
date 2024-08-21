@@ -10,15 +10,13 @@ PS1='[\u@\h \W]\$ '
 # ALIASES
 # -----------------------------------------------------
 alias c='clear'
-alias nf='fastfetch'
-alias pf='fastfetch'
 alias ff='fastfetch'
 
 # -----------------------------------------------------
 # HYPRDOTS
 # -----------------------------------------------------
-alias cd-hyprdots="cd ~/hyprdots"
-alias cd-hyprland="cd ~/.config/hypr"
+alias chyprdots="cd ~/hyprdots"
+alias chyprland="cd ~/.config/hypr"
 
 alias hyprland="nano ~/.config/hypr/hyprland.conf"
 alias hyprland-env="nano ~/.config/hypr/configuring/environment.conf"
@@ -30,7 +28,7 @@ alias hyprland-board="nano ~/.config/hypr/configuring/keyboard/keyboard.conf"
 # -----------------------------------------------------
 # Waybar
 # -----------------------------------------------------
-alias cd-waybar="cd ~/.config/waybar"
+alias cwb="cd ~/.config/waybar"
 alias wb="nano ~/.config/waybar/config.jsonc"
 
 alias player="nano ~/.config/hypr/scripts/toolbox/player.sh"
@@ -43,9 +41,6 @@ alias grub='sudo nano /boot/grub/grub.cfg && sudo grub-mkconfig -o /boot/grub/gr
 
 alias shutdown='systemctl poweroff'
 alias wifi='nmtui'
-
-alias update="sudo pacman -Syu"
-alias unused="sudo pacman -Qdtq | sudo pacman -Rsc -"
 
 # -----------------------------------------------------
 # DEVELOPMENT

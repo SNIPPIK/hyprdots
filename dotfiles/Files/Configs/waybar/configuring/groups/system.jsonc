@@ -2,7 +2,7 @@
   // System
   "custom/system": {
     "format": "",
-    "tooltip-format": "System info tray"
+    "tooltip-format": "System information"
   },
 
   "group/system": {

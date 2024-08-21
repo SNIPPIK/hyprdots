@@ -14,8 +14,8 @@
     // Load Modules
     "include": [
         //Hyprland load
-        "~/.config/waybar/configuring/hyprland/all.jsonc",
-        "~/.config/waybar/configuring/hyprland/workspaces/numbers.jsonc", //workspaces/{}.jsonc  | Supported type icons, numbers
+        "~/.config/waybar/configuring/hyprland.jsonc",
+        "~/.config/waybar/configuring/workspaces/numbers.jsonc", //workspaces/{}.jsonc  | Supported type icons, numbers
 
         // Default load
         "~/.config/waybar/configuring/custom.jsonc",
