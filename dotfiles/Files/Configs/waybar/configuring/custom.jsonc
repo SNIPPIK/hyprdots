@@ -53,7 +53,7 @@
     "on-click": "sleep 0.1 && dunstctl history-pop",
     "on-click-middle": "dunstctl history-clear",
     "on-click-right": "dunstctl close-all",
-    "interval": 5,
+    "interval": 2,
     "tooltip": true,
     "escape": true
   },
