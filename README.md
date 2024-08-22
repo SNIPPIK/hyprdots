@@ -18,6 +18,7 @@ While installing alongside another [DE](https://wiki.archlinux.org/title/Desktop
 > All files are linked, deleting the directory hyprdots can lead to serious consequences
 
 > [!TIP]
+> To work brightness requires the package aur:`light`\
 > There are options for some configs\
 > Change a hyprland animation -> in terminal `hyprland`\
 > Change a waybar workspace icons -> in terminal `wb`\

@@ -20,38 +20,44 @@
     "interval": 5,
     "return-type": "string",
 
-    "on-click": "bash ~/.config/hypr/scripts/toolbox/player.sh toggle",
-    "on-click-right": "bash ~/.config/hypr/scripts/toolbox/player.sh skip",
-    "on-scroll-up": "bash ~/.config/hypr/scripts/toolbox/player.sh seek+",
-    "on-scroll-down": "bash ~/.config/hypr/scripts/toolbox/player.sh seek-",
+    "on-click": "bash ~/.config/hypr/scripts/utils/audio.sh play_pause",
+    "on-click-middle": "bash ~/.config/hypr/scripts/utils/audio.sh prev_track",
+    "on-click-right": "bash ~/.config/hypr/scripts/utils/audio.sh next_track",
 
-    "exec": "bash ~/.config/hypr/scripts/toolbox/player.sh info",
+    "exec": "bash ~/.config/hypr/scripts/utils/audio.sh player_info",
     "max-length": 30,
     "tooltip": true,
     "escape": true
   },
 
-  // Notification
+  // Notifications
   "custom/notification": {
-    "tooltip": false,
-    "format": "{icon}",
+    "format": "{icon} {}",
+    "rotate": 0,
     "format-icons": {
-      "notification": "<span foreground='red'><sup></sup></span>",
-      "none": "",
-      "dnd-notification": "<span foreground='red'><sup></sup></span>",
-      "dnd-none": "",
-      "inhibited-notification": "<span foreground='red'><sup></sup></span>",
-      "inhibited-none": "",
-      "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
-      "dnd-inhibited-none": ""
+      "email-notification": "<span foreground='white'><sup></sup></span>",
+      "chat-notification": "󱋊<span foreground='white'><sup></sup></span>",
+      "warning-notification": "󱨪<span foreground='yellow'><sup></sup></span>",
+      "error-notification": "󱨪<span foreground='red'><sup></sup></span>",
+      "network-notification": "󱂇<span foreground='white'><sup></sup></span>",
+      "battery-notification": "󰁺<span foreground='white'><sup></sup></span>",
+      "update-notification": "󰚰<span foreground='white'><sup></sup></span>",
+      "music-notification": "󰝚<span foreground='white'><sup></sup></span>",
+      "volume-notification": "󰕿<span foreground='white'><sup></sup></span>",
+      "notification": "<span foreground='white'><sup></sup></span>",
+      "none": ""
     },
     "return-type": "json",
-    "exec-if": "which swaync-client",
-    "exec": "swaync-client -swb",
-    "on-click": "sleep 0.2 && swaync-client -t -sw",
-    "on-click-right": "sleep 0.2 && swaync-client -d -sw",
+    "exec-if": "which dunstctl",
+    "exec": "python ~/.config/dunst/notifications.py",
+    "on-click": "sleep 0.1 && dunstctl history-pop",
+    "on-click-middle": "dunstctl history-clear",
+    "on-click-right": "dunstctl close-all",
+    "interval": 5,
+    "tooltip": true,
     "escape": true
   },
+
 
   // System tray
   "tray": {

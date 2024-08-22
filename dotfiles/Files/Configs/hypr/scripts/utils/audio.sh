@@ -1,0 +1,188 @@
+#!/bin/bash
+volume_step=1
+max_volume=150
+notification_timeout=1000
+download_album_art=true
+show_album_art=true
+show_music_in_volume_indicator=true
+# -----------------------------------------------------
+# Uses regex to get volume from pactl
+function get_volume_output {
+    pactl get-sink-volume @DEFAULT_SINK@ | grep -Po '[0-9]{1,3}(?=%)' | head -1
+}
+function get_mute_output {
+    pactl get-sink-mute @DEFAULT_SINK@ | grep -Po '(?<=Mute: )(yes|no)'
+}
+# -----------------------------------------------------
+# Uses regex to get volume from pactl
+function get_volume_input {
+    pactl get-source-volume @DEFAULT_SOURCE@ | grep -Po '[0-9]{1,3}(?=%)' | head -1
+}
+function get_mute_input {
+    pactl get-source-mute @DEFAULT_SOURCE@ | grep -Po '(?<=Mute: )(yes|no)'
+}
+# -----------------------------------------------------
+# Returns a mute icon, a volume-low icon, or a volume-high icon, depending on the volume
+function get_output_icon {
+    volume=$(get_volume_output)
+    mute=$(get_mute_output)
+    if [ "$volume" -eq 0 ] || [ "$mute" == "yes" ] ; then
+        volume_icon=""
+    elif [ "$volume" -lt 50 ]; then
+        volume_icon=""
+    else
+        volume_icon=""
+    fi
+}
+function get_input_icon {
+    volume=$(get_volume_input)
+    mute=$(get_mute_input)
+    if [ "$volume" -eq 0 ] || [ "$mute" == "yes" ] ; then
+        volume_icon=""
+    elif [ "$volume" -lt 50 ]; then
+        volume_icon=""
+    else
+        volume_icon=""
+    fi
+}
+# -----------------------------------------------------
+# Displays a music notification
+function get_album_art {
+    url=$(playerctl -f "{{mpris:artUrl}}" metadata)
+    if [[ $url == "file://"* ]]; then
+        album_art="${url/file:\/\//}"
+    elif [[ $url == "http://"* ]] && [[ $download_album_art == "true" ]]; then
+        # Identify filename from URL
+        filename="$(echo $url | sed "s/.*\///")"
+
+        # Download file to /tmp if it doesn't exist
+        if [ ! -f "/tmp/$filename" ]; then
+            wget -O "/tmp/$filename" "$url"
+        fi
+
+        album_art="/tmp/$filename"
+    elif [[ $url == "https://"* ]] && [[ $download_album_art == "true" ]]; then
+        # Identify filename from URL
+        filename="$(echo $url | sed "s/.*\///")"
+
+        # Download file to /tmp if it doesn't exist
+        if [ ! -f "/tmp/$filename" ]; then
+            wget -O "/tmp/$filename" "$url"
+        fi
+
+        album_art="/tmp/$filename"
+    else
+        album_art=""
+    fi
+}
+function show_music_notif {
+    song_title=$(playerctl -f "{{title}}" metadata)
+    song_artist=$(playerctl -f "{{artist}}" metadata)
+    song_album=$(playerctl -f "{{album}}" metadata)
+
+    if [[ $show_album_art == "true" ]]; then
+        get_album_art
+    fi
+
+    notify-send -t $notification_timeout -h string:x-dunst-stack-tag:music_notif -i "$album_art" "$song_title" "$song_artist - $song_album" --transient
+}
+# -----------------------------------------------------
+# Displays a volume notification
+function show_volume_notif {
+    volume=$(get_volume_output)
+    get_output_icon
+
+    if [[ $show_music_in_volume_indicator == "true" ]]; then
+        current_song=$(playerctl -f "{{title}} - {{artist}}" metadata)
+
+        if [[ $show_album_art == "true" ]]; then
+            get_album_art
+        fi
+
+        notify-send -t $notification_timeout -h string:x-dunst-stack-tag:volume_notif -h int:value:$volume -i "$album_art" "$volume_icon $volume%" "$current_song" --transient
+    else
+        notify-send -t $notification_timeout -h string:x-dunst-stack-tag:volume_notif -h int:value:$volume "$volume_icon $volume%" --transient
+    fi
+}
+# Displays a volume notification
+function show_micro_notif {
+    volume=$(get_mute_input)
+    get_input_icon
+
+    if [[ $show_music_in_volume_indicator == "true" ]]; then
+        current_song=$(playerctl -f "{{title}} - {{artist}}" metadata)
+
+        if [[ $show_album_art == "true" ]]; then
+           get_album_art
+        fi
+
+        notify-send -t $notification_timeout -h string:x-dunst-stack-tag:volume_notif -h int:value:$volume -i "$album_art" "$volume_icon $volume%" "$current_song" --transient
+    else
+        notify-send -t $notification_timeout -h string:x-dunst-stack-tag:volume_notif -h int:value:$volume "$volume_icon $volume%" --transient
+    fi
+}
+# -----------------------------------------------------
+
+# Main function - Takes user input, "volume_up", "volume_down"
+case $1 in
+    # Unmutes and increases volume, then displays the notification
+    volume_up)
+    pactl set-sink-mute @DEFAULT_SINK@ 0
+    volume=$(get_volume_output)
+    if [ $(( "$volume" + "$volume_step" )) -gt $max_volume ]; then
+        pactl set-sink-volume @DEFAULT_SINK@ $max_volume%
+    else
+        pactl set-sink-volume @DEFAULT_SINK@ +$volume_step%
+    fi
+    show_volume_notif
+    ;;
+
+    # Raises volume and displays the notification
+    volume_down)
+    pactl set-sink-volume @DEFAULT_SINK@ -$volume_step%
+    show_volume_notif
+    ;;
+
+    # Toggles mute and displays the notification
+    volume_mute)
+    pactl set-sink-mute @DEFAULT_SINK@ toggle
+    show_volume_notif
+    ;;
+
+    # Toggles mute and displays the notification
+    micro_mute)
+    pactl set-source-mute @DEFAULT_SOURCE@ toggle
+    show_micro_notif
+    ;;
+
+     # Skips to the next song and displays the notification
+    next_track)
+    playerctl next
+    sleep 2 && show_music_notif
+    ;;
+
+    # Skips to the previous song and displays the notification
+    prev_track)
+    playerctl previous
+    sleep 0.5 && show_music_notif
+    ;;
+
+    # Pauses/resumes playback and displays the notification
+    play_pause)
+    playerctl play-pause
+    show_music_notif
+    ;;
+
+    # Information of current playing track
+    player_info)
+      class=$(playerctl metadata --format '{{lc(status)}}')
+
+      if [ "$class" = "playing" ] || [ "$class" = "paused" ]; then
+        title=" "$(playerctl metadata --format '{{title}}')
+      elif [ "$class" = "stopped" ]; then
+        title=
+      fi
+
+      echo "$title"
+    ;;
+esac
