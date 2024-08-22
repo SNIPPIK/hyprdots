@@ -56,7 +56,7 @@
     "restart-interval": 600,
     "exec": "bash ~/.config/hypr/scripts/toolbox/pacman.sh check",
 
-    "on-click": "bash ~/.config/hypr/scripts/toolbox/pacman.sh update",
-    "on-click-right": "bash ~/.config/hypr/scripts/toolbox/pacman.sh unused"
+    "on-click": "bash ~/.config/hypr/scripts/dialog.sh float-small update",
+    "on-click-right": "bash ~/.config/hypr/scripts/dialog.sh float-small unused"
   }
 }
