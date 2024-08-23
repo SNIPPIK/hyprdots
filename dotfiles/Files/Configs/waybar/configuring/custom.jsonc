@@ -2,9 +2,9 @@
   // Wallpaper
   "custom/wallpaper": {
     "format": "",
-    "on-click": "bash ~/.config/hypr/scripts/wallpaper.sh random",
-    "on-click-middle": "bash ~/.config/hypr/scripts/wallpaper.sh restart",
-    "on-click-right": "bash ~/.config/hypr/scripts/wallpaper.sh select",
+    "on-click": "bash ~/.config/hypr/scripts/tools/wallpaper.sh random",
+    "on-click-middle": "bash ~/.config/hypr/scripts/tools/wallpaper.sh restart",
+    "on-click-right": "bash ~/.config/hypr/scripts/tools/wallpaper.sh select",
     "tooltip-format": "Left: Select random\nRight: Select wallpaper\nMiddle: Restart wallpaper engine"
   },
 
@@ -49,7 +49,7 @@
     },
     "return-type": "json",
     "exec-if": "which dunstctl",
-    "exec": "python ~/.config/dunst/notifications.py",
+    "exec": "python ~/.config/hypr/scripts/tools/notifications.py",
     "on-click": "sleep 0.1 && dunstctl history-pop",
     "on-click-middle": "dunstctl history-clear",
     "on-click-right": "dunstctl close-all",
@@ -100,10 +100,11 @@
       "warning": 30,
       "critical": 15
     },
-    "format": "{icon}   {capacity}%",
-    "format-alt": "{icon}  {time}",
-    "format-charging": "  {capacity}%",
-    "format-plugged": "  {capacity}%",
-    "format-icons": [" ", " ", " ", " ", " "]
+    "format": "{icon} {capacity}%",
+    "format-alt": "{icon} {time}",
+    "format-charging": "{icon}<span foreground='green'><sup></sup></span> {capacity}%",
+    "format-plugged": "{icon}<span foreground='green'><sup></sup></span> {capacity}%",
+    "format-icons": [" ", " ", " ", " ", " "],
+    "bat-compatibility": true
   }
 }

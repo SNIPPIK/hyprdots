@@ -39,8 +39,8 @@
 
     "on-click": "bash ~/.config/hypr/scripts/utils/audio.sh micro_mute",
     "on-click-right": "pavucontrol",
-    "on-scroll-up": "bash ~/.config/hypr/scripts/utils/audio.sh input-set+",
-    "on-scroll-down": "bash ~/.config/hypr/scripts/utils/audio.sh input-set-"
+    "on-scroll-up": "bash ~/.config/hypr/scripts/utils/audio.sh micro_volume_up",
+    "on-scroll-down": "bash ~/.config/hypr/scripts/utils/audio.sh micro_volume_down"
   },
 
   // Bluetooth

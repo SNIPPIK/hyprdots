@@ -125,6 +125,12 @@ function show_micro_notif {
 
 # Main function - Takes user input, "volume_up", "volume_down"
 case $1 in
+    # Toggles mute and displays the notification
+    volume_mute)
+    pactl set-sink-mute @DEFAULT_SINK@ toggle
+    show_volume_notif
+    ;;
+
     # Unmutes and increases volume, then displays the notification
     volume_up)
     pactl set-sink-mute @DEFAULT_SINK@ 0
@@ -144,14 +150,26 @@ case $1 in
     ;;
 
     # Toggles mute and displays the notification
-    volume_mute)
-    pactl set-sink-mute @DEFAULT_SINK@ toggle
-    show_volume_notif
-    ;;
-
-    # Toggles mute and displays the notification
     micro_mute)
     pactl set-source-mute @DEFAULT_SOURCE@ toggle
+    show_micro_notif
+    ;;
+
+    # Unmutes and increases volume, then displays the notification
+    micro_volume_up)
+    pactl set-source-mute @DEFAULT_SOURCE@ 0
+    volume=$(get_volume_input)
+    if [ $(( "$volume" + "$volume_step" )) -gt $max_volume ]; then
+        pactl set-source-volume @DEFAULT_SOURCE@ $max_volume%
+    else
+        pactl set-source-volume @DEFAULT_SOURCE@ +$volume_step%
+    fi
+    show_micro_notif
+    ;;
+
+    # Raises volume and displays the notification
+    micro_volume_down)
+    pactl set-source-volume @DEFAULT_SOURCE@ -$volume_step%
     show_micro_notif
     ;;
 
