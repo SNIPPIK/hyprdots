@@ -6,7 +6,7 @@
     "format-icons": {
       "headphone": " ",
       "car": " ",
-      "default": [" ", " ", " "]
+      "default": [" ", " ", " ", " "]
     },
 
     "on-click": "bash ~/.config/hypr/scripts/utils/audio.sh volume_mute",
