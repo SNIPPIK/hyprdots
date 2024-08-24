@@ -2,7 +2,7 @@
   //Output (headphone)
   "pulseaudio#output": {
     "format": "{icon} {volume}%",
-    "format-muted": " {volume}%",
+    "format-muted": "  {volume}%",
     "format-icons": {
       "headphone": " ",
       "car": " ",
