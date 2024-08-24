@@ -1,7 +1,7 @@
 [<img align="right" alt="Avatar" width="150px" src="dotfiles/Files/Configs/hypr/icons/hyprland.svg" />]()
 
-# hyprdots
-- [`WIKI`](https://wiki.hyprland.org/)
+# DotFiles
+- [`Hyprland WIKI`](https://wiki.hyprland.org/)
 - [`My wallpaper pack`](https://github.com/SNIPPIK/wallpapers)
 - [`decaycs/wallpapers`](https://github.com/decaycs/wallpapers)
 
@@ -38,6 +38,15 @@ To update, execute the following command:
 dotsync
 ```
 
+## Dependencies
+Used for nice work dotfiles
+- `hyprland`, `hyprpaper`, `hypridle`, `hyprlock`, `waybar`, `rofi-wayland`, `nautilus`
+- `polkit-gnome`, `dunst`, `grim`, `sddm`, `starship`, `gnome-keyring`, `wl-clipboard`
+- `otf-font-awesome`, `noto-fonts-emoji`, `ttf-nerd-fonts-symbols-mono`, `ttf-dejavu`
+- `pipewire-pulse`, `wireplumber`, `bluez`, `blueberry`, `pavucontrol`,
+
+## Images
+- Version 0.6.0
 <img align="" alt="image" width="1920" src="/assets/images/1.png" />
 <img align="" alt="image" width="1920" src="/assets/images/2.png" />
 <img align="" alt="image" width="1920" src="/assets/images/3.png" />
@@ -51,9 +60,11 @@ dotsync
 <img align="" alt="image" width="1920" src="/assets/images/11.png" />
 
 
-### Demo
+### Demonstration videos
 <details close>
   <summary>Click to open</summary>
+
+# Old videos are stored here, new demos are in releases
 
 ### v0.5.0 
 https://github.com/user-attachments/assets/f972c4fb-51c6-47e2-bd4a-0405a0e2ad43
