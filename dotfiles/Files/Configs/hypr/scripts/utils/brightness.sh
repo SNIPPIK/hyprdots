@@ -1,4 +1,13 @@
 #!/bin/bash
+#  ____       _       _     _
+# | __ ) _ __(_) __ _| |__ | |_ _ __   ___  ___ ___
+# |  _ \| '__| |/ _` | '_ \| __| '_ \ / _ \/ __/ __|
+# | |_) | |  | | (_| | | | | |_| | | |  __/\__ \__ \
+# |____/|_|  |_|\__, |_| |_|\__|_| |_|\___||___/___/
+#               |___/
+# -----------------------------------------------------
+# Requires aur:light
+
 brightness_step=5
 notification_timeout=1000
 
@@ -14,7 +23,7 @@ function get_brightness_icon {
 }
 # -----------------------------------------------------
 # Displays a brightness notification using dunstify
-function show_brightness_notif {
+function show_brightness_notification {
     brightness=$(get_brightness)
     echo $brightness
     get_brightness_icon
@@ -27,12 +36,12 @@ case $1 in
     brightness_up)
     # Increases brightness and displays the notification
     sudo light -A $brightness_step
-    show_brightness_notif
+    show_brightness_notification
     ;;
 
     brightness_down)
     # Decreases brightness and displays the notification
     sudo light -U $brightness_step
-    show_brightness_notif
+    show_brightness_notification
     ;;
 esac

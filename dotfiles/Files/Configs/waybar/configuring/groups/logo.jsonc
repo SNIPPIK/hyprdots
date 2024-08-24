@@ -44,7 +44,7 @@
   "custom/version": {
     "format": "  {}",
     "return-type": "string",
-    "tooltip-format": "Hyprdots version",
+    "tooltip-format": "DotFiles version",
     "exec": "sleep 0.1 && cat ~/hyprdots/dotfiles/version"
   },
 

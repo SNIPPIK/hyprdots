@@ -1,4 +1,12 @@
 #!/bin/bash
+#     _             _ _         ____        _       ____            _
+#    / \  _   _  __| (_) ___   / ___| _   _| |__   / ___| _   _ ___| |_ ___ _ __ ___
+#   / _ \| | | |/ _` | |/ _ \  \___ \| | | | '_ \  \___ \| | | / __| __/ _ \ '_ ` _ \
+#  / ___ \ |_| | (_| | | (_) |  ___) | |_| | |_) |  ___) | |_| \__ \ ||  __/ | | | | |
+# /_/   \_\__,_|\__,_|_|\___/  |____/ \__,_|_.__/  |____/ \__, |___/\__\___|_| |_| |_|
+#                                                         |___/
+# -----------------------------------------------------
+
 volume_step=1
 max_volume=150
 notification_timeout=1000
@@ -75,7 +83,7 @@ function get_album_art {
         album_art=""
     fi
 }
-function show_music_notif {
+function show_music_notification {
     song_title=$(playerctl -f "{{title}}" metadata)
     song_artist=$(playerctl -f "{{artist}}" metadata)
     song_album=$(playerctl -f "{{album}}" metadata)
@@ -88,7 +96,7 @@ function show_music_notif {
 }
 # -----------------------------------------------------
 # Displays a volume notification
-function show_volume_notif {
+function show_volume_notification {
     volume=$(get_volume_output)
     get_output_icon
 
@@ -105,7 +113,7 @@ function show_volume_notif {
     fi
 }
 # Displays a volume notification
-function show_micro_notif {
+function show_micro_notification {
     volume=$(get_mute_input)
     get_input_icon
 
@@ -128,7 +136,7 @@ case $1 in
     # Toggles mute and displays the notification
     volume_mute)
     pactl set-sink-mute @DEFAULT_SINK@ toggle
-    show_volume_notif
+    show_volume_notification
     ;;
 
     # Unmutes and increases volume, then displays the notification
@@ -140,19 +148,19 @@ case $1 in
     else
         pactl set-sink-volume @DEFAULT_SINK@ +$volume_step%
     fi
-    show_volume_notif
+    show_volume_notification
     ;;
 
     # Raises volume and displays the notification
     volume_down)
     pactl set-sink-volume @DEFAULT_SINK@ -$volume_step%
-    show_volume_notif
+    show_volume_notification
     ;;
 
     # Toggles mute and displays the notification
     micro_mute)
     pactl set-source-mute @DEFAULT_SOURCE@ toggle
-    show_micro_notif
+    show_micro_notification
     ;;
 
     # Unmutes and increases volume, then displays the notification
@@ -164,31 +172,31 @@ case $1 in
     else
         pactl set-source-volume @DEFAULT_SOURCE@ +$volume_step%
     fi
-    show_micro_notif
+    show_micro_notification
     ;;
 
     # Raises volume and displays the notification
     micro_volume_down)
     pactl set-source-volume @DEFAULT_SOURCE@ -$volume_step%
-    show_micro_notif
+    show_micro_notification
     ;;
 
      # Skips to the next song and displays the notification
     next_track)
     playerctl next
-    sleep 2 && show_music_notif
+    sleep 2 && show_music_notification
     ;;
 
     # Skips to the previous song and displays the notification
     prev_track)
     playerctl previous
-    sleep 0.5 && show_music_notif
+    sleep 0.5 && show_music_notification
     ;;
 
     # Pauses/resumes playback and displays the notification
     play_pause)
     playerctl play-pause
-    show_music_notif
+    show_music_notification
     ;;
 
     # Information of current playing track

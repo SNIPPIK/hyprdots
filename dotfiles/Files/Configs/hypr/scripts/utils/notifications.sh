@@ -1,11 +1,16 @@
 #!/bin/bash
+#  _   _       _   _  __ _           _   _
+# | \ | | ___ | |_(_)/ _(_) ___ __ _| |_(_) ___  _ __  ___
+# |  \| |/ _ \| __| | |_| |/ __/ _` | __| |/ _ \| '_ \/ __|
+# | |\  | (_) | |_| |  _| | (_| (_| | |_| | (_) | | | \__ \
+# |_| \_|\___/ \__|_|_| |_|\___\__,_|\__|_|\___/|_| |_|___/
 # -----------------------------------------------------
 # All notifications
 NOTIFY=1
 
 # -----------------------------------------------------
 # Notification with icon
-notify_icon() {
+notification_icon() {
   if [ "$1" = "temp" ]; then
     notify-send "$2" "$3" --icon="$4" --expire-time="$5" --transient
   else
@@ -14,7 +19,7 @@ notify_icon() {
 }
 
 # Notification without icon
-notify() {
+notification() {
   if [ "$1" = "temp" ]; then
     notify-send "$2" "$3" --expire-time="$4" --transient
   else
@@ -30,7 +35,7 @@ fi
 # -----------------------------------------------------
 # Send notification
 if [ "$1" == "icon" ]; then
-  notify_icon "$2" "$3" "$4" "$5" "$6"
+  notification_icon "$2" "$3" "$4" "$5" "$6"
 else
-  notify "$2" "$3" "$4" "$5"
+  notification "$2" "$3" "$4" "$5"
 fi
