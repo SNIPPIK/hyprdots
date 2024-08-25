@@ -1,0 +1,49 @@
+/* -----------------------------------------------------
+ * Workspace
+ * ----------------------------------------------------- */
+#workspaces {
+    background: @background-button;
+    transition: none;
+}
+
+/* -----------------------------------------------------
+ * Workspace buttons
+ * ----------------------------------------------------- */
+#workspaces button {
+    transition: none;
+    color: @color-text;
+    background: transparent;
+    animation: ws_normal 20s ease-in-out 1;
+}
+
+/* -----------------------------------------------------
+ * Workspace selected button
+ * ----------------------------------------------------- */
+#workspaces button:hover {
+    color: @color-text;
+    animation: ws_hover 20s ease-in-out 1;
+    transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682);
+}
+
+/* -----------------------------------------------------
+ * Workspace work space
+ * ----------------------------------------------------- */
+#workspaces button.persistent {
+    color: @color-text;
+}
+
+/* -----------------------------------------------------
+ * Workspace active button
+ * ----------------------------------------------------- */
+#workspaces button.active {
+    color: @workspace-color-active;
+    animation: ws_hover 20s ease-in-out 1;
+    transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682);
+}
+
+/* -----------------------------------------------------
+ * Workspace empty button
+ * ----------------------------------------------------- */
+#workspaces button.empty {
+    color: @workspace-color-not-active;
+}

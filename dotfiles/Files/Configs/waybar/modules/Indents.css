@@ -1,0 +1,36 @@
+/* -----------------------------------------------------
+ * Padding
+ * ----------------------------------------------------- */
+
+/* First left button */
+#custom-logo {
+    margin-left: 10px;
+}
+
+/* Last right button */
+#custom-power {
+    margin-right: 10px;
+}
+
+/* Tray, running applications */
+#tray {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+/* Current track */
+#custom-media {
+    padding-left: 7px;
+    padding-right: 7px;
+}
+
+/* -----------------------------------------------------
+ * Padding optionals
+ * ----------------------------------------------------- */
+#custom-system {
+    margin-right: 8px;
+}
+
+#custom-wallpaper {
+    margin-left: 8px;
+}

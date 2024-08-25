@@ -1,0 +1,14 @@
+/* -----------------------------------------------------
+ * Window
+ * ----------------------------------------------------- */
+#window {
+    padding-left: 8px;
+    padding-right: 8px;
+    color: @color-text;
+    background: @background-button;
+    border: 5px solid @background-border;
+}
+
+#waybar {
+    background: none;
+}

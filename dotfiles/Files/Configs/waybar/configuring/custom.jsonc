@@ -45,17 +45,22 @@
       "music-notification": "󰝚<span foreground='white'><sup></sup></span>",
       "volume-notification": "󰕿<span foreground='white'><sup></sup></span>",
       "notification": "<span foreground='red'><sup></sup></span>",
+      "dnd": "",
       "none": ""
     },
     "return-type": "json",
     "exec-if": "which dunstctl",
     "exec": "python ~/.config/hypr/scripts/tools/notifications.py",
-    "on-click": "sleep 0.1 && dunstctl history-pop",
+    "interval": 3,
+    "tooltip": true,
+    "escape": true,
+
+    "on-click": "bash ~/.config/hypr/scripts/utils/notifications.sh toggle",
     "on-click-middle": "dunstctl history-clear",
     "on-click-right": "dunstctl close-all",
-    "interval": 4,
-    "tooltip": true,
-    "escape": true
+
+    "on-scroll-down": "sleep 0.1 && dunstctl history-pop",
+    "on-scroll-up": "sleep 0.1 && dunstctl history-pop"
   },
 
 

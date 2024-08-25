@@ -30,7 +30,6 @@
   },
   // Memory usage
   "memory": {   // RAM
-    "interval": 25,
     "format": " {}%",
     "tooltip-format": "RAM: {used:0.1f}GiB used"
   },
