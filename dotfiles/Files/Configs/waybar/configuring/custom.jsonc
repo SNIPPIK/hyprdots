@@ -5,12 +5,14 @@
     "on-click": "bash ~/.config/hypr/scripts/tools/wallpaper.sh random",
     "on-click-middle": "bash ~/.config/hypr/scripts/tools/wallpaper.sh restart",
     "on-click-right": "bash ~/.config/hypr/scripts/tools/wallpaper.sh select",
-    "tooltip-format": "Left: Select random\nRight: Select wallpaper\nMiddle: Restart wallpaper engine"
+    "tooltip-format": "󰆊 Switch wallpaper\n 󰳽 click-left:   Select random\n 󰳽 click-right:  Select wallpaper\n 󰳽 click-middle: Restart, wallpaper engine",
+    "interval" : "once"
   },
 
   //Media player
   "custom/media": {
     "format": "<span foreground='LIGHTGREEN'>{}</span>",
+    "tooltip-format": " Player\n 󰳽 click-left:   Pause/Resume\n 󰳽 click-right:  Skip\n 󰳽 click-middle: Repeat",
     "interval": 5,
     "return-type": "string",
 

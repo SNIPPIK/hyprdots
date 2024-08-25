@@ -1,0 +1,14 @@
+{
+  "group/workspace": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 350,
+      "children-class": "not-memory",
+      "transition-left-to-right": true
+    },
+    "modules": [
+      "hyprland/workspaces",
+      "wlr/taskbar"
+    ]
+  }
+}

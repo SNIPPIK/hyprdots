@@ -27,7 +27,7 @@
     border: none;
     font-family: "JetBrainsMono Nerd Font", cursive;
     font-weight: bold;
-    font-size: 11px;
+    font-size: 10px;
     min-height: 10px;
 }
 
@@ -51,7 +51,7 @@
 #custom-power, #custom-lock, #custom-logout, #custom-reboot,
 
     /* Workspace */
-#workspaces
+#workspaces, #taskbar
 {
     padding-left: 5px;
     padding-right: 5px;

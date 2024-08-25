@@ -9,11 +9,7 @@
       "disabled": [""],
       "linked": [""]
     },
-
-    "tooltip-format": "󰈀 {ifname} via {gwaddri}",
-    "tooltip-format-wifi": "\uE0D9 {ifname} @ {essid}\n🔗: {ipaddr}\n📶: {signalStrength}% | 📡: {frequency}MHz\n📤: {bandwidthUpBits} | 📥: {bandwidthDownBits}",
-    "tooltip-format-ethernet": "󰈀 {ifname}\n🔗: {ipaddr}\n📤: {bandwidthUpBits} | 📥: {bandwidthDownBits}",
-    "tooltip-format-disconnected": "Disconnected",
+    "tooltip-format": "Network: <big><b>{essid}</b></big>\nSignal strength: <b>{signaldBm}dBm ({signalStrength}%)</b>\nFrequency: <b>{frequency}MHz</b>\nInterface: <b>{ifname}</b>\nIP: <b>{ipaddr}/{cidr}</b>\nGateway: <b>{gwaddr}</b>\nNetmask: <b>{netmask}</b>",
     "max-length": 50,
 
     "on-click": "sleep 0.1 && nm-connection-editor",

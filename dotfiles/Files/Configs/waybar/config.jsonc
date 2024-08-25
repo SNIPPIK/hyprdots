@@ -7,10 +7,15 @@
 // ---------------------------------------
 {
     // General Settings
-    "mod": "dock",
     "layer": "top",
+    "position": "top",
+    "mod": "dock",
     "margin-top": 6,
     "height": 10,
+    "exclusive": true,
+    "passthrough": false,
+    "gtk-layer-shell": true,
+    "reload_style_on_change": true,
 
     // Load Modules
     "include": [
@@ -23,6 +28,7 @@
         "~/.config/waybar/configuring/network.jsonc",
 
         // Group load
+        "~/.config/waybar/configuring/groups/workspace.jsonc",
         "~/.config/waybar/configuring/groups/audio.jsonc",
         "~/.config/waybar/configuring/groups/logo.jsonc",
         "~/.config/waybar/configuring/groups/power.jsonc",
@@ -31,7 +37,7 @@
 
     // Modules Left
     "modules-left": [
-        "group/logo", "hyprland/workspaces",
+        "group/logo", "group/workspace",
         "hyprland/window"
     ],
 

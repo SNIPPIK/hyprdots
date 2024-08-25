@@ -2,7 +2,8 @@
   // System
   "custom/system": {
     "format": "",
-    "tooltip-format": "System information"
+    "tooltip-format": "System information",
+    "interval" : "once"
   },
 
   "group/system": {

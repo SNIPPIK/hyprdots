@@ -6,7 +6,8 @@
     "escape": true,
 
     "on-click": "bash ~/.config/hypr/scripts/dialog.sh powermenu",
-    "on-click-right": "bash ~/.config/hypr/scripts/dialog.sh powermenu"
+    "on-click-right": "bash ~/.config/hypr/scripts/dialog.sh powermenu",
+    "interval" : "once"
   },
 
   // Group power
@@ -30,20 +31,23 @@
     "format": "<span foreground='yellow'></span>",
     "tooltip-format": "Lock",
     "on-click": "sleep 0.1 && playerctl pause && hyprlock",
-    "on-click-right": "sleep 0.1 && playerctl pause && hyprlock"
+    "on-click-right": "sleep 0.1 && playerctl pause && hyprlock",
+    "interval" : "once"
   },
   // Logout system
   "custom/logout": {
     "format": "<span foreground='yellow'></span>",
     "tooltip-format": "Logout",
     "on-click": "sleep 0.1 && hyprctl dispatch exit",
-    "on-click-right": "sleep 0.1 && hyprctl dispatch exit"
+    "on-click-right": "sleep 0.1 && hyprctl dispatch exit",
+    "interval" : "once"
   },
   // Reboot system
   "custom/reboot": {
     "format": "<span foreground='yellow'>\uf0e2</span>",
     "tooltip-format": "Reboot",
     "on-click": "sleep 0.1 && systemctl reboot",
-    "on-click-right": "sleep 0.1 && systemctl reboot"
+    "on-click-right": "sleep 0.1 && systemctl reboot",
+    "interval" : "once"
   }
 }

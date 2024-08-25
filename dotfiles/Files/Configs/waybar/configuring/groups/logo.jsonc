@@ -3,8 +3,9 @@
   "custom/logo": {
     "format": "<span foreground='aqua'></span>",
     "on-click": "sleep 0.2 && bash ~/.config/rofi/run.sh fullscreen",
-    "on-click-middle": "bash ~/.config/hypr/scripts/dialog.sh float settings",
-    "on-click-right": "sleep 0.2 && bash ~/.config/rofi/run.sh fullscreen"
+    "on-click-right": "bash ~/.config/hypr/scripts/dialog.sh float settings",
+    "tooltip-format": "<span foreground='aqua'></span> Information\n 󰳽 click-left:   App menu\n 󰳽 click-right:  Open Settings",
+    "interval" : "once"
   },
 
   // Group logo
@@ -29,7 +30,8 @@
     "format": "  {}",
     "return-type": "string",
     "tooltip-format": "Kernel version",
-    "exec": "sleep 0.1 && uname --kernel-release"
+    "exec": "sleep 0.1 && uname --kernel-release",
+    "interval" : "once"
   },
 
   // Current hyprland version
@@ -37,7 +39,8 @@
     "format": "🖥  {}",
     "return-type": "string",
     "tooltip-format": "Hyprland version",
-    "exec": "sleep 0.1 && pacman -Qe hyprland"
+    "exec": "sleep 0.1 && pacman -Qe hyprland",
+    "interval" : "once"
   },
 
   // Hyprdots version
@@ -45,7 +48,8 @@
     "format": "  {}",
     "return-type": "string",
     "tooltip-format": "DotFiles version",
-    "exec": "sleep 0.1 && cat ~/hyprdots/dotfiles/version"
+    "exec": "sleep 0.1 && cat ~/hyprdots/dotfiles/version",
+    "interval" : "once"
   },
 
   // Updates Count | Total packages

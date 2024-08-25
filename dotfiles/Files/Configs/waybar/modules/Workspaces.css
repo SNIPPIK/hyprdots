@@ -1,7 +1,7 @@
 /* -----------------------------------------------------
  * Workspace
  * ----------------------------------------------------- */
-#workspaces {
+#workspaces, #taskbar {
     background: @background-button;
     transition: none;
 }
@@ -9,17 +9,18 @@
 /* -----------------------------------------------------
  * Workspace buttons
  * ----------------------------------------------------- */
-#workspaces button {
+#workspaces button, #taskbar button {
     transition: none;
     color: @color-text;
     background: transparent;
+    border-radius: 5px;
     animation: ws_normal 20s ease-in-out 1;
 }
 
 /* -----------------------------------------------------
  * Workspace selected button
  * ----------------------------------------------------- */
-#workspaces button:hover {
+#workspaces button:hover, #taskbar button:hover {
     color: @color-text;
     animation: ws_hover 20s ease-in-out 1;
     transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682);
@@ -35,7 +36,7 @@
 /* -----------------------------------------------------
  * Workspace active button
  * ----------------------------------------------------- */
-#workspaces button.active {
+#workspaces button.active, #taskbar button.active {
     color: @workspace-color-active;
     animation: ws_hover 20s ease-in-out 1;
     transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682);
@@ -46,4 +47,12 @@
  * ----------------------------------------------------- */
 #workspaces button.empty {
     color: @workspace-color-not-active;
+}
+
+
+/* -----------------------------------------------------
+ * Taskbar active button
+ * ----------------------------------------------------- */
+#taskbar button.active {
+    background: @workspace-color-not-active;
 }

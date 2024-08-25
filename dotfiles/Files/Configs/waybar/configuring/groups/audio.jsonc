@@ -1,7 +1,8 @@
 {
   //Output (headphone)
-  "pulseaudio#output": {
+  "pulseaudio": {
     "format": "{icon} {volume}%",
+    "tooltip-format": "{icon} {desc} // {volume}%",
     "format-muted": " {volume}%",
     "format-icons": {
       "headphone": " ",
@@ -24,18 +25,18 @@
       "transition-left-to-right": false
     },
     "modules": [
-      "pulseaudio#output",
+      "pulseaudio",
       "bluetooth",
-      "pulseaudio#input"
+      "pulseaudio#microphone"
     ]
   },
 
   //Input (Microphone)
-  "pulseaudio#input": {
+  "pulseaudio#microphone": {
     "format": "{format_source}",
     "format-source": "",
     "format-source-muted": "",
-    "tooltip-format": "{volume}% {format_source}",
+    "tooltip-format": "{format_source} {source_desc} // {source_volume}%",
 
     "on-click": "bash ~/.config/hypr/scripts/utils/audio.sh micro_mute",
     "on-click-right": "pavucontrol",
