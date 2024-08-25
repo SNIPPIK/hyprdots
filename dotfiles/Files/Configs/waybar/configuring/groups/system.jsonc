@@ -28,17 +28,20 @@
     "interval": 15,
     "format": " {usage:2}%"
   },
+
   // Memory usage
   "memory": {   // RAM
     "format": " {}%",
     "tooltip-format": "RAM: {used:0.1f}GiB used"
   },
+
   // Disk / use
   "disk": {     //Disk
     "interval": 90,
     "format": " {percentage_used}%",
     "path": "/"
   },
+
   // Cpu temp
   "temperature": {
     "interval": 25,
@@ -48,6 +51,7 @@
     "format-critical": "{temperatureC}°C ",
     "format": "{temperatureC}°C "
   },
+
   // Privacy - screenshare, audio-out, audio-in
   "privacy": {
     "icon-spacing": 4,

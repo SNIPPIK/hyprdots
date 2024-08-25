@@ -8,9 +8,50 @@
 # -----------------------------------------------------
 cache_file="$HOME/.cache/current_wallpaper"
 WALLPAPERS_DIR=$HOME/Pictures/Wallpapers
-# -----------------------------------------------------
-# Apply image in hyprctl
-selected() {
+function saveFile() {
+   # Create cache file
+   if [ ! -f "$cache_file" ]; then
+      touch "$cache_file"
+      echo "$1" > "$cache_file"
+   else
+      echo "$1" > "$cache_file"
+   fi
+}
+# ------------------SWWW-------------------------------
+#  ______        ____        ____        __
+# / ___\ \      / /\ \      / /\ \      / /
+# \___ \\ \ /\ / /  \ \ /\ / /  \ \ /\ / /
+#  ___) |\ V  V /    \ V  V /    \ V  V /
+# |____/  \_/\_/      \_/\_/      \_/\_/
+# ------------------SWWW-------------------------------
+function random_type() {
+  case $((1 + $RANDOM % 2)) in
+    1)
+      printf "wipe"
+      ;;
+    2)
+      printf "wave"
+      ;;
+  esac
+}
+function sel_sww() {
+    swww img --transition-type "$(random_type)" "$1"
+
+    # Create cache file
+    saveFile "$1"
+
+    sleep 2
+    swww clear-cache
+}
+# ------------------HyperPaper-------------------------
+#  _   _                  ____
+# | | | |_   _ _ __  _ __|  _ \ __ _ _ __   ___ _ __
+# | |_| | | | | '_ \| '__| |_) / _` | '_ \ / _ \ '__|
+# |  _  | |_| | |_) | |  |  __/ (_| | |_) |  __/ |
+# |_| |_|\__, | .__/|_|  |_|   \__,_| .__/ \___|_|
+#        |___/|_|                   |_|
+# ------------------HyperPaper-------------------------
+function sel_hyprpaper() {
     monitor=$(hyprctl monitors | grep Monitor | awk '{print $2}')
 
     #Change wallpaper image
@@ -18,37 +59,38 @@ selected() {
     hyprctl hyprpaper wallpaper "$monitor, $1"
 
     # Create cache file
-    if [ ! -f "$cache_file" ]; then
-        touch "$cache_file"
-        echo "$1" > "$cache_file"
-    else
-        echo "$1" > "$cache_file"
-    fi
+    saveFile "$1"
 
     #Unload wallpaper image
     sleep 2
     hyprctl hyprpaper unload all
 }
 # -----------------------------------------------------
+function selected() {
+  if pidof "swww-daemon"; then
+      sel_sww "$1"
+  elif pidof "hyprpaper"; then
+      sel_hyprpaper "$1"
+  fi
+}
+# -----------------------------------------------------
 # Load last wallpaper
 last() {
-     if [ -f "$cache_file" ]; then
-         file=$(cat "$cache_file")
-
-         if [ -n "$1" ]; then
-            notify "temp" "$1" "$file"
-         fi
-
-         sleep 1
-         selected "$file"
-     else
-       notify "n" "Not found wallpaper cache file \n- $cache_file"
-     fi
+   if [ -f "$cache_file" ]; then
+       file=$(cat "$cache_file")
+       if [ -n "$1" ]; then
+          notify "temp" "$1" "$file"
+       fi
+       sleep 1
+       selected "$file"
+   else
+      notify "n" "Not found wallpaper cache file \n- $cache_file"
+   fi
 }
 # -----------------------------------------------------
 # Notification
 notify() {
-  bash ~/.config/hypr/scripts/utils/notifications.sh "icon" "$1" "Hyprpaper" "$2" "$3" 1500
+  bash ~/.config/hypr/scripts/utils/notifications.sh "icon" "$1" "Wallpaper engine" "$2" "$3" 1500
 }
 # -----------------------------------------------------
 # Run rofi
@@ -77,7 +119,7 @@ wallpaper_random() {
 # -----------------------------------------------------
 # Restart hyprpaper
 if [ "$1" == "restart" ]; then
-  ~/.config/hypr/scripts/utils/reload.sh hyprpaper
+  ~/.config/hypr/scripts/utils/reload.sh wallpaper
 
   last "Restart wallpaper engine"
   exit 1

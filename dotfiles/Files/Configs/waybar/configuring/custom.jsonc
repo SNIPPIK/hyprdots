@@ -8,12 +8,6 @@
     "tooltip-format": "Left: Select random\nRight: Select wallpaper\nMiddle: Restart wallpaper engine"
   },
 
-  "custom/separator": {
-    "format": "┃",
-    "interval": "once",
-    "tooltip": false
-  },
-
   //Media player
   "custom/media": {
     "format": "<span foreground='LIGHTGREEN'>{}</span>",

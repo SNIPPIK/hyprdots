@@ -15,7 +15,7 @@ restart() {
 # -----------------------------------------------------
 
 # Restart waybar
-if [ "$1" = "waybar" ]; then
+if [ "$1" = "panel" ]; then
   restart "waybar"
   sleep 0.5
   waybar
@@ -23,8 +23,14 @@ fi
 # -----------------------------------------------------
 
 # Restart hyprpaper
-if [ "$1" = "hyprpaper" ]; then
-  restart "hyprpaper"
-  sleep 0.5
-  hyprpaper
+if [ "$1" = "wallpaper" ]; then
+    if pidof "swww-daemon"; then
+       restart "swww-daemon"
+       sleep 0.5
+       swww-daemon
+    elif pidof "hyprpaper"; then
+      restart "hyprpaper"
+      sleep 0.5
+      hyprpaper
+    fi
 fi
