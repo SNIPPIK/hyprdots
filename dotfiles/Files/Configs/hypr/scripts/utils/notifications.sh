@@ -5,8 +5,6 @@
 # | |\  | (_) | |_| |  _| | (_| (_| | |_| | (_) | | | \__ \
 # |_| \_|\___/ \__|_|_| |_|\___\__,_|\__|_|\___/|_| |_|___/
 # -----------------------------------------------------
-# All notifications
-NOTIFY=1
 
 # -----------------------------------------------------
 # Notification with icon
@@ -28,10 +26,17 @@ notification() {
 }
 
 # -----------------------------------------------------
-# If disable notification
-if [ "$NOTIFY" == 0 ]; then
+# Check dnd mode
+if [ "$1" == "toggle" ]; then
+  if [ "$(dunstctl is-paused)" == false ]; then
+     dunstctl set-paused true
+  else
+     dunstctl set-paused false
+  fi
+
   exit 0
 fi
+
 # -----------------------------------------------------
 # Send notification
 if [ "$1" == "icon" ]; then

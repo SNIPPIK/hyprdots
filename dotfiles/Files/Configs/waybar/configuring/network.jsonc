@@ -4,13 +4,15 @@
     "format": "{icon}",
     "format-icons": {
       "wifi": ["\uE0D5", "\uE0D6", "\uE0D7", "\uE0D9"],
+      "disconnected": [""],
       "ethernet": ["󰈀 "],
-      "disconnected": ["\uE0DA"]
+      "disabled": [""],
+      "linked": [""]
     },
 
     "tooltip-format": "󰈀 {ifname} via {gwaddri}",
-    "tooltip-format-wifi": "\uE0D9 {ifname} @ {essid}\nIP: {ipaddr}\nStrength: {signalStrength}%\nFreq: {frequency}MHz\n📤: {bandwidthUpBits} | 📥: {bandwidthDownBits}",
-    "tooltip-format-ethernet": "󰈀 {ifname}\n🔖: {ipaddr}\n📤: {bandwidthUpBits} | 📥: {bandwidthDownBits}",
+    "tooltip-format-wifi": "\uE0D9 {ifname} @ {essid}\n🔗: {ipaddr}\n📶: {signalStrength}% | 📡: {frequency}MHz\n📤: {bandwidthUpBits} | 📥: {bandwidthDownBits}",
+    "tooltip-format-ethernet": "󰈀 {ifname}\n🔗: {ipaddr}\n📤: {bandwidthUpBits} | 📥: {bandwidthDownBits}",
     "tooltip-format-disconnected": "Disconnected",
     "max-length": 50,
 
