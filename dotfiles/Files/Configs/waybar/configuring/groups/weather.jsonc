@@ -1,0 +1,15 @@
+{
+  // Group logo
+  "group/weather": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 350,
+      "children-class": "not-memory",
+      "transition-left-to-right": false
+    },
+    "modules": [
+      "clock",
+      "custom/weather"
+    ]
+  }
+}

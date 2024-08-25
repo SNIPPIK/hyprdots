@@ -24,11 +24,13 @@
         "~/.config/waybar/configuring/workspaces/numbers.jsonc", //workspaces/{}.jsonc  | Supported type icons, numbers
 
         // Default load
+        "~/.config/waybar/configuring/global.jsonc",
         "~/.config/waybar/configuring/custom.jsonc",
         "~/.config/waybar/configuring/network.jsonc",
 
         // Group load
         "~/.config/waybar/configuring/groups/workspace.jsonc",
+        "~/.config/waybar/configuring/groups/weather.jsonc",
         "~/.config/waybar/configuring/groups/audio.jsonc",
         "~/.config/waybar/configuring/groups/logo.jsonc",
         "~/.config/waybar/configuring/groups/power.jsonc",
@@ -37,7 +39,8 @@
 
     // Modules Left
     "modules-left": [
-        "group/logo", "group/workspace",
+        "group/logo",
+        "group/workspace",
         "hyprland/window"
     ],
 
@@ -54,7 +57,7 @@
         "network",
         "tray",
         "custom/notification",
-        "clock",
+        "group/weather",
         "battery",
         "group/power"
     ]
