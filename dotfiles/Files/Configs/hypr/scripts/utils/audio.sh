@@ -36,6 +36,8 @@ function get_output_icon {
     mute=$(get_mute_output)
     if [ "$volume" -eq 0 ] || [ "$mute" == "yes" ] ; then
         volume_icon=""
+    elif [ "$volume" -lt 25 ]; then
+        volume_icon=""
     elif [ "$volume" -lt 50 ]; then
         volume_icon=""
     else

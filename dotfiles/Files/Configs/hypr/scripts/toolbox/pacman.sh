@@ -31,21 +31,25 @@ if [ "$1" == "check" ]; then
   mapfile -t updates < <(packages)
   updated=${#updates[@]}
   total="$(pacman -Q | wc -l)"
-
   text=" ${updated} | 󰏖 $(pacman -Q | wc -l)"
-  tooltip=" <b>$updated updates | 󰏖 Packages $total</b>\n"
-  tooltip+="<b>$(stringToLen "Package" 20) # $(stringToLen "Current" 20) # $(stringToLen "Next" 20)</b>\n"
+  tooltip=""
 
-  for i in "${updates[@]}"; do
-    update="$(stringToLen "$(echo "$i" | awk '{print $1}')" 20)"
-    prev="$(stringToLen "$(echo "$i" | awk '{print $2}')" 20)"
-    next="$(stringToLen "$(echo "$i" | awk '{print $4}')" 20)"
+  if [ "$(checkupdates)" ]; then
+    tooltip=" <b>$updated updates | 󰏖 Packages $total</b>\n"
+    tooltip+="<b>$(stringToLen "Package" 20) $(stringToLen "Current" 20) $(stringToLen "Next" 20)</b>\n"
 
-    tooltip+="<b>$update</b> # $prev # $next\n"
-  done
+    for i in "${updates[@]}"; do
+        update="$(stringToLen "$(echo "$i" | awk '{print $1}')" 20)"
+        prev="$(stringToLen "$(echo "$i" | awk '{print $2}')" 20)"
+        next="$(stringToLen "$(echo "$i" | awk '{print $4}')" 20)"
 
-  tooltip="$(echo "$tooltip" | column -t -s '  #  ')"
-  tooltip=${tooltip::-2}
+        tooltip+="<b>$update</b> $prev $next\n"
+      done
+
+      tooltip=${tooltip::-2}
+  else
+    tooltip=" <b>$updated updates | 󰏖 Packages $total</b>\n- Packages not found for update"
+  fi
 
 cat <<EOF
 { "text":"$text", "tooltip":"$tooltip"}
