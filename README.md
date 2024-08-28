@@ -18,7 +18,7 @@ While installing alongside another [DE](https://wiki.archlinux.org/title/Desktop
 
 > [!IMPORTANT]
 > The install script will auto-detect an NVIDIA card and install nvidia-dkms drivers for your kernel.
-> Please ensure that your NVIDIA card supports dkms drivers in the list provided [here](https://wiki.archlinux.org/title/NVIDIA).\
+> Please ensure that your NVIDIA card supports dkms drivers in the list provided [here](https://wiki.archlinux.org/title/NVIDIA).
 
 > [!TIP]
 > To work brightness requires the package aur:`light`\
