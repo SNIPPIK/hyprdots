@@ -24,11 +24,10 @@ link() {
   fi
 }
 
-# Need to update hyprdots
-cp ~/hyprdots/dotfiles/sync.sh ~/.cache
-
 # The user's response is required
 choice() {
+  # shellcheck disable=SC3045
+  # shellcheck disable=SC2162
   read -p "Continue (y/n)? " choice
   case "$choice" in
     y|Y|н|Н ) echo "Continue...";;
@@ -39,7 +38,7 @@ choice() {
 # -----------------------------------------------------
 # Check root user
 if [ "$USER" = "root" ]; then
-    echo "Do not use root in this script, log in with another account"
+    echo "Do not use root in this script, login in with another account"
     exit 0
 fi
 
@@ -48,6 +47,11 @@ if [ ! -d ~/.config ]; then
   mkdir ~/.config
 fi
 
+# Need to update hyprdots
+if [ -f ~/.cache/sync.sh ]; then
+  rm -rd ~/.cache/sync.sh
+fi
+cp ~/hyprdots/dotfiles/sync.sh ~/.cache
 # -----------------------------------------------------
 echo WARNING backup your .config directory
 choice
@@ -57,67 +61,18 @@ if [ ! -d ~/hyprdots ]; then
     ln -s "${PWD}" ~/
 fi
 
-# Linking directories
-# shellcheck disable=SC2045
-for path in $(ls ~/hyprdots/dotfiles/Files/Configs)
-do
-  if [ "$path" ]; then
-    linkConfig "$path"
-  fi
-done
-
-# Linking files
-# shellcheck disable=SC2045
-for file in ".bashrc" ".gtkrc-2.0"
-do
-   if [ "$file" ]; then
-      link "$file"
-   fi
-done
-
-# Create link to Pictures
-ln -s ~/hyprdots/dotfiles/Pictures/Wallpapers ~/Pictures
-
-echo Install fonts for waybar
-choice
-
-# Create dir fonts
-if [ ! -h ~/.fonts ]; then
-  mkdir ~/.fonts
-fi
-
-# Create link to wifi font
-# shellcheck disable=SC2045
-for path in $(ls ~/hyprdots/dotfiles/Files/Fonts)
-do
-  if [ "$path" ]; then
-    cp ~/hyprdots/dotfiles/Files/Fonts/"$path" ~/.fonts
-  fi
-done
-
-fc-cache -f -v
-
+bash ~/hyprdots/dotfiles/.installer/configs.sh
 # -----------------------------------------------------
 echo Installing packages
 choice
-
-# Install packages and yay
+# Install packages
 bash ~/hyprdots/dotfiles/.installer/packages.sh
-
-
+# Install packages
+bash ~/hyprdots/dotfiles/.installer/aur.sh
 # -----------------------------------------------------
-echo Unpack dark theme
+echo Unpack themes
 choice
-
-#Unpack theme
-echo Install 7zip
-sudo pacman -S p7zip
-echo Unpack Fluent
-7z x "${HOME}"/hyprdots/dotfiles/Files/Theme/Fluent.zip -o"${HOME}"/.themes
+bash ~/hyprdots/dotfiles/.installer/themes.sh
 # -----------------------------------------------------
 
-#Install sddm theme
-bash ~/hyprdots/dotfiles/.installer/sddm.sh
-
-# Install grub theme
-bash ~/hyprdots/dotfiles/.installer/grub.sh
+echo "Installing the ended!"
