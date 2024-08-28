@@ -74,5 +74,7 @@ echo Unpack themes
 choice
 bash ~/hyprdots/dotfiles/.installer/themes.sh
 # -----------------------------------------------------
-
+echo Install GPU Drivers
+bash ~/hyprdots/dotfiles/.installer/drivers.sh
+# -----------------------------------------------------
 echo "Installing the ended!"
