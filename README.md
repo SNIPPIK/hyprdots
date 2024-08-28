@@ -9,13 +9,16 @@
 The installation script is designed for a minimal [Arch Linux](https://wiki.archlinux.org/title/Arch_Linux) install, but **may** work on some [Arch-based distros](https://wiki.archlinux.org/title/Arch-based_distributions).
 While installing alongside another [DE](https://wiki.archlinux.org/title/Desktop_environment)/[WM](https://wiki.archlinux.org/title/Window_manager) should work, due to it being a heavily customized setup, it **will** conflict with your [GTK](https://wiki.archlinux.org/title/GTK)/[Qt](https://wiki.archlinux.org/title/Qt) theming, [Shell](https://wiki.archlinux.org/title/Command-line_shell), [SDDM](https://wiki.archlinux.org/title/SDDM), [GRUB](https://wiki.archlinux.org/title/GRUB), etc. and is at your own risk.
 
-> [!IMPORTANT]
-> The install script will no auto-detect an NVIDIA card and install nvidia-dkms drivers for your kernel.
-> Please ensure that your NVIDIA card supports dkms drivers in the list provided [here](https://wiki.archlinux.org/title/NVIDIA).
-
 > [!CAUTION]
 > See all button bindings in terminal `hyprland-binds`\
-> All files are linked, deleting the directory hyprdots can lead to serious consequences
+> All files are linked, deleting the directory hyprdots can lead to serious consequences\
+> The install script will auto install GPU drivers for AMD, NVIDIA, Intel is not supported in script\
+> The script will install dark theme gtk, sddm, grub. If you have a bootloader other grub installed, then it is better not to use hyprdots
+
+
+> [!IMPORTANT]
+> The install script will auto-detect an NVIDIA card and install nvidia-dkms drivers for your kernel.
+> Please ensure that your NVIDIA card supports dkms drivers in the list provided [here](https://wiki.archlinux.org/title/NVIDIA).\
 
 > [!TIP]
 > To work brightness requires the package aur:`light`\
