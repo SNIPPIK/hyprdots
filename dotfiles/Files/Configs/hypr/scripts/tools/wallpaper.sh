@@ -67,9 +67,9 @@ function sel_hyprpaper() {
 }
 # -----------------------------------------------------
 function selected() {
-  if pidof "swww-daemon"; then
+  if [ "$(pacman -Qs swww)" ]; then
       sel_sww "$1"
-  elif pidof "hyprpaper"; then
+  elif [ "$(pacman -Qs hyprpaper)" ]; then
       sel_hyprpaper "$1"
   fi
 }
@@ -84,7 +84,7 @@ function last() {
        sleep 1
        selected "$file"
    else
-      notify "n" "Not found wallpaper cache file \n- $cache_file"
+       notify "n" "Not found wallpaper cache file \n- $cache_file"
    fi
 }
 # -----------------------------------------------------
@@ -119,8 +119,9 @@ function wallpaper_random() {
 # -----------------------------------------------------
 # Restart hyprpaper
 if [ "$1" == "restart" ]; then
-  ~/.config/hypr/scripts/utils/reload.sh wallpaper
+  bash ~/.config/hypr/scripts/utils/reload.sh wallpaper
 
+  sleep 1s
   last "Restart wallpaper engine"
   exit 1
 # -----------------------------------------------------
@@ -153,18 +154,14 @@ elif [ "$1" == "auto" ]; then
 # Select engine
 elif [ "$1" == "engine" ]; then
   # For swww
-  if [ "$(pacman -Qs swww)" ] ;then
+  if [ "$(pacman -Qs swww)" ]; then
       echo ":: Using swww"
       swww init
       swww-daemon --format xrgb
-      sleep 0.5
-      ~/.config/hypr/scripts/tools/wallpaper.sh last
 
   # For hyprpaper
-  elif [ "$(pacman -Qs hyprpaper)" ] ;then
+  elif [ "$(pacman -Qs hyprpaper)" ]; then
       echo ":: Using hyprpaper"
       hyprpaper
-      sleep 0.5
-      ~/.config/hypr/scripts/tools/wallpaper.sh last
   fi
 fi

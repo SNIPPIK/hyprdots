@@ -24,13 +24,13 @@ fi
 
 # Restart hyprpaper
 if [ "$1" = "wallpaper" ]; then
-    if pidof "swww-daemon"; then
+    if [ "$(pacman -Qs swww)" ]; then
        restart "swww-daemon"
        sleep 0.5
        swww-daemon
-    elif pidof "hyprpaper"; then
-      restart "hyprpaper"
-      sleep 0.5
-      hyprpaper
+    elif [ "$(pacman -Qs hyprpaper)" ]; then
+       restart "hyprpaper"
+       sleep 0.5
+       hyprpaper
     fi
 fi
