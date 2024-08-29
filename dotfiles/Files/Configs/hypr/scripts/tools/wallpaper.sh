@@ -75,7 +75,7 @@ function selected() {
 }
 # -----------------------------------------------------
 # Load last wallpaper
-last() {
+function last() {
    if [ -f "$cache_file" ]; then
        file=$(cat "$cache_file")
        if [ -n "$1" ]; then
@@ -89,12 +89,12 @@ last() {
 }
 # -----------------------------------------------------
 # Notification
-notify() {
+function notify() {
   bash ~/.config/hypr/scripts/utils/notifications.sh "icon" "$1" "Wallpaper engine" "$2" "$3" 1500
 }
 # -----------------------------------------------------
 # Run rofi
-rofi_cmd() {
+function rofi_cmd() {
   rofi -dmenu \
   -i \
   -p "Select wallpaper to change" \
@@ -102,7 +102,7 @@ rofi_cmd() {
 }
 # -----------------------------------------------------
 # Select random image
-wallpaper_random() {
+function wallpaper_random() {
     random_background=""
 
     #Find image wallpaper
@@ -149,4 +149,22 @@ elif [ "$1" == "auto" ]; then
       wallpaper_random
       sleep 2m
   done
+# -----------------------------------------------------
+# Select engine
+elif [ "$1" == "engine" ]; then
+  # For swww
+  if [ "$(pacman -Qs swww)" ] ;then
+      echo ":: Using swww"
+      swww init
+      swww-daemon --format xrgb
+      sleep 0.5
+      ~/.config/hypr/scripts/tools/wallpaper.sh last
+
+  # For hyprpaper
+  elif [ "$(pacman -Qs hyprpaper)" ] ;then
+      echo ":: Using hyprpaper"
+      hyprpaper
+      sleep 0.5
+      ~/.config/hypr/scripts/tools/wallpaper.sh last
+  fi
 fi

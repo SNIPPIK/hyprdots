@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 #  ____                               _           _
 # / ___|  ___ _ __ ___  ___ _ __  ___| |__   ___ | |_
 # \___ \ / __| '__/ _ \/ _ \ '_ \/ __| '_ \ / _ \| __|
@@ -9,12 +9,12 @@ directory="${HOME}/Pictures/Screenshots"
 file="$(date "+%H:%M:%S %d.%m.%Y").png"
 # -----------------------------------------------------
 # Notification
-notify() {
+function notify() {
   bash ~/.config/hypr/scripts/utils/notifications.sh "icon" "temp" "Screenshot" "$1" "$2" 4000
 }
 
 # Check file
-find_screenshot() {
+function find_screenshot() {
   if [ ! -f "$directory/$file" ]; then
     exit 0
   fi

@@ -31,6 +31,8 @@
     "format": "{icon} {}",
     "rotate": 0,
     "format-icons": {
+      "dnd": "", "none": "",
+      "notification": "<span foreground='red'><sup></sup></span>",
       "email-notification": "<span foreground='red'><sup></sup></span>",
       "chat-notification": "󱋊<span foreground='red'><sup></sup></span>",
       "warning-notification": "󱨪<span foreground='yellow'><sup></sup></span>",
@@ -40,9 +42,7 @@
       "update-notification": "󰚰<span foreground='white'><sup></sup></span>",
       "music-notification": "󰝚<span foreground='white'><sup></sup></span>",
       "volume-notification": "󰕿<span foreground='white'><sup></sup></span>",
-      "notification": "<span foreground='red'><sup></sup></span>",
-      "dnd": "",
-      "none": ""
+      "dnd-notification": "<span foreground='white'><sup></sup></span>"
     },
     "return-type": "json",
     "exec-if": "which dunstctl",

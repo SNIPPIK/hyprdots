@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 # -----------------------------------------------------
 shutdown=''
 suspend=''
@@ -9,14 +9,14 @@ yes=''
 no=''
 # -----------------------------------------------------
 # Open power menu
-menu_select() {
+function menu_select() {
 	rofi -dmenu \
 		-mesg " User: ${USER} |  Uptime: $(uptime -p | sed -e 's/up //g')" \
 		-theme windows/power.rasi
 }
 # -----------------------------------------------------
 # Confirmation CMD
-confirm() {
+function confirm() {
 	rofi -dmenu \
 		-p 'Confirmation' \
 		-mesg "Are you Sure? $1?" \
@@ -24,7 +24,7 @@ confirm() {
 }
 # -----------------------------------------------------
 # Execute Command
-run_cmd() {
+function run_cmd() {
 	selected="$(echo -e "$yes\n$no" | confirm "$1")"
 
 	# If not selected yes
@@ -58,9 +58,9 @@ run_cmd() {
 # Actions
 chosen="$(echo -e "$lock\n$suspend\n$logout\n$reboot\n$shutdown" | menu_select)"
 case ${chosen} in
-    $shutdown)    run_cmd shutdown ;;
-    $reboot)      run_cmd reboot   ;;
-    $lock)        run_cmd lock     ;;
-    $suspend)	    run_cmd suspend  ;;
-    $logout)	    run_cmd logout   ;;
+    "$shutdown")    run_cmd shutdown ;;
+    "$reboot")      run_cmd reboot   ;;
+    "$lock")        run_cmd lock     ;;
+    "$suspend")	    run_cmd suspend  ;;
+    "$logout")	    run_cmd logout   ;;
 esac

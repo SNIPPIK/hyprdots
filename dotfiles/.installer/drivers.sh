@@ -10,7 +10,7 @@ if [[ "$gpu" == "*NVIDIA Corporation*" ]]; then
   echo "For the Turing (NV160/TUXXX) series or newer, NVIDIA recommends the open source kernel driver. To use it, you can install the nvidia-open package (for use with the linux kernel) or the nvidia-open-dkms package (for all other kernels).
   If these packages do not work, usually due to new hardware releases, nvidia-open-beta|AUR may have a newer driver version that offers support."
   echo Installing NVIDIA drivers packages
-  sudo pacman -S nvidia-dkms nvidia-utils lib32-nvidia-utils libva-nvidia-driver
+  sudo pacman -S nvidia-dkms nvidia-utils lib32-nvidia-utils libva-nvidia-driver egl-wayland
 
   echo Enabling the services nvidia-suspend.service, nvidia-hibernate.service and nvidia-resume.service
   sudo systemctl enable "nvidia-suspend.service"

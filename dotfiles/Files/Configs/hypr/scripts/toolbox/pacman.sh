@@ -9,7 +9,7 @@
 # Requires pacman-contrib, aur
 
 # Added a space in text and shorten it
-stringToLen() {
+function stringToLen() {
   STRING="$1"
   LEN="$2"
   if [ ${#STRING} -gt "$LEN" ]; then
@@ -20,7 +20,7 @@ stringToLen() {
 }
 
 # Get list packages
-packages() {
+function packages() {
   checkupdates --nocolor
   pacman -Qm | aur vercmp
 }

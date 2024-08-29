@@ -3,15 +3,8 @@
   "hyprland/workspaces": {
     "format": "{icon}",
     "format-icons": {
-      "1": "<span font='Font Awesome 5 Free 11'></span>",
-      "2": "<span font='Font Awesome 5 Free 11'></span>",
-      "3": "<span font='Font Awesome 5 Free 11'></span>",
-      "4": "<span font='Font Awesome 5 Free 11'></span>",
-      "5": "<span font='Font Awesome 5 Free 11'></span>",
-      "6": "<span font='Font Awesome 5 Free 11'></span>",
-      "7": "<span font='Font Awesome 5 Free 11'></span>",
-      "8": "<span font='Font Awesome 5 Free 11'></span>",
-      "default": "<span font='Font Awesome 5 Free 11'></span>"
+      "active": "<span font='8'></span>",
+      "default": "<span font='8'></span>"
     },
     "persistent-workspaces": {
       "*": 5
