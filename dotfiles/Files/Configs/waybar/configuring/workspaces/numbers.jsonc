@@ -1,9 +1,0 @@
-{
-  //Workspace
-  "hyprland/workspaces": {
-    "format": "{name}",
-    "persistent-workspaces": {
-      "*": 5
-    }
-  }
-}

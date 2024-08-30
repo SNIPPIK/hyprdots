@@ -204,9 +204,9 @@ case $1 in
       class=$(playerctl metadata --format '{{lc(status)}}')
 
       if [ "$class" = "playing" ] || [ "$class" = "paused" ]; then
-        title=" "$(playerctl metadata --format '{{title}}')
+        title=$(playerctl metadata --format '{{title}}')
       elif [ "$class" = "stopped" ]; then
-        title=
+        title=""
       fi
 
       echo "$title"

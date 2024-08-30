@@ -11,5 +11,14 @@
       "clock",
       "custom/weather"
     ]
+  },
+
+  // Weather
+  "custom/weather": {
+    "format": "{}",
+    "return-type": "string",
+    "restart-interval": 3600,
+    "exec": "sleep 0.2 && curl wttr.in/?format=3",
+    "on-click": "bash ~/.config/hypr/scripts/dialog.sh float-big weather"
   }
 }

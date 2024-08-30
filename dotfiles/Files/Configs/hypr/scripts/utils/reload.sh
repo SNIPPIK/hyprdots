@@ -22,7 +22,7 @@ if [ "$1" = "panel" ]; then
 fi
 # -----------------------------------------------------
 
-# Restart hyprpaper
+# Restart wallpaper engine
 if [ "$1" = "wallpaper" ]; then
     if [ "$(pacman -Qs swww)" ]; then
        restart "swww-daemon"

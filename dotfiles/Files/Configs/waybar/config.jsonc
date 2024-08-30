@@ -5,60 +5,70 @@
 //    \_/\_/ \__,_|\__, |_.__/ \__,_|_|
 //                 |___/
 // ---------------------------------------
-{
-    // General Settings
-    "layer": "top",
-    "position": "top",
-    "mod": "dock",
-    "margin-top": 6,
-    "height": 10,
-    "exclusive": true,
-    "passthrough": false,
-    "gtk-layer-shell": true,
-    "reload_style_on_change": true,
 
-    // Load Modules
-    "include": [
-        //Hyprland load
-        "~/.config/waybar/configuring/hyprland.jsonc",
-        "~/.config/waybar/configuring/workspaces/numbers.jsonc", //workspaces/{}.jsonc  | Supported type icons, numbers
+[
+    // Top bar
+    {
+        "mod": "dock",
+        "exclusive": true,
+        "passthrough": false,
+        "fixed-center": true,
+        "gtk-layer-shell": true,
+        "reload_style_on_change": true,
 
-        // Default load
-        "~/.config/waybar/configuring/global.jsonc",
-        "~/.config/waybar/configuring/custom.jsonc",
-        "~/.config/waybar/configuring/network.jsonc",
+        // Load Modules
+        "include": [
+            //Position: top, bottom
+            "~/.config/waybar/positions/top.jsonc",
 
-        // Group load
-        "~/.config/waybar/configuring/groups/workspace.jsonc",
-        "~/.config/waybar/configuring/groups/weather.jsonc",
-        "~/.config/waybar/configuring/groups/audio.jsonc",
-        "~/.config/waybar/configuring/groups/logo.jsonc",
-        "~/.config/waybar/configuring/groups/power.jsonc",
-        "~/.config/waybar/configuring/groups/system.jsonc"
-    ],
+            //Hyprland load
+            "~/.config/waybar/configuring/hyprland.jsonc",
 
-    // Modules Left
-    "modules-left": [
-        "group/logo",
-        "group/workspace",
-        "hyprland/window"
-    ],
+            // Default load
+            "~/.config/waybar/configuring/global.jsonc",
+            "~/.config/waybar/configuring/custom.jsonc",
+            "~/.config/waybar/configuring/network.jsonc",
 
-    // Modules Right
-    "modules-right": [
-        "custom/media",
+            // Group load
+            "~/.config/waybar/configuring/groups/workspace.jsonc",
+            "~/.config/waybar/configuring/groups/weather.jsonc",
+            "~/.config/waybar/configuring/groups/audio.jsonc",
+            "~/.config/waybar/configuring/groups/logo.jsonc",
+            "~/.config/waybar/configuring/groups/power.jsonc",
+            "~/.config/waybar/configuring/groups/system.jsonc"
+        ],
 
-        "custom/wallpaper",
-        "group/settings",
-        "group/system",
+        // Modules Left
+        "modules-left": [
+            "group/logo",
+            "group/workspace",
+            "hyprland/window"
+        ],
 
-        "hyprland/language",
-        "group/audio",
-        "network",
-        "tray",
-        "custom/notification",
-        "group/weather",
-        "battery",
-        "group/power"
-    ]
-}
+        // Modules Right
+        "modules-right": [
+            "custom/media",
+
+            "custom/wallpaper",
+            "group/settings",
+            "group/system",
+
+            "hyprland/language",
+            "group/audio",
+            "network",
+            "tray",
+            "custom/notification",
+            "group/weather",
+            "battery",
+            "group/power"
+        ],
+
+        //Workspace
+        "hyprland/workspaces": {
+            "format": "{name}",
+            "persistent-workspaces": {
+                "*": 5
+            }
+        }
+    }
+]

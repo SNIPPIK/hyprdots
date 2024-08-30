@@ -24,7 +24,6 @@ While installing alongside another [DE](https://wiki.archlinux.org/title/Desktop
 > To work brightness requires the package aur:`light`\
 > There are options for some configs\
 > Change a hyprland animation -> in terminal `hyprland`\
-> Change a waybar workspace icons -> in terminal `wb`\
 > View a current playing track in waybar, need to enable -> in terminal `player`\
 > Removed auto dynamic color for border, how to enable, need enable in hyprland.conf
 

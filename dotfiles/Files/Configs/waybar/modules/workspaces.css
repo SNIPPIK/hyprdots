@@ -7,21 +7,28 @@
 }
 
 /* -----------------------------------------------------
- * Workspace buttons
+ * Workspace, taskbar buttons
  * ----------------------------------------------------- */
 #workspaces button, #taskbar button {
-    transition: none;
-    color: @color-text;
-    background: transparent;
-    border-radius: 5px;
-    animation: ws_normal 20s ease-in-out 1;
+    color: black;
+    margin: 1px 3px;
+    padding: 0px;
+    border-radius: 100%;
+}
+
+#taskbar button {
+    background: @workspace-color-not-active;
+    padding-left: 5px;
+    padding-right: 5px;
 }
 
 /* -----------------------------------------------------
  * Workspace selected button
  * ----------------------------------------------------- */
 #workspaces button:hover, #taskbar button:hover {
-    color: @color-text;
+    border-radius: 10px;
+
+    background: @workspace-color-not-active;
     animation: ws_hover 20s ease-in-out 1;
     transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682);
 }
@@ -30,14 +37,18 @@
  * Workspace work space
  * ----------------------------------------------------- */
 #workspaces button.persistent {
-    color: @color-text;
+    background: @workspace-color-active;
 }
 
 /* -----------------------------------------------------
  * Workspace active button
  * ----------------------------------------------------- */
 #workspaces button.active, #taskbar button.active {
-    color: @workspace-color-active;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 10px;
+
+    background-color: @workspace-color-active;
     animation: ws_hover 20s ease-in-out 1;
     transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682);
 }
@@ -46,13 +57,6 @@
  * Workspace empty button
  * ----------------------------------------------------- */
 #workspaces button.empty {
-    color: @workspace-color-not-active;
-}
-
-
-/* -----------------------------------------------------
- * Taskbar active button
- * ----------------------------------------------------- */
-#taskbar button.active {
+    color: @color-text;
     background: @workspace-color-not-active;
 }

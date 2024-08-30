@@ -9,23 +9,6 @@
     "interval" : "once"
   },
 
-  //Media player
-  "custom/media": {
-    "format": "<span foreground='LIGHTGREEN'>{}</span>",
-    "tooltip-format": " Player\n 󰳽 click-left:   Pause/Resume\n 󰳽 click-right:  Skip\n 󰳽 click-middle: Repeat",
-    "interval": 5,
-    "return-type": "string",
-
-    "on-click": "bash ~/.config/hypr/scripts/utils/audio.sh play_pause",
-    "on-click-middle": "bash ~/.config/hypr/scripts/utils/audio.sh prev_track",
-    "on-click-right": "bash ~/.config/hypr/scripts/utils/audio.sh next_track",
-
-    "exec": "bash ~/.config/hypr/scripts/utils/audio.sh player_info",
-    "max-length": 30,
-    "tooltip": true,
-    "escape": true
-  },
-
   // Notifications
   "custom/notification": {
     "format": "{icon} {}",
@@ -59,12 +42,21 @@
     "on-scroll-up": "sleep 0.1 && dunstctl history-pop"
   },
 
-  // Weather
-  "custom/weather": {
-    "format": "{}",
+  //Media player
+  "custom/media": {
+    "format": "",
+    "format-alt": " <span foreground='LIGHTGREEN'>{}</span>",
+    "tooltip-format": " Player\n 󰳽 click-left:   Toggle info\n 󰳽 click-right:  Pause/Resume\n 󰳽 scroll-up:    Next\n 󰳽 scroll-down:  Repeat",
+    "interval": 5,
     "return-type": "string",
-    "restart-interval": 3600,
-    "exec": "sleep 0.2 && curl wttr.in/?format=3",
-    "on-click": "bash ~/.config/hypr/scripts/dialog.sh float-big weather"
+
+    "on-click-right": "bash ~/.config/hypr/scripts/utils/audio.sh play_pause",
+    "on-scroll-down": "bash ~/.config/hypr/scripts/utils/audio.sh prev_track",
+    "on-scroll-up": "bash ~/.config/hypr/scripts/utils/audio.sh next_track",
+
+    "exec": "bash ~/.config/hypr/scripts/utils/audio.sh player_info",
+    "max-length": 30,
+    "tooltip": true,
+    "escape": true
   }
 }

@@ -1,7 +1,8 @@
 {
   // Current window name
   "hyprland/window": {
-    "format": "  | {initialClass} - {initialTitle}"
+    "format": "  | {initialClass} - {initialTitle}",
+    "separate-outputs": true
   },
 
   // Current language

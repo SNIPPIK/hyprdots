@@ -120,8 +120,6 @@ function wallpaper_random() {
 # Restart hyprpaper
 if [ "$1" == "restart" ]; then
   bash ~/.config/hypr/scripts/utils/reload.sh wallpaper
-
-  sleep 1s
   last "Restart wallpaper engine"
   exit 1
 # -----------------------------------------------------

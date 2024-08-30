@@ -31,8 +31,6 @@ alias hyprland-board="nano ~/.config/hypr/configuring/keyboard/keyboard.conf"
 alias cwb="cd ~/.config/waybar"
 alias wb="nano ~/.config/waybar/config.jsonc"
 
-alias player="nano ~/.config/hypr/scripts/toolbox/player.sh"
-
 # -----------------------------------------------------
 # SYSTEM
 # -----------------------------------------------------
