@@ -8,6 +8,7 @@
     },
     "modules": [
       "hyprland/workspaces",
+      "tray",
       "wlr/taskbar"
     ]
   }

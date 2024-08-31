@@ -12,12 +12,12 @@
     "on-click-right": "bash ~/.config/hypr/scripts/dialog.sh float keybindings"
   },
 
-  // hypridle switcher
-  "idle_inhibitor": {
-    "format": "{icon}",
-    "format-icons": {
-      "activated": "",
-      "deactivated": ""
+  // Workspace
+  "hyprland/workspaces": {
+    "format": "{}",
+    "move-to-monitor": true,
+    "persistent-workspaces": {
+      "*": 8
     }
   },
 
@@ -36,6 +36,15 @@
     ],
     "app_ids-mapping": {
       "firefoxdeveloperedition": "firefox-developer-edition"
+    }
+  },
+
+  // hypridle switcher
+  "idle_inhibitor": {
+    "format": "{icon}",
+    "format-icons": {
+      "activated": "",
+      "deactivated": ""
     }
   }
 }

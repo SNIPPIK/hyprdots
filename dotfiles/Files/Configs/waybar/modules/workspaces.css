@@ -18,6 +18,7 @@
 
 #taskbar button {
     background: @workspace-color-not-active;
+    border-radius: 20px;
     padding-left: 5px;
     padding-right: 5px;
 }

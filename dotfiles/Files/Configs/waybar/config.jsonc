@@ -18,10 +18,10 @@
 
         // Load Modules
         "include": [
-            //Position: top, bottom
+            // Position: top, bottom
             "~/.config/waybar/positions/top.jsonc",
 
-            //Hyprland load
+            // Hyprland load
             "~/.config/waybar/configuring/hyprland.jsonc",
 
             // Default load
@@ -56,20 +56,10 @@
             "hyprland/language",
             "group/audio",
             "network",
-            "tray",
+            "battery",
             "custom/notification",
             "group/weather",
-            "battery",
             "group/power"
-        ],
-
-        //Workspace
-        "hyprland/workspaces": {
-            "format": "{name}",
-            "move-to-monitor": true,
-            "persistent-workspaces": {
-                "*": 5
-            }
-        }
+        ]
     }
 ]
