@@ -14,7 +14,7 @@
   "group/power": {
     "orientation": "inherit",
     "drawer": {
-      "transition-duration": 350,
+      "transition-duration": 450,
       "children-class": "not-memory",
       "transition-left-to-right": false
     },

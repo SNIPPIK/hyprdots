@@ -12,7 +12,7 @@
   "group/logo": {
     "orientation": "inherit",
     "drawer": {
-      "transition-duration": 350,
+      "transition-duration": 450,
       "children-class": "not-memory",
       "transition-left-to-right": true
     },
@@ -58,6 +58,7 @@
     "format": "{}",
     "return-type": "json",
     "restart-interval": 600,
+    "exec-on-event": true,
     "exec": "bash ~/.config/hypr/scripts/toolbox/pacman.sh check",
 
     "on-click": "bash ~/.config/hypr/scripts/dialog.sh float-small update",

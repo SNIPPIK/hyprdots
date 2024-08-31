@@ -1,8 +1,5 @@
-#!/bin/sh
-# -----------------------------------------------------
-
 # The user's response is required
-choice() {
+function choice() {
   # shellcheck disable=SC3045
   # shellcheck disable=SC2162
   read -p "Continue (y/n)? " choice

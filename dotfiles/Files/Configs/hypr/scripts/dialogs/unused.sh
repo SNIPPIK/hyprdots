@@ -1,16 +1,18 @@
-  echo "Remove unused packages"
+# Flatpak packages
+echo "Remove unused flatpak"
+flatpak uninstall --unused
 
-  packages=$(sudo pacman -Qdtq)
-  if [ -z "$packages" ]; then
-      echo "Not find packages for remove"
-  else
-      sudo pacman -Qdtq | sudo pacman -Rsc -
-  fi
-  sleep 0.2
+sleep 0.2s
 
-  clear
-  echo "Remove unused flatpak"
-  flatpak uninstall --unused
+# Arch packages
+clear
+if [ -z "$(sudo pacman -Qdtq)" ]; then
+    echo "Not find packages for remove"
+else
+    echo "Remove unused packages"
+    sudo pacman -Qdtq | sudo pacman -Rsc -
+fi
 
-  echo " "
-  read -p "Press enter to close"
+# Press enter
+echo " "
+read -p "Press enter to close"

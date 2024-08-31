@@ -49,7 +49,7 @@ Used for nice work dotfiles
 - `pipewire-pulse`, `wireplumber`, `bluez`, `blueberry`, `pavucontrol`,
 
 ## Images
-- Version 0.6.0
+- Version 0.6.2
 <img align="" alt="image" width="1920" src="/assets/images/1.png" />
 <img align="" alt="image" width="1920" src="/assets/images/2.png" />
 <img align="" alt="image" width="1920" src="/assets/images/3.png" />
@@ -58,9 +58,6 @@ Used for nice work dotfiles
 <img align="" alt="image" width="1920" src="/assets/images/6.png" />
 <img align="" alt="image" width="1920" src="/assets/images/7.png" />
 <img align="" alt="image" width="1920" src="/assets/images/8.png" />
-<img align="" alt="image" width="1920" src="/assets/images/9.png" />
-<img align="" alt="image" width="1920" src="/assets/images/10.png" />
-<img align="" alt="image" width="1920" src="/assets/images/11.png" />
 
 
 ### Demonstration videos

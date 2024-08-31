@@ -1,5 +1,3 @@
-#!/bin/sh
-# -----------------------------------------------------
 echo "$(cat ~/.config/hypr/configuring/keyboard/binds.conf)"
 
 echo " "

@@ -1,10 +1,14 @@
-  echo "Update system"
-  sudo pacman -Syu
-  sleep 0.2
+# Update system packages
+echo "Update system"
+sudo pacman -Syu
 
-  clear
-  echo "Update flatpak"
-  flatpak update
+sleep 0.2s
 
-  echo " "
-  read -p "Press enter to close"
+# Update flatpak packages
+clear
+echo "Update flatpak"
+flatpak update
+
+# Press enter
+echo " "
+read -p "Press enter to close"

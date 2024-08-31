@@ -1,5 +1,3 @@
-#!/bin/sh
-# -----------------------------------------------------
 # DPI Server
 if ! ciadpi --help; then
    bash ~/.config/hypr/scripts/utils/notifications.sh "no-icon" "temp" "System" "Not found package ciadpi. Need to install so work!" 4000
@@ -11,5 +9,6 @@ else
   ciadpi -s 2 -d 2
 fi
 
+# Press enter
 echo " "
 read -p "Press enter to close"
