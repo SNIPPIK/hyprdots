@@ -1,28 +1,5 @@
 #!/bin/sh
 # -----------------------------------------------------
-# Create link to directory
-linkConfig() {
-  if [ -h ~/.config/"$1" ] || [ -d ~/.config/"$1" ]; then
-      rm -rd ~/.config/"$1"
-      ln -s ~/hyprdots/dotfiles/Files/Configs/"$1" ~/.config
-      echo Created link to "$1", file exists, remove and create
-  else
-      echo Created link to "$1"
-      ln -s ~/hyprdots/dotfiles/Files/Configs/"$1" ~/.config
-  fi
-}
-
-# Create link to file
-link() {
-  if [ -h ~/"$1" ] || [ -f ~/"$1" ]; then
-      rm -r ~/"$1"
-      ln -s ~/hyprdots/dotfiles/Files/Additions/"$1" ~/
-      echo Created link to "$1", file exists, remove and create
-  else
-      echo Created link to "$1"
-      ln -s ~/hyprdots/dotfiles/Files/Additions/"$1" ~/
-  fi
-}
 
 # The user's response is required
 choice() {
