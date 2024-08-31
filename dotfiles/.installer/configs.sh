@@ -22,7 +22,6 @@ link() {
   fi
 }
 
-
 # Linking directories
 # shellcheck disable=SC2045
 for path in $(ls ~/hyprdots/dotfiles/Files/Configs)
@@ -42,7 +41,12 @@ do
 done
 
 # Create link to Pictures
-ln -s ~/hyprdots/dotfiles/Pictures/Wallpapers ~/Pictures
+if [ ! -d ~/Pictures/Wallpapers ]; then
+  ln -s ~/hyprdots/dotfiles/Pictures/Wallpapers ~/Pictures
+else
+  ln -s ~/hyprdots/dotfiles/Pictures/Wallpapers/hyprland.png ~/Pictures/Wallpapers
+  ln -s ~/hyprdots/dotfiles/Pictures/Wallpapers/hyprlock.png ~/Pictures/Wallpapers
+fi
 
 echo Install fonts for waybar
 choice
