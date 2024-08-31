@@ -66,6 +66,7 @@
         //Workspace
         "hyprland/workspaces": {
             "format": "{name}",
+            "move-to-monitor": true,
             "persistent-workspaces": {
                 "*": 5
             }

@@ -21,6 +21,7 @@ While installing alongside another [DE](https://wiki.archlinux.org/title/Desktop
 > Please ensure that your NVIDIA card supports dkms drivers in the list provided [here](https://wiki.archlinux.org/title/NVIDIA).
 
 > [!TIP]
+> Monitors auto calibrate on monitor.sh | Left to Right\
 > To work brightness requires the package aur:`light`\
 > There are options for some configs\
 > Change a hyprland animation -> in terminal `hyprland`\

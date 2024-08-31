@@ -25,7 +25,7 @@
 /* -----------------------------------------------------
  * Workspace selected button
  * ----------------------------------------------------- */
-#workspaces button:hover, #taskbar button:hover {
+#workspaces button:hover, #taskbar button:hover, #workspaces button.hosting-monitor, #workspaces button.special {
     border-radius: 10px;
 
     background: @workspace-color-not-active;

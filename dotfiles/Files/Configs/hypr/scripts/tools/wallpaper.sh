@@ -52,11 +52,11 @@ function sel_sww() {
 #        |___/|_|                   |_|
 # ------------------HyperPaper-------------------------
 function sel_hyprpaper() {
-    monitor=$(hyprctl monitors | grep Monitor | awk '{print $2}')
-
-    #Change wallpaper image
-    hyprctl hyprpaper preload "$1"
-    hyprctl hyprpaper wallpaper "$monitor, $1"
+    for monitor in $(hyprctl monitors | grep 'Monitor' | awk '{ print $2 }'); do
+          #Change wallpaper image
+          hyprctl hyprpaper preload "$1"
+          hyprctl hyprpaper wallpaper "$monitor,$1"
+    done
 
     # Create cache file
     saveFile "$1"
@@ -66,34 +66,43 @@ function sel_hyprpaper() {
     hyprctl hyprpaper unload all
 }
 # -----------------------------------------------------
+# Notification
+function notify() {
+  if [ ! "$4" ]; then
+    bash ~/.config/hypr/scripts/utils/notifications.sh "$1" "$2" "Wallpaper engine" "$3" 2000
+  else
+    bash ~/.config/hypr/scripts/utils/notifications.sh "$1" "$2" "Wallpaper engine" "$3" "$4" 2000
+  fi
+}
+# Select wallpaper engine for restarting
+function restart_wallpaper() {
+  # Restart wallpaper engine
+  if [ "$(pacman -Qs swww)" ]; then
+      killall -q "swww-daemon"
+      sleep 0.5
+      swww-daemon
+  elif [ "$(pacman -Qs hyprpaper)" ]; then
+      killall -q "hyprpaper"
+      sleep 0.5
+      hyprpaper
+  fi
+}
+# Select wallpaper engine for change image
 function selected() {
+  # Use SWWW
   if [ "$(pacman -Qs swww)" ]; then
       sel_sww "$1"
+  # Use hyprpaper
   elif [ "$(pacman -Qs hyprpaper)" ]; then
-      sel_hyprpaper "$1"
+    sel_hyprpaper "$1"
+  # Not found wallpaper engine
+  else
+    notify "n" "n" "Not found engine.\n Please install hyprpaper or swww!"
+    exit 0
   fi
 }
 # -----------------------------------------------------
-# Load last wallpaper
-function last() {
-   if [ -f "$cache_file" ]; then
-       file=$(cat "$cache_file")
-       if [ -n "$1" ]; then
-          notify "temp" "$1" "$file"
-       fi
-       sleep 1
-       selected "$file"
-   else
-       notify "n" "Not found wallpaper cache file \n- $cache_file"
-   fi
-}
-# -----------------------------------------------------
-# Notification
-function notify() {
-  bash ~/.config/hypr/scripts/utils/notifications.sh "icon" "$1" "Wallpaper engine" "$2" "$3" 1500
-}
-# -----------------------------------------------------
-# Run rofi
+# Dialog rofi - select wallpapers
 function rofi_cmd() {
   rofi -dmenu \
   -i \
@@ -101,38 +110,50 @@ function rofi_cmd() {
   -theme windows/wallpaper
 }
 # -----------------------------------------------------
-# Select random image
-function wallpaper_random() {
-    random_background=""
 
-    #Find image wallpaper
-    if [ -d "$WALLPAPERS_DIR" ]; then
+
+#  ____       _           _     _____
+# / ___|  ___| | ___  ___| |_  |_   _|   _ _ __   ___  ___
+# \___ \ / _ \ |/ _ \/ __| __|   | || | | | '_ \ / _ \/ __|
+#  ___) |  __/ |  __/ (__| |_    | || |_| | |_) |  __/\__ \
+# |____/ \___|_|\___|\___|\__|   |_| \__, | .__/ \___||___/
+#                                    |___/|_|
+# Change random wallpaper
+if [ "$1" == "random" ]; then
+   random_background=""
+
+   #Find image wallpaper
+   if [ -d "$WALLPAPERS_DIR" ]; then
       random_background="$(find -L "$WALLPAPERS_DIR" -type f | shuf -n 1)"
-    else
-      notify "temp" "Fail select wallpaper. Not found $WALLPAPERS_DIR"
-      exit 1
-    fi
+   else
+      notify "n" "n" "Fail select wallpaper. Not found $WALLPAPERS_DIR"
+      exit 0
+   fi
 
-    selected "$random_background"
-}
-
-# -----------------------------------------------------
-# Restart hyprpaper
-if [ "$1" == "restart" ]; then
-  bash ~/.config/hypr/scripts/utils/reload.sh wallpaper
-  last "Restart wallpaper engine"
-  exit 1
-# -----------------------------------------------------
+   selected "$random_background"
 # Load last wallpaper
 elif [ "$1" == "last" ]; then
-  last "Load last wallpaper"
+  if [ -f "$cache_file" ]; then
+      file=$(cat "$cache_file")
+
+      # Notify
+      if [ -n "$1" ]; then
+         notify "icon" "temp" "Load last wallpaper" "$file"
+      fi
+
+      sleep 1
+      selected "$file"
+  fi
 # -----------------------------------------------------
-# Change random wallpaper
-elif [ "$1" == "random" ]; then
-  wallpaper_random
-  exit 1
+# Auto switching wallpapers
+elif [ "$1" == "auto" ]; then
+  while true
+  do
+      bash ~/.config/hypr/scripts/tools/wallpaper.sh random
+      sleep 2m
+  done
 # -----------------------------------------------------
-# Selected image
+# User selected image
 elif [ "$1" == "select" ]; then
   selected_wallpaper=$(find "${WALLPAPERS_DIR}" -type f -printf "%P\n" | sort | while read -r A ; do echo -en "$A\x00icon\x1f""${WALLPAPERS_DIR}"/"$A\n" ; done | rofi_cmd)
 
@@ -140,26 +161,34 @@ elif [ "$1" == "select" ]; then
      exit 1
   fi
   selected "$WALLPAPERS_DIR/$selected_wallpaper"
-# -----------------------------------------------------
-# Auto switch wallpapers
-elif [ "$1" == "auto" ]; then
-  while true
-  do
-      wallpaper_random
-      sleep 2m
-  done
+fi
+
+
+#  _   _ _   _ _
+# | | | | |_(_) |___
+# | | | | __| | / __|
+# | |_| | |_| | \__ \
+#  \___/ \__|_|_|___/
+# Restart wallpaper engine
+if [ "$1" == "restart" ]; then
+  bash ~/.config/hypr/scripts/utils/reload.sh wallpaper
+  bash ~/.config/hypr/scripts/tools/wallpaper.sh last
 # -----------------------------------------------------
 # Select engine
 elif [ "$1" == "engine" ]; then
   # For swww
   if [ "$(pacman -Qs swww)" ]; then
-      echo ":: Using swww"
+      notify "n" "temp" " - Using swww"
       swww init
       swww-daemon --format xrgb
 
   # For hyprpaper
   elif [ "$(pacman -Qs hyprpaper)" ]; then
-      echo ":: Using hyprpaper"
+      notify "n" "temp" " - Using hyprpaper"
       hyprpaper
+  # Not found wallpaper engine
+  else
+      notify "n" "n" "Not found engine.\n Please install hyprpaper or swww!"
+      exit 0
   fi
 fi

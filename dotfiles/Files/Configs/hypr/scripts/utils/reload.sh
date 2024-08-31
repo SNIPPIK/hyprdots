@@ -21,16 +21,3 @@ if [ "$1" = "panel" ]; then
   waybar
 fi
 # -----------------------------------------------------
-
-# Restart wallpaper engine
-if [ "$1" = "wallpaper" ]; then
-    if [ "$(pacman -Qs swww)" ]; then
-       restart "swww-daemon"
-       sleep 0.5
-       swww-daemon
-    elif [ "$(pacman -Qs hyprpaper)" ]; then
-       restart "hyprpaper"
-       sleep 0.5
-       hyprpaper
-    fi
-fi
