@@ -42,11 +42,11 @@ choice
 # Install packages
 bash ~/hyprdots/dotfiles/.installer/packages.sh
 # Install packages
-bash ~/hyprdots/dotfiles/.installer/aur.sh
+sudo bash ~/hyprdots/dotfiles/.installer/aur.sh
 # -----------------------------------------------------
 echo Unpack themes
 choice
-bash ~/hyprdots/dotfiles/.installer/themes.sh
+sudo bash ~/hyprdots/dotfiles/.installer/themes.sh
 # -----------------------------------------------------
 echo Install GPU Drivers
 bash ~/hyprdots/dotfiles/.installer/drivers.sh
