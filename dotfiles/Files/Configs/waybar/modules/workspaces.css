@@ -8,6 +8,7 @@
 
 /* -----------------------------------------------------
  * Workspace, taskbar buttons
+ * Default button
  * ----------------------------------------------------- */
 #workspaces button, #taskbar button {
     color: black;
@@ -24,25 +25,40 @@
 }
 
 /* -----------------------------------------------------
- * Workspace selected button
+ * Workspace - selected button
+ * Swap space
  * ----------------------------------------------------- */
-#workspaces button:hover, #taskbar button:hover, #workspaces button.hosting-monitor, #workspaces button.special {
-    border-radius: 10px;
-
+#workspaces button:hover, #taskbar button:hover {
     background: @workspace-color-not-active;
+
+    border-radius: 10px;
     animation: ws_hover 20s ease-in-out 1;
     transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682);
 }
 
 /* -----------------------------------------------------
- * Workspace work space
+ * Workspace - hosting-monitor
+ * Space for not current monitor
+ * ----------------------------------------------------- */
+#workspaces button.hosting-monitor, #workspaces button.special {
+    background: @workspace-color-not-active;
+
+    border-radius: 10px;
+    animation: ws_hover 20s ease-in-out 1;
+    transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682);
+}
+
+/* -----------------------------------------------------
+ * Workspace - work space
+ * Active space
  * ----------------------------------------------------- */
 #workspaces button.persistent {
     background: @workspace-color-active;
 }
 
 /* -----------------------------------------------------
- * Workspace active button
+ * Workspace - active button
+ * Current active space
  * ----------------------------------------------------- */
 #workspaces button.active, #taskbar button.active {
     padding-left: 15px;
@@ -55,7 +71,8 @@
 }
 
 /* -----------------------------------------------------
- * Workspace empty button
+ * Workspace - empty button
+ * Empty space
  * ----------------------------------------------------- */
 #workspaces button.empty {
     color: @color-text;
