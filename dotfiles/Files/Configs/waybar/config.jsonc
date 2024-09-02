@@ -54,6 +54,7 @@
             "group/system",
 
             "hyprland/language",
+            "tray",
             "group/audio",
             "network",
             "battery",

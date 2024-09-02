@@ -44,7 +44,7 @@ if [ "$1" == "check" ]; then
         next="$(stringToLen "$(echo "$i" | awk '{print $4}')" 20)"
 
         tooltip+="<b>$update</b> $prev $next\n"
-      done
+    done
 
       tooltip=${tooltip::-2}
   else

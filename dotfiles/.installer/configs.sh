@@ -40,12 +40,27 @@ do
    fi
 done
 
+
+# Create Pictures dir
+if [ -d ~/Pictures ] || [ -h ~/Pictures ]; then
+   # Create wallpaper dir
+   if [ -d ~/Pictures/Wallpapers ] || [ -h ~/Pictures/Wallpapers ]; then
+       cp -r ~/hyprdots/dotfiles/Pictures/Wallpapers/hyprland.png ~/Pictures/Wallpapers/hyprland.png
+       cp -r ~/hyprdots/dotfiles/Pictures/Wallpapers/hyprlock.png ~/Pictures/Wallpapers/hyprlock.png
+   else
+     cp -r ~/hyprdots/dotfiles/Pictures/Wallpapers ~/Pictures/Wallpapers
+   fi
+else
+  cp -r ~/hyprdots/dotfiles/Pictures ~/Pictures
+fi
+
+
 # Create link to Pictures
 if [ ! -d ~/Pictures/Wallpapers ]; then
   ln -s ~/hyprdots/dotfiles/Pictures/Wallpapers ~/Pictures
 else
-  ln -s ~/hyprdots/dotfiles/Pictures/Wallpapers/hyprland.png ~/Pictures/Wallpapers
-  ln -s ~/hyprdots/dotfiles/Pictures/Wallpapers/hyprlock.png ~/Pictures/Wallpapers
+  cp ~/hyprdots/dotfiles/Pictures/Wallpapers/hyprland.png ~/Pictures/Wallpapers
+  cp ~/hyprdots/dotfiles/Pictures/Wallpapers/hyprlock.png ~/Pictures/Wallpapers
 fi
 
 echo Install fonts for waybar
