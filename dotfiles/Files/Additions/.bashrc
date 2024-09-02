@@ -44,8 +44,6 @@ alias wifi='nmtui'
 # DEVELOPMENT
 # -----------------------------------------------------
 alias dotsync="bash ~/.cache/sync.sh"
-alias hyprland-git="bash ~/hyprdots/dotfiles/.installer/hyprland.sh git"
-alias hyprland-stable="bash ~/hyprdots/dotfiles/.installer/hyprland.sh stable"
 
 # -----------------------------------------------------
 # START STARSHIP

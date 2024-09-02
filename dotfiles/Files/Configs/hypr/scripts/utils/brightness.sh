@@ -25,9 +25,9 @@ function get_brightness_icon {
 # Displays a brightness notification using dunstify
 function show_brightness_notification {
     brightness=$(get_brightness)
-    echo $brightness
+    echo "$brightness"
     get_brightness_icon
-    notify-send -t $notification_timeout -h string:x-dunst-stack-tag:brightness_notif -h int:value:$brightness "$brightness_icon $brightness%" --transient
+    notify-send -t $notification_timeout -h string:x-dunst-stack-tag:brightness_notif -h int:value:"$brightness" "$brightness_icon $brightness%" --transient
 }
 
 

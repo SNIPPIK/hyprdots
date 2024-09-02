@@ -22,4 +22,10 @@ for monitor in $monitors; do
 done
 
 sleep 2
-bash ~/.config/hypr/scripts/utils/notifications.sh "n" "temp" "Monitor calibrate" "$total_monitors" 2000
+
+# Send notification
+if [ "$(monitors | wc -l)" -gt 1 ]; then
+  bash ~/.config/hypr/scripts/utils/notifications.sh "n" "temp" "Monitors calibrated" "$total_monitors" 2000
+else
+  bash ~/.config/hypr/scripts/utils/notifications.sh "n" "temp" "Monitor calibrated" "$total_monitors" 2000
+fi

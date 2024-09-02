@@ -54,15 +54,6 @@ else
   cp -r ~/hyprdots/dotfiles/Pictures ~/Pictures
 fi
 
-
-# Create link to Pictures
-if [ ! -d ~/Pictures/Wallpapers ]; then
-  ln -s ~/hyprdots/dotfiles/Pictures/Wallpapers ~/Pictures
-else
-  cp ~/hyprdots/dotfiles/Pictures/Wallpapers/hyprland.png ~/Pictures/Wallpapers
-  cp ~/hyprdots/dotfiles/Pictures/Wallpapers/hyprlock.png ~/Pictures/Wallpapers
-fi
-
 echo Install fonts for waybar
 choice
 

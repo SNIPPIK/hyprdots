@@ -61,7 +61,7 @@ function get_album_art {
         album_art="${url/file:\/\//}"
     elif [[ $url == "http://"* ]] && [[ $download_album_art == "true" ]]; then
         # Identify filename from URL
-        filename="$(echo $url | sed "s/.*\///")"
+        filename="$(echo "$url" | sed "s/.*\///")"
 
         # Download file to /tmp if it doesn't exist
         if [ ! -f "/tmp/$filename" ]; then
@@ -71,7 +71,7 @@ function get_album_art {
         album_art="/tmp/$filename"
     elif [[ $url == "https://"* ]] && [[ $download_album_art == "true" ]]; then
         # Identify filename from URL
-        filename="$(echo $url | sed "s/.*\///")"
+        filename="$(echo "$url" | sed "s/.*\///")"
 
         # Download file to /tmp if it doesn't exist
         if [ ! -f "/tmp/$filename" ]; then
@@ -107,9 +107,9 @@ function show_volume_notification {
             get_album_art
         fi
 
-        notify-send -t $notification_timeout -h string:x-dunst-stack-tag:volume_notif -h int:value:$volume -i "$album_art" "$volume_icon $volume%" "$current_song" --transient
+        notify-send -t $notification_timeout -h string:x-dunst-stack-tag:volume_notif -h int:value:"$volume" -i "$album_art" "$volume_icon $volume%" "$current_song" --transient
     else
-        notify-send -t $notification_timeout -h string:x-dunst-stack-tag:volume_notif -h int:value:$volume "$volume_icon $volume%" --transient
+        notify-send -t $notification_timeout -h string:x-dunst-stack-tag:volume_notif -h int:value:"$volume" "$volume_icon $volume%" --transient
     fi
 }
 # Displays a volume notification
@@ -124,9 +124,9 @@ function show_micro_notification {
            get_album_art
         fi
 
-        notify-send -t $notification_timeout -h string:x-dunst-stack-tag:volume_notif -h int:value:$volume -i "$album_art" "$volume_icon $volume%" "$current_song" --transient
+        notify-send -t $notification_timeout -h string:x-dunst-stack-tag:volume_notif -h int:value:"$volume" -i "$album_art" "$volume_icon $volume%" "$current_song" --transient
     else
-        notify-send -t $notification_timeout -h string:x-dunst-stack-tag:volume_notif -h int:value:$volume "$volume_icon $volume%" --transient
+        notify-send -t $notification_timeout -h string:x-dunst-stack-tag:volume_notif -h int:value:"$volume" "$volume_icon $volume%" --transient
     fi
 }
 # -----------------------------------------------------
