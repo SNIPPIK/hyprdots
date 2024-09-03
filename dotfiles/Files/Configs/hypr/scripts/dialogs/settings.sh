@@ -21,5 +21,6 @@ echo "    Open grub        - grub"
 echo "    Open mkinitcpio  - mkinitcpio"
 echo "    Shutdown sys     - shutdown"
 echo " "
+
 # Press enter
 read -p "Press enter to close"
