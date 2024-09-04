@@ -23,6 +23,12 @@ function confirm() {
 # -----------------------------------------------------
 # Actions
 chosen="$(echo -e "$lock\n$suspend\n$logout\n$reboot\n$shutdown" | menu_select)"
+
+# If not selected button
+if [ ! "$chosen" ]; then
+  exit 0
+fi
+
 selected="$(echo -e "$yes\n$no" | confirm "$chosen")"
 
 # If not selected yes
@@ -43,7 +49,8 @@ case ${chosen} in
 
     # Lock system
     "$lock")
-    	  playerctl pause
+    	  playerctl --all-players stop
+    	  sleep 0.1s
         hyprlock
     ;;
 

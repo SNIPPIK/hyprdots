@@ -59,7 +59,7 @@
     "return-type": "json",
     "restart-interval": 600,
     "exec-on-event": true,
-    "exec": "sleep 2 && bash ~/.config/hypr/scripts/toolbox/pacman.sh check",
+    "exec": "bash ~/.config/hypr/scripts/toolbox/pacman.sh check",
 
     "on-click": "bash ~/.config/hypr/scripts/dialog.sh float-small update",
     "on-click-right": "bash ~/.config/hypr/scripts/dialog.sh float-small unused"
