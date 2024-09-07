@@ -9,7 +9,7 @@
       "disabled": [""],
       "linked": [""]
     },
-    "tooltip-format": "Network: <big><b>{essid}</b></big>\nSignal strength: <b>{signaldBm}dBm ({signalStrength}%)</b>\nFrequency: <b>{frequency}MHz</b>\nInterface: <b>{ifname}</b>\nIP: <b>{ipaddr}/{cidr}</b>\nGateway: <b>{gwaddr}</b>\nNetmask: <b>{netmask}</b>",
+    "tooltip-format": "{icon} // <b>{ipaddr}/{cidr}</b> | <b>{gwaddr}</b>\n \uE0D9: <b>{signaldBm}dBm ({signalStrength}%)</b>\n : <b>{frequency}MHz</b>\n \uF1E6: <b>{ifname}</b>\n\n 󰳽 click-left:   Open settings\n 󰳽 click-right:  Open alt settings\n 󰳽 click-middle: Open DPI",
     "max-length": 50,
 
     "on-click": "sleep 0.1 && nm-connection-editor",

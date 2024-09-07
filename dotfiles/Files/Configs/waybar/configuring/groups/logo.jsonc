@@ -49,7 +49,9 @@
     "return-type": "string",
     "tooltip-format": "DotFiles version",
     "exec": "sleep 0.1 && cat ~/hyprdots/dotfiles/version",
-    "interval" : "once"
+    "interval" : "once",
+
+    "on-click": "sleep 0.2 && bash ~/.cache/sync.sh"
   },
 
   // Updates Count | Total packages

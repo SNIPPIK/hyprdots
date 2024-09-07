@@ -2,13 +2,14 @@
   //Output (headphone)
   "pulseaudio": {
     "format": "{icon} {volume}%",
-    "tooltip-format": "{icon} {desc} // {volume}%",
     "format-muted": " {volume}%",
     "format-icons": {
       "headphone": " ",
       "car": " ",
       "default": ["", "", "", ""]
     },
+
+    "tooltip-format": "{desc} // {volume}%\n\n󰎟 Binds\n 󰳽 click-left: Toggle Mute\n 󰳽 click-right: Open settings\n 󰳽 scroll: Volume control",
 
     "on-click": "bash ~/.config/hypr/scripts/utils/audio.sh volume_mute",
     "on-click-right": "pavucontrol",
@@ -36,7 +37,9 @@
     "format": "{format_source}",
     "format-source": "",
     "format-source-muted": "",
-    "tooltip-format": "{format_source} {source_desc} // {source_volume}%",
+
+
+    "tooltip-format": "{source_desc} // {source_volume}%\n\n󰎟 Binds\n 󰳽 click-left: Toggle Mute\n 󰳽 click-right: Open settings\n 󰳽 scroll: Volume control",
 
     "on-click": "bash ~/.config/hypr/scripts/utils/audio.sh micro_mute",
     "on-click-right": "pavucontrol",
@@ -54,8 +57,8 @@
       "device2"
     ],
     // preference list deciding the displayed device
-    "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
-    "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+    "tooltip-format": "Devices - {num_connections} connected\n{controller_alias}\t{controller_address}",
+    "tooltip-format-connected": "Devices - {num_connections} connected\n{controller_alias}\t{controller_address}\n\nConnected:\n{device_enumerate}",
     "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
     "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
     "on-click": "blueberry",
