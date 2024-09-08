@@ -21,12 +21,9 @@ While installing alongside another [DE](https://wiki.archlinux.org/title/Desktop
 > Please ensure that your NVIDIA card supports dkms drivers in the list provided [here](https://wiki.archlinux.org/title/NVIDIA).
 
 > [!TIP]
-> Monitors auto calibrate on monitor.sh | Left to Right\
-> To work brightness requires the package aur:`light`\
-> There are options for some configs\
-> Change a hyprland animation -> in terminal `hyprland`\
-> View a current playing track in waybar, need to enable -> in terminal `player`\
-> Removed auto dynamic color for border, how to enable, need enable in hyprland.conf
+> Auto configuration of monitors\
+> Auto connection of linked bluetooth devices\
+> Hyprland animations can be changed in hyprland.conf
 
 To install, execute the following commands:
 ```shell
@@ -49,7 +46,7 @@ Used for nice work dotfiles
 - `pipewire-pulse`, `wireplumber`, `bluez`, `blueberry`, `pavucontrol`,
 
 ## Images
-- Version 0.6.2
+- Version 0.6.3
 <img align="" alt="image" width="1920" src="/assets/images/1.png" />
 <img align="" alt="image" width="1920" src="/assets/images/2.png" />
 <img align="" alt="image" width="1920" src="/assets/images/3.png" />
