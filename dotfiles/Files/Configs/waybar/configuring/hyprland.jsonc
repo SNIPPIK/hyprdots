@@ -1,7 +1,7 @@
 {
   // Current window name
   "hyprland/window": {
-    "format": "  | {initialClass} - {initialTitle}",
+    "format": " | {initialClass} - {initialTitle}",
     "separate-outputs": true
   },
 
@@ -18,7 +18,10 @@
     "move-to-monitor": true,
     "persistent-workspaces": {
       "*": 8
-    }
+    },
+
+    "on-scroll-up": "hyprctl dispatch workspace r+1",
+    "on-scroll-down": "hyprctl dispatch workspace r-1"
   },
 
   // Task bar

@@ -10,6 +10,7 @@
     // Top bar
     {
         "mod": "dock",
+        "width": 1900,
         "exclusive": true,
         "passthrough": false,
         "fixed-center": true,
@@ -43,6 +44,11 @@
             "group/logo",
             "group/workspace",
             "hyprland/window"
+        ],
+
+        // Modules Center
+        "modules-center": [
+
         ],
 
         // Modules Right

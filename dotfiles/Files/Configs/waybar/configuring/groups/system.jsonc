@@ -48,8 +48,8 @@
     "interval": 25,
     "thermal-zone": 2,
     "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
-    "critical-threshold": 80,
-    "format-critical": "{temperatureC}°C ",
+    "critical-threshold": 75,
+    "format-critical": "<span foreground='red'>{temperatureC}°C </span>",
     "format": "{temperatureC}°C "
   },
 
