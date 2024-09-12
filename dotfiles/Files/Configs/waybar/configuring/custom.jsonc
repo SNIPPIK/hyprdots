@@ -10,7 +10,7 @@
   },
 
   // Notifications
-  "custom/notification": {
+  "custom/notifications": {
     "format": "{icon} {}",
     "rotate": 0,
     "format-icons": {

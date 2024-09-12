@@ -64,7 +64,7 @@
             "group/audio",
             "network",
             "battery",
-            "custom/notification",
+            "custom/notifications",
             "group/weather",
             "group/power"
         ]
