@@ -11,10 +11,8 @@
 
   // Notifications
   "custom/notifications": {
-    "format": "{icon} {}",
-    "rotate": 0,
+    "format": "{} {icon}",
     "format-icons": {
-      "dnd": "", "none": "",
       "notification": "<span foreground='red'><sup></sup></span>",
       "email-notification": "<span foreground='red'><sup></sup></span>",
       "chat-notification": "󱋊<span foreground='red'><sup></sup></span>",
@@ -25,7 +23,8 @@
       "update-notification": "󰚰<span foreground='white'><sup></sup></span>",
       "music-notification": "󰝚<span foreground='white'><sup></sup></span>",
       "volume-notification": "󰕿<span foreground='white'><sup></sup></span>",
-      "dnd-notification": "<span foreground='white'><sup></sup></span>"
+      "dnd-notification": "<span foreground='white'><sup></sup></span>",
+      "none": "", "dnd": ""
     },
     "return-type": "json",
     "exec-if": "which dunstctl",
