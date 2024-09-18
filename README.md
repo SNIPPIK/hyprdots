@@ -1,4 +1,4 @@
-[<img align="right" alt="Avatar" width="150px" src="dotfiles/Files/Configs/hypr/icons/hyprland.svg" />]()
+[<img align="right" alt="Avatar" width="150px" src="assets/hyprland.svg" />]()
 
 # DotFiles
 - [`Hyprland WIKI`](https://wiki.hyprland.org/)
@@ -21,8 +21,7 @@ While installing alongside another [DE](https://wiki.archlinux.org/title/Desktop
 > Please ensure that your NVIDIA card supports dkms drivers in the list provided [here](https://wiki.archlinux.org/title/NVIDIA).
 
 > [!TIP]
-> Auto configuration of monitors\
-> Auto connection of linked bluetooth devices\
+> Auto configuration of monitors, left to right\
 > Hyprland animations can be changed in hyprland.conf
 
 To install, execute the following commands:
@@ -40,10 +39,11 @@ dotsync
 
 ## Dependencies
 Used for nice work dotfiles
-- `hyprland`, `hyprpaper`, `hypridle`, `hyprlock`, `waybar`, `rofi-wayland`, `nautilus`
+- `hyprland`, `hyprpaper`, `hypridle`, `hyprlock`, `waybar`, `rofi-wayland`, `hyprcursor`
 - `polkit-gnome`, `dunst`, `grim`, `sddm`, `starship`, `gnome-keyring`, `wl-clipboard`
 - `otf-font-awesome`, `noto-fonts-emoji`, `ttf-nerd-fonts-symbols-mono`, `ttf-dejavu`
-- `pipewire-pulse`, `wireplumber`, `bluez`, `blueberry`, `pavucontrol`,
+- `pipewire-pulse`, `wireplumber`, `bluez`, `blueberry`, `pavucontrol`, `flatpak`
+- `gnome-software`, `nautilus`
 
 ## Images
 - Version 0.6.3
@@ -57,7 +57,7 @@ Used for nice work dotfiles
 <img align="" alt="image" width="1920" src="/assets/images/8.png" />
 
 
-### Demonstration videos
+### Demonstration videos (archive)
 <details close>
   <summary>Click to open</summary>
 
