@@ -25,19 +25,19 @@
   },
 
   // Cpu usage
-  "cpu": {      // CPU
+  "cpu": {
     "interval": 15,
     "format": " {usage:2}%"
   },
 
   // Memory usage
-  "memory": {   // RAM
+  "memory": {
     "format": " {}%",
     "tooltip-format": "RAM: {used:0.1f}GiB used"
   },
 
   // Disk / use
-  "disk": {     //Disk
+  "disk": {
     "interval": 90,
     "format": " {percentage_used}%",
     "path": "/"
