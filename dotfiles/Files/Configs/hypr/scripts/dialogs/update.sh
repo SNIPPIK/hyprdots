@@ -8,8 +8,17 @@ sleep 0.2s
 # Update aur packages
 clear
 echo "Updating aur repository"
-yay -Syu
 
+# Install yay
+if ! yay; then
+  cd ~/.cache/
+  git clone https://aur.archlinux.org/yay.git
+  cd yay
+  makepkg -si
+  sleep 0.2s
+fi
+
+yay -Syu
 sleep 0.2s
 
 # Update flatpak packages

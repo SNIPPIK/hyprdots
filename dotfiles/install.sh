@@ -22,10 +22,15 @@ if [ ! -d ~/.config ]; then
 fi
 
 # Need to update hyprdots
+if [ ! -d ~/.cache ]; then
+  mkdir ~/.cache/
+fi
+
+# Need to update hyprdots
 if [ -f ~/.cache/sync.sh ]; then
   rm -rd ~/.cache/sync.sh
 fi
-cp ~/hyprdots/dotfiles/sync.sh ~/.cache
+cp ~/hyprdots/dotfiles/sync.sh ~/.cache/sync.sh
 # -----------------------------------------------------
 echo WARNING backup your .config directory
 choice
@@ -41,8 +46,6 @@ echo Installing packages
 choice
 # Install packages
 bash ~/hyprdots/dotfiles/.installer/packages.sh
-# Install packages
-sudo bash ~/hyprdots/dotfiles/.installer/aur.sh
 # -----------------------------------------------------
 echo Unpack themes
 choice

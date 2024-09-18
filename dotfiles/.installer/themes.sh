@@ -8,6 +8,18 @@ sudo pacman -S qt6-5compact qt6-declarative qt6-svg
 sleep 0.2s
 
 echo
+echo Install cursor theme
+# Remove old directory
+if [ -d ~/.icons/FutureCyan ]; then
+  rm -rd ~/.icons/FutureCyan
+fi
+
+# Unpack cursor theme
+7z x "${HOME}"/hyprdots/dotfiles/Files/Theme/FutureCyan.zip -o"${HOME}"/.icons/
+
+sleep 0.2s
+
+echo
 echo Needed added to sddm and create config
 sudo mkdir /etc/sddm.conf.d/
 sudo echo "[Theme]
@@ -20,14 +32,3 @@ echo Install 7zip
 sudo pacman -S p7zip
 echo Unpack Fluent
 7z x "${HOME}"/hyprdots/dotfiles/Files/Theme/Fluent.zip -o"${HOME}"/.themes
-
-sleep 0.2s
-
-# grub theme
-echo Install sddm theme neon
-sudo 7z x "${HOME}"/hyprdots/dotfiles/Files/Theme/Vimix.zip -o/"${HOME}"/.cache/
-echo
-echo Installing grub theme
-sleep 5
-
-"${HOME}"/.cache/Vimix/install.sh

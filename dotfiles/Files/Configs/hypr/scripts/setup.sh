@@ -66,10 +66,14 @@ fi
 #    \_/\_/ \__,_|\__, |_.__/ \__,_|_|
 #                 |___/
 # -----------------------------------------------------
-if [ "$1" = "panel" ]; then
-  killall -q "waybar"
-  sleep 0.5s
-  waybar
+if [ "$1" = "panel-toggle" ]; then
+  if [ $(ps -fC waybar | grep waybar | awk '{ print $8 }') ]; then
+    bash ~/.config/hypr/scripts/utils/notifications.sh "n" "temp" "Panel" "Your panel disabled" 1500
+    pkill "waybar"
+  else
+    bash ~/.config/hypr/scripts/utils/notifications.sh "n" "temp" "Panel" "Your panel enabled" 1500
+    waybar
+  fi
 fi
 
 
