@@ -69,9 +69,9 @@ function sel_hyprpaper() {
 # Notification
 function notify() {
   if [ ! "$4" ]; then
-    bash ~/.config/hypr/scripts/utils/notifications.sh "$1" "$2" "Wallpaper engine" "$3" 2000
+    bash ~/.config/dunst/client/notifications.sh "$1" "$2" "Wallpaper engine" "$3" 2000
   else
-    bash ~/.config/hypr/scripts/utils/notifications.sh "$1" "$2" "Wallpaper engine" "$3" "$4" 2000
+    bash ~/.config/dunst/client/notifications.sh "$1" "$2" "Wallpaper engine" "$3" "$4" 2000
   fi
 }
 # Select wallpaper engine for restarting

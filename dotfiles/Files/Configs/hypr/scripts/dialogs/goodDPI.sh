@@ -1,6 +1,6 @@
 # DPI Server
 if ! ciadpi --help; then
-   bash ~/.config/hypr/scripts/utils/notifications.sh "no-icon" "temp" "System" "Not found package ciadpi. Need to install so work!" 4000
+   bash ~/.config/dunst/client/notifications.sh "no-icon" "temp" "System" "Not found package ciadpi. Need to install so work!" 4000
    exit 0
 else
   clear

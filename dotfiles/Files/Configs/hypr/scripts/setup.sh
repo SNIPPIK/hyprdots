@@ -1,4 +1,10 @@
 #!/usr/bin/env bash
+# -----------------------------------------------------
+# Send notification
+notify () {
+  bash ~/.config/dunst/client/notifications.sh "$1" "$2" "$3" "$4" $5
+}
+# -----------------------------------------------------
 #  _   _                  _                 _   __  __             _ _
 # | | | |_   _ _ __  _ __| | __ _ _ __   __| | |  \/  | ___  _ __ (_) |_ ___  _ __ ___
 # | |_| | | | | '_ \| '__| |/ _` | '_ \ / _` | | |\/| |/ _ \| '_ \| | __/ _ \| '__/ __|
@@ -37,24 +43,22 @@ if [ "$1" = "monitors" ]; then
       done
   done
 
-  # Create config
-  rm ~/.config/hypr/configuring/window/monitors.conf
-  printf "#This file is temp\n$preset" >> ~/.config/hypr/configuring/window/monitors.conf
-
-  sleep 2
-
   # If not find new monitors
   if [ ! "$total_monitors" ]; then
-    bash ~/.config/hypr/scripts/utils/notifications.sh "n" "temp" "Monitor calibrating" "Used best resolution" 2000
+    notify "n" "temp" "Monitor calibrating" "Used best resolution" 2000
     exit 0
   fi
 
+  # Create config
+  rm ~/.config/hypr/configuring/window/monitors.conf
+  printf "#This file is temp\n$preset" >> ~/.config/hypr/configuring/window/monitors.conf
+  sleep 2
 
   # Send notification
   if [ "$(monitors | wc -l)" -gt 1 ]; then
-    bash ~/.config/hypr/scripts/utils/notifications.sh "n" "temp" "Monitors calibrating" "$total_monitors" 2000
+    notify "n" "temp" "Monitors calibrating" "$total_monitors" 2000
   else
-    bash ~/.config/hypr/scripts/utils/notifications.sh "n" "temp" "Monitor calibrating" "$total_monitors" 2000
+    notify "n" "temp" "Monitor calibrating" "$total_monitors" 2000
   fi
 fi
 
@@ -68,10 +72,10 @@ fi
 # -----------------------------------------------------
 if [ "$1" = "panel-toggle" ]; then
   if [ $(ps -fC waybar | grep waybar | awk '{ print $8 }') ]; then
-    bash ~/.config/hypr/scripts/utils/notifications.sh "n" "temp" "Panel" "Your panel disabled" 1500
+    notify "n" "temp" "Panel" "Your panel disabled" 1500
     pkill "waybar"
   else
-    bash ~/.config/hypr/scripts/utils/notifications.sh "n" "temp" "Panel" "Your panel enabled" 1500
+    notify "n" "temp" "Panel" "Your panel enabled" 1500
     waybar
   fi
 fi

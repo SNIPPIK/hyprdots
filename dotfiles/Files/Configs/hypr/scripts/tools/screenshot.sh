@@ -10,7 +10,7 @@ file="$(date "+%H:%M:%S %d.%m.%Y").png"
 # -----------------------------------------------------
 # Notification
 function notify() {
-  bash ~/.config/hypr/scripts/utils/notifications.sh "icon" "temp" "Screenshot" "$1" "$2" 4000
+  bash ~/.config/dunst/client/notifications.sh "icon" "temp" "Screenshot" "$1" "$2" 4000
 }
 
 # Check file

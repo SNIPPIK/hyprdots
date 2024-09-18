@@ -8,7 +8,7 @@
 
 # -----------------------------------------------------
 # Notification with icon
-notification_icon() {
+function notification_icon() {
   if [ "$1" = "temp" ]; then
     notify-send "$2" "$3" --icon="$4" --expire-time="$5" --transient
   else
@@ -17,7 +17,7 @@ notification_icon() {
 }
 
 # Notification without icon
-notification() {
+function notification() {
   if [ "$1" = "temp" ]; then
     notify-send "$2" "$3" --expire-time="$4" --transient
   else
