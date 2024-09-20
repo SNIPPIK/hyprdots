@@ -10,6 +10,11 @@ function choice() {
   esac
 }
 # -----------------------------------------------------
+echo " ___      _   ___ _ _        "
+echo "|   \ ___| |_| __(_) |___ ___"
+echo "| |) / _ \  _| _|| | / -_|_-<"
+echo "|___/\___/\__|_| |_|_\___/__/"
+
 # Check root user
 if [ "$USER" = "root" ]; then
     echo "Do not use root in this script, login in with another account"
@@ -32,6 +37,12 @@ if [ -f ~/.cache/sync.sh ]; then
 fi
 cp ~/hyprdots/dotfiles/sync.sh ~/.cache/sync.sh
 # -----------------------------------------------------
+echo "   ____             __ _            "
+echo "  / ___|___  _ __  / _(_) __ _ ___  "
+echo " | |   / _ \| '_ \| |_| |/ _ '/ __| "
+echo " | |__| (_) | | | |  _| | (_| \__ \ "
+echo "  \____\___/|_| |_|_| |_|\__, |___/ "
+echo "                        |___/       "
 echo WARNING backup your .config directory
 choice
 
@@ -42,15 +53,32 @@ fi
 
 bash ~/hyprdots/dotfiles/.installer/configs.sh
 # -----------------------------------------------------
+echo "  ___           _        _ _  "
+echo " |_ _|_ __  ___| |_ __ _| | | "
+echo "  | || '_ \/ __| __/ _ '| | | "
+echo "  | || | | \__ \ || (_| | | | "
+echo " |___|_| |_|___/\__\__,_|_|_| "
 echo Installing packages
 choice
 # Install packages
 bash ~/hyprdots/dotfiles/.installer/packages.sh
 # -----------------------------------------------------
+echo "  _____ _                               "
+echo " |_   _| |__   ___ _ __ ___   ___  ___  "
+echo "   | | | '_ \ / _ \ '_  '_ \ / _ \/ __|  "
+echo "   | | | | | |  __/ | | | | |  __/\__ \ "
+echo "   |_| |_| |_|\___|_| |_| |_|\___||___/ "
+
 echo Unpack themes
 choice
 sudo bash ~/hyprdots/dotfiles/.installer/themes.sh
 # -----------------------------------------------------
+echo "   ____ ____  _   _  "
+echo "  / ___|  _ \| | | | "
+echo " | |  _| |_) | | | | "
+echo " | |_| |  __/| |_| | "
+echo "  \____|_|    \___/  "
+
 echo Install GPU Drivers
 bash ~/hyprdots/dotfiles/.installer/drivers.sh
 # -----------------------------------------------------
