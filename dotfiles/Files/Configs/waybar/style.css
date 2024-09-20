@@ -30,7 +30,7 @@
  * ----------------------------------------------------- */
 /* Any */
 #custom-wallpaper, #custom-notifications, #temperature, #custom-weather,
-#tray, #battery, #clock, #language, #idle_inhibitor, #custom-media,
+#tray, #battery, #clock, #language, #idle_inhibitor, #mpris,
 
     /* Logo group */
 #custom-logo, #custom-pacman, #custom-kernel, #custom-updates, #custom-version, #custom-hyprland,
@@ -59,12 +59,12 @@
 /* -----------------------------------------------------
  * Border
  * ----------------------------------------------------- */
-#custom-logo, #language, #custom-wallpaper, #custom-media {
+#custom-logo, #language, #custom-wallpaper, #mpris {
     border-bottom-left-radius: 5px;
     border-top-left-radius: 5px;
 }
 
-#custom-system, #custom-power, #custom-media, #window {
+#custom-system, #custom-power, #mpris, #window {
     border-bottom-right-radius: 5px;
     border-top-right-radius: 5px;
 }
@@ -89,4 +89,15 @@ tooltip {
 tooltip label {
     font-size: 14px;
     color: @color-text;
+}
+
+/* -----------------------------------------------------
+ * PlayerCTL colors
+ * ----------------------------------------------------- */
+#mpris.playing {
+    color: @workspace-color-active;
+}
+
+#mpris.paused {
+    color: yellow;
 }

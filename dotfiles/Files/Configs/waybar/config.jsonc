@@ -47,12 +47,11 @@
 
         // Modules Center
         "modules-center": [
-
         ],
 
         // Modules Right
         "modules-right": [
-            "custom/media",
+            "mpris",
 
             "custom/wallpaper",
             "group/settings",

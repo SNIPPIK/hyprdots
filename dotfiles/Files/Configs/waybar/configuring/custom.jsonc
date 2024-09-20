@@ -42,20 +42,26 @@
   },
 
   //Media player
-  "custom/media": {
-    "format": "",
-    "format-alt": " <span foreground='LIGHTGREEN'>{}</span>",
-    "tooltip-format": " Player\n 󰳽 click-left:   Toggle info\n 󰳽 click-right:  Pause/Resume\n 󰳽 scroll-up:    Next\n 󰳽 scroll-down:  Repeat",
-    "interval": 5,
-    "return-type": "string",
+  "mpris": {
+    "dynamic-len": 25,
+    "player-icons": {
+      "default": "",
+      "spotify": "",
+      "mpv": "🎵"
+    },
+    "status-icons": {
+      "playing": "",
+      "paused": "⏸"
+    },
 
-    "on-click-right": "bash ~/.config/hypr/scripts/utils/audio.sh play_pause",
-    "on-scroll-down": "bash ~/.config/hypr/scripts/utils/audio.sh prev_track",
-    "on-scroll-up": "bash ~/.config/hypr/scripts/utils/audio.sh next_track",
+    "format": "{player_icon}",
+    "format-alt": "{player_icon} | {status_icon} | {artist} - {title}",
+    "tooltip-format": "{player} - {status} | [{position}/{length}]\nAuthor: {artist}\nFull: {title}",
 
-    "exec": "bash ~/.config/hypr/scripts/utils/audio.sh player_info",
-    "max-length": 30,
-    "tooltip": true,
-    "escape": true
+    "on-click": "sleep 0.2s",
+    "on-click-middle": "bash ~/.config/hypr/scripts/utils/audio.sh play_pause",
+    "on-click-right": "bash ~/.config/hypr/scripts/utils/audio.sh next_track",
+    "on-double-click": "bash ~/.config/hypr/scripts/utils/audio.sh prev_track",
+    "on-scroll-down": "bash ~/.config/hypr/scripts/utils/audio.sh prev_track"
   }
 }
