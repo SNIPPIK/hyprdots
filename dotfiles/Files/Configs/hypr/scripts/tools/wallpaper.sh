@@ -91,7 +91,6 @@ function restart_wallpaper() {
     if [ $(ps -fC swww) ]; then
        pkill swww
        notify "n" "temp" " - Restart swww"
-       sleep 0.2s
     else
        notify "n" "temp" " - Using swww"
     fi
@@ -102,10 +101,9 @@ function restart_wallpaper() {
   # For hyprpaper
   elif [ "$(pacman -Qs hyprpaper)" ]; then
     # If find process to has kill
-    if [ $(ps -fC hyprpaper) ]; then
+    if [ "$(ps -fC hyprpaper)" ]; then
       pkill hyprpaper
       notify "n" "temp" " - Restart hyprpaper"
-      sleep 0.2s
     else
       notify "n" "temp" " - Using hyprpaper"
     fi
@@ -190,17 +188,16 @@ fi
 # | |_| | |_| | \__ \
 #  \___/ \__|_|_|___/
 # -----------------------------------------------------
-# Select engine or restart engine
+# Select engine or restart engine, and load last wallpaper
 if [ "$1" == "engine" ]; then
   file="$HOME/Pictures/Wallpapers/hyprland.png"
 
   # If find cache wallpaper
   if [ -f "$cache_file" ]; then
-    file="$(cat "$cache_file")"
+     file="$(cat "$cache_file")"
   fi
 
-  sleep 1
-
-  # Restart and load last wallpaper
-  restart_wallpaper & sleep 5s & selected "$file"
+  # Restart engine
+  restart_wallpaper & sleep 2s
+  selected "$file"
 fi
