@@ -21,6 +21,7 @@ While installing alongside another [DE](https://wiki.archlinux.org/title/Desktop
 > Please ensure that your NVIDIA card supports dkms drivers in the list provided [here](https://wiki.archlinux.org/title/NVIDIA).
 
 > [!TIP]
+> This config tested on notebook and desktop\
 > Auto configuration of monitors, left to right\
 > Hyprland animations can be changed in hyprland.conf
 
