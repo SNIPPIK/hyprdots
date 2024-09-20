@@ -45,7 +45,11 @@ if [ "$1" = "monitors" ]; then
 
   # If not find new monitors
   if [ ! "$total_monitors" ]; then
-    notify "n" "temp" "Monitor calibrating" "The best settings are used" 2000
+    # If need show information
+    if [ "$3" == "show" ]; then
+      notify "n" "temp" "Monitor calibrating" "The best settings are used" 2000
+    fi
+
     exit 0
   fi
 
@@ -72,10 +76,19 @@ fi
 # -----------------------------------------------------
 if [ "$1" = "panel-toggle" ]; then
   if [ $(ps -fC waybar | grep waybar | awk '{ print $8 }') ]; then
-    notify "n" "temp" "Panel" "You has disabled panel" 1500
+    # If need show information
+    if [ "$2" == "show" ]; then
+       notify "n" "temp" "Panel" "You has disabled panel" 1500
+    fi
+
+    sleep 0.2s
     pkill "waybar"
   else
-    notify "n" "temp" "Panel" "You has enabled panel" 1500
+    # If need show information
+    if [ "$2" == "show" ]; then
+       notify "n" "temp" "Panel" "You has enabled panel" 1500
+    fi
+    sleep 0.2s
     waybar
   fi
 fi

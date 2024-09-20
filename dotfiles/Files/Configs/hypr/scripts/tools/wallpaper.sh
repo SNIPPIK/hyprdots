@@ -136,11 +136,6 @@ elif [ "$1" == "last" ]; then
   if [ -f "$cache_file" ]; then
       file=$(cat "$cache_file")
 
-      # Notify
-      if [ -n "$1" ]; then
-         notify "icon" "temp" "Load last wallpaper" "$file"
-      fi
-
       sleep 1
       selected "$file"
   fi
