@@ -81,43 +81,17 @@ if [ "$1" = "panel-toggle" ]; then
        notify "n" "temp" "Panel" "You has disabled panel" 1500
     fi
 
-    sleep 0.2s
-    pkill "waybar"
+    sleep 0.5s
+    pkill "waybar" & exit 0
   else
     # If need show information
     if [ "$2" == "show" ]; then
        notify "n" "temp" "Panel" "You has enabled panel" 1500
     fi
-    sleep 0.2s
-    waybar
+    sleep 0.5s
+    waybar & exit 0
   fi
 fi
-
-
-#  ____  _            _              _   _
-# | __ )| |_   _  ___| |_ ___   ___ | |_| |__
-# |  _ \| | | | |/ _ \ __/ _ \ / _ \| __| '_ \
-# | |_) | | |_| |  __/ || (_) | (_) | |_| | | |
-# |____/|_|\__,_|\___|\__\___/ \___/ \__|_| |_|
-# -----------------------------------------------------
-# Automatically connect saved devices
-if [ "$1" = "bluetooth" ]; then
-  # List of connected devices
-  devices=$(bluetoothctl devices | awk '{ print $2 }')
-
-  # If not connected devices
-  if [ ! "$devices" ]; then
-      exit 0
-  fi
-
-  # Scan the list of connected devices
-  for device in $devices
-  do
-    # Connect to device
-    bluetoothctl connect "$device"
-  done
-fi
-
 
 #          _                 _           _    _                                     _        _
 # __  ____| | __ _        __| | ___  ___| | _| |_ ___  _ __        _ __   ___  _ __| |_ __ _| |___

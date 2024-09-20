@@ -17,13 +17,14 @@ function saveFile() {
       echo "$1" > "$cache_file"
    fi
 }
-# ------------------SWWW-------------------------------
+
+
+# --------------------SWWW-----------------------------
 #  ______        ____        ____        __
 # / ___\ \      / /\ \      / /\ \      / /
 # \___ \\ \ /\ / /  \ \ /\ / /  \ \ /\ / /
 #  ___) |\ V  V /    \ V  V /    \ V  V /
 # |____/  \_/\_/      \_/\_/      \_/\_/
-# ------------------SWWW-------------------------------
 function random_type() {
   case $((1 + $RANDOM % 2)) in
     1)
@@ -43,14 +44,15 @@ function sel_sww() {
     sleep 2
     swww clear-cache
 }
-# ------------------HyperPaper-------------------------
+# --------------------SWWW-----------------------------
+
+
 #  _   _                  ____
 # | | | |_   _ _ __  _ __|  _ \ __ _ _ __   ___ _ __
 # | |_| | | | | '_ \| '__| |_) / _` | '_ \ / _ \ '__|
 # |  _  | |_| | |_) | |  |  __/ (_| | |_) |  __/ |
 # |_| |_|\__, | .__/|_|  |_|   \__,_| .__/ \___|_|
 #        |___/|_|                   |_|
-# ------------------HyperPaper-------------------------
 function sel_hyprpaper() {
     for monitor in $(hyprctl monitors | grep 'Monitor' | awk '{ print $2 }'); do
           #Change wallpaper image
@@ -65,7 +67,14 @@ function sel_hyprpaper() {
     sleep 2
     hyprctl hyprpaper unload all
 }
-# -----------------------------------------------------
+# ------------------HyperPaper-------------------------
+
+
+#  _   _ _   _ _
+# | | | | |_(_) |___
+# | | | | __| | / __|
+# | |_| | |_| | \__ \
+#  \___/ \__|_|_|___/
 # Notification
 function notify() {
   if [ ! "$4" ]; then
@@ -74,17 +83,38 @@ function notify() {
     bash ~/.config/dunst/client/notifications.sh "$1" "$2" "Wallpaper engine" "$3" "$4" 2000
   fi
 }
-# Select wallpaper engine for restarting
+# Restart wallpaper engine
 function restart_wallpaper() {
-  # Restart wallpaper engine
+  # For swww
   if [ "$(pacman -Qs swww)" ]; then
-      killall -q "swww-daemon"
-      sleep 0.5
-      swww-daemon
+    # If find process to has kill
+    if [ $(ps -fC swww) ]; then
+       pkill swww
+       notify "n" "temp" " - Restart swww"
+       sleep 0.2s
+    else
+       notify "n" "temp" " - Using swww"
+    fi
+
+    swww init & exit 0
+    swww-daemon --format xrgb & exit 0
+
+  # For hyprpaper
   elif [ "$(pacman -Qs hyprpaper)" ]; then
-      killall -q "hyprpaper"
-      sleep 0.5
-      hyprpaper
+    # If find process to has kill
+    if [ $(ps -fC hyprpaper) ]; then
+      pkill hyprpaper
+      notify "n" "temp" " - Restart hyprpaper"
+      sleep 0.2s
+    else
+      notify "n" "temp" " - Using hyprpaper"
+    fi
+
+    hyprpaper & exit 0
+
+  # Not found wallpaper engine
+  else
+      notify "n" "n" "Not found engine.\n Please install hyprpaper or swww!"
   fi
 }
 # Select wallpaper engine for change image
@@ -101,6 +131,9 @@ function selected() {
     exit 0
   fi
 }
+# ---------------------Utils---------------------------
+
+
 # -----------------------------------------------------
 # Dialog rofi - select wallpapers
 function rofi_cmd() {
@@ -131,14 +164,6 @@ if [ "$1" == "random" ]; then
    fi
 
    selected "$random_background"
-# Load last wallpaper
-elif [ "$1" == "last" ]; then
-  if [ -f "$cache_file" ]; then
-      file=$(cat "$cache_file")
-
-      sleep 1
-      selected "$file"
-  fi
 # -----------------------------------------------------
 # Auto switching wallpapers
 elif [ "$1" == "auto" ]; then
@@ -164,26 +189,17 @@ fi
 # | | | | __| | / __|
 # | |_| | |_| | \__ \
 #  \___/ \__|_|_|___/
-# Restart wallpaper engine
-if [ "$1" == "restart" ]; then
-  bash ~/.config/hypr/scripts/utils/reload.sh wallpaper
-  bash ~/.config/hypr/scripts/tools/wallpaper.sh last
 # -----------------------------------------------------
-# Select engine
-elif [ "$1" == "engine" ]; then
-  # For swww
-  if [ "$(pacman -Qs swww)" ]; then
-      notify "n" "temp" " - Using swww"
-      swww init
-      swww-daemon --format xrgb
+# Select engine or restart engine
+if [ "$1" == "engine" ]; then
+  file="$HOME/Pictures/Wallpapers/hyprland.png"
 
-  # For hyprpaper
-  elif [ "$(pacman -Qs hyprpaper)" ]; then
-      notify "n" "temp" " - Using hyprpaper"
-      hyprpaper
-  # Not found wallpaper engine
-  else
-      notify "n" "n" "Not found engine.\n Please install hyprpaper or swww!"
-      exit 0
+  # If find cache wallpaper
+  if [ -f "$cache_file" ]; then
+    sleep 1
+    file="$(cat "$cache_file")"
   fi
+
+  # Restart and load last wallpaper
+  restart_wallpaper & sleep 5s & selected "$file"
 fi
