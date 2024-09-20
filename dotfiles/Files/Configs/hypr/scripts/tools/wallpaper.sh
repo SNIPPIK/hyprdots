@@ -196,9 +196,10 @@ if [ "$1" == "engine" ]; then
 
   # If find cache wallpaper
   if [ -f "$cache_file" ]; then
-    sleep 1
     file="$(cat "$cache_file")"
   fi
+
+  sleep 1
 
   # Restart and load last wallpaper
   restart_wallpaper & sleep 5s & selected "$file"
