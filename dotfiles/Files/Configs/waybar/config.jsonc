@@ -6,65 +6,62 @@
 //                 |___/
 // ---------------------------------------
 
-[
-    // Top bar
-    {
-        "mod": "dock",
-        "exclusive": true,
-        "passthrough": false,
-        "fixed-center": true,
-        "gtk-layer-shell": true,
-        "reload_style_on_change": true,
+{
+    "mod": "dock",
+    "exclusive": true,
+    "passthrough": false,
+    "fixed-center": true,
+    "gtk-layer-shell": true,
+    "reload_style_on_change": true,
 
-        // Load Modules
-        "include": [
-            // Position: top, bottom
-            "~/.config/waybar/positions/top.jsonc",
+    // Load Modules
+    "include": [
+        // Position: top, bottom
+        "~/.config/waybar/positions/top.jsonc",
 
-            // Hyprland load
-            "~/.config/waybar/configuring/hyprland.jsonc",
+        // Hyprland load
+        "~/.config/waybar/configuring/hyprland.jsonc",
 
-            // Default load
-            "~/.config/waybar/configuring/global.jsonc",
-            "~/.config/waybar/configuring/custom.jsonc",
-            "~/.config/waybar/configuring/network.jsonc",
+        // Default load
+        "~/.config/waybar/configuring/global.jsonc",
+        "~/.config/waybar/configuring/custom.jsonc",
+        "~/.config/waybar/configuring/network.jsonc",
 
-            // Group load
-            "~/.config/waybar/configuring/groups/workspace.jsonc",
-            "~/.config/waybar/configuring/groups/weather.jsonc",
-            "~/.config/waybar/configuring/groups/audio.jsonc",
-            "~/.config/waybar/configuring/groups/logo.jsonc",
-            "~/.config/waybar/configuring/groups/power.jsonc",
-            "~/.config/waybar/configuring/groups/system.jsonc"
-        ],
+        // Group load
+        "~/.config/waybar/configuring/groups/workspace.jsonc",
+        "~/.config/waybar/configuring/groups/weather.jsonc",
+        "~/.config/waybar/configuring/groups/audio.jsonc",
+        "~/.config/waybar/configuring/groups/logo.jsonc",
+        "~/.config/waybar/configuring/groups/power.jsonc",
+        "~/.config/waybar/configuring/groups/system.jsonc"
+    ],
 
-        // Modules Left
-        "modules-left": [
-            "group/logo",
-            "group/workspace",
-            "hyprland/window"
-        ],
+    // Modules Left
+    "modules-left": [
+        "group/logo",
+        "group/workspace",
+        "hyprland/window"
+    ],
 
-        // Modules Center
-        "modules-center": [
-        ],
+    // Modules Center
+    "modules-center": [
+    ],
 
-        // Modules Right
-        "modules-right": [
-            "mpris",
+    // Modules Right
+    "modules-right": [
+        "mpris",
 
-            "custom/wallpaper",
-            "group/settings",
-            "group/system",
+        "custom/wallpaper",
+        "group/settings",
+        "group/system",
 
-            "hyprland/language",
-            "tray",
-            "group/audio",
-            "network",
-            "battery",
-            "custom/notifications",
-            "group/weather",
-            "group/power"
-        ]
-    }
-]
+        "hyprland/language",
+        "tray",
+        "group/audio",
+        "network",
+        "battery",
+        "custom/notifications",
+        "group/weather",
+        "group/power"
+    ]
+}

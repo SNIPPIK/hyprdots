@@ -198,17 +198,4 @@ case $1 in
     playerctl play-pause
     show_music_notification
     ;;
-
-    # Information of current playing track
-    player_info)
-      class=$(playerctl metadata --format '{{lc(status)}}')
-
-      if [ "$class" = "playing" ] || [ "$class" = "paused" ]; then
-        title=$(playerctl metadata --format '{{title}}')
-      elif [ "$class" = "stopped" ]; then
-        title=""
-      fi
-
-      echo "$title"
-    ;;
 esac

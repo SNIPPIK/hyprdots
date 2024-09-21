@@ -14,7 +14,8 @@
 
   // Workspace
   "hyprland/workspaces": {
-    "format": "{}",
+    "format": "{name}",
+    "format-icons": {},
     "move-to-monitor": true,
     "persistent-workspaces": {
       "*": 8

@@ -82,14 +82,14 @@ if [ "$1" = "panel-toggle" ]; then
     fi
 
     sleep 0.5s
-    pkill "waybar" & exit 0
+    pkill "waybar" & sleep 1 exit 0
   else
     # If need show information
     if [ "$2" == "show" ]; then
        notify "n" "temp" "Panel" "You has enabled panel" 1500
     fi
-    sleep 0.5s
-    waybar & exit 0
+
+    waybar & sleep 1 & exit 0
   fi
 fi
 

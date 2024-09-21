@@ -1,7 +1,6 @@
 # Update system packages
 echo "Updating the system and synchronizing with arch repositories"
-sudo pacman -Syy
-sudo pacman -Syu
+sudo pacman -Syyu
 
 sleep 0.2s
 
