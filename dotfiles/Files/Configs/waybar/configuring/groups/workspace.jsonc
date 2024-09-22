@@ -4,6 +4,20 @@
     "drawer": {
       "transition-duration": 450,
       "children-class": "not-memory",
+      "transition-left-to-right": true,
+      "click-to-reveal": true
+    },
+    "modules": [
+      "custom/dot-workspace",
+      "group/workspace-hide"
+    ]
+  },
+
+  "group/workspace-hide": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 450,
+      "children-class": "not-memory",
       "transition-left-to-right": true
     },
     "modules": [

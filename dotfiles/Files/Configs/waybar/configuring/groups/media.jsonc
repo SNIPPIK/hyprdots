@@ -1,0 +1,55 @@
+{
+  // Group media
+  "group/music-controller": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 450,
+      "children-class": "not-memory",
+      "transition-left-to-right": true,
+      "click-to-reveal": true
+    },
+    "modules": [
+      "custom/media-slider",
+      "custom/player-backward",
+      "custom/player-play",
+      "custom/player-forward",
+      "custom/player-info"
+    ]
+  },
+
+  // Back play
+  "custom/player-backward": {
+    "format": "\uF04A",
+    "tooltip": false,
+    "on-click": "bash ~/.config/hypr/scripts/utils/audio.sh prev_track",
+    "interval" : "once"
+  },
+
+  // Pause/Resume
+  "custom/player-play": {
+    "format": "{icon}",
+    "tooltip": false,
+    "return-type": "json",
+    "exec": "playerctl -a metadata --format '{\"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
+    "on-click": "bash ~/.config/hypr/scripts/utils/audio.sh play_pause",
+    "format-icons": {
+      "Playing": "<span>\uF04C</span>",
+      "Paused": "<span>\uF04B</span>",
+      "Stopped": "<span>\uF04B</span>"
+    }
+  },
+
+  "custom/player-info": {
+    "format": "| {}",
+    "return-type": "json",
+    "exec": "playerctl -a metadata --format '{\"text\": \"{{artist}} - {{markup_escape(title)}}\"}' -F"
+  },
+
+  // Next play
+  "custom/player-forward": {
+    "format": "\uF04E",
+    "tooltip": false,
+    "on-click": "bash ~/.config/hypr/scripts/utils/audio.sh next_track",
+    "interval" : "once"
+  }
+}

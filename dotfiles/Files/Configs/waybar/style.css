@@ -26,23 +26,26 @@
 }
 
 /* -----------------------------------------------------
- * BUTTONs
+ * BUTTONS
  * ----------------------------------------------------- */
-/* Any */
+    /* Any */
 #custom-wallpaper, #custom-notifications, #temperature, #custom-weather,
-#tray, #battery, #clock, #language, #idle_inhibitor, #mpris,
+#tray, #battery, #clock, #language, #idle_inhibitor,
+
+    /* Dot */
+#custom-dot-workspace,#custom-media-slider, #custom-dots,
 
     /* Logo group */
-#custom-logo, #custom-pacman, #custom-kernel, #custom-updates, #custom-version, #custom-hyprland,
+#custom-logo, #custom-pacman, #custom-kernel, #custom-version, #custom-hyprland,
 
     /* Settings group */
-#pulseaudio, #bluetooth, #network, #privacy,
+#pulseaudio, #bluetooth, #network,
 
     /* System info group */
 #custom-system, #cpu, #memory, #disk,
 
     /* Power menu */
-#custom-power, #custom-lock, #custom-logout, #custom-reboot,
+#custom-power,
 
     /* Workspace */
 #workspaces, #taskbar, #window
@@ -56,15 +59,41 @@
     border: 5px solid @background-border;
 }
 
+/* Player controller */
+#custom-player-backward, #custom-player-play, #custom-player-forward, #custom-player-info {
+    padding-left: 7px;
+    padding-right: 7px;
+
+    color: @color-text;
+    background: @background-button;
+    border-top: 5px solid @background-border;
+    border-bottom: 5px solid @background-border;
+}
+
+/* -----------------------------------------------------
+ * BUTTONS hover
+ * ----------------------------------------------------- */
+#tray :hover, #network:hover, #custom-notifications:hover, #idle_inhibitor:hover,
+#clock:hover, #custom-weather:hover, #custom-wallpaper:hover, #language:hover,
+#custom-pacman:hover, #custom-version:hover, #pulseaudio:hover, #bluetooth:hover,
+#custom-logo:hover,  #custom-power:hover,
+
+#custom-player-backward:hover, #custom-player-play:hover, #custom-player-forward:hover {
+    box-shadow: inset 0 -1px #ffffff;
+
+    animation: ws_hover 20s ease-in-out 1;
+    transition: all 0.35s cubic-bezier(.55,-0.68,.48,1.682);
+}
+
 /* -----------------------------------------------------
  * Border
  * ----------------------------------------------------- */
-#custom-logo, #language, #custom-wallpaper, #mpris {
+#custom-logo, #language, #custom-wallpaper {
     border-bottom-left-radius: 5px;
     border-top-left-radius: 5px;
 }
 
-#custom-system, #custom-power, #mpris, #window {
+#custom-system, #custom-power, #window {
     border-bottom-right-radius: 5px;
     border-top-right-radius: 5px;
 }
@@ -92,12 +121,8 @@ tooltip label {
 }
 
 /* -----------------------------------------------------
- * PlayerCTL colors
+ * HyprIdle manager
  * ----------------------------------------------------- */
-#mpris.playing {
-    color: @workspace-color-active;
-}
-
-#mpris.paused {
+#idle_inhibitor.deactivated {
     color: yellow;
 }

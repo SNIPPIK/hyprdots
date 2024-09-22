@@ -14,15 +14,15 @@
 
   // Workspace
   "hyprland/workspaces": {
+    "all-outputs": false,
+    "active-only": false,
     "format": "{name}",
-    "format-icons": {},
     "move-to-monitor": true,
-    "persistent-workspaces": {
-      "*": 8
-    },
+    "persistent-workspaces": { "*": 8 },
 
-    "on-scroll-up": "hyprctl dispatch workspace r+1",
-    "on-scroll-down": "hyprctl dispatch workspace r-1"
+    "on-click": "activate",
+    "on-scroll-up": "hyprctl dispatch workspace e+1",
+    "on-scroll-down": "hyprctl dispatch workspace e-1"
   },
 
   // Task bar
@@ -40,15 +40,6 @@
     ],
     "app_ids-mapping": {
       "firefoxdeveloperedition": "firefox-developer-edition"
-    }
-  },
-
-  // hypridle switcher
-  "idle_inhibitor": {
-    "format": "{icon}",
-    "format-icons": {
-      "activated": "",
-      "deactivated": ""
     }
   }
 }

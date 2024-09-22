@@ -6,7 +6,7 @@ else
   clear
   echo Running DPI Server
   echo Your local proxy IP:127.0.0.1 Port:1080 Protocol:SOCKS5
-  ciadpi -s 2 -d 2 --buf-size 9999999 --tfo --auto-mode 1 --auto=torst --tlsrec 1+s
+  ciadpi -s 2 -d 2 --buf-size 9999999 --tfo --auto-mode 1
 fi
 
 # Press enter

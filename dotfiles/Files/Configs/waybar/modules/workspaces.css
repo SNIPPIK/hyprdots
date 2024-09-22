@@ -41,7 +41,7 @@
  * Space for not current monitor
  * ----------------------------------------------------- */
 #workspaces button.hosting-monitor, #workspaces button.special {
-    background: @workspace-color-not-active;
+    background: @workspace-color-active;
 
     border-radius: 10px;
     animation: ws_hover 20s ease-in-out 1;

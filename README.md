@@ -47,7 +47,7 @@ Used for nice work dotfiles
 - `gnome-software`, `nautilus`
 
 ## Images
-- Version 0.6.3
+- Version 0.7.0
 <img align="" alt="image" width="1920" src="/assets/images/1.png" />
 <img align="" alt="image" width="1920" src="/assets/images/2.png" />
 <img align="" alt="image" width="1920" src="/assets/images/3.png" />
@@ -56,6 +56,7 @@ Used for nice work dotfiles
 <img align="" alt="image" width="1920" src="/assets/images/6.png" />
 <img align="" alt="image" width="1920" src="/assets/images/7.png" />
 <img align="" alt="image" width="1920" src="/assets/images/8.png" />
+<img align="" alt="image" width="1920" src="/assets/images/9.png" />
 
 
 ### Demonstration videos (archive)

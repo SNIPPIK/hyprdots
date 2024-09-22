@@ -1,11 +1,32 @@
 {
+  // Toggle bottom
+  "custom/dots": {
+    "format": "",
+    "tooltip": false,
+    "interval" : "once"
+  },
+
+  // Fake button
+  "custom/dot-workspace": {
+    "format": "",
+    "tooltip": false,
+    "interval" : "once"
+  },
+
+  // Fake button
+  "custom/media-slider": {
+    "format": "",
+    "tooltip": false,
+    "interval" : "once"
+  },
+
   // Wallpaper
   "custom/wallpaper": {
     "format": "",
     "on-click": "bash ~/.config/hypr/scripts/tools/wallpaper.sh random",
     "on-click-middle": "bash ~/.config/hypr/scripts/tools/wallpaper.sh engine",
     "on-click-right": "bash ~/.config/hypr/scripts/tools/wallpaper.sh select",
-    "tooltip-format": "󰆊 Switch wallpaper\n 󰳽 click-left:   Select random\n 󰳽 click-right:  Select wallpaper\n 󰳽 click-middle: Restart, wallpaper engine",
+    "tooltip-format": " Switch wallpaper\n 󰳽 click-left:   Select random\n 󰳽 click-right:  Select wallpaper\n 󰳽 click-middle: Restart, wallpaper engine",
     "interval" : "once"
   },
 
@@ -41,27 +62,14 @@
     "on-scroll-up": "sleep 0.1 && dunstctl history-pop"
   },
 
-  //Media player
-  "mpris": {
-    "dynamic-len": 25,
-    "player-icons": {
-      "default": "",
-      "spotify": "",
-      "mpv": "🎵"
-    },
-    "status-icons": {
-      "playing": "",
-      "paused": "⏸"
-    },
+  // Power Menu
+  "custom/power": {
+    "format": "<span foreground='red'>⏻</span>",
+    "tooltip-format": "Power Menu",
+    "escape": true,
 
-    "format": "{player_icon}",
-    "format-alt": "{player_icon} | {status_icon} | {artist} - {title}",
-    "tooltip-format": "{player} - {status} | [{position}/{length}]\nAuthor: {artist}\nFull: {title}",
-
-    "on-click": "sleep 0.2s",
-    "on-click-middle": "bash ~/.config/hypr/scripts/utils/audio.sh play_pause",
-    "on-click-right": "bash ~/.config/hypr/scripts/utils/audio.sh next_track",
-    "on-double-click": "bash ~/.config/hypr/scripts/utils/audio.sh prev_track",
-    "on-scroll-down": "bash ~/.config/hypr/scripts/utils/audio.sh prev_track"
+    "on-click": "bash ~/.config/hypr/scripts/dialog.sh powermenu",
+    "on-click-right": "bash ~/.config/hypr/scripts/dialog.sh powermenu",
+    "interval" : "once"
   }
 }

@@ -8,37 +8,30 @@
 
 {
     "mod": "dock",
+    "layer": "top",
     "exclusive": true,
-    "passthrough": false,
-    "fixed-center": true,
-    "gtk-layer-shell": true,
-    "reload_style_on_change": true,
+    "position": "top",
+    "margin-top": 3,
 
     // Load Modules
     "include": [
-        // Position: top, bottom
-        "~/.config/waybar/positions/top.jsonc",
-
         // Hyprland load
         "~/.config/waybar/configuring/hyprland.jsonc",
-
-        // Default load
-        "~/.config/waybar/configuring/global.jsonc",
         "~/.config/waybar/configuring/custom.jsonc",
-        "~/.config/waybar/configuring/network.jsonc",
 
         // Group load
         "~/.config/waybar/configuring/groups/workspace.jsonc",
-        "~/.config/waybar/configuring/groups/weather.jsonc",
+        "~/.config/waybar/configuring/groups/tray.jsonc",
+        "~/.config/waybar/configuring/groups/media.jsonc",
         "~/.config/waybar/configuring/groups/audio.jsonc",
         "~/.config/waybar/configuring/groups/logo.jsonc",
-        "~/.config/waybar/configuring/groups/power.jsonc",
         "~/.config/waybar/configuring/groups/system.jsonc"
     ],
 
     // Modules Left
     "modules-left": [
         "group/logo",
+        "group/music-controller",
         "group/workspace",
         "hyprland/window"
     ],
@@ -49,19 +42,92 @@
 
     // Modules Right
     "modules-right": [
-        "mpris",
-
         "custom/wallpaper",
         "group/settings",
         "group/system",
 
         "hyprland/language",
-        "tray",
+        "group/tray-apps",
         "group/audio",
         "network",
-        "battery",
         "custom/notifications",
-        "group/weather",
-        "group/power"
-    ]
+        "battery",
+        "clock",
+        "custom/power"
+    ],
+
+    // Clock
+    "clock": {
+        "format": "{:L%H:%M} ",
+        "format-alt": "{:L%A, %B %d, %Y (%R)} ",
+        "tooltip-format": "<tt><small>{calendar}</small></tt>",
+        "calendar": {
+            "mode"          : "year",
+            "mode-mon-col"  : 3,
+            "weeks-pos"     : "right",
+            "on-scroll"     : 1,
+            "format": {
+                "months":     "<span color='#ffead3'><b>{}</b></span>",
+                "days":       "<span color='#ecc6d9'><b>{}</b></span>",
+                "weeks":      "<span color='#99ffdd'><b>W{}</b></span>",
+                "weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
+                "today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
+            }
+        },
+        "actions":  {
+            "on-click-right": "mode",
+            "on-click-forward": "tz_up",
+            "on-click-backward": "tz_down",
+            "on-scroll-up": "shift_up",
+            "on-scroll-down": "shift_down"
+        }
+    },
+
+    // Battery
+    "battery": {
+        "interval": 45,
+        "states": {
+            "good": 80,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon} {capacity}%",
+        "format-alt": "{icon} {time}",
+        "format-charging": "{icon}<span foreground='green'><sup></sup></span> {capacity}%",
+        "format-plugged": "{icon}<span foreground='green'><sup></sup></span> {capacity}%",
+        "format-icons": [" ", " ", " ", " ", " "],
+        "bat-compatibility": true
+    },
+
+    // Network
+    "network": {
+        "format": "{icon}",
+        "format-alt": "<span foreground='#99ffdd'> {bandwidthDownBytes}</span> <span foreground='#ffcc66'> {bandwidthUpBytes}</span>",
+        "format-icons": {
+            "wifi": ["\uE0D5", "\uE0D6", "\uE0D7", "\uE0D9"],
+            "disconnected": [""],
+            "ethernet": ["󰈀 "],
+            "disabled": [""],
+            "linked": [""]
+        },
+        "tooltip-format": "{icon} // <b>{ipaddr}/{cidr}</b> | <b>{gwaddr}</b>\n \uE0D9: <b>{signaldBm}dBm ({signalStrength}%)</b>\n : <b>{frequency}MHz</b>\n \uF1E6: <b>{ifname}</b>\n\n 󰳽 click-right:  Open settings\n 󰳽 click-middle: Open DPI",
+        "max-length": 50,
+        "interval": 5,
+
+        "on-click-middle": "bash ~/.config/hypr/scripts/dialog.sh float goodDPI",
+        "on-click-right": "sleep 0.1 && nm-connection-editor"
+    },
+
+    // hypridle switcher
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "start-activated": true,
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
+        },
+
+        "tooltip-format-activated": "{icon} | hypridle\nStatus: {status}",
+        "tooltip-format-deactivated": "{icon} | hypridle\nStatus: {status}"
+    }
 }

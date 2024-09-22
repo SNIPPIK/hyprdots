@@ -4,7 +4,8 @@
     "format": "<span foreground='aqua'></span>",
     "on-click": "sleep 0.2 && bash ~/.config/rofi/run.sh fullscreen",
     "on-click-right": "sleep 0.2 && bash ~/.config/rofi/run.sh fullscreen",
-    "interval" : "once"
+    "interval" : "once",
+    "tooltip": false
   },
 
   // Group logo

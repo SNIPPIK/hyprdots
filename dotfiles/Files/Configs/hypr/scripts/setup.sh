@@ -81,15 +81,19 @@ if [ "$1" = "panel-toggle" ]; then
        notify "n" "temp" "Panel" "You has disabled panel" 1500
     fi
 
-    sleep 0.5s
-    pkill "waybar" & sleep 1 exit 0
+    killall -e "waybar" & sleep 0.5s & exit 0
   else
-    # If need show information
-    if [ "$2" == "show" ]; then
-       notify "n" "temp" "Panel" "You has enabled panel" 1500
+
+    # Show info
+    if [ $(ps -fC waybar | grep waybar | awk '{ print $8 }') ]; then
+      # If need show information
+      if [ "$2" == "show" ]; then
+        notify "n" "temp" "Panel" "You has enabled panel" 1500
+      fi
     fi
 
-    waybar & sleep 1 & exit 0
+    waybar & sleep 5s
+    exit 0
   fi
 fi
 

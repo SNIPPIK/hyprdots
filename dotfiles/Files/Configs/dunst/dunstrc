@@ -6,6 +6,7 @@
 # -----------------------------------------------------
 
 [global]
+    icon_path = /usr/share/icons/Adwaita/16x16/status/:/usr/share/icons/Adwaita/16x16/devices/:/usr/share/icons/Adwaita/16x16/legacy/
     font = "Font Awesome 5 Free Regular 14, Ubuntu Light 13"
     allow_markup = yes
     markup = yes
@@ -43,28 +44,32 @@
     max_icon_size = 64
     alignment = center
     vertical_alignment = center
+    set_transient = yes
     #offset = 12x67
-
-[shortcuts]
-    close = ctrl+space
-    close_all = ctrl+shift+space
-    history = ctrl+grave
-    context = ctrl+shift+period
 
 [urgency_low]
     background = "#131519"
     foreground = "#ffffff"
-    highlight = "#5bb1b4"
+    highlight = "#8ec07c"
+    history_ignore = true
     timeout = 5
 
 [urgency_normal]
     background = "#131519"
     foreground = "#ffffff"
-    highlight = "#5bb1b4"
+    highlight = "#8ec07c"
     timeout = 20
 
 [urgency_critical]
     background = "#131519"
     foreground = "#ffffff"
-    highlight = "#5bb1b4"
+    highlight = "#8ec07c"
     timeout = 0
+
+[music]
+    background = "#131519"
+    foreground = "#ffffff"
+    highlight = "#8ec07c"
+    history_ignore = true
+    timeout = 2
+    urgency = low
