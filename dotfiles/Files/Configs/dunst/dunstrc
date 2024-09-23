@@ -44,32 +44,39 @@
     max_icon_size = 64
     alignment = center
     vertical_alignment = center
-    set_transient = yes
     #offset = 12x67
+    set_stack_tag = no
+
+[music]
+    appname = "notify-send"
+    background = "#131519"
+    foreground = "#ffffff"
+    highlight = "#8ec07c"
+    history_ignore = yes
+    timeout = 2
+
+[volume]
+    appname = "notify-send"
+    background = "#131519"
+    foreground = "#ffffff"
+    highlight = "#8ec07c"
+    history_ignore = yes
+    timeout = 2
 
 [urgency_low]
     background = "#131519"
     foreground = "#ffffff"
     highlight = "#8ec07c"
-    history_ignore = true
     timeout = 5
 
 [urgency_normal]
     background = "#131519"
     foreground = "#ffffff"
     highlight = "#8ec07c"
-    timeout = 20
+    timeout = 10
 
 [urgency_critical]
     background = "#131519"
     foreground = "#ffffff"
     highlight = "#8ec07c"
-    timeout = 0
-
-[music]
-    background = "#131519"
-    foreground = "#ffffff"
-    highlight = "#8ec07c"
-    history_ignore = true
-    timeout = 2
-    urgency = low
+    timeout = 20

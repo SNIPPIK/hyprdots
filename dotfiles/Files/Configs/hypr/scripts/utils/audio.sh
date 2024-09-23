@@ -107,9 +107,9 @@ function show_volume_notification {
             get_album_art
         fi
 
-        notify-send -t $notification_timeout -h string:category:music -h string:x-dunst-stack-tag:volume_notif -h int:value:"$volume" -i "$album_art" "$volume_icon $volume%" "$current_song"
+        notify-send -t $notification_timeout -h string:category:volume -h string:x-dunst-stack-tag:volume_notif -h int:value:"$volume" -i "$album_art" "$volume_icon $volume%" "$current_song"
     else
-        notify-send -t $notification_timeout -h string:category:music -h string:x-dunst-stack-tag:volume_notif -h int:value:"$volume" "$volume_icon $volume%"
+        notify-send -t $notification_timeout -h string:category:volume -h string:x-dunst-stack-tag:volume_notif -h int:value:"$volume" "$volume_icon $volume%"
     fi
 }
 # Displays a volume notification
@@ -124,9 +124,9 @@ function show_micro_notification {
            get_album_art
         fi
 
-        notify-send -t $notification_timeout -h string:category:music -h string:x-dunst-stack-tag:volume_notif -h int:value:"$volume" -i "$album_art" "$volume_icon $volume%" "$current_song"
+        notify-send -t $notification_timeout -h string:category:volume -h string:x-dunst-stack-tag:volume_notif -h int:value:"$volume" -i "$album_art" "$volume_icon $volume%" "$current_song"
     else
-        notify-send -t $notification_timeout -h string:category:music -h string:x-dunst-stack-tag:volume_notif -h int:value:"$volume" "$volume_icon $volume%" --transient
+        notify-send -t $notification_timeout -h string:category:volume -h string:x-dunst-stack-tag:volume_notif -h int:value:"$volume" "$volume_icon $volume%"
     fi
 }
 # -----------------------------------------------------
