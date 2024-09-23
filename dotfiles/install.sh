@@ -85,6 +85,7 @@ echo Install GPU Drivers
 bash $HOME/hyprdots/dotfiles/.installer/drivers.sh
 # -----------------------------------------------------
 # Run sudo commands
+echo Install sddm theme neon
 sudo 7z x $sddm_path -o/usr/share/sddm/themes/
 sudo bash $HOME/hyprdots/dotfiles/.installer/sddm.sh
 
