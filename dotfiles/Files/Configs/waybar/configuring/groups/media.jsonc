@@ -21,8 +21,8 @@
   "custom/player-backward": {
     "format": "\uF04A",
     "tooltip": false,
-    "on-click": "bash ~/.config/hypr/scripts/utils/audio.sh prev_track",
-    "interval" : "once"
+    "exec": "playerctl -a metadata --format '{\"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
+    "on-click": "bash ~/.config/hypr/scripts/utils/audio.sh prev_track"
   },
 
   // Pause/Resume
@@ -39,6 +39,7 @@
     }
   },
 
+  // Track info
   "custom/player-info": {
     "format": "| {}",
     "return-type": "json",
@@ -49,7 +50,7 @@
   "custom/player-forward": {
     "format": "\uF04E",
     "tooltip": false,
-    "on-click": "bash ~/.config/hypr/scripts/utils/audio.sh next_track",
-    "interval" : "once"
+    "exec": "playerctl -a metadata --format '{\"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
+    "on-click": "bash ~/.config/hypr/scripts/utils/audio.sh next_track"
   }
 }
