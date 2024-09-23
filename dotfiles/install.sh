@@ -1,3 +1,5 @@
+sddm_path="$HOME/hyprdots/dotfiles/Files/Theme/neon.zip"
+
 # The user's response is required
 function choice() {
   # shellcheck disable=SC3045
@@ -22,20 +24,20 @@ if [ "$USER" = "root" ]; then
 fi
 
 # If not directory Configs
-if [ ! -d ~/.config ]; then
-  mkdir ~/.config
+if [ ! -d $HOME/.config ]; then
+  mkdir $HOME/.config
 fi
 
 # Need to update hyprdots
-if [ ! -d ~/.cache ]; then
-  mkdir ~/.cache/
+if [ ! -d $HOME/.cache ]; then
+  mkdir $HOME/.cache/
 fi
 
 # Need to update hyprdots
-if [ -f ~/.cache/sync.sh ]; then
-  rm -rd ~/.cache/sync.sh
+if [ -f $HOME/.cache/sync.sh ]; then
+  rm -rd $HOME/.cache/sync.sh
 fi
-cp ~/hyprdots/dotfiles/sync.sh ~/.cache/sync.sh
+cp $HOME/hyprdots/dotfiles/sync.sh $HOME/.cache/sync.sh
 # -----------------------------------------------------
 echo "   ____             __ _            "
 echo "  / ___|___  _ __  / _(_) __ _ ___  "
@@ -47,11 +49,11 @@ echo WARNING backup your .config directory
 choice
 
 # Link hyprdots
-if [ ! -d ~/hyprdots ]; then
-    ln -s "${PWD}" ~/
+if [ ! -d $HOME/hyprdots ]; then
+    ln -s "${PWD}" $HOME/
 fi
 
-bash ~/hyprdots/dotfiles/.installer/configs.sh
+bash $HOME/hyprdots/dotfiles/.installer/configs.sh
 # -----------------------------------------------------
 echo "  ___           _        _ _  "
 echo " |_ _|_ __  ___| |_ __ _| | | "
@@ -61,7 +63,7 @@ echo " |___|_| |_|___/\__\__,_|_|_| "
 echo Installing packages
 choice
 # Install packages
-bash ~/hyprdots/dotfiles/.installer/packages.sh
+bash $HOME/hyprdots/dotfiles/.installer/packages.sh
 # -----------------------------------------------------
 echo "  _____ _                               "
 echo " |_   _| |__   ___ _ __ ___   ___  ___  "
@@ -71,7 +73,7 @@ echo "   |_| |_| |_|\___|_| |_| |_|\___||___/ "
 
 echo Unpack themes
 choice
-sudo bash ~/hyprdots/dotfiles/.installer/themes.sh
+bash $HOME/hyprdots/dotfiles/.installer/themes.sh
 # -----------------------------------------------------
 echo "   ____ ____  _   _  "
 echo "  / ___|  _ \| | | | "
@@ -80,6 +82,10 @@ echo " | |_| |  __/| |_| | "
 echo "  \____|_|    \___/  "
 
 echo Install GPU Drivers
-bash ~/hyprdots/dotfiles/.installer/drivers.sh
+bash $HOME/hyprdots/dotfiles/.installer/drivers.sh
 # -----------------------------------------------------
+# Run sudo commands
+sudo 7z x $sddm_path -o/usr/share/sddm/themes/
+sudo bash $HOME/hyprdots/dotfiles/.installer/sddm.sh
+
 echo "Installing the ended!"
