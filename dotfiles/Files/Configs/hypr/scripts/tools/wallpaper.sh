@@ -88,7 +88,7 @@ function restart_wallpaper() {
   # For swww
   if [ "$(pacman -Qs swww)" ]; then
     # If find process to has kill
-    if [ $(ps -fC swww) ]; then
+    if [ "$(ps -fC swww)" ]; then
        pkill swww
        notify "n" "temp" " - Restart swww"
     else
