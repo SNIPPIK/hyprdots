@@ -9,7 +9,10 @@
     },
     "modules": [
       "custom/dots",
-      "tray"
+      "tray",
+      "network",
+      "battery",
+      "custom/power"
     ]
   },
 
