@@ -44,10 +44,11 @@ Used for nice work dotfiles
 - `polkit-gnome`, `dunst`, `grim`, `sddm`, `starship`, `gnome-keyring`, `wl-clipboard`
 - `otf-font-awesome`, `noto-fonts-emoji`, `ttf-nerd-fonts-symbols-mono`, `ttf-dejavu`
 - `pipewire-pulse`, `wireplumber`, `bluez`, `blueberry`, `pavucontrol`, `flatpak`
-- `gnome-software`, `nautilus`
+- `gnome-software`, `nautilus`, `frog-protocols`
 
 ## Images
 - Version 0.7.0
+- [`Backgroud wallpaper`](https://github.com/SNIPPIK/wallpapers/blob/main/Pack%202/Anime/%5B4K%5D%20Anime%20girl%20headphones.jpg)
 <img align="" alt="image" width="1920" src="/assets/images/1.png" />
 <img align="" alt="image" width="1920" src="/assets/images/2.png" />
 <img align="" alt="image" width="1920" src="/assets/images/3.png" />
