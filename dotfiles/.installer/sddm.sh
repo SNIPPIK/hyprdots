@@ -1,6 +1,3 @@
-echo Install sddm theme neon
-sudo 7z x "${HOME}"/hyprdots/dotfiles/Files/Theme/neon.zip -o/usr/share/sddm/themes/
-
 echo
 echo Installing needed packages
 sleep 5
