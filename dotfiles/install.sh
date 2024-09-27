@@ -23,6 +23,8 @@ if [ "$USER" = "root" ]; then
     exit 0
 fi
 
+echo "Wait to start installing dotfiles"
+
 # If not directory Configs
 if [ ! -d $HOME/.config ]; then
   mkdir $HOME/.config
@@ -38,6 +40,8 @@ if [ -f $HOME/.cache/sync.sh ]; then
   rm -rd $HOME/.cache/sync.sh
 fi
 cp $HOME/hyprdots/dotfiles/sync.sh $HOME/.cache/sync.sh
+
+sleep 2
 # -----------------------------------------------------
 echo "   ____             __ _            "
 echo "  / ___|___  _ __  / _(_) __ _ ___  "
