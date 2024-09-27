@@ -65,6 +65,15 @@ choice
 # Install packages
 bash $HOME/hyprdots/dotfiles/.installer/packages.sh
 # -----------------------------------------------------
+echo " __        __    _ _                                  "
+echo " \ \      / /_ _| | |_ __   __ _ _ __   ___ _ __ ___  "
+echo "  \ \ /\ / / _' | | | '_ \ / _' | '_ \ / _ \ '__/ __| "
+echo "   \ V  V / (_| | | | |_) | (_| | |_) |  __/ |  \__ \ "
+echo "    \_/\_/ \__,_|_|_| .__/ \__,_| .__/ \___|_|  |___/ "
+echo "                    |_|         |_|                   "
+echo Your need choice wallpaper engine
+bash $HOME/hyprdots/dotfiles/.installer/wallpaper.sh
+# -----------------------------------------------------
 echo "  _____ _                               "
 echo " |_   _| |__   ___ _ __ ___   ___  ___  "
 echo "   | | | '_ \ / _ \ '_  '_ \ / _ \/ __|  "

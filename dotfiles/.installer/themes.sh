@@ -11,8 +11,6 @@ fi
 sleep 0.2s
 
 #Unpack theme
-echo Install 7zip
-sudo pacman -S p7zip
 echo Unpack Fluent
 7z x "${HOME}"/hyprdots/dotfiles/Files/Theme/Fluent.zip -o"${HOME}"/.themes
 
