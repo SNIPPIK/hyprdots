@@ -13,16 +13,6 @@ if [ "$USER" = "root" ]; then
     exit 0
 fi
 
-version="$(curl https://raw.githubusercontent.com/SNIPPIK/hyprdots/main/dotfiles/version)"
-current="$(cat ~/hyprdots/dotfiles/version)"
-
-# Check version hyprdots
-if [ "$version" = "$current" ]; then
-  echo "The latest version is already installed"
-  sleep 5s
-  exit 0;
-fi
-
 # Open home directory
 cd ~/
 
