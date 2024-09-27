@@ -92,7 +92,7 @@ function show_music_notification {
         get_album_art
     fi
 
-    notify-send -t $notification_timeout -h string:category:music -h string:x-dunst-stack-tag:music_notif -i "$album_art" "$song_title" "$song_artist - $song_album"
+    notify-send -t $notification_timeout -h string:category:volume -h string:x-dunst-stack-tag:music_notif -i "$album_art" "$song_title" "$song_artist - $song_album"
 }
 # -----------------------------------------------------
 # Displays a volume notification
