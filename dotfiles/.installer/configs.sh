@@ -55,7 +55,6 @@ else
 fi
 
 echo Install fonts for waybar
-choice
 
 # Create dir fonts
 if [ ! -h $HOME/.fonts ]; then
