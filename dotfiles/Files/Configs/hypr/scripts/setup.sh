@@ -75,17 +75,17 @@ fi
 #                 |___/
 # -----------------------------------------------------
 if [ "$1" = "panel-toggle" ]; then
-  if [ $(ps -fC waybar | grep waybar | awk '{ print $8 }') ]; then
+  if [ "$(ps -fC waybar | grep waybar | awk '{ print $8 }')" ]; then
     # If need show information
     if [ "$2" == "show" ]; then
        notify "n" "temp" "Panel" "You has disabled panel" 1500
     fi
 
-    killall -e "waybar" & sleep 0.5s & exit 0
+    pkill "waybar" & sleep 0.5s & exit 0
   else
 
     # Show info
-    if [ $(ps -fC waybar | grep waybar | awk '{ print $8 }') ]; then
+    if [ ! "$(ps -fC waybar | grep waybar | awk '{ print $8 }')" ]; then
       # If need show information
       if [ "$2" == "show" ]; then
         notify "n" "temp" "Panel" "You has enabled panel" 1500
