@@ -1,15 +1,7 @@
 # Install arch packages
 echo Installing need packages...
-sudo pacman -S p7zip frog-protocols xorg-xinput libdisplay-info xdg-desktop-portal-hyprland xorg-xwayland wayland wayland-protocols hyprcursor hyprland hypridle hyprlock waybar otf-font-awesome noto-fonts-emoji rofi-wayland nm-connection-editor pipewire-pulse wireplumber bluez bluez-utils blueberry pavucontrol nautilus polkit-gnome dunst grim slurp pacman-contrib sddm fastfetch starship gnome-keyring ttf-nerd-fonts-symbols-mono ttf-dejavu wl-clipboard flatpak gnome-software
 
-sleep 0.2s
-
-# Run systemctl services
-echo Run systemctl services
-
-# Enable services
-for name in "sddm" "bluetooth"
-do
-  sudo systemctl enable "$name"
-  sudo systemctl start "$name"
+# Install all packages
+for name in .installer/packages/arch/*; do
+  sudo pacman -S $(cat $name)
 done

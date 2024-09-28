@@ -13,11 +13,3 @@ sleep 0.2s
 #Unpack theme
 echo Unpack Fluent
 7z x "${HOME}"/hyprdots/dotfiles/Files/Theme/Fluent.zip -o"${HOME}"/.themes
-
-sleep 0.2s
-
-echo Install sddm theme neon
-sudo 7z x "${HOME}"/hyprdots/dotfiles/Files/Theme/neon.zip -o/usr/share/sddm/themes/
-echo
-echo Installing needed packages
-sudo pacman -S qt6-5compact qt6-declarative qt6-svg
