@@ -36,7 +36,7 @@ function random_type() {
   esac
 }
 function sel_sww() {
-    swww img --transition-type "$(random_type)" "$1"
+    swww img --transition-type "$(random_type)" "$1" --transition-fps 255
 
     # Create cache file
     saveFile "$1"
