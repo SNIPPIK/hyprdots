@@ -18,7 +18,7 @@
     "active-only": false,
     "format": "{name}",
     "move-to-monitor": true,
-    "persistent-workspaces": { "*": 8 },
+    "persistent-workspaces": { "*": 6 },
 
     "on-click": "activate",
     "on-scroll-up": "hyprctl dispatch workspace e+1",

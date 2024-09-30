@@ -1,0 +1,108 @@
+
+/* -----------------------------------------------------
+ * BUTTONS
+ * ----------------------------------------------------- */
+/* Any */
+#custom-wallpaper, #custom-notifications, #temperature,
+#tray, #battery, #clock, #language, #idle_inhibitor,
+
+    /* Dot */
+#custom-media-slider,
+
+    /* Logo group */
+#custom-logo, #custom-pacman, #custom-kernel, #custom-version, #custom-hyprland,
+
+    /* Settings group */
+#pulseaudio, #bluetooth, #network,
+
+    /* System info group */
+#custom-system, #cpu, #memory, #disk,
+
+    /* Power menu */
+#custom-power,
+
+    /* Workspace */
+#workspaces, #taskbar, #window {
+    margin-top: 4px;
+    margin-bottom: 5px;
+
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+
+    color: @color-text;
+    background: @background-button;
+    border-radius: 0.4em;
+}
+
+/* Space buttons */
+#custom-player-backward, #taskbar, #clock, #language, #custom-notifications,
+#tray, #temperature, #idle_inhibitor, #custom-power, #battery,
+
+    /* Logo group */
+#custom-logo, #custom-pacman, #custom-kernel, #custom-version, #custom-hyprland,
+
+    /* Settings group */
+#pulseaudio, #bluetooth, #network,
+
+    /* System info group */
+#custom-system, #cpu, #memory, #disk,
+
+    /* Workspace */
+#window, #workspaces
+{
+    margin-left: 5px;
+}
+
+/* -----------------------------------------------------
+ * BUTTONS hover
+ * ----------------------------------------------------- */
+/*
+#tray :hover, #network:hover, #custom-notifications:hover, #idle_inhibitor:hover,
+#clock:hover, #custom-weather:hover, #custom-wallpaper:hover, #language:hover,
+#custom-pacman:hover, #custom-version:hover, #pulseaudio:hover, #bluetooth:hover,
+#custom-logo:hover,  #custom-power:hover,
+
+#custom-player-backward:hover, #custom-player-play:hover, #custom-player-forward:hover {
+    animation: ws_hover 20s ease-in-out 1;
+    transition: all 0.35s cubic-bezier(.55,-0.68,.48,1.682);
+}
+ */
+
+
+/* Space custom-logo */
+#custom-logo {
+    margin-left: 10px;
+
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Space custom-logo */
+#custom-notifications {
+    margin-right: 10px;
+}
+
+
+/* Player controller */
+#custom-player-backward, #custom-player-play, #custom-player-forward, #custom-player-info {
+    margin-top: 5px;
+    margin-bottom: 5px;
+
+    padding-left: 7px;
+    padding-right: 7px;
+
+    color: @color-text;
+    background: @background-button;
+}
+
+#custom-player-backward {
+    border-top-left-radius: 0.4em;
+    border-bottom-left-radius: 0.4em;
+}
+
+#custom-player-info {
+    border-top-right-radius: 0.4em;
+    border-bottom-right-radius: 0.4em;
+}

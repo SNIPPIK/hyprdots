@@ -1,4 +1,11 @@
 {
+  // Fake button
+  "custom/media-slider": {
+    "format": "",
+    "tooltip": false,
+    "interval" : "once"
+  },
+
   // Group media
   "group/music-controller": {
     "orientation": "inherit",

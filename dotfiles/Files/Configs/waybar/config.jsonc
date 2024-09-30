@@ -7,11 +7,16 @@
 // ---------------------------------------
 
 {
-    "mod": "dock",
     "layer": "top",
-    "exclusive": true,
     "position": "top",
-    "margin-top": 3,
+    "mod": "dock",
+    "exclusive": true,
+    "passthrough": false,
+    "gtk-layer-shell": true,
+
+    //"margin-top": 5,
+    //"margin-left": 10,
+    //"margin-right": 10,
 
     // Load Modules
     "include": [
@@ -21,7 +26,6 @@
 
         // Group load
         "~/.config/waybar/configuring/groups/workspace.jsonc",
-        "~/.config/waybar/configuring/groups/tray.jsonc",
         "~/.config/waybar/configuring/groups/media.jsonc",
         "~/.config/waybar/configuring/groups/audio.jsonc",
         "~/.config/waybar/configuring/groups/logo.jsonc",
@@ -31,13 +35,13 @@
     // Modules Left
     "modules-left": [
         "group/logo",
-        "group/music-controller",
         "group/workspace",
         "hyprland/window"
     ],
 
     // Modules Center
     "modules-center": [
+        "group/music-controller"
     ],
 
     // Modules Right
@@ -47,16 +51,18 @@
         "group/system",
 
         "hyprland/language",
+
+        "network",
         "group/audio",
-        "custom/notifications",
+        "battery",
         "clock",
-        "group/tray-apps"
+        "custom/notifications"
     ],
 
     // Clock
     "clock": {
         "format": "{:L%H:%M} ",
-        "format-alt": "{:L%A, %B %d, %Y (%R)} ",
+        "format-alt": " {:L%A, %B %d, %Y (%R)} ",
         "tooltip-format": "<tt><small>{calendar}</small></tt>",
         "calendar": {
             "mode"          : "year",
@@ -92,7 +98,7 @@
         "format-alt": "{icon} {time}",
         "format-charging": "{icon}<span foreground='green'><sup></sup></span> {capacity}%",
         "format-plugged": "{icon}<span foreground='green'><sup></sup></span> {capacity}%",
-        "format-icons": [" ", " ", " ", " ", " "],
+        "format-icons": ["", "", "", "", ""],
         "bat-compatibility": true
     },
 
@@ -126,5 +132,11 @@
 
         "tooltip-format-activated": "{icon} | hypridle\nStatus: {status}",
         "tooltip-format-deactivated": "{icon} | hypridle\nStatus: {status}"
+    },
+
+    // System tray
+    "tray": {
+        "icon-size": 16,
+        "spacing": 10
     }
 }

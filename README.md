@@ -47,7 +47,7 @@ Used for nice work dotfiles
 - `gnome-software`, `nautilus`, `frog-protocols`
 
 ## Images
-- Version 0.7.0
+- Version 0.7.1
 - [`Backgroud wallpaper`](https://github.com/SNIPPIK/wallpapers/blob/main/Pack%202/Anime/%5B4K%5D%20Anime%20girl%20headphones.jpg)
 <img align="" alt="image" width="1920" src="/assets/images/1.png" />
 <img align="" alt="image" width="1920" src="/assets/images/2.png" />
@@ -58,6 +58,7 @@ Used for nice work dotfiles
 <img align="" alt="image" width="1920" src="/assets/images/7.png" />
 <img align="" alt="image" width="1920" src="/assets/images/8.png" />
 <img align="" alt="image" width="1920" src="/assets/images/9.png" />
+<img align="" alt="image" width="1920" src="/assets/images/10.png" />
 
 
 ### Demonstration videos (archive)

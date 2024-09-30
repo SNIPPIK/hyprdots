@@ -1,25 +1,4 @@
 {
-  // Toggle bottom
-  "custom/dots": {
-    "format": "",
-    "tooltip": false,
-    "interval" : "once"
-  },
-
-  // Fake button
-  "custom/dot-workspace": {
-    "format": "",
-    "tooltip": false,
-    "interval" : "once"
-  },
-
-  // Fake button
-  "custom/media-slider": {
-    "format": "",
-    "tooltip": false,
-    "interval" : "once"
-  },
-
   // Wallpaper
   "custom/wallpaper": {
     "format": "",

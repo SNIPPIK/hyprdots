@@ -12,9 +12,9 @@
  * ----------------------------------------------------- */
 #workspaces button, #taskbar button {
     color: black;
-    margin: 1px 3px;
-    padding: 0px;
+    margin: 0px 3px;
     border-radius: 100%;
+    padding: 0px 0px 0px 0px;
 }
 
 #taskbar button {
@@ -25,35 +25,24 @@
 }
 
 /* -----------------------------------------------------
- * Workspace - selected button
- * Swap space
+ * Workspace - hover
+ * Hover button of mouse
  * ----------------------------------------------------- */
 #workspaces button:hover, #taskbar button:hover {
-    background: @workspace-color-not-active;
-
+    padding-left: 5px;
+    padding-right: 5px;
     border-radius: 10px;
-    animation: ws_hover 20s ease-in-out 1;
-    transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682);
 }
 
 /* -----------------------------------------------------
  * Workspace - hosting-monitor
  * Space for not current monitor
  * ----------------------------------------------------- */
-#workspaces button.hosting-monitor, #workspaces button.special {
+#workspaces button.hosting-monitor, #workspaces button.special, #taskbar button.active {
     background: @workspace-color-active;
-
-    border-radius: 10px;
-    animation: ws_hover 20s ease-in-out 1;
-    transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682);
-}
-
-/* -----------------------------------------------------
- * Workspace - work space
- * Active space
- * ----------------------------------------------------- */
-#workspaces button.persistent {
-    background: @workspace-color-active;
+    background: linear-gradient(-45deg, #42e73c, #23a6d5, #23d5ab, #d5cc23);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
 }
 
 /* -----------------------------------------------------
@@ -65,9 +54,8 @@
     padding-right: 15px;
     border-radius: 10px;
 
-    background-color: @workspace-color-active;
-    animation: ws_hover 20s ease-in-out 1;
-    transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682);
+    animation: gradient 15s ease infinite;
+    transition: all 0.35s cubic-bezier(.55,-0.68,.48,1.682);
 }
 
 /* -----------------------------------------------------
@@ -77,4 +65,19 @@
 #workspaces button.empty {
     color: @color-text;
     background: @workspace-color-not-active;
+}
+
+/* -----------------------------------------------------
+ * Animation Gradient
+ * ----------------------------------------------------- */
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }

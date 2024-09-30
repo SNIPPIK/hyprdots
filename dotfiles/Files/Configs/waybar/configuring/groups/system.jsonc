@@ -20,20 +20,26 @@
       "memory",
       "disk",
       "temperature",
-      "idle_inhibitor"
+      "idle_inhibitor",
+      "custom/power"
     ]
+  },
+
+  // Memory usage
+  "memory": {
+    "rotate": 270,
+    "format": "{icon}",
+    "format-icons": ["󰝦","󰪞","󰪟","󰪠","󰪡","󰪢","󰪣","󰪤","󰪥"],
+    "max-length": 10,
+    "tooltip-format": " {percentage}%\n{used:0.1f}/{total} GB"
   },
 
   // Cpu usage
   "cpu": {
     "interval": 15,
-    "format": " {usage:2}%"
-  },
-
-  // Memory usage
-  "memory": {
-    "format": " {}%",
-    "tooltip-format": " - {percentage}%\n{used:0.1f}GB/{total:0.1f}GB\n{swapUsed}GB/{swapTotal}GB"
+    "format": "{icon}",
+    "rotate": 270,
+    "format-icons": ["󰝦","󰪞","󰪟","󰪠","󰪡","󰪢","󰪣","󰪤","󰪥"]
   },
 
   // Disk / use
@@ -50,6 +56,7 @@
     "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
     "critical-threshold": 75,
     "format-critical": "<span foreground='red'>{temperatureC}°C </span>",
-    "format": "{temperatureC}°C "
+    "format": "{temperatureC}°C ",
+    "tooltip-format": "CPU Hotspot {temperatureC}°C "
   }
 }

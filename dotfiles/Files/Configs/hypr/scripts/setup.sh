@@ -83,16 +83,17 @@ if [ "$1" = "panel-toggle" ]; then
 
     pkill "waybar" & sleep 0.5s & exit 0
   else
+    waybar & sleep 0.5s
 
     # Show info
-    if [ ! "$(ps -fC waybar | grep waybar | awk '{ print $8 }')" ]; then
+    if [ "$(ps -fC waybar | grep waybar | awk '{ print $8 }')" ]; then
       # If need show information
       if [ "$2" == "show" ]; then
         notify "n" "temp" "Panel" "You has enabled panel" 1500
       fi
+    else
+      notify "n" "temp" "Panel" "Fail, pls update your dotfiles" 1500
     fi
-
-    waybar & sleep 5s
     exit 0
   fi
 fi
