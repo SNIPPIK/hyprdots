@@ -99,6 +99,7 @@
         "format-charging": "{icon}<span foreground='green'><sup></sup></span> {capacity}%",
         "format-plugged": "{icon}<span foreground='green'><sup></sup></span> {capacity}%",
         "format-icons": ["", "", "", "", ""],
+        //"format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
         "bat-compatibility": true
     },
 

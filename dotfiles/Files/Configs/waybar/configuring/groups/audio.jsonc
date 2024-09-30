@@ -57,6 +57,7 @@
     ],
 
     "format-icons": ["", "", "", "", ""],
+    //"format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
 
     // preference list deciding the displayed device
     "tooltip-format": "Devices - {num_connections} connected\n{controller_alias}\t{controller_address}",
