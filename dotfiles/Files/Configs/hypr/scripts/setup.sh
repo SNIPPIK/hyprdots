@@ -44,7 +44,7 @@ if [ "$1" = "monitors" ]; then
   done
 
   # If not find new monitors
-  if [ ! "$total_monitors" ]; then
+  if [ ! "$total_monitors" ] && [ ! "$3" == "forced" ]; then
     # If need show information
     if [ "$3" == "show" ]; then
       notify "n" "temp" "Monitor calibrating" "The best settings are used" 2000
