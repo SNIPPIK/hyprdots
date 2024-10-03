@@ -43,6 +43,7 @@ if [ "$1" = "monitors" ]; then
       done
   done
 
+if [ ! "$2" ]; then
   # If not find new monitors
   if [ ! "$total_monitors" ]; then
     # If need show information
@@ -52,6 +53,7 @@ if [ "$1" = "monitors" ]; then
 
     exit 0
   fi
+fi
 
   # Create config
   rm ~/.config/hypr/configuring/window/monitors.conf
