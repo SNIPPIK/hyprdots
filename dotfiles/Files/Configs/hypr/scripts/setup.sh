@@ -43,7 +43,7 @@ if [ "$1" = "monitors" ]; then
       done
   done
 
-if [ ! "$2" ]; then
+if [ ! "$3" ]; then
   # If not find new monitors
   if [ ! "$total_monitors" ]; then
     # If need show information
