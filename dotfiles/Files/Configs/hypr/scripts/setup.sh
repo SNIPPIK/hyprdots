@@ -4,69 +4,8 @@
 notify () {
   bash ~/.config/dunst/client/notifications.sh "$1" "$2" "$3" "$4" $5
 }
+
 # -----------------------------------------------------
-#  _   _                  _                 _   __  __             _ _
-# | | | |_   _ _ __  _ __| | __ _ _ __   __| | |  \/  | ___  _ __ (_) |_ ___  _ __ ___
-# | |_| | | | | '_ \| '__| |/ _` | '_ \ / _` | | |\/| |/ _ \| '_ \| | __/ _ \| '__/ __|
-# |  _  | |_| | |_) | |  | | (_| | | | | (_| | | |  | | (_) | | | | | || (_) | |  \__ \
-# |_| |_|\__, | .__/|_|  |_|\__,_|_| |_|\__,_| |_|  |_|\___/|_| |_|_|\__\___/|_|  |___/
-#        |___/|_|
-# -----------------------------------------------------
-# Support: scale factor
-if [ "$1" = "monitors" ]; then
-  monitors=$(hyprctl monitors | grep 'Monitor' | awk '{ print $2 }')
-  current_resolutions=$(hyprctl monitors | grep ' at' | awk '{ print $1 }' | sed -E 's/^([^.]*).*/\1/')
-  resolutions=$(hyprctl monitors | grep 'availableModes:' | awk '{ print $3 }' | sed -E 's/^([^.]*).*/\1/')
-  total_monitors=""
-  preset=""
-
-  # Check all monitors
-  for monitor in $monitors
-  do
-      # Check all best resolutions
-      for resolution in $resolutions
-      do
-           # Check current resolution
-           for current in $current_resolutions
-           do
-             preset+="monitor=$monitor,$resolution,auto,$2\n"
-
-             # If find current = best to skip
-             if [ "$resolution" = "$current" ]; then
-               continue
-             fi
-
-             # Configure new monitors
-             total_monitors+="$monitor - $resolution\n"
-             hyprctl keyword monitor "$monitor,$resolution,auto,$2"
-           done
-      done
-  done
-
-  # If not find new monitors
-  if [ ! "$total_monitors" ] && [ ! "$3" == "forced" ]; then
-    # If need show information
-    if [ "$3" == "show" ]; then
-      notify "n" "temp" "Monitor calibrating" "The best settings are used" 2000
-    fi
-
-    exit 0
-  fi
-
-  # Create config
-  rm ~/.config/hypr/configuring/window/monitors.conf
-  printf "#This file is temp\n$preset" >> ~/.config/hypr/configuring/window/monitors.conf
-  sleep 2
-
-  # Send notification
-  if [ "$(monitors | wc -l)" -gt 1 ]; then
-    notify "n" "temp" "Monitors calibrating" "$total_monitors" 2000
-  else
-    notify "n" "temp" "Monitor calibrating" "$total_monitors" 2000
-  fi
-fi
-
-
 # __        __          _
 # \ \      / /_ _ _   _| |__   __ _ _ __
 #  \ \ /\ / / _` | | | | '_ \ / _` | '__|
@@ -98,6 +37,7 @@ if [ "$1" = "panel-toggle" ]; then
   fi
 fi
 
+# -----------------------------------------------------
 #          _                 _           _    _                                     _        _
 # __  ____| | __ _        __| | ___  ___| | _| |_ ___  _ __        _ __   ___  _ __| |_ __ _| |___
 # \ \/ / _` |/ _` |_____ / _` |/ _ \/ __| |/ / __/ _ \| '_ \ _____| '_ \ / _ \| '__| __/ _` | / __|

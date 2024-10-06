@@ -14,9 +14,9 @@
     "passthrough": false,
     "gtk-layer-shell": true,
 
-    //"margin-top": 5,
-    //"margin-left": 10,
-    //"margin-right": 10,
+    "margin-top": 5,
+    "margin-left": 10,
+    "margin-right": 10,
 
     // Load Modules
     "include": [
@@ -125,7 +125,6 @@
     // hypridle switcher
     "idle_inhibitor": {
         "format": "{icon}",
-        "start-activated": true,
         "format-icons": {
             "activated": "",
             "deactivated": ""

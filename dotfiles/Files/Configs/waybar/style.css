@@ -20,7 +20,7 @@
 /* Panel color */
 window#waybar {
     background: rgba(12, 12, 12, 0.7);
-    /*border-radius: 15px;*/
+    border-radius: 10px;
 }
 
 /* -----------------------------------------------------
