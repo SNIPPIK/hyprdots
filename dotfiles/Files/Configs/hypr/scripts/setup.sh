@@ -17,23 +17,23 @@ if [ "$1" = "panel-toggle" ]; then
   if [ "$(ps -fC waybar | grep waybar | awk '{ print $8 }')" ]; then
     # If need show information
     if [ "$2" == "show" ]; then
-       notify "n" "temp" "Panel" "You has disabled panel" 1500
+      hyprctl notify 1 2000 "rgb(ffffff)" "Panel | You has disabled panel"
     fi
 
-    pkill "waybar" & sleep 0.5s & exit 0
+    pkill "waybar"
   else
-    waybar & sleep 0.5s
+    hyprctl dispatch exec waybar
+    sleep 1s
 
     # Show info
     if [ "$(ps -fC waybar | grep waybar | awk '{ print $8 }')" ]; then
       # If need show information
       if [ "$2" == "show" ]; then
-        notify "n" "temp" "Panel" "You has enabled panel" 1500
+        hyprctl notify 1 2000 "rgb(ffffff)" "Panel | You has enabled panel"
       fi
     else
-      notify "n" "temp" "Panel" "Fail, pls update your dotfiles" 1500
+      hyprctl notify 3 2000 "rgb(ff0000)" "Panel | Fail, pls update your dotfiles"
     fi
-    exit 0
   fi
 fi
 

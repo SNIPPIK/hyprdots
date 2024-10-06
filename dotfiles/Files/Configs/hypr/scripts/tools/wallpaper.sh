@@ -90,29 +90,29 @@ function restart_wallpaper() {
     # If find process to has kill
     if [ "$(ps -fC swww)" ]; then
        pkill swww
-       notify "n" "temp" " - Restart swww"
+       hyprctl notify 1 2000 "rgb(ffffff)" "Wallpaper Engine | Restart swww"
     else
-       notify "n" "temp" " - Using swww"
+       hyprctl notify 1 2000 "rgb(ffffff)" "Wallpaper Engine | Using swww"
     fi
 
-    swww init & exit 0
-    swww-daemon --format xrgb & exit 0
+    hyprctl dispatch exec swww init
+    hyprctl dispatch exec swww-daemon --format xrgb
 
   # For hyprpaper
   elif [ "$(pacman -Qs hyprpaper)" ]; then
     # If find process to has kill
     if [ "$(ps -fC hyprpaper)" ]; then
       pkill hyprpaper
-      notify "n" "temp" " - Restart hyprpaper"
+      hyprctl notify 1 2000 "rgb(ff0000)" "Wallpaper Engine | Restart hyprpaper"
     else
-      notify "n" "temp" " - Using hyprpaper"
+      hyprctl notify 1 2000 "rgb(ff0000)" "Wallpaper Engine | Using hyprpaper"
     fi
 
-    hyprpaper & exit 0
+    hyprctl dispatch exec hyprpaper
 
   # Not found wallpaper engine
   else
-      notify "n" "n" "Not found engine.\n Please install hyprpaper or swww!"
+      hyprctl notify 3 10000 "rgb(ff0000)" "Not found engine. Please install hyprpaper or swww!"
   fi
 }
 # Select wallpaper engine for change image
@@ -125,7 +125,7 @@ function selected() {
     sel_hyprpaper "$1"
   # Not found wallpaper engine
   else
-    notify "n" "n" "Not found engine.\n Please install hyprpaper or swww!"
+    hyprctl notify 3 10000 "rgb(ff0000)" "Not found engine. Please install hyprpaper or swww!"
     exit 0
   fi
 }
@@ -157,7 +157,7 @@ if [ "$1" == "random" ]; then
    if [ -d "$WALLPAPERS_DIR" ]; then
       random_background="$(find -L "$WALLPAPERS_DIR" -type f | shuf -n 1)"
    else
-      notify "n" "n" "Fail select wallpaper. Not found $WALLPAPERS_DIR"
+      hyprctl notify 3 10000 "rgb(ff0000)" "Fail select wallpaper. Not found $WALLPAPERS_DIR"
       exit 0
    fi
 
@@ -198,6 +198,7 @@ if [ "$1" == "engine" ]; then
   fi
 
   # Restart engine
-  restart_wallpaper & sleep 2s
+  restart_wallpaper
+  sleep 2s
   selected "$file"
 fi
