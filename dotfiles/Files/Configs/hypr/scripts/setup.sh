@@ -32,7 +32,7 @@ if [ "$1" = "panel-toggle" ]; then
         hyprctl notify 1 2000 "rgb(ffffff)" "Panel | You has enabled panel"
       fi
     else
-      hyprctl notify 3 2000 "rgb(ff0000)" "Panel | Fail, pls update your dotfiles"
+      hyprctl notify 3 2000 "rgb(ff0000)" "Panel | Fail, pls enable retry!"
     fi
   fi
 fi
