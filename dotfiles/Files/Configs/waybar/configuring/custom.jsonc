@@ -15,7 +15,6 @@
     "format-icons": {
       "notification": "<span foreground='red'><sup></sup></span>",
       "email-notification": "<span foreground='red'><sup></sup></span>",
-      "chat-notification": "󱋊<span foreground='red'><sup></sup></span>",
       "warning-notification": "󱨪<span foreground='yellow'><sup></sup></span>",
       "error-notification": "󱨪<span foreground='red'><sup></sup></span>",
       "network-notification": "󱂇<span foreground='white'><sup></sup></span>",
@@ -24,6 +23,10 @@
       "music-notification": "󰝚<span foreground='white'><sup></sup></span>",
       "volume-notification": "󰕿<span foreground='white'><sup></sup></span>",
       "dnd-notification": "<span foreground='white'><sup></sup></span>",
+
+      "chat-notification": "󱋊<span foreground='red'><sup></sup></span>",
+      "im.received-notification": "󱋊<span foreground='red'><sup></sup></span>",
+
       "none": "", "dnd": ""
     },
     "return-type": "json",
