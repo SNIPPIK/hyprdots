@@ -6,7 +6,7 @@
     "format-icons": {
       "headphone": " ",
       "car": " ",
-      "default": ["", "", "", ""]
+      "default": ["", "", "", "", "󰕾"]
     },
 
     "tooltip-format": "{desc} // {volume}%\n\n󰎟 Binds\n 󰳽 click-left: Toggle Mute\n 󰳽 click-right: Open settings\n 󰳽 scroll: Volume control",

@@ -9,11 +9,11 @@ notify-send "Getting list of available Wi-Fi networks..."
 # 1 2 3
 # 8 0 4
 # 7 6 5
-POSITION=3
-YOFF=17
+POSITION=0
+YOFF=60
 XOFF=0
 FIELDS=SSID,SECURITY,BARS
-FONT="DejaVu Sans Mono 8"
+FONT="DejaVu Sans Mono 12"
 
 LIST=$(nmcli --fields "$FIELDS" device wifi list | sed '/^--/d')
 # For some reason rofi always approximates character width 2 short... hmmm
@@ -47,14 +47,13 @@ elif [[ "$CONSTATE" =~ "disabled" ]]; then
 fi
 
 
-
 CHENTRY=$(echo -e "Custom SSID\n$TOGGLE\n\n$LIST" | uniq -u | rofi -dmenu -p "Wi-Fi SSID: " -lines "$LINENUM" -a "$HIGHLINE" -location "$POSITION" -yoffset "$YOFF" -xoffset "$XOFF" -font "$FONT" -width -"$RWIDTH" -theme windows/wifi.rasi )
 CHSSID=$(echo "$CHENTRY" | sed  's/\s\{2,\}/\|/g' | awk -F "|" '{print $1}')
 
 # If the user inputs "manual" as their SSID in the start window, it will bring them to this screen
 if [ "$CHENTRY" = "Custom SSID" ] ; then
 	# Manual entry of the SSID and password (if appplicable)
-	MSSID=$(echo "enter the SSID of the network (SSID,password)" | rofi -dmenu -p "Manual Entry: " -font "$FONT" -lines 1)
+	MSSID=$(echo "Enter the SSID of the network (SSID,password)" | rofi -dmenu -p "Manual Entry: " -font "$FONT" -lines 1 -theme windows/wifi.rasi)
 	# Separating the password from the entered string
 	MPASS=$(echo "$MSSID" | awk -F "," '{print $2}')
 
@@ -83,7 +82,7 @@ else
 		nmcli con up "$CHSSID"
 	else
 		if [[ "$CHENTRY" =~ "WPA2" ]] || [[ "$CHENTRY" =~ "WEP" ]]; then
-			WIFIPASS=$(echo "if connection is stored, hit enter" | rofi -dmenu -p "password: " -lines 1 -font "$FONT" )
+			WIFIPASS=$(echo "If connection is stored, hit enter" | rofi -dmenu -p "WI-FI Password: " -lines 1 -font "$FONT" -theme windows/wifi.rasi )
 		fi
 		nmcli dev wifi con "$CHSSID" password "$WIFIPASS"
 	fi

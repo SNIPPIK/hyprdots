@@ -1,0 +1,45 @@
+{
+  // Hyprland logo
+  "custom/hyprlogo": {
+    "format": " ",
+    "interval" : "once",
+    "tooltip": false
+  },
+
+  // Group logo
+  "group/hyprgroup": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 450,
+      "children-class": "not-memory",
+      "transition-left-to-right": false,
+      "click-to-reveal": true
+    },
+    "modules": [
+      "custom/hyprlogo",
+      "custom/hyprland",
+      "custom/version",
+      "idle_inhibitor"
+    ]
+  },
+
+  // Current hyprland version
+  "custom/hyprland": {
+    "format": "🖥  {}",
+    "return-type": "string",
+    "tooltip-format": "Hyprland version",
+    "exec": "sleep 0.1 && pacman -Qe hyprland",
+    "interval" : "once"
+  },
+
+  // Hyprdots version
+  "custom/version": {
+    "format": "  {}",
+    "return-type": "string",
+    "tooltip-format": "DotFiles version",
+    "exec": "sleep 0.1 && cat ~/hyprdots/dotfiles/version",
+    "interval" : "once",
+
+    "on-click": "sleep 0.2 && bash ~/.cache/sync.sh"
+  }
+}

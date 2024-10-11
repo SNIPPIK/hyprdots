@@ -7,7 +7,7 @@
 #tray, #battery, #clock, #language, #idle_inhibitor,
 
     /* Dot */
-#custom-media-slider,
+#custom-hyprlogo,
 
     /* Logo group */
 #custom-logo, #custom-pacman, #custom-kernel, #custom-version, #custom-hyprland,
@@ -36,9 +36,17 @@
     border-radius: 0.4em;
 }
 
+#custom-hyprlogo {
+    background-image: image(url("hyprland.svg"));
+    background-size: 13px 17px;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding-left: 10px
+}
+
 /* Space buttons */
-#custom-player-backward, #taskbar, #clock, #language, #custom-notifications,
-#tray, #temperature, #idle_inhibitor, #custom-power, #battery,
+#custom-player-backward, #taskbar, #clock, #language, #custom-notifications, #custom-wallpaper,
+#tray, #temperature, #idle_inhibitor, #custom-power, #battery, #custom-hyprlogo,
 
     /* Logo group */
 #custom-logo, #custom-pacman, #custom-kernel, #custom-version, #custom-hyprland,
@@ -80,15 +88,19 @@
 }
 
 /* Space custom-logo */
-#custom-notifications {
+#custom-power {
     margin-right: 5px;
+}
+
+#custom-system {
+    margin-right: 10px;
 }
 
 
 /* Player controller */
 #custom-player-backward, #custom-player-play, #custom-player-forward, #custom-player-info {
-    margin-top: 5px;
-    margin-bottom: 5px;
+    margin-top: 3px;
+    margin-bottom: 3px;
 
     padding-left: 7px;
     padding-right: 7px;

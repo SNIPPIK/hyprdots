@@ -18,52 +18,48 @@
     },
     "modules": [
       "custom/logo",
-      "custom/pacman",
-      "custom/version",
-      "custom/kernel",
-      "custom/hyprland"
+      "custom/player-backward",
+      "custom/player-play",
+      "custom/player-forward",
+      "custom/player-info"
     ]
   },
 
-  // Kernel version
-  "custom/kernel": {
-    "format": "  {}",
-    "return-type": "string",
-    "tooltip-format": "Kernel version",
-    "exec": "sleep 0.1 && uname --kernel-release",
-    "interval" : "once"
+  // Back play
+  "custom/player-backward": {
+    "format": "\uF04A",
+    "tooltip": false,
+    "exec": "playerctl -a metadata --format '{\"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
+    "on-click": "bash ~/.config/hypr/scripts/utils/audio.sh prev_track"
   },
 
-  // Current hyprland version
-  "custom/hyprland": {
-    "format": "🖥  {}",
-    "return-type": "string",
-    "tooltip-format": "Hyprland version",
-    "exec": "sleep 0.1 && pacman -Qe hyprland",
-    "interval" : "once"
-  },
-
-  // Hyprdots version
-  "custom/version": {
-    "format": "  {}",
-    "return-type": "string",
-    "tooltip-format": "DotFiles version",
-    "exec": "sleep 0.1 && cat ~/hyprdots/dotfiles/version",
-    "interval" : "once",
-
-    "on-click": "sleep 0.2 && bash ~/.cache/sync.sh"
-  },
-
-  // Updates Count | Total packages
-  "custom/pacman": {
-    "signal": 8,
-    "format": "{}",
+  // Pause/Resume
+  "custom/player-play": {
+    "format": "{icon}",
+    "tooltip": false,
     "return-type": "json",
-    "restart-interval": 600,
-    "exec-on-event": true,
-    "exec": "bash ~/.config/hypr/scripts/toolbox/pacman.sh check",
+    "exec": "playerctl -a metadata --format '{\"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
+    "on-click": "bash ~/.config/hypr/scripts/utils/audio.sh play_pause",
+    "format-icons": {
+      "Playing": "<span>\uF04C</span>",
+      "Paused": "<span>\uF04B</span>",
+      "Stopped": "<span>\uF04B</span>"
+    }
+  },
 
-    "on-click": "bash ~/.config/hypr/scripts/dialog.sh float-small update",
-    "on-click-right": "bash ~/.config/hypr/scripts/dialog.sh float-small unused"
+  // Track info
+  "custom/player-info": {
+    "format": "| {}",
+    "return-type": "json",
+    "exec": "playerctl -a metadata --format '{\"text\": \"{{artist}} - {{markup_escape(title)}}\"}' -F",
+    "max-length": 50
+  },
+
+  // Next play
+  "custom/player-forward": {
+    "format": "\uF04E",
+    "tooltip": false,
+    "exec": "playerctl -a metadata --format '{\"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
+    "on-click": "bash ~/.config/hypr/scripts/utils/audio.sh next_track"
   }
 }

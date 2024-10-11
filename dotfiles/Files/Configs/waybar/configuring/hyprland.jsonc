@@ -1,8 +1,9 @@
 {
   // Current window name
   "hyprland/window": {
-    "format": " | {initialClass} - {initialTitle}",
-    "separate-outputs": true
+    "format": " | {initialTitle}",
+    "separate-outputs": true,
+    "max-length": 20
   },
 
   // Current language
@@ -14,13 +15,10 @@
 
   // Workspace
   "hyprland/workspaces": {
-    "all-outputs": false,
-    "active-only": false,
     "format": "{name}",
     "move-to-monitor": true,
     "persistent-workspaces": { "*": 6 },
 
-    "on-click": "activate",
     "on-scroll-up": "hyprctl dispatch workspace e+1",
     "on-scroll-down": "hyprctl dispatch workspace e-1"
   },
@@ -37,9 +35,6 @@
     "on-click-right": "close",
     "ignore-list": [
       "Alacritty"
-    ],
-    "app_ids-mapping": {
-      "firefoxdeveloperedition": "firefox-developer-edition"
-    }
+    ]
   }
 }

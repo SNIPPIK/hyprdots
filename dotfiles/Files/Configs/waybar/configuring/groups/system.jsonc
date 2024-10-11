@@ -20,9 +20,21 @@
       "memory",
       "disk",
       "temperature",
-      "idle_inhibitor",
-      "custom/power"
+      "custom/pacman"
     ]
+  },
+
+  // Updates Count | Total packages
+  "custom/pacman": {
+    "signal": 8,
+    "format": "{}",
+    "return-type": "json",
+    "restart-interval": 600,
+    "exec-on-event": true,
+    "exec": "bash ~/.config/hypr/scripts/toolbox/pacman.sh check",
+
+    "on-click": "bash ~/.config/hypr/scripts/dialog.sh float-small update",
+    "on-click-right": "bash ~/.config/hypr/scripts/dialog.sh float-small unused"
   },
 
   // Memory usage
