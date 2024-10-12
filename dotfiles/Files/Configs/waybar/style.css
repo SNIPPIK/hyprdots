@@ -39,6 +39,7 @@ tooltip {
 }
 
 tooltip label {
+    font-family: "JetBrainsMono Nerd Font", cursive;
     font-size: 14px;
     color: @color-text;
 }
