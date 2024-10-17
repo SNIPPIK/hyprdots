@@ -32,6 +32,8 @@ def format_history(history):
             else:
                 alt = 'notification'
                 tooltip.append(f" {body}\n")
+    else:
+        tooltip.append(f"󱄊 No new notifications\n")
 
     isDND = subprocess.run(['dunstctl', 'get-pause-level'], stdout=subprocess.PIPE)
     isDND = isDND.stdout.decode('utf-8').strip()

@@ -34,7 +34,10 @@
     "on-click": "activate",
     "on-click-right": "close",
     "ignore-list": [
-      "Alacritty"
+      "Alacritty",
+      "hyprdots-float-big",
+      "hyprdots-float-small",
+      "hyprdots-float"
     ]
   }
 }

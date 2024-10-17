@@ -1,15 +1,11 @@
-/* -----------------------------------------------------
- * Workspace
- * ----------------------------------------------------- */
-#workspaces, #taskbar {
-    background: @background-button;
-    transition: none;
-}
+/*  ___      _   _
+ | _ )_  _| |_| |_ ___ _ _  ___
+ | _ \ || |  _|  _/ _ \ ' \(_-<
+ |___/\_,_|\__|\__\___/_||_/__/
 
-/* -----------------------------------------------------
  * Workspace, taskbar buttons
  * Default button
- * ----------------------------------------------------- */
+ */
 #workspaces button, #taskbar button {
     color: black;
     margin: 0px 3px;
@@ -24,31 +20,45 @@
     padding-right: 5px;
 }
 
-/* -----------------------------------------------------
+/*
+   ___ _              _
+  / __| |__ _ ______ | |_  _____ _____ _ _
+ | (__| / _` (_-<_-< | ' \/ _ \ V / -_) '_|
+  \___|_\__,_/__/__/ |_||_\___/\_/\___|_|
+
  * Workspace - hover
  * Hover button of mouse
- * ----------------------------------------------------- */
+ */
 #workspaces button:hover, #taskbar button:hover {
     padding-left: 5px;
     padding-right: 5px;
     border-radius: 10px;
 }
 
-/* -----------------------------------------------------
+/*
+   ___ _              _           _   _                              _ _
+  / __| |__ _ ______ | |_  ___ __| |_(_)_ _  __ _ ___ _ __  ___ _ _ (_) |_ ___ _ _
+ | (__| / _` (_-<_-< | ' \/ _ (_-<  _| | ' \/ _` |___| '  \/ _ \ ' \| |  _/ _ \ '_|
+  \___|_\__,_/__/__/ |_||_\___/__/\__|_|_||_\__, |   |_|_|_\___/_||_|_|\__\___/_|
+                                            |___/
  * Workspace - hosting-monitor
  * Space for not current monitor
- * ----------------------------------------------------- */
+ */
 #workspaces button.hosting-monitor, #workspaces button.special, #taskbar button.active {
-    background: @workspace-color-active;
     background: linear-gradient(-45deg, #42e73c, #23a6d5, #23d5ab, #d5cc23);
     background-size: 400% 400%;
     animation: gradient 15s ease infinite;
 }
 
-/* -----------------------------------------------------
+/*
+   ___ _                      _   _
+  / __| |__ _ ______  __ _ __| |_(_)_ _____
+ | (__| / _` (_-<_-< / _` / _|  _| \ V / -_)
+  \___|_\__,_/__/__/ \__,_\__|\__|_|\_/\___|
+
  * Workspace - active button
  * Current active space
- * ----------------------------------------------------- */
+ */
 #workspaces button.active, #taskbar button.active {
     padding-left: 15px;
     padding-right: 15px;
@@ -58,26 +68,28 @@
     transition: all 0.35s cubic-bezier(.55,-0.68,.48,1.682);
 }
 
-/* -----------------------------------------------------
+/*
+   ___ _                             _
+  / __| |__ _ ______  ___ _ __  _ __| |_ _  _
+ | (__| / _` (_-<_-< / -_) '  \| '_ \  _| || |
+  \___|_\__,_/__/__/ \___|_|_|_| .__/\__|\_, |
+                               |_|       |__/
  * Workspace - empty button
  * Empty space
- * ----------------------------------------------------- */
+ */
 #workspaces button.empty {
     color: @color-text;
     background: @workspace-color-not-active;
 }
 
-/* -----------------------------------------------------
- * Animation Gradient
- * ----------------------------------------------------- */
+/*
+    _        _            _   _             ___             _ _         _
+   /_\  _ _ (_)_ __  __ _| |_(_)___ _ _    / __|_ _ __ _ __| (_)___ _ _| |_
+  / _ \| ' \| | '  \/ _` |  _| / _ \ ' \  | (_ | '_/ _` / _` | / -_) ' \  _|
+ /_/ \_\_||_|_|_|_|_\__,_|\__|_\___/_||_|  \___|_| \__,_\__,_|_\___|_||_\__|
+*/
 @keyframes gradient {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
+    0%      { background-position: 0% 50%;   }
+    50%     { background-position: 100% 50%; }
+    100%    { background-position: 0% 50%;   }
 }

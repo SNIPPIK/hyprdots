@@ -10,43 +10,54 @@
  * ----------------------------------------------------- */
 @import "styles/buttons.css";
 
-/* Main */
+/*
+  __  __      _        ___ _        _
+ |  \/  |__ _(_)_ _   / __| |_ _  _| |___
+ | |\/| / _` | | ' \  \__ \  _| || | / -_)
+ |_|  |_\__,_|_|_||_| |___/\__|\_, |_\___|
+                               |__/
+*/
 * {
     font-family: Noto Sans, FiraCode Nerd Font Mono, sans-serif;
     font-weight: bold;
     font-size: 12px;
     min-height: 10px;
 }
-/* Panel color */
+#custom-logo { font-family: "JetBrainsMono Nerd Font", cursive; }
+
+
+/*
+  ___               _          _
+ | _ \__ _ _ _  ___| |  __ ___| |___ _ _
+ |  _/ _` | ' \/ -_) | / _/ _ \ / _ \ '_|
+ |_| \__,_|_||_\___|_| \__\___/_\___/_|
+*/
 window#waybar {
-    background: rgba(12, 12, 12, 0.7);
+    background: rgba(12, 12, 12, 0.85);
     border-radius: 10px;
 }
 
-#custom-logo {
-    font-family: "JetBrainsMono Nerd Font", cursive;
-}
-
-/* -----------------------------------------------------
- * Tooltip dialog
- * ----------------------------------------------------- */
+/*
+  _____         _ _   _
+ |_   _|__  ___| | |_(_)_ __
+   | |/ _ \/ _ \ |  _| | '_ \
+   |_|\___/\___/_|\__|_| .__/
+                       |_|
+*/
 tooltip {
-    border-radius: 5px;
     padding: 2px;
     border: 2px solid @background-border;
-    background: @background-button;
-    color: @color-text;
 }
-
 tooltip label {
     font-family: "JetBrainsMono Nerd Font", cursive;
     font-size: 14px;
-    color: @color-text;
 }
 
-/* -----------------------------------------------------
- * HyprIdle manager
- * ----------------------------------------------------- */
-#idle_inhibitor.deactivated {
-    color: yellow;
-}
+/*
+  _  _              ___    _ _
+ | || |_  _ _ __ _ |_ _|__| | |___
+ | __ | || | '_ \ '_| |/ _` | / -_)
+ |_||_|\_, | .__/_||___\__,_|_\___|
+       |__/|_|
+*/
+#idle_inhibitor.deactivated { color: yellow; }
