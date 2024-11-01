@@ -3,8 +3,8 @@
   "logo": {
     "type": "small",
     "padding": {
-      "top": 1,
-      "right": 2
+      "top": 2,
+      "right": 6
     }
   },
   "display": {
@@ -49,6 +49,10 @@
     {
       "key": "{$2}{#32}{icon}   ",
       "type": "memory"
+    },
+    {
+      "key": "{$2}{#33}{icon}   ",
+      "type": "media"
     },
     {
       "format": "{#1}{#keys}╰{$1}╯",

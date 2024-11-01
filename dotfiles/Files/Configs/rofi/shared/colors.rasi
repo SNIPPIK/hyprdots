@@ -8,12 +8,13 @@
  **/
 
 * {
-    background:     rgba(43, 44, 43, 0.85);
-    background-alt: rgba(0, 0, 0, 0.75);
-    foreground:     #FFFFFFFF;
-    selected:       gray;
-    active:         rgba(255, 255, 255, 0.75);
-    urgent:         #E06C75FF;
+    background:         rgba(49, 51, 56, 0.85);
+    background-element: rgba(30, 31, 34, 1);
+    background-alt:     rgba(0, 0, 0, 0.90);
+    foreground:         #FFFFFFFF;
+    selected:           black;
+    active:             rgba(255, 255, 255, 0.75);
+    urgent:             #E06C75FF;
 }
 
 * {
@@ -22,7 +23,7 @@
     background-colour:           var(background);
     foreground-colour:           var(foreground);
     alternate-background:        var(background-alt);
-    normal-background:           var(background);
+    normal-background:           var(background-element);
     normal-foreground:           var(foreground);
     urgent-background:           var(urgent);
     urgent-foreground:           var(background);
@@ -34,7 +35,7 @@
     selected-urgent-foreground:  var(foreground);
     selected-active-background:  var(urgent);
     selected-active-foreground:  var(background);
-    alternate-normal-background: var(background);
+    alternate-normal-background: var(background-element);
     alternate-normal-foreground: var(foreground);
     alternate-urgent-background: var(urgent);
     alternate-urgent-foreground: var(background);

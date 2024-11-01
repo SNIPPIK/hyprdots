@@ -135,8 +135,8 @@ tooltip
 
     /* Workspace */
 #window, #workspaces        { margin-left: 5px; }
-#custom-logo                { padding: 0px 15px; margin-left: 7px; }
-#custom-power               { margin-right: 7px; }
+#custom-logo                { padding: 0px 15px; margin-left: 5px; }
+#custom-power               { margin-right: 5px; }
 #custom-system              { margin-right: 10px; }
 
 

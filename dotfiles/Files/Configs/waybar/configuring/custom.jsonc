@@ -1,4 +1,13 @@
 {
+  // Arch logo
+  "custom/logo": {
+    "format": "<span foreground='aqua'></span>",
+    "on-click": "sleep 0.2 && bash ~/.config/rofi/run.sh fullscreen",
+    "on-click-right": "sleep 0.2 && bash ~/.config/rofi/run.sh fullscreen",
+    "interval" : "once",
+    "tooltip": false
+  },
+
   // Wallpaper
   "custom/wallpaper": {
     "format": "",
@@ -11,7 +20,7 @@
 
   // Notifications
   "custom/notifications": {
-    "format": "{} {icon}",
+    "format": "{icon}",
     "format-icons": {
       "notification": "<span foreground='red'><sup></sup></span>",
       "email-notification": "<span foreground='red'><sup></sup></span>",

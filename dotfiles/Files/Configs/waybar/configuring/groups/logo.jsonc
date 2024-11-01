@@ -29,7 +29,6 @@
   "custom/player-backward": {
     "format": "\uF04A",
     "tooltip": false,
-    "exec": "playerctl -a metadata --format '{\"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
     "on-click": "bash ~/.config/hypr/scripts/utils/audio.sh prev_track"
   },
 
@@ -59,7 +58,6 @@
   "custom/player-forward": {
     "format": "\uF04E",
     "tooltip": false,
-    "exec": "playerctl -a metadata --format '{\"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
     "on-click": "bash ~/.config/hypr/scripts/utils/audio.sh next_track"
   }
 }
