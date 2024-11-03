@@ -13,10 +13,9 @@
     padding: 3px 10px;
 }
 
-#custom-wallpaper:hover, #temperature:hover, #tray, #battery:hover, #language:hover, #idle_inhibitor:hover,
-#custom-logo:hover, #custom-pacman:hover, #custom-version:hover, #custom-hyprland:hover,
-#custom-hyprlogo:hover, #network:hover, #custom-system:hover, #cpu:hover,
-#memory:hover, #disk:hover, #custom-power:hover, #clock:hover, #custom-notifications:hover {
+#custom-wallpaper:hover, #tray, #battery:hover, #language:hover,
+#custom-logo:hover, #custom-hyprlogo:hover, #network:hover, #custom-system:hover,
+#custom-power:hover, #clock:hover, #custom-notifications:hover {
     transition: 0.5s;
     border: 1px rgba(255, 253, 253, 0.85) solid;
 }
