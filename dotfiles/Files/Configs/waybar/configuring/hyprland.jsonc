@@ -3,7 +3,7 @@
   "hyprland/window": {
     "format": " | {initialTitle}",
     "separate-outputs": true,
-    "max-length": 20
+    "max-length": 35
   },
 
   // Current language

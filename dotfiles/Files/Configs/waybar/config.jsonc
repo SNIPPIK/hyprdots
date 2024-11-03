@@ -9,14 +9,7 @@
 {
     "layer": "top",
     "position": "top",
-    "mod": "dock",
     "exclusive": true,
-    "passthrough": false,
-    "gtk-layer-shell": true,
-
-    "margin-top": 2,
-    "margin-left": 10,
-    "margin-right": 10,
 
     // Load Modules
     "include": [

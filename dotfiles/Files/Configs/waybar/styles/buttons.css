@@ -4,27 +4,21 @@
  | _ \ || |  _|  _/ _ \ ' \(_-<
  |___/\_,_|\__|\__\___/_||_/__/
  */
-#custom-wallpaper, #temperature,
-#tray, #battery, #language, #idle_inhibitor,
-
-    /* Logo */
-#custom-logo, #custom-pacman, #custom-kernel, #custom-version, #custom-hyprland,
-#custom-hyprlogo,
-
-    /* Settings group */
-#pulseaudio, #bluetooth, #network,
-
-    /* System info group */
-#custom-system, #cpu, #memory, #disk,
-
-    /* Power menu */
-#custom-power,
-
-    /* Workspace */
-#workspaces, #taskbar, #window
+#custom-wallpaper, #temperature, #tray, #battery, #language, #idle_inhibitor,
+#custom-logo, #custom-pacman, #custom-version, #custom-hyprland,
+#custom-hyprlogo, #pulseaudio, #bluetooth, #network, #custom-system, #cpu,
+#memory, #disk, #custom-power, #workspaces, #taskbar, #window
 {
     margin: 3px 0px;
     padding: 3px 10px;
+}
+
+#custom-wallpaper:hover, #temperature:hover, #tray, #battery:hover, #language:hover, #idle_inhibitor:hover,
+#custom-logo:hover, #custom-pacman:hover, #custom-version:hover, #custom-hyprland:hover,
+#custom-hyprlogo:hover, #network:hover, #custom-system:hover, #cpu:hover,
+#memory:hover, #disk:hover, #custom-power:hover, #clock:hover, #custom-notifications:hover {
+    transition: 0.5s;
+    border: 1px rgba(255, 253, 253, 0.85) solid;
 }
 
 
@@ -34,38 +28,39 @@
  | (__/ _ \ / _ \ '_| | '_ \ || |  _|  _/ _ \ ' \(_-<
   \___\___/_\___/_|   |_.__/\_,_|\__|\__\___/_||_/__/
 */
-#custom-wallpaper, #temperature, #clock, #custom-notifications,
-#tray, #battery, #language, #idle_inhibitor,
-
-    /* Logo */
-#custom-logo, #custom-pacman, #custom-kernel, #custom-version, #custom-hyprland,
-#custom-hyprlogo,
-
-    /* Settings group */
-#pulseaudio, #bluetooth, #network,
-
-    /* System info group */
-#custom-system, #cpu, #memory, #disk,
-
-    /* Power menu */
-#custom-power,
-
-    /* Player buttons */
-#custom-player-backward, #custom-player-play, #custom-player-forward, #custom-player-info,
-
-    /* Workspace */
-#workspaces, #taskbar, #window,
-
-    /* Tooltip */
-tooltip, tooltip label
-{
+#custom-wallpaper, #battery, #language, #custom-logo, #custom-hyprlogo, #network, #custom-system,
+#custom-power, #taskbar, #window, #clock, #custom-notifications, #tray, #workspaces {
     color: @color-text;
     background: @background-button;
+    border: 1px #0c0c0c solid;
 }
 
+#custom-wallpaper, #battery, #language, #custom-logo, #custom-hyprlogo, #network, #custom-system,
+#custom-power, #taskbar, #window, #clock, #custom-notifications, #tray
+{
+    text-shadow: 0px 0px 2px rgba(0, 0, 0, 1);
+}
+
+tooltip, tooltip label {
+    color: @color-text;
+    background: @background-button;
+    margin: 0.2em 0.3em 0.2em 0.3em;
+}
+
+
 /*
-text-shadow: 0px 0px 2px rgba(0, 0, 0, 1);
+   ___        _                ___     _
+  / __|  _ __| |_ ___ _ __    / __|___| |___ _ _
+ | (_| || (_-<  _/ _ \ '  \  | (__/ _ \ / _ \ '_|
+  \___\_,_/__/\__\___/_|_|_|  \___\___/_\___/_|
 */
+#cpu, #memory, #disk, #custom-pacman, #temperature, #idle_inhibitor,
+#pulseaudio, #bluetooth, #custom-version, #custom-hyprland, #network.alt,
+#custom-player-backward, #custom-player-play, #custom-player-forward, #custom-player-info
+{
+    color: @nord_dark_font;
+    background: @light;
+}
 
 
 /*
@@ -74,26 +69,10 @@ text-shadow: 0px 0px 2px rgba(0, 0, 0, 1);
  | _ \/ _ \ '_/ _` / -_) '_| | '_ \ || |  _|  _/ _ \ ' \(_-<
  |___/\___/_| \__,_\___|_|   |_.__/\_,_|\__|\__\___/_||_/__/
 */
-#custom-wallpaper, #temperature,
-#tray, #battery, #language, #idle_inhibitor,
-
-    /* Logo */
-#custom-logo, #custom-pacman, #custom-kernel, #custom-version, #custom-hyprland,
-#custom-hyprlogo,
-
-    /* Settings group */
-#pulseaudio, #bluetooth, #network,
-
-    /* System info group */
-#custom-system, #cpu, #memory, #disk,
-
-    /* Power menu */
-#custom-power,
-
-    /* Workspace */
-#workspaces, #taskbar, #window,
-    /* Tooltip */
-tooltip
+#custom-wallpaper, #temperature,#tray, #battery, #language, #idle_inhibitor,
+#custom-logo, #custom-pacman, #custom-version, #custom-hyprland, #custom-hyprlogo,
+#pulseaudio, #bluetooth, #network, #custom-system, #cpu, #memory, #disk,
+#custom-power, #workspaces, #taskbar, #window, tooltip
 {
     border-radius: 0.4em;
 }
@@ -123,17 +102,8 @@ tooltip
 */
 #custom-player-backward, #taskbar, #language, #custom-wallpaper,
 #tray, #temperature, #idle_inhibitor, #custom-power, #battery, #custom-hyprlogo,
-
-    /* Logo group */
-#custom-logo, #custom-pacman, #custom-kernel, #custom-version, #custom-hyprland,
-
-    /* Settings group */
-#pulseaudio, #bluetooth, #network,
-
-    /* System info group */
-#custom-system, #cpu, #memory, #disk,
-
-    /* Workspace */
+#custom-logo, #custom-pacman, #custom-version, #custom-hyprland, #pulseaudio,
+#bluetooth, #network, #custom-system, #cpu, #memory, #disk,
 #window, #workspaces        { margin-left: 5px; }
 #custom-logo                { padding: 0px 15px; margin-left: 5px; }
 #custom-power               { margin-right: 5px; }
@@ -183,3 +153,24 @@ tooltip
     background-position: center;
     padding: 0px 11px;
 }
+
+
+/*
+   ___     _ _   _         _    ___     _
+  / __|_ _(_) |_(_)__ __ _| |  / __|___| |___ _ _
+ | (__| '_| |  _| / _/ _` | | | (__/ _ \ / _ \ '_|
+  \___|_| |_|\__|_\__\__,_|_|  \___\___/_\___/_|
+ */
+#memory.critical, #cpu.critical, #temperature.critical, #battery.critical
+{ color: red; }
+
+
+/*
+  _  _              ___    _ _
+ | || |_  _ _ __ _ |_ _|__| | |___
+ | __ | || | '_ \ '_| |/ _` | / -_)
+ |_||_|\_, | .__/_||___\__,_|_\___|
+       |__/|_|
+*/
+#idle_inhibitor.deactivated { color: red; }
+#idle_inhibitor.activated { color: #0c0c0c; }
