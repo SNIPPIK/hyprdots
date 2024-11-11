@@ -1,11 +1,5 @@
 #!/usr/bin/env bash
 # -----------------------------------------------------
-# Send notification
-notify () {
-  bash ~/.config/dunst/client/notifications.sh "$1" "$2" "$3" "$4" $5
-}
-
-# -----------------------------------------------------
 # __        __          _
 # \ \      / /_ _ _   _| |__   __ _ _ __
 #  \ \ /\ / / _` | | | | '_ \ / _` | '__|
@@ -32,7 +26,7 @@ if [ "$1" = "panel-toggle" ]; then
         hyprctl notify 1 2000 "rgb(ffffff)" "Panel | You has enabled panel"
       fi
     else
-      hyprctl notify 3 2000 "rgb(ff0000)" "Panel | Fail, pls enable retry!"
+      hyprctl notify 0 2000 "rgb(ff0000)" "Panel | Fail, pls enable retry!"
     fi
   fi
 fi
