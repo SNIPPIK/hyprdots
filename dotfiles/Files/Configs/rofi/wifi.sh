@@ -3,8 +3,6 @@
 #Set default english languages
 export LC_ALL=en_US.UTF-8
 
-notify-send "Getting list of available Wi-Fi networks..."
-
 # position values:
 # 1 2 3
 # 8 0 4

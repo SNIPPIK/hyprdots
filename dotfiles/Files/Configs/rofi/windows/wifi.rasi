@@ -31,10 +31,13 @@
 
 window {
     background-color: @background;
-    border:           1;
-    padding:          5;
+    border:                      1;
+    padding:                     5;
     border-radius:               5px;
     cursor:                      "default";
+
+    width:                       600px;
+    height:                      40%;
 }
 mainbox {
     border:  0;

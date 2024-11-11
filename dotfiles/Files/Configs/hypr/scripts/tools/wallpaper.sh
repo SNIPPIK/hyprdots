@@ -8,6 +8,7 @@
 # -----------------------------------------------------
 cache_file="$HOME/.cache/current_wallpaper"
 WALLPAPERS_DIR=$HOME/Pictures/Wallpapers
+RANDOM_WALLPAPER_INTERVAL=300
 function saveFile() {
    # Create cache file
    if [ ! -f "$cache_file" ]; then
@@ -163,14 +164,6 @@ if [ "$1" == "random" ]; then
 
    selected "$random_background"
 # -----------------------------------------------------
-# Auto switching wallpapers
-elif [ "$1" == "auto" ]; then
-  while true
-  do
-      bash ~/.config/hypr/scripts/tools/wallpaper.sh random
-      sleep 2m
-  done
-# -----------------------------------------------------
 # User selected image
 elif [ "$1" == "select" ]; then
   selected_wallpaper=$(find "${WALLPAPERS_DIR}" -type f -printf "%P\n" | sort | while read -r A ; do echo -en "$A\x00icon\x1f""${WALLPAPERS_DIR}"/"$A\n" ; done | rofi_cmd)
@@ -179,6 +172,15 @@ elif [ "$1" == "select" ]; then
      exit 1
   fi
   selected "$WALLPAPERS_DIR/$selected_wallpaper"
+# -----------------------------------------------------
+# Auto change wallpaper
+elif [ "$1" == "auto" ]; then
+  while true; do
+      echo "work"
+      random_background="$(find -L "$WALLPAPERS_DIR" -type f | shuf -n 1)"
+      selected "$random_background"
+      sleep "$RANDOM_WALLPAPER_INTERVAL"
+  done
 fi
 
 
