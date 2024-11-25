@@ -44,6 +44,12 @@ if [ "$1" == "restart" ]; then
       hyprctl notify 2 2000 "rgb(ffffff)" "Hyprland | Reload configs"
   fi
 
+  # Restart wallpaper engine
+  bash ~/.config/hypr/scripts/tools/wallpaper.sh "engine"
+
+  # Restart panel
+  pkill "waybar" && hyprctl dispatch exec waybar
+
   hyprctl reload
 fi
 
