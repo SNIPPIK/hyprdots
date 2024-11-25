@@ -1,7 +1,7 @@
 {
   // Current window name
   "hyprland/window": {
-    "format": " | {initialTitle}",
+    "format": " | {title}",
     "separate-outputs": true,
     "max-length": 35
   },
