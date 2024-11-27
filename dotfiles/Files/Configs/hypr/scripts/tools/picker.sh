@@ -9,7 +9,7 @@ if [ "$1" == "picker" ]; then
 
   # Send notification
   if [ "$2" == "show" ]; then
-     hyprctl notify 1 2000 "rgb($COLOR)" "Picker | Pasted in buffer"
+     hyprctl notify 1 2000 "rgb($COLOR)" "Picker | Pasted in buffer | #$COLOR"
   fi
 
   # Added to buffer

@@ -10,7 +10,7 @@
 # Notification with icon
 function notification_icon() {
   if [ "$1" = "temp" ]; then
-    notify-send -h string:category:music "$2" "$3" --icon="$4" --expire-time="$5"
+    notify-send -h string:category:hide "$2" "$3" --icon="$4" --expire-time="$5"
   else
     notify-send "$2" "$3" --icon="$4" --expire-time="$5"
   fi
@@ -19,7 +19,7 @@ function notification_icon() {
 # Notification without icon
 function notification() {
   if [ "$1" = "temp" ]; then
-    notify-send -h string:category:music "$2" "$3" --expire-time="$4"
+    notify-send -h string:category:hide "$2" "$3" --expire-time="$4"
   else
     notify-send "$2" "$3" --expire-time="$4"
   fi
