@@ -47,7 +47,8 @@
 #workspaces button.hosting-monitor, #workspaces button.special, #taskbar button.active {
     background: linear-gradient(-45deg, #42e73c, #23a6d5, #23d5ab, #d5cc23);
     background-size: 400% 400%;
-    animation: gradient 15s ease infinite;
+    animation: gradient 15s linear infinite;
+    animation-timing-function: steps(64);
 }
 
 /*
@@ -64,7 +65,8 @@
     padding-right: 15px;
     border-radius: 10px;
 
-    animation: gradient 15s ease infinite;
+    animation: gradient 15s linear infinite;
+    animation-timing-function: steps(64);
     transition: all 0.35s cubic-bezier(.55,-0.68,.48,1.682);
 }
 
