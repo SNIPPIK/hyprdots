@@ -40,6 +40,12 @@ alias grub='sudo nano /boot/grub/grub.cfg && sudo grub-mkconfig -o /boot/grub/gr
 alias shutdown='systemctl poweroff'
 alias wifi='nmtui'
 
+alias amd-open='sudo pacman -Syu vulkan-radeon lib32-vulkan-radeon && sudo pacman -Rcs amdvlk lib32-amdvlk'
+alias amd-close='sudo pacman -Syu amdvlk lib32-amdvlk && sudo pacman -Rcs vulkan-radeon lib32-vulkan-radeon'
+
+alias nvidia-open='sudo pacman -Syu nvidia-open && sudo pacman -Rc nvidia'
+alias nvidia-close='sudo pacman -Syu nvidia && sudo pacman -Rc nvidia-open'
+
 # -----------------------------------------------------
 # DEVELOPMENT
 # -----------------------------------------------------

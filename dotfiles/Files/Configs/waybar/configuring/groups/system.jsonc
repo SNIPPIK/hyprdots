@@ -20,6 +20,7 @@
       "memory",
       "disk",
       "temperature",
+      "custom/gpu",
       "custom/pacman"
     ]
   },
@@ -70,5 +71,14 @@
     "format-critical": "<span foreground='red'>{temperatureC}°C </span>",
     "format": "{temperatureC}°C ",
     "tooltip-format": "CPU Hotspot {temperatureC}°C "
+  },
+
+  // GPU
+  "custom/gpu": {
+    "signal": 8,
+    "format": "󰾲 {}",
+    "return-type": "json",
+    "restart-interval": 2600,
+    "exec": "sleep 0.1 && bash ~/.config/hypr/scripts/dialogs/video.sh info"
   }
 }
