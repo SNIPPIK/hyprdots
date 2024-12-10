@@ -14,7 +14,7 @@
     "on-click": "bash ~/.config/hypr/scripts/tools/wallpaper.sh random",
     "on-click-middle": "bash ~/.config/hypr/scripts/tools/wallpaper.sh engine",
     "on-click-right": "bash ~/.config/hypr/scripts/tools/wallpaper.sh select",
-    "tooltip-format": " Switch wallpaper\n 󰳽 click-left:   Select random\n 󰳽 click-right:  Select wallpaper\n 󰳽 click-middle: Restart, wallpaper engine",
+    "tooltip-format": " Switch wallpaper\n - 󰳽 click-left:\tSelect random\n - 󰳽 click-right:\tSelect wallpaper\n - 󰳽 click-middle:\tRestart wallpaper engine",
     "interval" : "once"
   },
 

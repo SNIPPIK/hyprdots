@@ -44,7 +44,7 @@
     "format": "{icon}",
     "format-icons": ["󰝦","󰪞","󰪟","󰪠","󰪡","󰪢","󰪣","󰪤","󰪥"],
     "max-length": 10,
-    "tooltip-format": " {percentage}%\n{used:0.1f}/{total} GB"
+    "tooltip-format": " Memory\n -  {used:0.1f}/{total:0.1f} GB \t{avail:0.1f} GB - {percentage}%\n - 󰓡 {swapUsed:0.1f}/{swapTotal:0.1f} GB\t{swapAvail:0.1f} GB - {swapPercentage}%"
   },
 
   // Cpu usage
@@ -78,7 +78,7 @@
     "signal": 8,
     "format": "󰾲 {}",
     "return-type": "json",
-    "restart-interval": 2600,
-    "exec": "sleep 0.1 && bash ~/.config/hypr/scripts/dialogs/video.sh info"
+    "restart-interval": "once",
+    "exec": "sleep 0.1 && bash ~/.config/waybar/scripts/gpu.sh"
   }
 }

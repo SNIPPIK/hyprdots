@@ -9,7 +9,7 @@
       "default": ["", "", "", "", "󰕾"]
     },
 
-    "tooltip-format": "{desc} // {volume}%\n\n󰎟 Binds\n 󰳽 click-left: Toggle Mute\n 󰳽 click-right: Open settings\n 󰳽 scroll: Volume control",
+    "tooltip-format": "{desc} // {volume}%\n\n󰎟 Binds\n - 󰳽 click-left:\tToggle Mute\n - 󰳽 click-right:\tOpen settings\n - 󰳽 scrolling:\tVolume control",
 
     "on-click": "bash ~/.config/hypr/scripts/utils/audio.sh volume_mute",
     "on-click-right": "pavucontrol",
@@ -38,7 +38,7 @@
     "format-source": "",
     "format-source-muted": "",
 
-    "tooltip-format": "{source_desc} // {source_volume}%\n\n󰎟 Binds\n 󰳽 click-left: Toggle Mute\n 󰳽 click-right: Open settings\n 󰳽 scroll: Volume control",
+    "tooltip-format": "{source_desc} // {source_volume}%\n\n󰎟 Binds\n - 󰳽 click-left:\tToggle Mute\n - 󰳽 click-right:\tOpen settings\n - 󰳽 scrolling:\tVolume control",
 
     "on-click": "bash ~/.config/hypr/scripts/utils/audio.sh micro_mute",
     "on-click-right": "pavucontrol",

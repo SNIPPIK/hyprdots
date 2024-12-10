@@ -8,24 +8,27 @@
 #                 |___/
 # -----------------------------------------------------
 if [ "$1" = "panel-toggle" ]; then
-  if [ "$(ps -fC waybar | grep waybar | awk '{ print $8 }')" ]; then
+  ps_waybar="$(ps -fC waybar | grep waybar | awk '{ print $8 }')"
+
+  if [ "$ps_waybar" ]; then
     # If need show information
     if [ "$2" == "show" ]; then
       hyprctl notify 1 2000 "rgb(ffffff)" "Panel | You has disabled panel"
     fi
 
-    pkill "waybar"
+    sleep 1s && pkill "waybar"
+    exit 0
   else
-    hyprctl dispatch exec waybar
-    sleep 1s
+    # If need show information
+    if [ "$2" == "show" ]; then
+      hyprctl notify 1 2000 "rgb(ffffff)" "Panel | You has enabled panel"
+    fi
 
-    # Show info
-    if [ "$(ps -fC waybar | grep waybar | awk '{ print $8 }')" ]; then
-      # If need show information
-      if [ "$2" == "show" ]; then
-        hyprctl notify 1 2000 "rgb(ffffff)" "Panel | You has enabled panel"
-      fi
-    else
+    sleep 1s
+    hyprctl dispatch exec waybar
+
+    # Show error info
+    if [ -z "$(ps -fC waybar | grep waybar | awk '{ print $8 }')r" ]; then
       hyprctl notify 0 2000 "rgb(ff0000)" "Panel | Fail, pls enable retry!"
     fi
   fi

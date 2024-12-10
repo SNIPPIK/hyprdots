@@ -109,7 +109,7 @@
             "disabled": [""],
             "linked": [""]
         },
-        "tooltip-format": "{icon} // <b>{ipaddr}/{cidr}</b> | <b>{gwaddr}</b>\n 󰤨: <b>{signaldBm}dBm ({signalStrength}%)</b>\n : <b>{frequency}MHz</b>\n \uF1E6: <b>{ifname}</b>\n\n 󰳽 click-right:  Open settings\n 󰳽 click-middle: Scan wifi",
+        "tooltip-format": "{icon} // <b>{ipaddr}/{cidr}</b> | <b>{gwaddr}</b>\n - 󰤨:\t<b>{signaldBm}dBm ({signalStrength}%)</b>\n - :\t<b>{frequency}MHz</b>\n - \uF1E6:\t<b>{ifname}</b>\n\n - 󰳽 click-right:\tOpen settings\n - 󰳽 click-middle:\tScan wifi (beta)",
         "max-length": 50,
         "interval": 5,
 
@@ -121,12 +121,12 @@
     "idle_inhibitor": {
         "format": "{icon}",
         "format-icons": {
-            "activated": "",
-            "deactivated": ""
+            "activated": "",
+            "deactivated": ""
         },
 
-        "tooltip-format-activated": "{icon} | hypridle\nStatus: {status}",
-        "tooltip-format-deactivated": "{icon} | hypridle\nStatus: {status}"
+        "tooltip-format-activated": "{icon} | hypridle\nStatus: deactivated",
+        "tooltip-format-deactivated": "{icon} | hypridle\nStatus: activated"
     },
 
     // System tray

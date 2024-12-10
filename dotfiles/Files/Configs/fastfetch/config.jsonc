@@ -51,6 +51,10 @@
       "type": "memory"
     },
     {
+      "key": "{$2}{#32}{icon}   ",
+      "type": "swap"
+    },
+    {
       "key": "{$2}{#33}{icon}   ",
       "type": "media"
     },
