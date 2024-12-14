@@ -9,7 +9,7 @@
 # Requires brightnessctl
 
 brightness_step=5
-notification_timeout=1000
+notification_timeout=2000
 
 # -----------------------------------------------------
 # Uses regex to get brightness from xbacklight

@@ -8,8 +8,8 @@
 # -----------------------------------------------------
 
 volume_step=1
-max_volume=150
-notification_timeout=1000
+max_volume=100
+notification_timeout=2000
 download_album_art=true
 show_album_art=true
 show_music_in_volume_indicator=true
@@ -40,7 +40,7 @@ function get_output_icon {
         volume_icon=""
     elif [ "$volume" -lt 60 ]; then
         volume_icon=""
-    elif [ "$volume" -lt 60 ]; then
+    elif [ "$volume" -lt 80 ]; then
             volume_icon="󰕾"
     else
         volume_icon=""
