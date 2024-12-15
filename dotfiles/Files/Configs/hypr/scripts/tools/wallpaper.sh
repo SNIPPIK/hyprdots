@@ -9,6 +9,7 @@
 cache_file="$HOME/.cache/current_wallpaper"
 WALLPAPERS_DIR=$HOME/Pictures/Wallpapers
 RANDOM_WALLPAPER_INTERVAL=300
+FPS_WALLPAPER=50
 function saveFile() {
    # Create cache file
    if [ ! -f "$cache_file" ]; then
@@ -37,7 +38,7 @@ function random_type() {
   esac
 }
 function sel_sww() {
-    swww img --transition-type "$(random_type)" "$1" --transition-fps 60
+    swww img --transition-type "$(random_type)" "$1" --transition-fps $FPS_WALLPAPER
 
     # Create cache file
     saveFile "$1"

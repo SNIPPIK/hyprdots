@@ -37,6 +37,16 @@ window#waybar {
     background: alpha(@background-waybar, 0.7);
 }
 
+#power-profiles-daemon.performance {
+    color: darkcyan;
+}
+#power-profiles-daemon.balanced {
+    color: darkorange;
+}
+#power-profiles-daemon.power-saver {
+    color: green;
+}
+
 /*
   _____         _ _   _
  |_   _|__  ___| | |_(_)_ __

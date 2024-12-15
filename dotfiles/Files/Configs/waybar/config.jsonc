@@ -8,8 +8,6 @@
 
 {
     "layer": "top",
-    "position": "top",
-    "exclusive": true,
 
     // Load Modules
     "include": [

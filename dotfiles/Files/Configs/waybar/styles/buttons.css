@@ -7,7 +7,8 @@
 #custom-wallpaper, #temperature, #tray, #battery, #language, #idle_inhibitor,
 #custom-logo, #custom-pacman, #custom-version, #custom-hyprland,
 #custom-hyprlogo, #pulseaudio, #bluetooth, #network, #custom-system, #cpu,
-#memory, #disk, #custom-power, #workspaces, #taskbar, #window, #custom-gpu
+#memory, #disk, #custom-power, #workspaces, #taskbar, #window, #custom-gpu,
+#power-profiles-daemon
 {
     margin: 3px 0px;
     padding: 3px 10px;
@@ -54,7 +55,7 @@ tooltip, tooltip label {
   \___\_,_/__/\__\___/_|_|_|  \___\___/_\___/_|
 */
 #cpu, #memory, #disk, #custom-pacman, #temperature, #idle_inhibitor, #custom-gpu,
-#pulseaudio, #bluetooth, #custom-version, #custom-hyprland, #network.alt,
+#pulseaudio, #bluetooth, #custom-version, #custom-hyprland, #network.alt, #power-profiles-daemon,
 #custom-player-backward, #custom-player-play, #custom-player-forward, #custom-player-info
 {
     color: @nord_dark_font;
@@ -71,7 +72,8 @@ tooltip, tooltip label {
 #custom-wallpaper, #temperature,#tray, #battery, #language, #idle_inhibitor,
 #custom-logo, #custom-pacman, #custom-version, #custom-hyprland, #custom-hyprlogo,
 #pulseaudio, #bluetooth, #network, #custom-system, #cpu, #memory, #disk,
-#custom-power, #workspaces, #taskbar, #window, tooltip, #custom-gpu
+#custom-power, #workspaces, #taskbar, #window, tooltip, #custom-gpu,
+#power-profiles-daemon
 {
     border-radius: 0.4em;
 }
@@ -102,7 +104,7 @@ tooltip, tooltip label {
 #custom-player-backward, #taskbar, #language, #custom-wallpaper,
 #tray, #temperature, #idle_inhibitor, #custom-power, #battery, #custom-hyprlogo,
 #custom-logo, #custom-pacman, #custom-version, #custom-hyprland, #pulseaudio,
-#bluetooth, #network, #custom-system, #cpu, #memory, #disk, #custom-gpu,
+#bluetooth, #network, #custom-system, #cpu, #memory, #disk, #custom-gpu, #power-profiles-daemon,
 #window, #workspaces        { margin-left: 5px; }
 #custom-logo                { padding: 0px 15px; margin-left: 5px; }
 #custom-power               { margin-right: 5px; }

@@ -20,6 +20,7 @@
       "memory",
       "disk",
       "temperature",
+      "power-profiles-daemon",
       "custom/gpu",
       "custom/pacman"
     ]
@@ -52,7 +53,21 @@
     "interval": 15,
     "format": "{icon}",
     "rotate": 270,
-    "format-icons": ["󰝦","󰪞","󰪟","󰪠","󰪡","󰪢","󰪣","󰪤","󰪥"]
+    "format-icons": ["󰝦","󰪞","󰪟","󰪠","󰪡","󰪢","󰪣","󰪤","󰪥"],
+    "tooltip-format": "12213"
+  },
+
+  // Power menu
+  "power-profiles-daemon": {
+    "format": "{icon}",
+    "tooltip-format": " Power profile\n - \tDriver: \t{driver}\n - {icon}\tProfile: \t{profile}",
+    "tooltip": true,
+    "format-icons": {
+      "default": "",
+      "performance": "",
+      "balanced": "",
+      "power-saver": ""
+    }
   },
 
   // Disk / use

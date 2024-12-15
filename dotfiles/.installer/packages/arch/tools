@@ -11,3 +11,4 @@ gnome-keyring
 wl-clipboard
 flatpak
 gnome-software
+power-profiles-daemon
