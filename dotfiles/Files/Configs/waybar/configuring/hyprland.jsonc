@@ -2,7 +2,6 @@
   // Current window name
   "hyprland/window": {
     "format": " | {title}",
-    "separate-outputs": true,
     "max-length": 35
   },
 
@@ -18,7 +17,6 @@
     "format": "{name}",
     "move-to-monitor": true,
     "persistent-workspaces": { "*": 6 },
-
     "on-scroll-up": "hyprctl dispatch workspace e+1",
     "on-scroll-down": "hyprctl dispatch workspace e-1"
   },

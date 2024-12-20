@@ -1,35 +1,20 @@
 /* -----------------------------------------------------
  * Background Colors
  * ----------------------------------------------------- */
+@define-color background-waybar_blue #2E3440;
 @define-color background-waybar #2E3440;
-@define-color background-border rgba(49, 51, 56, 0.99);
-@define-color background-button rgba(49, 51, 56, 0.99);
-@define-color background-tray rgba(45, 45, 45, 0.95);
+@define-color background-light #D8DEE9;
+@define-color background #282828;
 
 
 /* -----------------------------------------------------
  * Text Colors
  * ----------------------------------------------------- */
-@define-color color-text #ffffff;
-@define-color color-accent rgba(255, 255, 255, 0.75);
-
+@define-color text #D8DEE9;
+@define-color nord_dark_font #434C5E;
 
 /* -----------------------------------------------------
  * Workspace Colors
  * ----------------------------------------------------- */
 @define-color workspace-color-active #ABE9B3;
 @define-color workspace-color-not-active gray;
-
-
-/*
-  _  _            _   _____ _
- | \| |___ _ _ __| | |_   _| |_  ___ _ __  ___
- | .` / _ \ '_/ _` |   | | | ' \/ -_) '  \/ -_)
- |_|\_\___/_| \__,_|   |_| |_||_\___|_|_|_\___|
-*/
-@define-color bg #2E3440;
-@define-color light #D8DEE9;
-@define-color nord_light_font #D8DEE9;
-@define-color nord_dark_font #434C5E;
-@define-color nord_bg_blue #546484;
-@define-color battery #88c0d0;

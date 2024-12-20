@@ -134,7 +134,7 @@ echo "        |___/                                   "
 echo Run systemctl services
 
 # Enable services
-for name in "sddm" "bluetooth"
+for name in "sddm" "bluetooth" "power-profiles-daemon"
 do
   sudo systemctl enable "$name"
   sudo systemctl start "$name"

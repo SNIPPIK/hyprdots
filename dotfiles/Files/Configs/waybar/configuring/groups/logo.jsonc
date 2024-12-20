@@ -37,7 +37,8 @@
     "format": "{icon}",
     "tooltip": false,
     "return-type": "json",
-    "exec": "playerctl -a metadata --format '{\"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
+    "exec": "playerctl -a metadata --format '{\"alt\": \"{{status}}\", \"class\": \"{{status}}\"}'",
+    "interval": 3,
     "on-click": "bash ~/.config/hypr/scripts/utils/audio.sh play_pause",
     "format-icons": {
       "Playing": "<span>\uF04C</span>",
@@ -50,7 +51,8 @@
   "custom/player-info": {
     "format": "| {}",
     "return-type": "json",
-    "exec": "playerctl -a metadata --format '{\"text\": \"{{artist}} - {{markup_escape(title)}}\"}' -F",
+    "exec": "playerctl -a metadata --format '{\"text\": \"{{artist}} - {{markup_escape(title)}}\"}'",
+    "interval": 5,
     "max-length": 50
   },
 

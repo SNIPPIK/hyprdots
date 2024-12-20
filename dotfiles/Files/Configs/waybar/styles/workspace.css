@@ -11,6 +11,11 @@
     margin: 0px 2px;
     border-radius: 100%;
     padding: 0px 0px 0px 0px;
+
+    /*
+    For icons
+    padding: 1px 1px 0px 0px;
+    */
 }
 
 #taskbar button {
@@ -80,7 +85,7 @@
  * Empty space
  */
 #workspaces button.empty {
-    color: @color-text;
+    color: @text;
     background: @workspace-color-not-active;
 }
 

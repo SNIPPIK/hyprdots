@@ -60,10 +60,10 @@
     //"format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
 
     // preference list deciding the displayed device
-    "tooltip-format": "Devices - {num_connections} connected\n{controller_alias}\t{controller_address}",
-    "tooltip-format-connected": "Devices - {num_connections} connected\n{controller_alias}\t{controller_address}\n\nConnected:\n{device_enumerate}",
-    "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
-    "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{icon} | {device_battery_percentage}%",
+    "tooltip-format": " Bluetooth information\n - {controller_alias}\t{controller_address}",
+    "tooltip-format-connected": " Bluetooth information\n - {controller_alias}\t{controller_address}\n\nDevices\n{device_enumerate}",
+    "tooltip-format-enumerate-connected": " - {device_alias}\t{device_address}",
+    "tooltip-format-enumerate-connected-battery": " - {device_alias}\t{device_address}\t{icon} | {device_battery_percentage}%",
     "on-click": "blueberry",
     "on-click-right": "blueberry"
   }

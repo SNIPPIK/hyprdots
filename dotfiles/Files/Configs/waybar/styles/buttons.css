@@ -8,7 +8,7 @@
 #custom-logo, #custom-pacman, #custom-version, #custom-hyprland,
 #custom-hyprlogo, #pulseaudio, #bluetooth, #network, #custom-system, #cpu,
 #memory, #disk, #custom-power, #workspaces, #taskbar, #window, #custom-gpu,
-#power-profiles-daemon
+#power-profiles-daemon, #clock, #custom-notifications
 {
     margin: 3px 0px;
     padding: 3px 10px;
@@ -18,7 +18,7 @@
 #custom-logo:hover, #custom-hyprlogo:hover, #network:hover, #custom-system:hover,
 #custom-power:hover, #clock:hover, #custom-notifications:hover {
     transition: 0.5s;
-    border: 1px rgba(255, 253, 253, 0.85) solid;
+    border: 0.8px rgba(255, 253, 253, 0.85) solid;
 }
 
 
@@ -30,9 +30,9 @@
 */
 #custom-wallpaper, #battery, #language, #custom-logo, #custom-hyprlogo, #network, #custom-system,
 #custom-power, #taskbar, #window, #clock, #custom-notifications, #tray, #workspaces {
-    color: @color-text;
-    background: @background-button;
-    border: 1px #0c0c0c solid;
+    color: @text;
+    background: @background;
+    border: 0.8px #0c0c0c solid;
 }
 
 #custom-wallpaper, #battery, #language, #custom-logo, #custom-hyprlogo, #network, #custom-system,
@@ -42,8 +42,8 @@
 }
 
 tooltip, tooltip label {
-    color: @color-text;
-    background: @background-button;
+    color: @text;
+    background: @background;
     margin: 0.2em 0.3em 0.2em 0.3em;
 }
 
@@ -59,7 +59,13 @@ tooltip, tooltip label {
 #custom-player-backward, #custom-player-play, #custom-player-forward, #custom-player-info
 {
     color: @nord_dark_font;
-    background: @light;
+    background: @background-light;
+}
+
+#cpu, #memory, #disk, #custom-pacman, #temperature, #idle_inhibitor, #custom-gpu,
+#pulseaudio, #bluetooth, #custom-version, #custom-hyprland, #network.alt, #power-profiles-daemon
+{
+    border: 1px @nord_bg_blue solid;
 }
 
 
@@ -110,6 +116,21 @@ tooltip, tooltip label {
 #custom-power               { margin-right: 5px; }
 #custom-system              { margin-right: 10px; }
 
+/*
+  ___ _                                _           _ _
+ | _ \ |__ _ _  _ ___ _ _   __ ___ _ _| |_ _ _ ___| | |___ _ _
+ |  _/ / _` | || / -_) '_| / _/ _ \ ' \  _| '_/ _ \ | / -_) '_|
+ |_| |_\__,_|\_, \___|_|   \__\___/_||_\__|_| \___/_|_\___|_|
+             |__/
+*/
+#custom-player-backward, #custom-player-play, #custom-player-forward, #custom-player-info {
+    margin: 4px 0px;
+    padding: 0px 7px;
+}
+
+#custom-player-backward {
+    margin-left: 5px;
+}
 
 /*
    ___         _             _         _   _
@@ -122,22 +143,6 @@ tooltip, tooltip label {
     padding: 0px 10px;
 }
 
-
-/*
-  ___ _                                _           _ _
- | _ \ |__ _ _  _ ___ _ _   __ ___ _ _| |_ _ _ ___| | |___ _ _
- |  _/ / _` | || / -_) '_| / _/ _ \ ' \  _| '_/ _ \ | / -_) '_|
- |_| |_\__,_|\_, \___|_|   \__\___/_||_\__|_| \___/_|_\___|_|
-             |__/
-*/
-#custom-player-backward, #custom-player-play, #custom-player-forward, #custom-player-info {
-    margin: 3px 0px;
-    padding: 0px 7px;
-}
-
-#custom-player-backward {
-    margin-left: 5px;
-}
 
 
 /*

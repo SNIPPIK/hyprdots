@@ -6,130 +6,133 @@
 //                 |___/
 // ---------------------------------------
 
-{
-    "layer": "top",
+[
+    {
+        "name": "top-bar",
+        "layer": "top",
 
-    // Load Modules
-    "include": [
-        // Hyprland load
-        "~/.config/waybar/configuring/hyprland.jsonc",
-        "~/.config/waybar/configuring/custom.jsonc",
+        // Load Modules
+        "include": [
+            // Group load
+            "~/.config/waybar/configuring/groups/workspace.jsonc",
+            "~/.config/waybar/configuring/groups/audio.jsonc",
+            "~/.config/waybar/configuring/groups/logo.jsonc",
+            "~/.config/waybar/configuring/groups/hyprutils.jsonc",
+            "~/.config/waybar/configuring/groups/system.jsonc",
 
-        // Group load
-        "~/.config/waybar/configuring/groups/workspace.jsonc",
-        "~/.config/waybar/configuring/groups/audio.jsonc",
-        "~/.config/waybar/configuring/groups/logo.jsonc",
-        "~/.config/waybar/configuring/groups/hyprutils.jsonc",
-        "~/.config/waybar/configuring/groups/system.jsonc"
-    ],
+            // Hyprland load
+            "~/.config/waybar/configuring/hyprland.jsonc",
+            "~/.config/waybar/configuring/custom.jsonc"
+        ],
 
-    // Modules Left
-    "modules-left": [
-        "group/logo",
-        "group/workspace",
-        "hyprland/window"
-    ],
+        // Modules Left
+        "modules-left": [
+            "group/logo",
+            "group/workspace",
+            "hyprland/window"
+        ],
 
-    // Modules Center
-    "modules-center": [
-        "clock",
-        "custom/notifications"
-    ],
+        // Modules Center
+        "modules-center": [
+            "clock",
+            "custom/notifications"
+        ],
 
-    // Modules Right
-    "modules-right": [
-        "group/hyprgroup",
-        "group/settings",
-        "group/system",
+        // Modules Right
+        "modules-right": [
+            "group/hyprgroup",
+            "group/settings",
+            "group/system",
 
-        "custom/wallpaper",
-        "hyprland/language",
-        "tray",
-        "network",
-        "group/audio",
-        "battery",
-        "custom/power"
-    ],
+            "custom/wallpaper",
+            "hyprland/language",
+            "tray",
+            "network",
+            "group/audio",
+            "battery",
+            "custom/power"
+        ],
 
-    // Clock
-    "clock": {
-        "format": "{:L%H:%M} ",
-        "format-alt": " {:L%a, %b %d, %Y (%R)} ",
-        "tooltip-format": "<tt><small>{calendar}</small></tt>",
-        "calendar": {
-            "mode"          : "year",
-            "mode-mon-col"  : 3,
-            "weeks-pos"     : "right",
-            "on-scroll"     : 1,
-            "format": {
-                "months":     "<span color='#ffead3'><b>{}</b></span>",
-                "days":       "<span color='#ecc6d9'><b>{}</b></span>",
-                "weeks":      "<span color='#99ffdd'><b>W{}</b></span>",
-                "weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
-                "today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
+        // Clock
+        "clock": {
+            "format": "{:L%H:%M} ",
+            "format-alt": " {:L%a, %b %d, %Y (%R)} ",
+            "tooltip-format": "<tt><small>{calendar}</small></tt>",
+            "calendar": {
+                "mode"          : "year",
+                "mode-mon-col"  : 3,
+                "weeks-pos"     : "right",
+                "on-scroll"     : 1,
+                "format": {
+                    "months":     "<span color='#ffead3'><b>{}</b></span>",
+                    "days":       "<span color='#ecc6d9'><b>{}</b></span>",
+                    "weeks":      "<span color='#99ffdd'><b>W{}</b></span>",
+                    "weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
+                    "today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
+                }
+            },
+            "actions":  {
+                "on-click-right": "mode",
+                "on-click-forward": "tz_up",
+                "on-click-backward": "tz_down",
+                "on-scroll-up": "shift_up",
+                "on-scroll-down": "shift_down"
             }
         },
-        "actions":  {
-            "on-click-right": "mode",
-            "on-click-forward": "tz_up",
-            "on-click-backward": "tz_down",
-            "on-scroll-up": "shift_up",
-            "on-scroll-down": "shift_down"
+
+        // Battery
+        "battery": {
+            "interval": 45,
+            "states": {
+                "good": 80,
+                "warning": 30,
+                "critical": 15
+            },
+            "format": "{icon} {capacity}%",
+            "format-alt": "{icon} {time}",
+            "format-charging": "{icon}<span foreground='green'><sup></sup></span> {capacity}%",
+            "format-plugged": "{icon}<span foreground='green'><sup></sup></span> {capacity}%",
+
+            "format-icons": ["", "", "", "", ""],
+            //"format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+            "bat-compatibility": true
+        },
+
+        // Network
+        "network": {
+            "format": "{icon}",
+            "format-alt": "<span foreground='#99ffdd'> {bandwidthDownBytes}</span> <span foreground='#ffcc66'> {bandwidthUpBytes}</span>",
+            "format-icons": {
+                "wifi": ["󰤯 ", "󰤟 ", "󰤢 ", "󰤢 ", "󰤨 "],
+                "disconnected": [""],
+                "ethernet": ["󰈀 "],
+                "disabled": [""],
+                "linked": [""]
+            },
+            "tooltip-format": "{icon} // <b>{ipaddr}/{cidr}</b> | <b>{gwaddr}</b>\n - 󰤨\t<b>{signaldBm}dBm ({signalStrength}%)</b>\n - \t<b>{frequency}MHz</b>\n - \uF1E6\t<b>{ifname}</b>\n\n - 󰳽 click-right:\tOpen settings\n - 󰳽 click-middle:\tScan wifi (beta)",
+            "max-length": 50,
+            "interval": 5,
+
+            "on-click-middle": "bash ~/.config/rofi/wifi.sh",
+            "on-click-right": "sleep 0.1 && nm-connection-editor"
+        },
+
+        // hypridle switcher
+        "idle_inhibitor": {
+            "format": "{icon}",
+            "format-icons": {
+                "activated": "",
+                "deactivated": ""
+            },
+
+            "tooltip-format-activated": "{icon} | hypridle\n - Status: deactivated",
+            "tooltip-format-deactivated": "{icon} | hypridle\n - Status: activated"
+        },
+
+        // System tray
+        "tray": {
+            "icon-size": 16,
+            "spacing": 10
         }
-    },
-
-    // Battery
-    "battery": {
-        "interval": 45,
-        "states": {
-            "good": 80,
-            "warning": 30,
-            "critical": 15
-        },
-        "format": "{icon} {capacity}%",
-        "format-alt": "{icon} {time}",
-        "format-charging": "{icon}<span foreground='green'><sup></sup></span> {capacity}%",
-        "format-plugged": "{icon}<span foreground='green'><sup></sup></span> {capacity}%",
-
-        "format-icons": ["", "", "", "", ""],
-        //"format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
-        "bat-compatibility": true
-    },
-
-    // Network
-    "network": {
-        "format": "{icon}",
-        "format-alt": "<span foreground='#99ffdd'> {bandwidthDownBytes}</span> <span foreground='#ffcc66'> {bandwidthUpBytes}</span>",
-        "format-icons": {
-            "wifi": ["󰤯 ", "󰤟 ", "󰤢 ", "󰤢 ", "󰤨 "],
-            "disconnected": [""],
-            "ethernet": ["󰈀 "],
-            "disabled": [""],
-            "linked": [""]
-        },
-        "tooltip-format": "{icon} // <b>{ipaddr}/{cidr}</b> | <b>{gwaddr}</b>\n - 󰤨:\t<b>{signaldBm}dBm ({signalStrength}%)</b>\n - :\t<b>{frequency}MHz</b>\n - \uF1E6:\t<b>{ifname}</b>\n\n - 󰳽 click-right:\tOpen settings\n - 󰳽 click-middle:\tScan wifi (beta)",
-        "max-length": 50,
-        "interval": 5,
-
-        "on-click-middle": "bash ~/.config/rofi/wifi.sh",
-        "on-click-right": "sleep 0.1 && nm-connection-editor"
-    },
-
-    // hypridle switcher
-    "idle_inhibitor": {
-        "format": "{icon}",
-        "format-icons": {
-            "activated": "",
-            "deactivated": ""
-        },
-
-        "tooltip-format-activated": "{icon} | hypridle\nStatus: deactivated",
-        "tooltip-format-deactivated": "{icon} | hypridle\nStatus: activated"
-    },
-
-    // System tray
-    "tray": {
-        "icon-size": 16,
-        "spacing": 10
     }
-}
+]
