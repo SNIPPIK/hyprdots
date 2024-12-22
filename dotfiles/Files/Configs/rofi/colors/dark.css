@@ -1,8 +1,7 @@
 /* -----------------------------------------------------
  * Background Colors
  * ----------------------------------------------------- */
-@define-color background-waybar_blue #2E3440;
-@define-color background-waybar #2E3440;
+@define-color background-waybar rgba(17, 17, 27,0.85);
 @define-color background-light #D8DEE9;
 @define-color background #282828;
 

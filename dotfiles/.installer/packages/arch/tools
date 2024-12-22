@@ -12,3 +12,4 @@ wl-clipboard
 flatpak
 gnome-software
 power-profiles-daemon
+jq

@@ -34,7 +34,7 @@
 */
 .top-bar {
     background: @background-waybar;
-    background: alpha(@background-waybar, 0.8);
+    background: alpha(@background-waybar, 0.85);
 }
 
 /*
