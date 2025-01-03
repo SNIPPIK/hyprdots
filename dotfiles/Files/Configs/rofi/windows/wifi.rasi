@@ -30,14 +30,16 @@
 }
 
 window {
-    background-color: @background;
-    border:                      1;
-    padding:                     5;
-    border-radius:               5px;
-    cursor:                      "default";
+    transparency:                "real";
+    location:                    eastnorth;
+    fullscreen:                  false;
+    width:                       500px;
+    border-radius:               20px;
+    margin:                      20px;
 
-    width:                       600px;
-    height:                      40%;
+    cursor:                      "default";
+    background-color:            transparent;
+
 }
 mainbox {
     border:  0;
@@ -123,9 +125,8 @@ button.selected {
     text-color:       @selected-normal-foreground;
 }
 inputbar {
-    spacing:    0;
     text-color: @normal-foreground;
-    padding:    1px ;
+    children:   [ prompt,textbox-prompt-colon,entry,case-indicator ];
 }
 case-indicator {
     spacing:    0;
@@ -138,9 +139,6 @@ entry {
 prompt {
     spacing:    0;
     text-color: @normal-foreground;
-}
-inputbar {
-    children:   [ prompt,textbox-prompt-colon,entry,case-indicator ];
 }
 textbox-prompt-colon {
     expand:     false;
