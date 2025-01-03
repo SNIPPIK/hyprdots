@@ -26,7 +26,8 @@ While installing alongside another [DE](https://wiki.archlinux.org/title/Desktop
 > Auto configuration of monitors, left to right\
 > Hyprland animations can be changed in hyprland.conf
 
-To install, execute the following commands:
+# Install
+- To install, execute the following commands:
 ```shell
 sudo pacman -S git
 git clone https://github.com/SNIPPIK/hyprdots.git
@@ -34,7 +35,12 @@ cd hyprdots/dotfiles
 bash ./install.sh
 ```
 
-To update, execute the following command:
+- If the workspace doesn't work
+```
+ln -s $XDG_RUNTIME_DIR/hypr /tmp/hypr
+```
+
+- To update, execute the following command:
 ```shell
 dotsync
 ```

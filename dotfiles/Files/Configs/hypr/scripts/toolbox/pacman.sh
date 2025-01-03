@@ -22,7 +22,7 @@ function stringToLen() {
 # Get list packages
 function packages() {
   checkupdates --nocolor
-  pacman -Qm | aur vercmp
+  pacman -Qm
 }
 # -----------------------------------------------------
 

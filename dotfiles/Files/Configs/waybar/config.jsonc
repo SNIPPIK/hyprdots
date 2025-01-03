@@ -10,6 +10,13 @@
     {
         "name": "top-bar",
         "layer": "top",
+        "position": "top",
+        "mod": "dock",
+        "height": 31,
+        "exclusive": true,
+        "passthrough": false,
+        "gtk-layer-shell": true,
+        "reload_style_on_change": true,
 
         // Load Modules
         "include": [
