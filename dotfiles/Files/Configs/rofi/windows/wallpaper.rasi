@@ -13,7 +13,7 @@ window {
     location:                    center;
     anchor:                      center;
     fullscreen:                  false;
-    width:                       50%;
+    width:                       40%;
     x-offset:                    0px;
     y-offset:                    0px;
 
@@ -62,7 +62,7 @@ prompt {
 listview {
     enabled:                     true;
     columns:                     5;
-    lines:                       4;
+    lines:                       3;
     cycle:                       true;
     dynamic:                     true;
     scrollbar:                   true;

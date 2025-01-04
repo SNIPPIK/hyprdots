@@ -16,9 +16,10 @@
 
 #custom-wallpaper:hover, #tray, #battery:hover, #language:hover,
 #custom-logo:hover, #custom-hyprlogo:hover, #network:hover, #custom-system:hover,
-#custom-power:hover, #clock:hover, #custom-notifications:hover {
-    transition: 0.5s;
-    border: 0.8px rgba(255, 253, 253, 0.85) solid;
+#custom-power:hover, #clock:hover, #custom-notifications:hover
+{
+    transition: all .3s ease;
+    border: 0.8px rgba(255, 253, 253, 0.7) solid;
 }
 
 
@@ -29,22 +30,17 @@
   \___\___/_\___/_|   |_.__/\_,_|\__|\__\___/_||_/__/
 */
 #custom-wallpaper, #battery, #language, #custom-logo, #custom-hyprlogo, #network, #custom-system,
-#custom-power, #taskbar, #window, #clock, #custom-notifications, #tray, #workspaces {
+#custom-power, #taskbar, #window, #clock, #custom-notifications, #tray, #workspaces
+{
     color: @text;
-    background: @background;
-    border: 0.8px #0c0c0c solid;
+    background: alpha(@background, 0.85);
+    border: 0.8px alpha(@text-dark, 0) solid;
 }
 
 #custom-wallpaper, #battery, #language, #custom-logo, #custom-hyprlogo, #network, #custom-system,
 #custom-power, #taskbar, #window, #clock, #custom-notifications, #tray
 {
     text-shadow: 0px 0px 2px rgba(0, 0, 0, 1);
-}
-
-tooltip, tooltip label {
-    color: @text;
-    background: @background;
-    margin: 0.2em 0.3em 0.2em 0.3em;
 }
 
 
@@ -59,13 +55,13 @@ tooltip, tooltip label {
 #custom-player-backward, #custom-player-play, #custom-player-forward, #custom-player-info
 {
     color: @nord_dark_font;
-    background: @background-light;
+    background: alpha(@background-light, .9);
 }
 
 #cpu, #memory, #disk, #custom-pacman, #temperature, #idle_inhibitor, #custom-gpu,
 #pulseaudio, #bluetooth, #custom-version, #custom-hyprland, #network.alt, #power-profiles-daemon
 {
-    border: 1px @nord_bg_blue solid;
+    border: 0.8px alpha(@nord_bg_blue, 0.5) solid;
 }
 
 
@@ -91,11 +87,13 @@ tooltip, tooltip label {
  | (_| || (_-<  _/ _ \ '  \  | _ \/ _ \ '_/ _` / -_) '_|
   \___\_,_/__/\__\___/_|_|_| |___/\___/_| \__,_\___|_|
 */
-#custom-player-backward, #clock {
+#custom-player-backward, #clock
+{
     border-top-left-radius: 0.4em;
     border-bottom-left-radius: 0.4em;
 }
-#custom-player-info, #custom-notifications {
+#custom-player-info, #custom-notifications
+{
     border-top-right-radius: 0.4em;
     border-bottom-right-radius: 0.4em;
 }
@@ -123,12 +121,14 @@ tooltip, tooltip label {
  |_| |_\__,_|\_, \___|_|   \__\___/_||_\__|_| \___/_|_\___|_|
              |__/
 */
-#custom-player-backward, #custom-player-play, #custom-player-forward, #custom-player-info {
+#custom-player-backward, #custom-player-play, #custom-player-forward, #custom-player-info
+{
     margin: 4px 0px;
     padding: 0px 7px;
 }
 
-#custom-player-backward {
+#custom-player-backward
+{
     margin-left: 5px;
 }
 
@@ -138,7 +138,8 @@ tooltip, tooltip label {
  | (__/ -_) ' \  _/ -_) '_| | '_ \ || |  _|  _/ _ \ ' \(_-<
   \___\___|_||_\__\___|_|   |_.__/\_,_|\__|\__\___/_||_/__/
 */
-#clock, #custom-notifications {
+#clock, #custom-notifications
+{
     margin: 3px 0px;
     padding: 0px 10px;
 }
@@ -152,12 +153,13 @@ tooltip, tooltip label {
   \___\_,_/__/\__\___/_|_|_| |___/\__|\_, |_\___|
                                       |__/
 */
-#custom-hyprlogo {
+#custom-hyprlogo
+{
     background-image: image(url("hyprland.svg"));
     background-size: 13px 17px;
     background-repeat: no-repeat;
     background-position: center;
-    padding: 0px 11px;
+    padding: 0px 12px;
 }
 
 
@@ -180,3 +182,21 @@ tooltip, tooltip label {
 */
 #idle_inhibitor.deactivated { color: #0c0c0c;; }
 #idle_inhibitor.activated { color: red; }
+
+/*
+  ___       _   _        _
+ | _ ) __ _| |_| |_ __ _| |_ _  _
+ | _ \/ _` |  _|  _/ _` |  _| || |
+ |___/\__,_|\__|\__\__,_|\__|\_, |
+                             |__/
+*/
+#battery.charging { color: #26A65B; }
+#battery.warning:not(.charging) { color: #ffbe61; }
+#battery.critical:not(.charging) {
+    color: red;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}

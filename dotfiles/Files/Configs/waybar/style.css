@@ -32,9 +32,16 @@
  |  _/ _` | ' \/ -_) | / _/ _ \ / _ \ '_|
  |_| \__,_|_||_\___|_| \__\___/_\___/_|
 */
-.top-bar {
+window#waybar
+{
     background: @background-waybar;
     background: alpha(@background-waybar, 0.85);
+}
+
+
+window#waybar.empty
+{
+    all:unset;
 }
 
 /*
@@ -54,9 +61,15 @@
    |_|\___/\___/_|\__|_| .__/
                        |_|
 */
+tooltip, tooltip label {
+    color: @text;
+    background: @background;
+    margin: 0.2em 0.3em 0.2em 0.3em;
+}
+
 tooltip {
     padding: 2px;
-    border: 2px solid @background;
+    border: 2px solid alpha(@background, .5);
 }
 
 tooltip label {
