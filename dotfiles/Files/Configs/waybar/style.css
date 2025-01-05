@@ -34,6 +34,7 @@
 */
 window#waybar
 {
+    transition: all .3s ease;
     background: @background-waybar;
     background: alpha(@background-waybar, 0.85);
 }
@@ -41,6 +42,7 @@ window#waybar
 
 window#waybar.empty
 {
+    transition: all .3s ease;
     all:unset;
 }
 
