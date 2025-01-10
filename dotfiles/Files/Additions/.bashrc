@@ -22,8 +22,8 @@ alias hyprland="nano ~/.config/hypr/hyprland.conf"
 alias hyprland-env="nano ~/.config/hypr/configuring/environment.conf"
 alias hyprland-start="nano ~/.config/hypr/configuring/autostart.conf"
 
-alias hyprland-binds="nano ~/.config/hypr/configuring/keyboard/binds.conf"
-alias hyprland-board="nano ~/.config/hypr/configuring/keyboard/keyboard.conf"
+alias hyprland-binds="nano ~/.config/hypr/configuring/input/binds.conf"
+alias hyprland-board="nano ~/.config/hypr/configuring/input/keyboard.conf"
 
 # -----------------------------------------------------
 # Waybar
