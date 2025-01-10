@@ -6,9 +6,8 @@
 # /_/   \_\__,_|\__,_|_|\___/  |____/ \__,_|_.__/  |____/ \__, |___/\__\___|_| |_| |_|
 #                                                         |___/
 # -----------------------------------------------------
-
 volume_step=1
-max_volume=100
+max_volume=120
 notification_timeout=2000
 download_album_art=true
 show_album_art=true
@@ -41,7 +40,9 @@ function get_output_icon {
     elif [ "$volume" -lt 60 ]; then
         volume_icon=""
     elif [ "$volume" -lt 80 ]; then
-            volume_icon="󰕾"
+          volume_icon="󰕾"
+    elif [ "$volume" -lt 100 ]; then
+          volume_icon="Warning 󰕾"
     else
         volume_icon=""
     fi

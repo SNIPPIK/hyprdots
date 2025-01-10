@@ -49,13 +49,16 @@ case ${chosen} in
 
     # Lock system
     "$lock")
-        loginctl lock-session &
-    	  playerctl --all-players stop
+        sleep 0.3s
+        loginctl lock-session
+    	  playerctl --all-players pause
     ;;
 
-    # Pause system
+    # Sleep system
     "$suspend")
-        systemctl suspend & playerctl --all-players stop
+        playerctl --all-players pause
+        sleep 0.3s
+        systemctl suspend
         sleep 0.5s
         hyprctl dispatch dpms off
     ;;

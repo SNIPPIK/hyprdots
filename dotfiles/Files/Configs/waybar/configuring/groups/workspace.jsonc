@@ -4,9 +4,11 @@
     "drawer": {
       "transition-duration": 450,
       "children-class": "not-memory",
-      "transition-left-to-right": true
+      "transition-left-to-right": true,
+      "click-to-reveal": true
     },
     "modules": [
+      "custom/logo",
       "hyprland/workspaces",
       "wlr/taskbar"
     ]

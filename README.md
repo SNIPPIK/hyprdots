@@ -54,8 +54,8 @@ Used for nice work dotfiles
 - `gnome-software`, `nautilus`, `frog-protocols`
 
 ## Images
-- Version 0.7.5.2
-- [`Backgroud wallpaper`](https://github.com/SNIPPIK/wallpapers/blob/main/Pack%202/shadow.jpg)
+- Version 0.7.6
+- [`Backgroud wallpaper`](https://github.com/SNIPPIK/wallpapers/blob/main/Pack%203/Distos/Hyprland.png)
 <img align="" alt="image" width="1920" src="/assets/images/1.png" />
 <img align="" alt="image" width="1920" src="/assets/images/2.png" />
 <img align="" alt="image" width="1920" src="/assets/images/3.png" />

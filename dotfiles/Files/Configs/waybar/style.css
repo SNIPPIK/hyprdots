@@ -32,7 +32,7 @@
  |  _/ _` | ' \/ -_) | / _/ _ \ / _ \ '_|
  |_| \__,_|_||_\___|_| \__\___/_\___/_|
 */
-window#waybar
+window.mainbar#waybar
 {
     transition: all .3s ease;
     background: @background-waybar;
@@ -40,7 +40,7 @@ window#waybar
 }
 
 
-window#waybar.empty
+window#waybar
 {
     transition: all .3s ease;
     all:unset;

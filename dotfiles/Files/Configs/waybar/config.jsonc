@@ -8,7 +8,7 @@
 
 [
     {
-        "name": "top-bar",
+        "name": "mainbar",
         "layer": "top",
         "position": "top",
         "mod": "dock",
@@ -23,7 +23,6 @@
             // Group load
             "~/.config/waybar/configuring/groups/workspace.jsonc",
             "~/.config/waybar/configuring/groups/audio.jsonc",
-            "~/.config/waybar/configuring/groups/logo.jsonc",
             "~/.config/waybar/configuring/groups/hyprutils.jsonc",
             "~/.config/waybar/configuring/groups/system.jsonc",
 
@@ -34,7 +33,6 @@
 
         // Modules Left
         "modules-left": [
-            "group/logo",
             "group/workspace",
             "hyprland/window"
         ],
@@ -141,5 +139,77 @@
             "icon-size": 16,
             "spacing": 10
         }
+    },
+
+    // Weather
+    {
+        "name": "weather",
+        "layer": "bottom",
+        "position": "bottom",
+        "margin-right": 15,
+        "margin-bottom": 25,
+
+        "exclusive": false,
+
+        // Load Modules
+        "include": [],
+
+        "modules-right": [
+            "custom/weather"
+        ],
+
+        // Weather
+        "custom/weather": {
+            "format": " {} ",
+            "return-type": "string",
+            "exec": "curl -s 'wttr.in?format=%c+%C+%t' 2>/dev/null",
+            "interval": 600,
+            "on-click": "bash ~/.config/waybar/scripts/dialog.sh float weather",
+            "on-click-right": "bash ~/.config/waybar/scripts/dialog.sh float weather"
+        }
     }
+
+    // Player (WIP)
+    /*
+    {
+        "name": "player",
+        "layer": "bottom",
+        "position": "bottom",
+        "margin-bottom": 10,
+        "exclusive": false,
+
+        "modules-center": [
+            "image#album-art",
+            "mpris"
+        ],
+
+        // Player working
+        "mpris": {
+            "format": "{artist} - {title}\t{player_icon}\n{album}\t{status_icon}\n{position}/{length}",
+            "tooltip-format": "{player_icon} {artist} - {title}\n{status_icon} {position}/{length}",
+            "interval": 10,
+
+            "player-icons": {
+                "chromium": "",
+                "firefox": "",
+                "default": "▶",
+                "mpv": "🎵"
+            },
+
+            "status-icons": {
+                "playing": "󰎆",
+                "paused": "󱑽"
+            }
+        },
+
+        // Image track
+        "image#album-art": {
+            "exec": "bash ~/.config/hypr/bin/hyprlock/player.sh --arturl",
+            "size": 64,
+            "interval": 10,
+
+            "on-click": "wl-copy < $(bash ~/.config/hypr/bin/hyprlock/player.sh --arturl)",
+            "on-click-right": "wl-copy < $(bash ~/.config/hypr/bin/hyprlock/player.sh --arturl)"
+        }
+    }*/
 ]

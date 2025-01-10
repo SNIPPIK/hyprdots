@@ -11,10 +11,10 @@
 
     "tooltip-format": "{desc} // {volume}%\n\n󰎟 Binds\n - 󰳽 click-left:\tToggle Mute\n - 󰳽 click-right:\tOpen settings\n - 󰳽 scrolling:\tVolume control",
 
-    "on-click": "bash ~/.config/hypr/scripts/utils/audio.sh volume_mute",
+    "on-click": "bash ~/.config/hypr/bin/tools/audio.sh volume_mute",
     "on-click-right": "pavucontrol",
-    "on-scroll-down": "bash ~/.config/hypr/scripts/utils/audio.sh volume_down",
-    "on-scroll-up": "bash ~/.config/hypr/scripts/utils/audio.sh volume_up"
+    "on-scroll-down": "bash ~/.config/hypr/bin/tools/audio.sh volume_down",
+    "on-scroll-up": "bash ~/.config/hypr/bin/tools/audio.sh volume_up"
   },
 
   // Group audio
@@ -40,10 +40,10 @@
 
     "tooltip-format": "{source_desc} // {source_volume}%\n\n󰎟 Binds\n - 󰳽 click-left:\tToggle Mute\n - 󰳽 click-right:\tOpen settings\n - 󰳽 scrolling:\tVolume control",
 
-    "on-click": "bash ~/.config/hypr/scripts/utils/audio.sh micro_mute",
+    "on-click": "bash ~/.config/hypr/bin/tools/audio.sh micro_mute",
     "on-click-right": "pavucontrol",
-    "on-scroll-up": "bash ~/.config/hypr/scripts/utils/audio.sh micro_volume_up",
-    "on-scroll-down": "bash ~/.config/hypr/scripts/utils/audio.sh micro_volume_down"
+    "on-scroll-up": "bash ~/.config/hypr/bin/tools/audio.sh micro_volume_up",
+    "on-scroll-down": "bash ~/.config/hypr/bin/tools/audio.sh micro_volume_down"
   },
 
   // Bluetooth

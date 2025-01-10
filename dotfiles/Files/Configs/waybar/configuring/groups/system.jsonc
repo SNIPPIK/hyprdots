@@ -32,10 +32,10 @@
     "return-type": "json",
     "restart-interval": 600,
     "exec-on-event": true,
-    "exec": "bash ~/.config/hypr/scripts/toolbox/pacman.sh check",
+    "exec": "bash ~/.config/waybar/scripts/utils/pacman.sh check",
 
-    "on-click": "bash ~/.config/hypr/scripts/dialog.sh float-small update",
-    "on-click-right": "bash ~/.config/hypr/scripts/dialog.sh float-small unused"
+    "on-click": "bash ~/.config/waybar/scripts/dialog.sh float-small update",
+    "on-click-right": "bash ~/.config/waybar/scripts/dialog.sh float-small unused"
   },
 
   // Memory usage
@@ -93,7 +93,7 @@
     "format": "󰾲 {}",
     "return-type": "json",
     "restart-interval": "once",
-    "exec": "sleep 0.1 && bash ~/.config/waybar/scripts/gpu.sh"
+    "exec": "sleep 0.1 && bash ~/.config/waybar/scripts/utils/gpu.sh"
   },
 
   // GPU temp
