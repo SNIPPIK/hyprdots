@@ -1,13 +1,37 @@
 {
   // Current window name
   "hyprland/window": {
-    "format": " | {title}",
-    "max-length": 35
+    "format": "<span foreground='#89b4fa'> </span> | {title}",
+    "max-length": 35,
+
+    // === Window Titles ===
+
+    "rewrite": {
+      // == Terminal ==
+      "@(.*):(.*)": " | Terminal",
+      "(.*)@(.*):~": " | Terminal",
+
+      // == Media ==
+      "(.*)Spotify":
+      "<span foreground='#a6e3a1'> </span> | Spotify",
+      "(.*)YouTube Music":
+      "<span foreground='#cf1818'> </span> | YouTube Music",
+
+      // == Social ==
+      "vesktop":
+      "<span foreground='#89b4fa'> </span> | Discord",
+      "(.*)Discord(.*)":
+      "<span foreground='#89b4fa'> </span> | Discord $2",
+
+      // == Documents ==
+      "ONLYOFFICE Desktop Editors":
+      "<span foreground='#f38ba8'> </span> | OnlyOffice"
+    }
   },
 
   // Current language
   "hyprland/language": {
-    "format": " {short}",
+    "format": " {short}",
     "on-click": "bash ~/.config/hypr/scripts/dialog.sh float keybindings",
     "on-click-right": "bash ~/.config/hypr/scripts/dialog.sh float keybindings"
   },
