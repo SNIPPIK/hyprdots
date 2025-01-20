@@ -93,10 +93,10 @@
                 "warning": 30,
                 "critical": 15
             },
-            "format": "{icon} {capacity}%",
-            "format-alt": "{icon} {time}",
-            "format-charging": "{icon}<span foreground='green'><sup></sup></span> {capacity}%",
-            "format-plugged": "{icon}<span foreground='green'><sup></sup></span> {capacity}%",
+            "format": "{icon}\t{capacity}%",
+            "format-alt": "{icon}\t{time}",
+            "format-charging": "{icon}<span foreground='green'><sup></sup></span>\t{capacity}%",
+            "format-plugged": "{icon}<span foreground='green'><sup></sup></span>\t{capacity}%",
 
             "format-icons": ["", "", "", "", ""],
             //"format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
@@ -114,7 +114,7 @@
                 "disabled": [""],
                 "linked": [""]
             },
-            "tooltip-format": "{icon} // <b>{ipaddr}/{cidr}</b> | <b>{gwaddr}</b>\n - 󰤨\t<b>{signaldBm}dBm ({signalStrength}%)</b>\n - \t<b>{frequency}MHz</b>\n - \uF1E6\t<b>{ifname}</b>\n\n - 󰳽 click-right:\tOpen settings\n - 󰳽 click-middle:\tScan wifi (beta)",
+            "tooltip-format": "{icon} Network information\n - <b>{ipaddr}/{cidr}</b> | <b>{gwaddr}</b>\n - 󰤨\t<b>{signaldBm}dBm ({signalStrength}%)</b>\n - \t<b>{frequency}MHz</b>\n - \uF1E6\t<b>{ifname}</b>\n\n - 󰳽 click-right:\tOpen settings\n - 󰳽 click-middle:\tScan wifi",
             "max-length": 50,
             "interval": 5,
 
@@ -130,8 +130,8 @@
                 "deactivated": ""
             },
 
-            "tooltip-format-activated": "{icon} | hypridle\n - Status: deactivated",
-            "tooltip-format-deactivated": "{icon} | hypridle\n - Status: activated"
+            "tooltip-format-activated": "{icon} Idle manager\n - Status: deactivated",
+            "tooltip-format-deactivated": "{icon} Idle manager\n - Status: activated"
         },
 
         // System tray
@@ -170,8 +170,7 @@
     }
 
     // Player (WIP)
-    /*
-    {
+    /*{
         "name": "player",
         "layer": "bottom",
         "position": "bottom",

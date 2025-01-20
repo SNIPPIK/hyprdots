@@ -1,7 +1,7 @@
 {
-  // Arch logo
+  // Custom logo
   "custom/logo": {
-    "format": "<span foreground='aqua'></span>",
+    "format": "  ",
     "interval" : "once",
     "tooltip": false
   },

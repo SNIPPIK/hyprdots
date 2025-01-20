@@ -6,6 +6,7 @@
     "interval" : "once"
   },
 
+  // System group
   "group/system": {
     "orientation": "inherit",
     "drawer": {
@@ -16,13 +17,128 @@
     },
     "modules": [
       "custom/system",
-      "cpu", "memory", "disk", "custom/gpu",
-
-      "temperature", "temperature#4",
+      "group/cpu_info",
+      "memory",
+      "group/gpu_info",
 
       "power-profiles-daemon",
+      "disk",
       "custom/pacman"
     ]
+  },
+
+  // CPU group
+  "group/cpu_info": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 450,
+      "children-class": "not-memory",
+      "transition-left-to-right": false
+    },
+    "modules": [
+      "cpu",
+      "temperature"
+    ]
+  },
+
+  // Cpu usage
+  "cpu": {
+    "interval": 15,
+    "format": "{icon}",
+    "rotate": 270,
+    "format-icons": ["󰝦","󰪞","󰪟","󰪠","󰪡","󰪢","󰪣","󰪤","󰪥"],
+    "tooltip-format": "12213"
+  },
+
+  "load": {
+    "interval": 10,
+    "format": "load: {load1}",
+    "max-length": 10
+  },
+
+  // Cpu temp
+  "temperature": {
+    "interval": 25,
+    "thermal-zone": 2,
+    "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+    "critical-threshold": 75,
+
+    "format": "{temperatureC}°C {icon}",
+    "format-critical": "<span foreground='red'>{temperatureC}°C {icon}</span>",
+    "tooltip-format": "CPU Hotspot {temperatureC}°C{icon}",
+
+    "format-icons": [
+      "", // Icon: temperature-empty
+      "", // Icon: temperature-quarter
+      "", // Icon: temperature-half
+      "", // Icon: temperature-three-quarters
+      ""  // Icon: temperature-full
+    ]
+  },
+
+
+  // GPU group
+  "group/gpu_info": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 450,
+      "children-class": "not-memory",
+      "transition-left-to-right": false
+    },
+    "modules": [
+      "custom/gpu",
+      "temperature#4"
+    ]
+  },
+
+  // GPU
+  "custom/gpu": {
+    "signal": 8,
+    "format": "󰾲 {}",
+    "return-type": "json",
+    "restart-interval": "once",
+    "exec": "sleep 0.1 && bash ~/.config/waybar/scripts/utils/gpu.sh"
+  },
+
+  // GPU temp
+  "temperature#4": {
+    "interval": 25,
+    "thermal-zone": 4,
+    "hwmon-path": "/sys/class/hwmon/hwmon4/temp1_input",
+    "critical-threshold": 75,
+
+    "format": "{temperatureC}°C {icon}",
+    "format-critical": "<span foreground='red'>{temperatureC}°C {icon}</span>",
+    "tooltip-format": "CPU Hotspot {temperatureC}°C{icon}",
+
+    "format-icons": [
+      "", // Icon: temperature-empty
+      "", // Icon: temperature-quarter
+      "", // Icon: temperature-half
+      "", // Icon: temperature-three-quarters
+      ""  // Icon: temperature-full
+    ]
+  },
+
+
+  // Power menu
+  "power-profiles-daemon": {
+    "format": "{icon}",
+    "tooltip-format": " Power profile\n - \tDriver: \t{driver}\n - {icon}\tProfile: \t{profile}",
+    "tooltip": true,
+    "format-icons": {
+      "default": "",
+      "performance": "",
+      "balanced": "",
+      "power-saver": ""
+    }
+  },
+
+  // Disk / use
+  "disk": {
+    "interval": 90,
+    "format": " {percentage_used}%",
+    "path": "/"
   },
 
   // Updates Count | Total packages
@@ -45,64 +161,5 @@
     "format-icons": ["󰝦","󰪞","󰪟","󰪠","󰪡","󰪢","󰪣","󰪤","󰪥"],
     "max-length": 10,
     "tooltip-format": " Memory\n -  {used:0.1f}/{total:0.1f} GB \t{avail:0.1f} GB - {percentage}%\n - 󰓡 {swapUsed:0.1f}/{swapTotal:0.1f} GB\t{swapAvail:0.1f} GB - {swapPercentage}%"
-  },
-
-  // Cpu usage
-  "cpu": {
-    "interval": 15,
-    "format": "{icon}",
-    "rotate": 270,
-    "format-icons": ["󰝦","󰪞","󰪟","󰪠","󰪡","󰪢","󰪣","󰪤","󰪥"],
-    "tooltip-format": "12213"
-  },
-
-  // Power menu
-  "power-profiles-daemon": {
-    "format": "{icon}",
-    "tooltip-format": " Power profile\n - \tDriver: \t{driver}\n - {icon}\tProfile: \t{profile}",
-    "tooltip": true,
-    "format-icons": {
-      "default": "",
-      "performance": "",
-      "balanced": "",
-      "power-saver": ""
-    }
-  },
-
-  // Disk / use
-  "disk": {
-    "interval": 90,
-    "format": " {percentage_used}%",
-    "path": "/"
-  },
-
-  // Cpu temp
-  "temperature": {
-    "interval": 25,
-    "thermal-zone": 2,
-    "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
-    "critical-threshold": 75,
-    "format-critical": "<span foreground='red'>{temperatureC}°C </span>",
-    "format": "{temperatureC}°C ",
-    "tooltip-format": "CPU Hotspot {temperatureC}°C "
-  },
-
-  // GPU
-  "custom/gpu": {
-    "signal": 8,
-    "format": "󰾲 {}",
-    "return-type": "json",
-    "restart-interval": "once",
-    "exec": "sleep 0.1 && bash ~/.config/waybar/scripts/utils/gpu.sh"
-  },
-
-  // GPU temp
-  "temperature#4": {
-    "thermal-zone": 4,
-    "hwmon-path": "/sys/class/hwmon/hwmon4/temp1_input",
-    "critical-threshold": 75,
-    "format-critical": "<span foreground='red'>{temperatureC}°C </span>",
-    "format": "{temperatureC}°C ",
-    "tooltip-format": "GPU Hotspot {temperatureC}°C "
   }
 }

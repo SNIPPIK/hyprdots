@@ -1,22 +1,4 @@
 {
-  //Output (headphone)
-  "pulseaudio": {
-    "format": "{icon} {volume}%",
-    "format-muted": " {volume}%",
-    "format-icons": {
-      "headphone": " ",
-      "car": " ",
-      "default": ["", "", "", "", "󰕾"]
-    },
-
-    "tooltip-format": "{desc} // {volume}%\n\n󰎟 Binds\n - 󰳽 click-left:\tToggle Mute\n - 󰳽 click-right:\tOpen settings\n - 󰳽 scrolling:\tVolume control",
-
-    "on-click": "bash ~/.config/hypr/bin/tools/audio.sh volume_mute",
-    "on-click-right": "pavucontrol",
-    "on-scroll-down": "bash ~/.config/hypr/bin/tools/audio.sh volume_down",
-    "on-scroll-up": "bash ~/.config/hypr/bin/tools/audio.sh volume_up"
-  },
-
   // Group audio
   "group/audio": {
     "orientation": "inherit",
@@ -32,13 +14,30 @@
     ]
   },
 
-  //Input (Microphone)
+  // Output (headphone)
+  "pulseaudio": {
+    "format": "{icon}\t{volume}%",
+    "format-muted": "\t{volume}%",
+    "format-icons": {
+      "car": " ",
+      "default": ["", "", "", "", "", "", "", "", "", ""]
+    },
+
+    "tooltip-format": "{icon} Volume control\n - {desc} // {volume}%\n\n󰎟 Binds\n - 󰳽 click-left:\tToggle Mute\n - 󰳽 click-right:\tOpen settings\n - 󰳽 scrolling:\tVolume control",
+
+    "on-click": "bash ~/.config/hypr/bin/tools/audio.sh volume_mute",
+    "on-click-right": "pavucontrol",
+    "on-scroll-down": "bash ~/.config/hypr/bin/tools/audio.sh volume_down",
+    "on-scroll-up": "bash ~/.config/hypr/bin/tools/audio.sh volume_up"
+  },
+
+  // Input (Microphone)
   "pulseaudio#microphone": {
     "format": "{format_source}",
     "format-source": "",
     "format-source-muted": "",
 
-    "tooltip-format": "{source_desc} // {source_volume}%\n\n󰎟 Binds\n - 󰳽 click-left:\tToggle Mute\n - 󰳽 click-right:\tOpen settings\n - 󰳽 scrolling:\tVolume control",
+    "tooltip-format": "{format_source} Microphone control\n - {source_desc} // {source_volume}%\n\n󰎟 Binds\n - 󰳽 click-left:\tToggle Mute\n - 󰳽 click-right:\tOpen settings\n - 󰳽 scrolling:\tVolume control",
 
     "on-click": "bash ~/.config/hypr/bin/tools/audio.sh micro_mute",
     "on-click-right": "pavucontrol",

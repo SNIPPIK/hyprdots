@@ -36,6 +36,7 @@ alias wb="nano ~/.config/waybar/config.jsonc"
 # -----------------------------------------------------
 alias mkinitcpio='sudo nano /etc/mkinitcpio.conf && mkinitcpio'
 alias grub='sudo nano /boot/grub/grub.cfg && sudo grub-mkconfig -o /boot/grub/grub.cfg'
+alias grub-update='sudo grub-mkconfig -o /boot/grub/grub.cfg'
 
 alias shutdown='systemctl poweroff'
 alias wifi='nmtui'

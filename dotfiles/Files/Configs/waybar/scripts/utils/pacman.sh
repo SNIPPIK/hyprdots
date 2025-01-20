@@ -31,11 +31,11 @@ if [ "$1" == "check" ]; then
   mapfile -t updates < <(packages)
   updated=${#updates[@]}
   total="$(pacman -Q | wc -l)"
-  text=" ${updated} | 󰏖 $(pacman -Q | wc -l)"
+  text=" ${updated} | $(pacman -Q | wc -l) 󰏖"
   tooltip=""
 
   if [ "$updated" -ge 1 ]; then
-    tooltip=" <b>$updated updates | 󰏖 Packages $total</b>\n"
+    tooltip=" <b>$updated updates | Packages $total 󰏖</b>\n"
     tooltip+="<b>$(stringToLen "Package" 20) $(stringToLen "Current" 20) $(stringToLen "Next" 20)</b>\n"
 
     for i in "${updates[@]}"; do
@@ -48,7 +48,7 @@ if [ "$1" == "check" ]; then
 
       tooltip=${tooltip::-2}
   else
-    tooltip=" <b>$updated updates | 󰏖 Packages $total</b>\n- Packages not found for update"
+    tooltip=" <b>$updated updates | Packages $total</b> 󰏖\n- Packages not found for update"
   fi
 
 cat <<EOF
