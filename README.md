@@ -7,7 +7,7 @@
 
 ## Installation
 The installation script is designed for a minimal [Arch Linux](https://wiki.archlinux.org/title/Arch_Linux) install, but **may** work on some [Arch-based distros](https://wiki.archlinux.org/title/Arch-based_distributions).
-While installing alongside another [DE](https://wiki.archlinux.org/title/Desktop_environment)/[WM](https://wiki.archlinux.org/title/Window_manager) should work, due to it being a heavily customized setup, it **will** conflict with your [GTK](https://wiki.archlinux.org/title/GTK)/[Qt](https://wiki.archlinux.org/title/Qt) theming, [Shell](https://wiki.archlinux.org/title/Command-line_shell), [SDDM](https://wiki.archlinux.org/title/SDDM), [GRUB](https://wiki.archlinux.org/title/GRUB), etc. and is at your own risk.
+While installing alongside another [DE](https://wiki.archlinux.org/title/Desktop_environment)/[WM](https://wiki.archlinux.org/title/Window_manager) should work, due to it being a heavily customized setup, it **will** conflict with your [GTK](https://wiki.archlinux.org/title/GTK) theme, [SDDM](https://wiki.archlinux.org/title/SDDM), etc. and is at your own risk.
 
 > [!CAUTION]
 > See all button bindings in terminal `hyprland-binds`\
@@ -35,11 +35,6 @@ cd hyprdots/dotfiles
 bash ./install.sh
 ```
 
-- If the workspace doesn't work
-```
-ln -s $XDG_RUNTIME_DIR/hypr /tmp/hypr
-```
-
 - To update, execute the following command:
 ```shell
 dotsync
@@ -54,8 +49,8 @@ Used for nice work dotfiles
 - `gnome-software`, `nautilus`, `frog-protocols`
 
 ## Images
-- Version 0.7.6
-- [`Backgroud wallpaper`](https://github.com/SNIPPIK/wallpapers/blob/main/Pack%203/Distos/Hyprland.png)
+- Version 0.8.0
+- [`Backgroud wallpaper`](https://github.com/SNIPPIK/wallpapers/blob/main/Pack/%5B4K%5D%20Minimal_Squares.png)
 <img align="" alt="image" width="1920" src="/assets/images/1.png" />
 <img align="" alt="image" width="1920" src="/assets/images/2.png" />
 <img align="" alt="image" width="1920" src="/assets/images/3.png" />
@@ -65,7 +60,6 @@ Used for nice work dotfiles
 <img align="" alt="image" width="1920" src="/assets/images/7.png" />
 <img align="" alt="image" width="1920" src="/assets/images/8.png" />
 <img align="" alt="image" width="1920" src="/assets/images/9.png" />
-<img align="" alt="image" width="1920" src="/assets/images/10.png" />
 
 
 ### Demonstration videos (archive)
