@@ -92,7 +92,7 @@
     horizontal_padding = 8
 
     # Padding between text and icon.
-    text_icon_padding = 0
+    text_icon_padding = 2
 
     # Defines width in pixels of frame around the notification window.
     # Set to 0 to disable.
@@ -162,7 +162,7 @@
     #   %%  Literal %
     # Markup is allowed
     #format = "<b>%s</b>\n%b"
-    format = "<span foreground='#5bb1b4'><b>%s</b></span>\n%b"
+    format = "<span foreground='#D8DEE9'><b>%s</b></span>\n - %b"
 
     # Alignment of message text.
     # Possible values are "left", "center" and "right".
@@ -200,7 +200,7 @@
     ### Icons ###
 
     # Align icons left/right/off
-    icon_position = left
+    icon_position = right
 
     # Scale small icons up to this size, set to 0 to disable. Helpful
     # for e.g. small files or high-dpi screens. In case of conflict,
@@ -220,7 +220,7 @@
     sticky_history = yes
 
     # Maximum amount of notifications kept in history
-    history_length = 50
+    history_length = 30
 
     ### Misc/Advanced ###
 
@@ -231,10 +231,10 @@
     always_run_script = true
 
     # Define the title of the windows spawned by dunst
-    title = Dunst
+    title = dunst
 
     # Define the class of the windows spawned by dunst
-    class = Dunst
+    class = dunst
 
     # Print a notification on startup.
     # This is mainly for error detection, since dbus (re-)starts dunst
@@ -317,41 +317,43 @@
 [urgency_low]
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the "#" and following would be interpreted as a comment.
-    background = "#131519"
+    background = "#11111B99"
     foreground = "#ffffff"
-    highlight = "#8ec07c"
+    highlight = "#8ec07c7A"
     timeout = 5
     # Icon for notifications with low urgency, uncomment to enable
     #icon = /path/to/icon
 
 [urgency_normal]
-    background = "#131519"
+    background = "#11111B99"
     foreground = "#ffffff"
-    highlight = "#8ec07c"
+    highlight = "#8ec07c7A"
     timeout = 5
     # Icon for notifications with normal urgency, uncomment to enable
     #icon = /path/to/icon
 
 [urgency_critical]
-    background = "#131519"
+    background = "#11111B99"
     foreground = "#ffffff"
-    frame_color = "#ff0000"
+    highlight = "#8ec07c7A"
+    frame_color = "#FF0000FF"
     timeout = 20
     # Icon for notifications with critical urgency, uncomment to enable
     #icon = /path/to/icon
 
 [volume]
     category = "volume"
-    background = "#131519"
+    background = "#11111B99"
     foreground = "#ffffff"
-    highlight = "#8ec07c"
+    highlight = "#8ec07c7A"
+    #frame_color = "#11111B7A"
     history_ignore = yes
     timeout = 2
 
 [hide]
     category = "hide"
-    background = "#131519"
+    background = "#11111B99"
     foreground = "#ffffff"
-    highlight = "#8ec07c"
+    highlight = "#8ec07c7A"
     history_ignore = yes
     timeout = 2
