@@ -4,12 +4,13 @@ echo "    / \   _ __ ___| |__  "
 echo "   / _ \ | '__/ __| '_ \ "
 echo "  / ___ \| | | (__| | | |"
 echo " /_/   \_\_|  \___|_| |_|"
+echo "Removing unused packages"
 
 # Unused packages
 if [ -z "$(sudo pacman -Qdtq)" ]; then
-    echo "Not find unused packages for remove"
+    echo "Not found unused packages"
 else
-    echo "Removing unused packages"
+    echo "Found packages"
     sudo pacman -Qdtq | sudo pacman -Rsc -
 fi
 
