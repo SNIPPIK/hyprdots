@@ -15,4 +15,3 @@ if [ "$1" == "picker" ]; then
   # Added to buffer
   wl-copy "#$COLOR"
 fi
-
