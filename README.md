@@ -13,7 +13,8 @@ While installing alongside another [DE](https://wiki.archlinux.org/title/Desktop
 > See all button bindings in terminal `hyprland-binds`\
 > All files are linked, deleting the directory hyprdots can lead to serious consequences\
 > The install script will auto install GPU drivers for AMD, NVIDIA, Intel is not supported in script\
-> The script will install dark theme gtk, sddm, grub. If you have a bootloader other grub installed, then it is better not to use hyprdots
+> The script will install dark theme gtk, sddm, grub. If you have a bootloader other grub installed, then it is better not to use hyprdots\
+> The current bitmap files were created for the (2560x1080)21:9 format, I'm not sure that everything will work as it should at lower resolutions
 
 
 > [!IMPORTANT]

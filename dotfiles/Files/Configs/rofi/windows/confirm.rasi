@@ -37,7 +37,7 @@ mainbox {
     margin:                      20px;
     padding:                     20px;
     border:                      0px solid;
-    border-radius:               5px;
+    border-radius:               20px;
     background-color:            @background;
     children:                    [ "message", "listview" ];
 }

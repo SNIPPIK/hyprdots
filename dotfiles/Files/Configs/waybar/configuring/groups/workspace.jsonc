@@ -9,6 +9,19 @@
     },
     "modules": [
       "custom/logo",
+      "group/workspace-apps"
+    ]
+  },
+
+  "group/workspace-apps": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 450,
+      "children-class": "not-memory",
+      "transition-left-to-right": true,
+      "click-to-reveal": false
+    },
+    "modules": [
       "hyprland/workspaces",
       "wlr/taskbar"
     ]

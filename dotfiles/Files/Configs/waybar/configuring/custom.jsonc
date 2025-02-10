@@ -4,6 +4,8 @@
     "format": "  ",
     "interval" : "once",
     "tooltip": false
+
+    //"on-click-right": "bash ~/.config/rofi/run.sh fullscreen"
   },
 
   // Wallpaper

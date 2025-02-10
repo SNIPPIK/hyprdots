@@ -47,6 +47,9 @@ alias amd-close='sudo pacman -Syu amdvlk lib32-amdvlk && sudo pacman -Rcs vulkan
 alias nvidia-open='sudo pacman -Syu nvidia-open && sudo pacman -Rc nvidia'
 alias nvidia-close='sudo pacman -Syu nvidia && sudo pacman -Rc nvidia-open'
 
+alias pacman='sudo pacman'
+alias aur='yay'
+
 # -----------------------------------------------------
 # DEVELOPMENT
 # -----------------------------------------------------

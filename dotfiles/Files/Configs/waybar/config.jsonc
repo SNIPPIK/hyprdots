@@ -39,14 +39,11 @@
 
         // Modules Center
         "modules-center": [
-            "clock",
-            "custom/notifications"
         ],
 
         // Modules Right
         "modules-right": [
             "group/hyprgroup",
-            "group/settings",
             "group/system",
 
             "custom/wallpaper",
@@ -55,6 +52,8 @@
             "network",
             "group/audio",
             "battery",
+            "clock",
+            "custom/notifications",
             "custom/power"
         ],
 
@@ -139,6 +138,36 @@
             "icon-size": 16,
             "spacing": 10
         }
+
+        /*
+        // Player working
+        "mpris": {
+            "format": "{status_icon} | {artist} - {title}\t{player_icon}",
+            "tooltip-format": "{player_icon} {artist} - {title}\n{status_icon} {position}/{length}",
+
+            "player-icons": {
+                "chromium": "",
+                "firefox": "",
+                "default": "▶",
+                "mpv": "🎵"
+            },
+
+            "status-icons": {
+                "playing": "󰎆",
+                "paused": "󱑽"
+            }
+        },
+
+        // Image track
+        "image#album-art": {
+            "exec": "bash ~/.config/hypr/bin/hyprlock/player.sh --arturl",
+            "size": 16,
+            "interval": 10,
+
+            "on-click": "wl-copy < $(bash ~/.config/hypr/bin/hyprlock/player.sh --arturl)",
+            "on-click-right": "wl-copy < $(bash ~/.config/hypr/bin/hyprlock/player.sh --arturl)"
+        }
+        */
     },
 
     // Weather
@@ -186,7 +215,6 @@
         "mpris": {
             "format": "{artist} - {title}\t{player_icon}\n{album}\t{status_icon}\n{position}/{length}",
             "tooltip-format": "{player_icon} {artist} - {title}\n{status_icon} {position}/{length}",
-            "interval": 10,
 
             "player-icons": {
                 "chromium": "",

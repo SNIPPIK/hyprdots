@@ -67,9 +67,9 @@ function restart_engine() {
       # If find process to has kill
       if [ "$(ps -fC hyprpaper)" ]; then
          pkill hyprpaper
-         hyprctl notify 1 2000 "rgb(ff0000)" "Wallpaper Engine | Restart hyprpaper"
+         hyprctl notify 1 2000 "rgb(ffffff)" "Wallpaper Engine | Restart $1"
       else
-         hyprctl notify 1 2000 "rgb(ff0000)" "Wallpaper Engine | Using hyprpaper"
+         hyprctl notify 1 2000 "rgb(ffffff)" "Wallpaper Engine | Using $1"
       fi
 
       hyprctl dispatch exec hyprpaper
@@ -116,6 +116,9 @@ function saveFile() {
    else
       echo "$1" > "$wallpaper_cache_file"
    fi
+
+   # Dynamic color in panel
+   #wal -i "$(cat "$wallpaper_cache_file")"
 }
 
 # Notification
@@ -153,11 +156,11 @@ function support_type() {
     # Selected swww engine
     if [ "$engine" == "swww" ]; then
       if [ "$1" == "random" ]; then
-        random_background=$(find -L "$wallpaper_default_dir" -type f \( -name '*.png' -o -name '*.jpg' -o -name '*.gif' -o -name '*.webp' -o -name '*.tiff' \) | shuf -n 1)
+        random_background=$(find -L "$wallpaper_default_dir" -type f \( -name '*.png' -o -name '*.jpg' -o -name '*.jpeg' -o -name '*.gif' -o -name '*.webp' -o -name '*.tiff' \) | shuf -n 1)
 
         change_wallpaper "$random_background"
       elif [ "$1" == "select" ]; then
-        selected_wallpaper=$(find -L "$wallpaper_default_dir" -type f \( -name '*.png' -o -name '*.jpg' -o -name '*.gif' -o -name '*.webp' -o -name '*.tiff' \) -printf "%P\n" | sort | while read -r A ; do echo -en "$A\x00icon\x1f""${wallpaper_default_dir}"/"$A\n" ; done | rofi_dialog_menu)
+        selected_wallpaper=$(find -L "$wallpaper_default_dir" -type f \( -name '*.png' -o -name '*.jpg' -o -name '*.jpeg' -o -name '*.gif' -o -name '*.webp' -o -name '*.tiff' \) -printf "%P\n" | sort | while read -r A ; do echo -en "$A\x00icon\x1f""${wallpaper_default_dir}"/"$A\n" ; done | rofi_dialog_menu)
 
         if [[ $selected_wallpaper == "" ]]; then
            exit 1
@@ -169,11 +172,11 @@ function support_type() {
     # Selected hyprpaper engine
     elif [ "$engine" == "hyprpaper" ]; then
         if [ "$1" == "random" ]; then
-            random_background=$(find -L "$wallpaper_default_dir" -type f \( -name '*.png' -o -name '*.jpg' \) | shuf -n 1)
+            random_background=$(find -L "$wallpaper_default_dir" -type f \( -name '*.png' -o -name '*.jpg' -o -name '*.jpeg' \) | shuf -n 1)
 
             change_wallpaper "$random_background"
         elif [ "$1" == "select" ]; then
-            selected_wallpaper=$(find -L "$wallpaper_default_dir" -type f \( -name '*.png' -o -name '*.jpg' \) -printf "%P\n" | sort | while read -r A ; do echo -en "$A\x00icon\x1f""${wallpaper_default_dir}"/"$A\n" ; done | rofi_dialog_menu)
+            selected_wallpaper=$(find -L "$wallpaper_default_dir" -type f \( -name '*.png' -o -name '*.jpg' -o -name '*.jpeg' \) -printf "%P\n" | sort | while read -r A ; do echo -en "$A\x00icon\x1f""${wallpaper_default_dir}"/"$A\n" ; done | rofi_dialog_menu)
 
             if [[ $selected_wallpaper == "" ]]; then
                 exit 1

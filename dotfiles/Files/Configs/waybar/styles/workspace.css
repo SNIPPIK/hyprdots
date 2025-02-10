@@ -51,7 +51,7 @@
  * Workspace - hosting-monitor
  * Space for not current monitor
  */
-#workspaces button.hosting-monitor, #taskbar button.active {
+#workspaces button.hosting-monitor, #workspaces button.persistent, #taskbar button.active {
     background: linear-gradient(-45deg, #42e73c, #23a6d5, #23d5ab, #d5cc23);
     background-size: 400% 400%;
     animation: gradient 15s linear infinite;

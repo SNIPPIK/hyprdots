@@ -13,9 +13,9 @@ function stringToLen() {
   STRING="$1"
   LEN="$2"
   if [ ${#STRING} -gt "$LEN" ]; then
-    printf "%-21s" "${STRING:0:$((LEN - 2))}..."
+    printf "%-${LEN}s" "${STRING:0:LEN - 3}..."
   else
-    printf "%-20s" "$STRING"
+    printf "%-${LEN}s" "$STRING"
   fi
 }
 
@@ -36,14 +36,14 @@ if [ "$1" == "check" ]; then
 
   if [ "$updated" -ge 1 ]; then
     tooltip=" <b>$updated updates | Packages $total 󰏖</b>\n"
-    tooltip+="<b>$(stringToLen "Package" 20) $(stringToLen "Current" 20) $(stringToLen "Next" 20)</b>\n"
+    tooltip+="<b>$(stringToLen "Package" 30)    | $(stringToLen "Current" 15) | $(stringToLen "Next" 15)</b>\n"
 
     for i in "${updates[@]}"; do
-        update="$(stringToLen "$(echo "$i" | awk '{print $1}')" 20)"
-        prev="$(stringToLen "$(echo "$i" | awk '{print $2}')" 20)"
-        next="$(stringToLen "$(echo "$i" | awk '{print $4}')" 20)"
+        update="$(stringToLen "$(echo "$i" | awk '{print $1}')" 30)"
+        prev="$(stringToLen "$(echo "$i" | awk '{print $2}')" 15)"
+        next="$(stringToLen "$(echo "$i" | awk '{print $4}')" 15)"
 
-        tooltip+="<b>$update</b> $prev $next\n"
+        tooltip+=" - <b>$update</b> | $prev | $next\n"
     done
 
       tooltip=${tooltip::-2}
