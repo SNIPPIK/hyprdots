@@ -5,8 +5,10 @@
     "max-length": 50,
 
     // === Window Titles ===
-
     "rewrite": {
+      // == Steam ==
+      "(.*)Steam(.*)": "<span foreground='#ffffff'></span> | Steam",
+
       // == Terminal ==
       "@(.*):(.*)": "<span foreground='#89b4fa'></span> | Terminal",
       "(.*)@(.*):~": "<span foreground='#89b4fa'></span> | Terminal",

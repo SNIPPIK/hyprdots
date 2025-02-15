@@ -30,8 +30,8 @@ window {
     location:                    west;
     anchor:                      west;
     fullscreen:                  false;
-    width:                       500px;
-    height:                      100%;
+    width:                       20%;
+    height:                      99%;
     x-offset:                    5px;
     y-offset:                    0px;
 

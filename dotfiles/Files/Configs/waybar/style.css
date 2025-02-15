@@ -38,7 +38,6 @@ window.mainbar#waybar
     transition: all .3s ease;
     background: @background-waybar;
     background: alpha(@background-waybar, 0.85);
-    border-bottom: alpha(@background-light, 0.85) solid 1px;
 }
 
 window#waybar

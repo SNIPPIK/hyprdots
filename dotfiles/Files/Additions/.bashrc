@@ -48,6 +48,7 @@ alias nvidia-open='sudo pacman -Syu nvidia-open && sudo pacman -Rc nvidia'
 alias nvidia-close='sudo pacman -Syu nvidia && sudo pacman -Rc nvidia-open'
 
 alias pacman='sudo pacman'
+alias pacm='sudo pacman'
 alias aur='yay'
 
 # -----------------------------------------------------

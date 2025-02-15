@@ -1,7 +1,7 @@
 # Enable display
 hyprctl dispatch dpms on
 
-sleep 5
+sleep 5s
 
 # Restart wallpaper engine
 bash ~/.config/hypr/scripts/tools/wallpaper.sh "engine"

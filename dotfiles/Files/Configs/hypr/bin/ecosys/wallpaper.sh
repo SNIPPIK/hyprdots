@@ -11,7 +11,7 @@ wallpaper_default_dir="$HOME/Pictures/Wallpapers"
 wallpaper_cache_file="$HOME/.cache/current_wallpaper"
 
 RANDOM_WALLPAPER_INTERVAL=300
-FPS_WALLPAPER=50
+SWWW_FPS_WALLPAPER=50
 
 # Change wallpaper
 # $1 - wallpaper path
@@ -20,7 +20,7 @@ function change_wallpaper() {
 
   # Selected swww engine
   if [ "$engine" == "swww" ]; then
-    swww img "$1" --transition-fps $FPS_WALLPAPER
+    swww img "$1" --transition-fps $SWWW_FPS_WALLPAPER
 
     # Unload wallpaper image
     sleep 2
@@ -200,9 +200,8 @@ elif [ "$1" == "select" ]; then
 elif [ "$1" == "auto" ]; then
   while true; do
       echo "work"
-      random_background="$(find -L "$WALLPAPERS_DIR" -type f | shuf -n 1)"
-      change_wallpaper "$random_background"
-      sleep "$RANDOM_WALLPAPER_INTERVAL"
+      support_type "random"
+      sleep "$RANDOM_WALLPAPER_INTERVAL"s
   done
 
 # Select engine or restart engine, and load last wallpaper

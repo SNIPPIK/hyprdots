@@ -3,8 +3,8 @@
   "logo": {
     "type": "small",
     "padding": {
-      "top": 2,
-      "right": 6
+      "top": 1,
+      "left": 2
     }
   },
   "display": {
@@ -19,7 +19,7 @@
   },
   "modules": [
     {
-      "format": "{#1}{#keys}╭{$1}╮\u001b[76D {user-name-colored}{at-symbol-colored}{host-name-colored} 🖥  ",
+      "format": "{#1}{#keys}╭{$1}╮\u001b[50D {user-name-colored}{at-symbol-colored}{host-name-colored} 🖥  ",
       "type": "title"
     },
     {
@@ -53,10 +53,6 @@
     {
       "key": "{$2}{#32}{icon}   ",
       "type": "swap"
-    },
-    {
-      "key": "{$2}{#33}{icon}   ",
-      "type": "media"
     },
     {
       "format": "{#1}{#keys}╰{$1}╯",
