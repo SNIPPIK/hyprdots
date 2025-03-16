@@ -2,6 +2,7 @@
   // Current window name
   "hyprland/window": {
     "format": "<span foreground='#89b4fa'></span> | {title}",
+    "tooltip": false,
     "max-length": 50,
 
     // === Window Titles ===

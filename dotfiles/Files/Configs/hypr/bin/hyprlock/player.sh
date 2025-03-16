@@ -30,6 +30,7 @@ case "$1" in
 		echo "${title:0:28}" # Limit the output to 50 characters
 	fi
 	;;
+
 --arturl)
 	url=$(get_metadata "mpris:artUrl")
 	if [ -z "$url" ]; then
@@ -41,6 +42,7 @@ case "$1" in
 		echo "$url"
 	fi
 	;;
+
 --artist)
 	artist=$(get_metadata "xesam:artist")
 	if [ -z "$artist" ]; then
@@ -58,6 +60,7 @@ case "$1" in
 		echo "$(echo "scale=2; $length / 1000000 / 60" | bc) m"
 	fi
 	;;
+
 --status)
 	status=$(playerctl status 2>/dev/null)
 	if [[ $status == "Playing" ]]; then
@@ -68,6 +71,7 @@ case "$1" in
 		echo ""
 	fi
 	;;
+
 --album)
 	album=$(playerctl metadata --format "{{ xesam:album }}" 2>/dev/null)
 	if [[ -n $album ]]; then
@@ -81,9 +85,11 @@ case "$1" in
 		fi
 	fi
 	;;
+
 --source)
 	get_source_info
 	;;
+
 *)
 	echo "Invalid option: $1"
 	echo "Usage: $0 --title | --url | --artist | --length | --album | --source"

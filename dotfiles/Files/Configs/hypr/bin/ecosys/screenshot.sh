@@ -31,7 +31,8 @@ fi
 # -----------------------------------------------------
 # Create screenshot region
 if [ "$1" = "region" ]; then
-  grim -g "$(slurp)" "$directory/$file"
+  region=$(slurp)
+  grim -g "$region" "$directory/$file"
   find_screenshot
 fi
 # -----------------------------------------------------

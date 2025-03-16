@@ -187,7 +187,7 @@ case $1 in
      # Skips to the next song and displays the notification
     next_track)
     playerctl next
-    sleep 1 && show_music_notification
+    sleep 1s && show_music_notification
     ;;
 
     # Skips to the previous song and displays the notification

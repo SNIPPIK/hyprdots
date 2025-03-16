@@ -25,7 +25,8 @@ While installing alongside another [DE](https://wiki.archlinux.org/title/Desktop
 > Window rules support only: `English`, `Russian`\
 > This config tested on notebook and desktop\
 > Auto configuration of monitors, left to right\
-> Hyprland animations can be changed in hyprland.conf
+> Hyprland animations can be changed in hyprland.conf\
+> Wallpapers directory is Pictures/Wallpapers
 
 # Install
 - To install, execute the following commands:

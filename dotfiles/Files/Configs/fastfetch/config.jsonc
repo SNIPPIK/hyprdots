@@ -3,60 +3,52 @@
   "logo": {
     "type": "small",
     "padding": {
-      "top": 1,
-      "left": 2
+      "right": 1
     }
   },
   "display": {
-    "separator": ">  ",
-    "color": {
-      "separator": "red"
+    "size": {
+      "binaryPrefix": "si"
     },
-    "constants": [
-      "───────────────────────────────────────────────────────────────────────────",
-      "│\u001b[75C│\u001b[75D"
-    ]
+    "color": "blue",
+    "separator": "    "
   },
   "modules": [
     {
-      "format": "{#1}{#keys}╭{$1}╮\u001b[50D {user-name-colored}{at-symbol-colored}{host-name-colored} 🖥  ",
-      "type": "title"
+      "key": "╭─{#31}{icon} OS      ",
+      "type": "os"
     },
     {
-      "key": "{$2}{#31}{icon}   ",
+      "key": "├─{#32}{icon} Kernel  ",
       "type": "kernel"
     },
     {
-      "key": "{$2}{#32}{icon}   ",
-      "type": "uptime"
-    },
-    {
-      "key": "{$2}{#33}{icon}   ",
+      "key": "├─{#33}{icon} Packages",
       "type": "packages"
     },
     {
-      "key": "{$2}{#33}{icon}   ",
+      "key": "├─{#34}{icon} WM/DE   ",
       "type": "wm"
     },
     {
-      "key": "{$2}{#35}{icon}   ",
+      "key": "├─{#35}{icon} CPU     ",
       "type": "cpu"
     },
     {
-      "key": "{$2}{#34}{icon}   ",
+      "key": "├─{#36}{icon} GPU     ",
       "type": "gpu"
     },
     {
-      "key": "{$2}{#32}{icon}   ",
+      "key": "├─{#31}{icon} Vulkan  ",
+      "type": "vulkan"
+    },
+    {
+      "key": "├─{#38}{icon} Memory  ",
       "type": "memory"
     },
     {
-      "key": "{$2}{#32}{icon}   ",
+      "key": "╰─{#38}{icon} Swap    ",
       "type": "swap"
-    },
-    {
-      "format": "{#1}{#keys}╰{$1}╯",
-      "type": "custom"
     }
   ]
 }

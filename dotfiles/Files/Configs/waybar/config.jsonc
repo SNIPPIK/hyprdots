@@ -92,10 +92,10 @@
                 "warning": 30,
                 "critical": 15
             },
-            "format": "{icon}\t{capacity}%",
-            "format-alt": "{icon}\t{time}",
-            "format-charging": "{icon}<span foreground='green'><sup></sup></span>\t{capacity}%",
-            "format-plugged": "{icon}<span foreground='green'><sup></sup></span>\t{capacity}%",
+            "format": "{icon} {capacity}%",
+            "format-alt": "{icon} {time}",
+            "format-charging": "{icon}<span foreground='green'><sup></sup></span> {capacity}%",
+            "format-plugged": "{icon}<span foreground='green'><sup></sup></span> {capacity}%",
 
             "format-icons": ["", "", "", "", ""],
             //"format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
@@ -138,36 +138,6 @@
             "icon-size": 16,
             "spacing": 10
         }
-
-        /*
-        // Player working
-        "mpris": {
-            "format": "{status_icon} | {artist} - {title}\t{player_icon}",
-            "tooltip-format": "{player_icon} {artist} - {title}\n{status_icon} {position}/{length}",
-
-            "player-icons": {
-                "chromium": "",
-                "firefox": "",
-                "default": "▶",
-                "mpv": "🎵"
-            },
-
-            "status-icons": {
-                "playing": "󰎆",
-                "paused": "󱑽"
-            }
-        },
-
-        // Image track
-        "image#album-art": {
-            "exec": "bash ~/.config/hypr/bin/hyprlock/player.sh --arturl",
-            "size": 16,
-            "interval": 10,
-
-            "on-click": "wl-copy < $(bash ~/.config/hypr/bin/hyprlock/player.sh --arturl)",
-            "on-click-right": "wl-copy < $(bash ~/.config/hypr/bin/hyprlock/player.sh --arturl)"
-        }
-        */
     },
 
     // Weather
@@ -198,8 +168,9 @@
         }
     }
 
+    /*
     // Player (WIP)
-    /*{
+    ,{
         "name": "player",
         "layer": "bottom",
         "position": "bottom",
@@ -213,6 +184,8 @@
 
         // Player working
         "mpris": {
+            "interval": 5,
+
             "format": "{artist} - {title}\t{player_icon}\n{album}\t{status_icon}\n{position}/{length}",
             "tooltip-format": "{player_icon} {artist} - {title}\n{status_icon} {position}/{length}",
 
@@ -238,5 +211,6 @@
             "on-click": "wl-copy < $(bash ~/.config/hypr/bin/hyprlock/player.sh --arturl)",
             "on-click-right": "wl-copy < $(bash ~/.config/hypr/bin/hyprlock/player.sh --arturl)"
         }
-    }*/
+    }
+    */
 ]

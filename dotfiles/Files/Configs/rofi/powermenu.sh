@@ -39,11 +39,13 @@ fi
 case ${chosen} in
     # Shutdown system
     "$shutdown")
+        sleep 0.3s
         systemctl poweroff
     ;;
 
     # Reboot system
     "$reboot")
+        sleep 0.3s
         systemctl reboot
     ;;
 

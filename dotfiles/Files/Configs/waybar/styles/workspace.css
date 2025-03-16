@@ -35,9 +35,9 @@
  * Hover button of mouse
  */
 #workspaces button:hover, #taskbar button:hover {
-    background: linear-gradient(-45deg, #42e73c, #23a6d5, #23d5ab, #d5cc23);
+    background: linear-gradient(45deg, #42e73c, #23a6d5, #23d5ab, #d5cc23);
     background-size: 400% 400%;
-    animation: gradient 15s linear infinite;
+    animation: gradient 20s linear infinite;
     animation-timing-function: steps(64);
     transition: all .3s ease;
 }
@@ -52,9 +52,9 @@
  * Space for not current monitor
  */
 #workspaces button.hosting-monitor, #workspaces button.persistent, #taskbar button.active {
-    background: linear-gradient(-45deg, #42e73c, #23a6d5, #23d5ab, #d5cc23);
+    background: linear-gradient(45deg, #42e73c, #23a6d5, #23d5ab, #d5cc23);
     background-size: 400% 400%;
-    animation: gradient 15s linear infinite;
+    animation: gradient 20s linear infinite;
     animation-timing-function: steps(64);
     transition: all .3s ease;
 }
@@ -73,7 +73,7 @@
     padding-right: 15px;
     border-radius: 10px;
 
-    animation: gradient 15s linear infinite;
+    animation: gradient 20s linear infinite;
     animation-timing-function: steps(64);
     transition: all 0.35s cubic-bezier(.55,-0.68,.48,1.682);
 }

@@ -99,7 +99,7 @@
     frame_width = 1
 
     # Defines color of the frame around the notification window.
-    frame_color = "#aaaaaa"
+    frame_color = "#11111B99"
 
     # Define a color for the separator.
     # possible values are:
@@ -162,7 +162,7 @@
     #   %%  Literal %
     # Markup is allowed
     #format = "<b>%s</b>\n%b"
-    format = "<span foreground='#D8DEE9'><b>%s</b></span>\n - %b"
+    format = "<span foreground='#D8DEE9'><b>%s</b></span>\n%b"
 
     # Alignment of message text.
     # Possible values are "left", "center" and "right".
@@ -346,7 +346,6 @@
     background = "#11111B99"
     foreground = "#ffffff"
     highlight = "#8ec07c7A"
-    #frame_color = "#11111B7A"
     history_ignore = yes
     timeout = 2
 
