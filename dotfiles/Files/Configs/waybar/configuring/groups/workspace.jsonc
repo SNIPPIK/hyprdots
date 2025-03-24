@@ -1,4 +1,11 @@
 {
+  // Custom logo
+  "custom/workspace-logo": {
+    "format": "",
+    "interval" : "once",
+    "tooltip-format": " Workspace group\n - 󰳽 click-left:\tOpen group workspace"
+  },
+
   "group/workspace": {
     "orientation": "inherit",
     "drawer": {
@@ -8,7 +15,7 @@
       "click-to-reveal": true
     },
     "modules": [
-      "custom/logo",
+      "custom/workspace-logo",
       "group/workspace-apps"
     ]
   },

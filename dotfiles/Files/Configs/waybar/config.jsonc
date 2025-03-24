@@ -33,6 +33,7 @@
 
         // Modules Left
         "modules-left": [
+            "custom/logo",
             "group/workspace",
             "hyprland/window"
         ],
@@ -46,15 +47,13 @@
             "group/hyprgroup",
             "group/system",
 
-            "custom/wallpaper",
             "hyprland/language",
             "tray",
             "network",
             "group/audio",
             "battery",
-            "clock",
             "custom/notifications",
-            "custom/power"
+            "clock"
         ],
 
         // Clock
@@ -105,7 +104,7 @@
         // Network
         "network": {
             "format": "{icon}",
-            "format-alt": "<span foreground='#99ffdd'> {bandwidthDownBytes}</span> <span foreground='#ffcc66'> {bandwidthUpBytes}</span>",
+            "format-alt": " <span foreground='#99ffdd'> {bandwidthDownBytes}</span>   <span foreground='#ffcc66'> {bandwidthUpBytes}</span>",
             "format-icons": {
                 "wifi": ["󰤯 ", "󰤟 ", "󰤢 ", "󰤢 ", "󰤨 "],
                 "disconnected": [""],
@@ -168,7 +167,7 @@
         }
     }
 
-    /*
+
     // Player (WIP)
     ,{
         "name": "player",
@@ -184,7 +183,7 @@
 
         // Player working
         "mpris": {
-            "interval": 5,
+            "interval": 7,
 
             "format": "{artist} - {title}\t{player_icon}\n{album}\t{status_icon}\n{position}/{length}",
             "tooltip-format": "{player_icon} {artist} - {title}\n{status_icon} {position}/{length}",
@@ -206,11 +205,10 @@
         "image#album-art": {
             "exec": "bash ~/.config/hypr/bin/hyprlock/player.sh --arturl",
             "size": 64,
-            "interval": 10,
+            "interval": 15,
 
             "on-click": "wl-copy < $(bash ~/.config/hypr/bin/hyprlock/player.sh --arturl)",
             "on-click-right": "wl-copy < $(bash ~/.config/hypr/bin/hyprlock/player.sh --arturl)"
         }
     }
-    */
 ]

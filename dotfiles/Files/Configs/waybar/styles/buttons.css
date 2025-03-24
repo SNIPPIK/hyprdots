@@ -5,21 +5,25 @@
  |___/\_,_|\__|\__\___/_||_/__/
  */
 #custom-wallpaper, #temperature, #tray, #battery, #language, #idle_inhibitor,
-#custom-logo, #custom-pacman, #custom-version, #custom-hyprland,
+#custom-logo, #custom-pacman, #custom-version, #custom-hyprland, #custom-workspace-logo,
 #custom-hyprlogo, #pulseaudio, #bluetooth, #network, #custom-system, #cpu,
-#memory, #disk, #custom-power, #workspaces, #taskbar, #window, #custom-gpu,
-#power-profiles-daemon, #clock, #custom-notifications, #mpris
+#memory, #disk, #workspaces, #taskbar, #window, #custom-gpu,
+#power-profiles-daemon, #mpris, #clock, #custom-notifications
 {
     margin: 3px 0px;
     padding: 3px 10px;
 }
 
-#custom-wallpaper:hover, #tray, #battery:hover, #language:hover,
-#custom-logo:hover, #custom-hyprlogo:hover, #network:hover, #custom-system:hover,
-#custom-power:hover, #clock:hover, #custom-notifications:hover
+#battery:hover, #language:hover, #custom-workspace-logo:hover,
+#custom-logo:hover, #custom-hyprlogo:hover, #network:hover, #custom-system:hover
 {
     transition: all .3s ease;
     border: 0.8px rgba(255, 253, 253, 0.7) solid;
+}
+
+#clock
+{
+    margin-right: 5px;
 }
 
 
@@ -30,10 +34,10 @@
   \___\___/_\___/_|   |_.__/\_,_|\__|\__\___/_||_/__/
 */
 #custom-wallpaper, #battery, #language, #custom-logo, #custom-hyprlogo, #network, #custom-system,
-#custom-power, #taskbar, #window, #clock, #custom-notifications, #tray, #workspaces
+#taskbar, #window, #workspaces, #custom-workspace-logo
 {
     color: @text;
-    background: alpha(@background, 0.85);
+    background: black;
     border: 0.8px alpha(@text-dark, 0) solid;
 }
 
@@ -43,9 +47,16 @@
 }
 
 #custom-wallpaper, #battery, #language, #custom-logo, #custom-hyprlogo, #network, #custom-system,
-#custom-power, #taskbar, #window, #clock, #custom-notifications, #tray, #custom-weather, #mpris
+#taskbar, #window, #tray, #custom-weather, #mpris, #custom-workspace-logo
 {
     text-shadow: 0px 0px 2px rgba(0, 0, 0, 1);
+}
+
+#tray, #workspaces, #taskbar
+{
+    color: @text;
+    background: @background-waybar;
+    background: alpha(@background, 0.85);
 }
 
 
@@ -55,7 +66,7 @@
  | (_| || (_-<  _/ _ \ '  \  | (__/ _ \ / _ \ '_|
   \___\_,_/__/\__\___/_|_|_|  \___\___/_\___/_|
 */
-#cpu, #memory, #disk, #custom-pacman, #temperature, #idle_inhibitor, #custom-gpu,
+#cpu, #memory, #disk, #custom-pacman, #temperature, #idle_inhibitor, #custom-gpu, #clock, #custom-notifications,
 #pulseaudio, #bluetooth, #custom-version, #custom-hyprland, #network.alt, #power-profiles-daemon,
 #custom-player-backward, #custom-player-play, #custom-player-forward, #custom-player-info
 {
@@ -69,6 +80,12 @@
     border: 0.8px alpha(@nord_bg_blue, 0.5) solid;
 }
 
+#clock, #custom-notifications
+{
+    border-bottom: 0.8px alpha(@nord_dark_font, 0.5) solid;
+    border-top: 0.8px alpha(@nord_dark_font, 0.5) solid;
+}
+
 
 /*
   ___             _           _         _   _
@@ -80,7 +97,7 @@
 #custom-logo, #custom-pacman, #custom-version, #custom-hyprland, #custom-hyprlogo,
 #pulseaudio, #bluetooth, #network, #custom-system, #cpu, #memory, #disk,
 #custom-power, #workspaces, #taskbar, #window, tooltip, #custom-gpu,
-#power-profiles-daemon
+#power-profiles-daemon, #custom-workspace-logo
 {
     border-radius: 0.4em;
 }
@@ -92,12 +109,12 @@
  | (_| || (_-<  _/ _ \ '  \  | _ \/ _ \ '_/ _` / -_) '_|
   \___\_,_/__/\__\___/_|_|_| |___/\___/_| \__,_\___|_|
 */
-#image-album-art, #clock
+#image-album-art, #custom-notifications
 {
     border-top-left-radius: 0.4em;
     border-bottom-left-radius: 0.4em;
 }
-#mpris, #custom-notifications
+#mpris, #clock
 {
     border-top-right-radius: 0.4em;
     border-bottom-right-radius: 0.4em;
@@ -110,14 +127,12 @@
  |___/ .__/\__,_\__\___| |_.__/\_,_|\__|\__\___/_||_/__/
      |_|
 */
-#taskbar, #language, #custom-wallpaper, #clock,
+#taskbar, #language, #custom-wallpaper, #custom-notifications,
 #tray, #temperature, #idle_inhibitor, #custom-power, #battery, #custom-hyprlogo,
-#custom-logo, #custom-pacman, #custom-version, #custom-hyprland, #pulseaudio,
+#custom-logo, #custom-pacman, #custom-version, #custom-hyprland, #pulseaudio, #custom-workspace-logo,
 #bluetooth, #network, #custom-system, #cpu, #memory, #disk, #custom-gpu, #power-profiles-daemon,
 #window, #workspaces        { margin-left: 4px; }
 #custom-logo                { padding: 0px 15px; margin-left: 5px; }
-#custom-power               { margin-right: 5px; }
-#custom-system              { margin-right: 10px; }
 
 /*
    ___         _             _         _   _
@@ -125,7 +140,7 @@
  | (__/ -_) ' \  _/ -_) '_| | '_ \ || |  _|  _/ _ \ ' \(_-<
   \___\___|_||_\__\___|_|   |_.__/\_,_|\__|\__\___/_||_/__/
 */
-#custom-notifications, #mpris, #image-album-art
+#mpris, #image-album-art
 {
     margin: 3px 0px;
     padding: 0px 10px;

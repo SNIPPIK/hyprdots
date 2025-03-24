@@ -1,14 +1,14 @@
 @import "../rofi/colors/dark.css";
 
 /* -----------------------------------------------------
- * Workspace
- * ----------------------------------------------------- */
-@import "styles/workspace.css";
-
-/* -----------------------------------------------------
  * Buttons
  * ----------------------------------------------------- */
 @import "styles/buttons.css";
+
+/* -----------------------------------------------------
+ * Workspace
+ * ----------------------------------------------------- */
+@import "styles/workspace.css";
 
 /*
   __  __      _        ___ _        _
@@ -36,8 +36,7 @@
 window.mainbar#waybar
 {
     transition: all .3s ease;
-    background: @background-waybar;
-    background: alpha(@background-waybar, 0.85);
+    background: black;
 }
 
 window#waybar

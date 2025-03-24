@@ -35,8 +35,8 @@
   // Current language
   "hyprland/language": {
     "format": " {short}",
-    "on-click": "bash ~/.config/hypr/scripts/dialog.sh float keybindings",
-    "on-click-right": "bash ~/.config/hypr/scripts/dialog.sh float keybindings"
+    "on-click": "bash ~/.config/waybar/scripts/dialog.sh float keybindings",
+    "on-click-right": "bash ~/.config/waybar/scripts/dialog.sh float keybindings"
   },
 
   // Workspace

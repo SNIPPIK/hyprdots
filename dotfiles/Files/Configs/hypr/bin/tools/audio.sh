@@ -13,26 +13,36 @@ download_album_art=true
 show_album_art=true
 show_music_in_volume_indicator=true
 # -----------------------------------------------------
-# Uses regex to get volume from pactl
-function get_volume_output {
+
+
+# -----------------------------------------------------
+# Displays a volume notification
+function showOutputNotification {
+    volume=$(getOutputVolume)
+    getOutputIcon
+
+    if [[ $show_music_in_volume_indicator == "true" ]]; then
+        current_song=$(playerctl -f "{{title}} - {{artist}}" metadata)
+
+        if [[ $show_album_art == "true" ]]; then
+            getTrackImage
+        fi
+
+        notify-send -t $notification_timeout -h string:category:volume -h string:x-dunst-stack-tag:music_notif -h int:value:"$volume" -i "$album_art" "$volume_icon $volume%" "$current_song"
+    else
+        notify-send -t $notification_timeout -h string:category:volume -h string:x-dunst-stack-tag:music_notif -h int:value:"$volume" "$volume_icon $volume%"
+    fi
+}
+
+function getOutputVolume {
     pactl get-sink-volume @DEFAULT_SINK@ | grep -Po '[0-9]{1,3}(?=%)' | head -1
 }
-function get_mute_output {
+function getOutputMute {
     pactl get-sink-mute @DEFAULT_SINK@ | grep -Po '(?<=Mute: )(yes|no)'
 }
-# -----------------------------------------------------
-# Uses regex to get volume from pactl
-function get_volume_input {
-    pactl get-source-volume @DEFAULT_SOURCE@ | grep -Po '[0-9]{1,3}(?=%)' | head -1
-}
-function get_mute_input {
-    pactl get-source-mute @DEFAULT_SOURCE@ | grep -Po '(?<=Mute: )(yes|no)'
-}
-# -----------------------------------------------------
-# Returns a mute icon, a volume-low icon, or a volume-high icon, depending on the volume
-function get_output_icon {
-    volume=$(get_volume_output)
-    mute=$(get_mute_output)
+function getOutputIcon {
+    volume=$(getOutputVolume)
+    mute=$(getOutputMute)
     if [ "$volume" -eq 0 ] || [ "$mute" == "yes" ] ; then
         volume_icon=""
     elif [ "$volume" -lt 40 ]; then
@@ -47,9 +57,34 @@ function get_output_icon {
         volume_icon=""
     fi
 }
-function get_input_icon {
-    volume=$(get_volume_input)
-    mute=$(get_mute_input)
+# -----------------------------------------------------
+# Displays a volume notification
+function showInputNotification {
+    volume=$(getInputMute)
+    getInputIcon
+
+    if [[ $show_music_in_volume_indicator == "true" ]]; then
+        current_song=$(playerctl -f "{{title}} - {{artist}}" metadata)
+
+        if [[ $show_album_art == "true" ]]; then
+           getTrackImage
+        fi
+
+        notify-send -t $notification_timeout -h string:category:volume -h string:x-dunst-stack-tag:music_notif -h int:value:"$volume" -i "$album_art" "$volume_icon $volume%" "$current_song"
+    else
+        notify-send -t $notification_timeout -h string:category:volume -h string:x-dunst-stack-tag:music_notif -h int:value:"$volume" "$volume_icon $volume%"
+    fi
+}
+
+function getInputVolume {
+    pactl get-source-volume @DEFAULT_SOURCE@ | grep -Po '[0-9]{1,3}(?=%)' | head -1
+}
+function getInputMute {
+    pactl get-source-mute @DEFAULT_SOURCE@ | grep -Po '(?<=Mute: )(yes|no)'
+}
+function getInputIcon {
+    volume=$(getInputVolume)
+    mute=$(getInputMute)
     if [ "$volume" -eq 0 ] || [ "$mute" == "yes" ] ; then
         volume_icon=""
     else
@@ -57,9 +92,41 @@ function get_input_icon {
     fi
 }
 # -----------------------------------------------------
+
+
+# -----------------------------------------------------
+# Function to get metadata using playerctl
+function playerMeta {
+	playerctl metadata --format "{{ $1 }}" 2>/dev/null
+}
+
+function getPlayerStatus {
+  status=$(playerctl status 2>/dev/null)
+  	if [[ $status == "Playing" ]]; then
+  		echo "󰎆"
+  	elif [[ $status == "Paused" ]]; then
+  		echo "󱑽"
+  	else
+  		echo ""
+  	fi
+}
+function getAlbumName {
+  album=$(playerctl metadata --format "{{ xesam:album }}" 2>/dev/null)
+  	if [[ -n $album ]]; then
+  		echo "$album"
+  	else
+  		status=$(playerctl status 2>/dev/null)
+  		if [[ -n $status ]]; then
+  			echo "Not album"
+  		else
+  			echo ""
+  		fi
+  	fi
+}
+
 # Displays a music notification
-function get_album_art {
-    url=$(playerctl -f "{{mpris:artUrl}}" metadata)
+function getTrackImage {
+    url=$(playerMeta "mpris:artUrl")
     if [[ $url == "file://"* ]]; then
         album_art="${url/file:\/\//}"
     elif [[ $url == "http://"* ]] && [[ $download_album_art == "true" ]]; then
@@ -88,49 +155,30 @@ function get_album_art {
 }
 function show_music_notification {
     song_title=$(playerctl -f "{{title}}" metadata)
+
+    # If music info is not founded
+    if [ ! "$song_title" ]; then
+      sleep 5s
+      song_title=$(playerctl -f "{{title}}" metadata)
+
+      # Last check
+      if [ ! "$song_title" ]; then
+        exit 0
+      fi
+    fi
+
     song_artist=$(playerctl -f "{{artist}}" metadata)
-    song_album=$(playerctl -f "{{album}}" metadata)
+    song_duration=$(playerctl metadata --format "{{ duration(mpris:length) }}")
+    song_current=$(playerctl position --format "{{ duration(position) }}")
+    song_album=$(getAlbumName)
+    player_status=$(getPlayerStatus)
+
 
     if [[ $show_album_art == "true" ]]; then
-        get_album_art
+        getTrackImage
     fi
 
-    notify-send -t $notification_timeout -h string:category:volume -h string:x-dunst-stack-tag:music_notif -i "$album_art" "$song_title" "$song_artist - $song_album"
-}
-# -----------------------------------------------------
-# Displays a volume notification
-function show_volume_notification {
-    volume=$(get_volume_output)
-    get_output_icon
-
-    if [[ $show_music_in_volume_indicator == "true" ]]; then
-        current_song=$(playerctl -f "{{title}} - {{artist}}" metadata)
-
-        if [[ $show_album_art == "true" ]]; then
-            get_album_art
-        fi
-
-        notify-send -t $notification_timeout -h string:category:volume -h string:x-dunst-stack-tag:music_notif -h int:value:"$volume" -i "$album_art" "$volume_icon $volume%" "$current_song"
-    else
-        notify-send -t $notification_timeout -h string:category:volume -h string:x-dunst-stack-tag:music_notif -h int:value:"$volume" "$volume_icon $volume%"
-    fi
-}
-# Displays a volume notification
-function show_micro_notification {
-    volume=$(get_mute_input)
-    get_input_icon
-
-    if [[ $show_music_in_volume_indicator == "true" ]]; then
-        current_song=$(playerctl -f "{{title}} - {{artist}}" metadata)
-
-        if [[ $show_album_art == "true" ]]; then
-           get_album_art
-        fi
-
-        notify-send -t $notification_timeout -h string:category:volume -h string:x-dunst-stack-tag:music_notif -h int:value:"$volume" -i "$album_art" "$volume_icon $volume%" "$current_song"
-    else
-        notify-send -t $notification_timeout -h string:category:volume -h string:x-dunst-stack-tag:music_notif -h int:value:"$volume" "$volume_icon $volume%"
-    fi
+    notify-send -t $notification_timeout -h string:category:volume -h string:x-dunst-stack-tag:music_notif -i "$album_art" "$player_status $song_title" "$song_artist\n$song_current - $song_duration"
 }
 # -----------------------------------------------------
 
@@ -139,49 +187,49 @@ case $1 in
     # Toggles mute and displays the notification
     volume_mute)
     pactl set-sink-mute @DEFAULT_SINK@ toggle
-    show_volume_notification
+    showOutputNotification
     ;;
 
     # Unmutes and increases volume, then displays the notification
     volume_up)
     pactl set-sink-mute @DEFAULT_SINK@ 0
-    volume=$(get_volume_output)
+    volume=$(getOutputVolume)
     if [ $(( "$volume" + "$volume_step" )) -gt $max_volume ]; then
         pactl set-sink-volume @DEFAULT_SINK@ $max_volume%
     else
         pactl set-sink-volume @DEFAULT_SINK@ +$volume_step%
     fi
-    show_volume_notification
+    showOutputNotification
     ;;
 
     # Raises volume and displays the notification
     volume_down)
     pactl set-sink-volume @DEFAULT_SINK@ -$volume_step%
-    show_volume_notification
+    showOutputNotification
     ;;
 
     # Toggles mute and displays the notification
     micro_mute)
     pactl set-source-mute @DEFAULT_SOURCE@ toggle
-    show_micro_notification
+    showInputNotification
     ;;
 
     # Unmutes and increases volume, then displays the notification
     micro_volume_up)
     pactl set-source-mute @DEFAULT_SOURCE@ 0
-    volume=$(get_volume_input)
+    volume=$(getInputVolume)
     if [ $(( "$volume" + "$volume_step" )) -gt $max_volume ]; then
         pactl set-source-volume @DEFAULT_SOURCE@ $max_volume%
     else
         pactl set-source-volume @DEFAULT_SOURCE@ +$volume_step%
     fi
-    show_micro_notification
+    showInputNotification
     ;;
 
     # Raises volume and displays the notification
     micro_volume_down)
     pactl set-source-volume @DEFAULT_SOURCE@ -$volume_step%
-    show_micro_notification
+    showInputNotification
     ;;
 
      # Skips to the next song and displays the notification

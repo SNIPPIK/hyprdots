@@ -10,11 +10,10 @@ The installation script is designed for a minimal [Arch Linux](https://wiki.arch
 While installing alongside another [DE](https://wiki.archlinux.org/title/Desktop_environment)/[WM](https://wiki.archlinux.org/title/Window_manager) should work, due to it being a heavily customized setup, it **will** conflict with your [GTK](https://wiki.archlinux.org/title/GTK) theme, [SDDM](https://wiki.archlinux.org/title/SDDM), etc. and is at your own risk.
 
 > [!CAUTION]
-> See all button bindings in terminal `hyprland-binds`\
 > All files are linked, deleting the directory hyprdots can lead to serious consequences\
 > The install script will auto install GPU drivers for AMD, NVIDIA, Intel is not supported in script\
 > The script will install dark theme gtk, sddm, grub. If you have a bootloader other grub installed, then it is better not to use hyprdots\
-> The current bitmap files were created for the (2560x1080)21:9 format, I'm not sure that everything will work as it should at lower resolutions
+> The current bitmap files were created for the (2560x1080) - 21:9 format, I'm not sure that everything will work as it should at lower resolutions
 
 
 > [!IMPORTANT]
@@ -51,8 +50,9 @@ Used for nice work dotfiles
 - `gnome-software`, `nautilus`, `frog-protocols`
 
 ## Images
-- Version 0.8.0
-- [`Backgroud wallpaper`](https://github.com/SNIPPIK/wallpapers/blob/main/Pack/%5B4K%5D%20Minimal_Squares.png)
+- Version 0.9.0
+- [`Backgroud wallpaper`](https://github.com/SNIPPIK/wallpapers/blob/main/Static/Fantasy/%5B4K%5D%20moon-sky.png?raw=true)
+<img align="" alt="image" width="1920" src="/assets/images/0.png" />
 <img align="" alt="image" width="1920" src="/assets/images/1.png" />
 <img align="" alt="image" width="1920" src="/assets/images/2.png" />
 <img align="" alt="image" width="1920" src="/assets/images/3.png" />
@@ -62,6 +62,7 @@ Used for nice work dotfiles
 <img align="" alt="image" width="1920" src="/assets/images/7.png" />
 <img align="" alt="image" width="1920" src="/assets/images/8.png" />
 <img align="" alt="image" width="1920" src="/assets/images/9.png" />
+<img align="" alt="image" width="1920" src="/assets/images/10.png" />
 
 
 ### Demonstration videos (archive)
