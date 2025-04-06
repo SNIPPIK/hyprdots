@@ -15,7 +15,7 @@ alias ff='fastfetch'
 # -----------------------------------------------------
 # SYSTEM
 # -----------------------------------------------------
-# mkinitcpio
+# mkinitcpioe
 alias mkinitcpio='sudo nano /etc/mkinitcpio.conf && mkinitcpio'
 
 # Grub
@@ -35,7 +35,7 @@ alias nvidia-close='sudo pacman -Syu nvidia && sudo pacman -Rc nvidia-open'
 
 # Packet manager
 alias pacman='sudo pacman'
-alias aur='yay || echo "Need install yay package"'
+alias aur='yay'
 
 # -----------------------------------------------------
 # DEVELOPMENT

@@ -40,6 +40,18 @@ echo "                   |_|                "
 echo "Removing unused flatpak application"
 flatpak uninstall --unused
 
+# Arch installed packages
+clear
+echo "     _             _     "
+echo "    / \   _ __ ___| |__  "
+echo "   / _ \ | '__/ __| '_ \ "
+echo "  / ___ \| | | (__| | | |"
+echo " /_/   \_\_|  \___|_| |_|"
+echo "ATTENTION REMOVE PACKAGES WITH CARE, THEY CAN CRUSH THE SYSTEMD"
+echo "Possibly unnecessary packets"
+echo " "
+pacman -Qet
+
 # Press enter
 echo " "
 read -p "Press enter to close"
