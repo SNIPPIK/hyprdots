@@ -16,9 +16,9 @@ options=(
 
 # Define corresponding commands
 commands=(
-    "$HOME/.config/rofi/powermenu.sh"
-    "$HOME/.config/waybar//scripts/dialog.sh float update"
-    "$HOME/.config/waybar//scripts/dialog.sh float unused"
+    "$HOME/.config/hypr/bin/powermenu.sh"
+    "$HOME/.config/waybar/scripts/dialog.sh float update"
+    "$HOME/.config/waybar/scripts/dialog.sh float unused"
     "$HOME/.config/hypr/bin/tools/gamemode.sh"
     "$HOME/.config/hypr/bin/ecosys/wallpaper.sh select"
     "$HOME/.config/hypr/bin/ecosys/wallpaper.sh random"

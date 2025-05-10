@@ -157,7 +157,7 @@
 */
 #custom-hyprlogo
 {
-    background-image: image(url("hyprland.svg"));
+    background-image: image(url("./hyprland.svg"));
     background-size: 13px 17px;
     background-repeat: no-repeat;
     background-position: center;

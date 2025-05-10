@@ -48,3 +48,30 @@ if [ "$1" = "panel-toggle" ]; then
     fi
   fi
 fi
+
+if [ "$1" = "panel-restart" ]; then
+  ps_waybar="$(ps -fC waybar | grep waybar | awk '{ print $8 }')"
+
+  if [ "$ps_waybar" ]; then
+    # If need show information
+    if [ "$2" == "show" ]; then
+      hyprctl notify 1 2000 "rgb(ffffff)" "Panel | You has disabled panel"
+    fi
+
+    sleep 1s && pkill "waybar" && hyprctl dispatch exec waybar
+    exit 0
+  else
+    # If need show information
+    if [ "$2" == "show" ]; then
+      hyprctl notify 1 2000 "rgb(ffffff)" "Panel | You has enabled panel"
+    fi
+
+    sleep 1s
+    hyprctl dispatch exec waybar
+
+    # Show error info
+    if [ -z "$(ps -fC waybar | grep waybar | awk '{ print $8 }')r" ]; then
+      hyprctl notify 0 2000 "rgb(ff0000)" "Panel | Fail, pls enable retry!"
+    fi
+  fi
+fi

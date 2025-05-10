@@ -61,7 +61,7 @@ case ${chosen} in
         playerctl --all-players pause
         sleep 0.3s
         systemctl suspend
-        sleep 0.5s
+        sleep 2s
         hyprctl dispatch dpms off
     ;;
 
