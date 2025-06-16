@@ -28,7 +28,7 @@ if [ "$1" = "panel-toggle" ]; then
   if [ "$ps_waybar" ]; then
     # If need show information
     if [ "$2" == "show" ]; then
-      hyprctl notify 1 2000 "rgb(ffffff)" "Panel | You has disabled panel"
+      hyprctl notify 1 3000 "rgb(ffffff)" "Panel | You has disabled panel"
     fi
 
     sleep 1s && pkill "waybar"
@@ -36,7 +36,7 @@ if [ "$1" = "panel-toggle" ]; then
   else
     # If need show information
     if [ "$2" == "show" ]; then
-      hyprctl notify 1 2000 "rgb(ffffff)" "Panel | You has enabled panel"
+      hyprctl notify 1 3000 "rgb(ffffff)" "Panel | You has enabled panel"
     fi
 
     sleep 1s
@@ -44,7 +44,7 @@ if [ "$1" = "panel-toggle" ]; then
 
     # Show error info
     if [ -z "$(ps -fC waybar | grep waybar | awk '{ print $8 }')r" ]; then
-      hyprctl notify 0 2000 "rgb(ff0000)" "Panel | Fail, pls enable retry!"
+      hyprctl notify 0 3000 "rgb(ff0000)" "Panel | Fail, pls enable retry!"
     fi
   fi
 fi
@@ -55,7 +55,7 @@ if [ "$1" = "panel-restart" ]; then
   if [ "$ps_waybar" ]; then
     # If need show information
     if [ "$2" == "show" ]; then
-      hyprctl notify 1 2000 "rgb(ffffff)" "Panel | You has disabled panel"
+      hyprctl notify 1 3000 "rgb(ffffff)" "Panel | You has restarted panel"
     fi
 
     sleep 1s && pkill "waybar" && hyprctl dispatch exec waybar
@@ -63,7 +63,7 @@ if [ "$1" = "panel-restart" ]; then
   else
     # If need show information
     if [ "$2" == "show" ]; then
-      hyprctl notify 1 2000 "rgb(ffffff)" "Panel | You has enabled panel"
+      hyprctl notify 1 3000 "rgb(ffffff)" "Panel | You has restarted panel"
     fi
 
     sleep 1s
@@ -71,7 +71,7 @@ if [ "$1" = "panel-restart" ]; then
 
     # Show error info
     if [ -z "$(ps -fC waybar | grep waybar | awk '{ print $8 }')r" ]; then
-      hyprctl notify 0 2000 "rgb(ff0000)" "Panel | Fail, pls enable retry!"
+      hyprctl notify 0 3000 "rgb(ff0000)" "Panel | Fail, pls enable retry!"
     fi
   fi
 fi

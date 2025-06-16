@@ -1,10 +1,20 @@
 [[keyboard.bindings]]
+chars = "\u0003"
+key = "C"
+mods = "Control|Shift"
+
+[[keyboard.bindings]]
+chars = "\u0016"
+key = "V"
+mods = "Control|Shift"
+
+[[keyboard.bindings]]
 action = "Paste"
 key = "V"
 mods = "Control"
 
 [[keyboard.bindings]]
-chars = "\u0016"
+action = "Paste"
 key = "V"
 mods = "Control|Shift"
 
@@ -14,8 +24,39 @@ key = "C"
 mods = "Control"
 
 [[keyboard.bindings]]
-chars = "\u0003"
+action = "Copy"
 key = "C"
+mods = "Control|Shift"
+
+
+[[keyboard.bindings]]
+chars = "\u0003"
+key = "С"
+mods = "Control|Shift"
+
+[[keyboard.bindings]]
+chars = "\u0016"
+key = "М"
+mods = "Control|Shift"
+
+[[keyboard.bindings]]
+action = "Paste"
+key = "М"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "Paste"
+key = "М"
+mods = "Control|Shift"
+
+[[keyboard.bindings]]
+action = "Copy"
+key = "С"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "Copy"
+key = "С"
 mods = "Control|Shift"
 
 [window]

@@ -5,9 +5,9 @@
     "interval" : "once",
     "tooltip-format": "<span foreground='aqua'></span> System scripts\n - 󰳽 click-left:\tOpen scripts window\n - 󰳽 click-middle:\tOpen information system\n - 󰳽 click-right:\tOpen apps window",
 
-    "on-click": "sleep 0.2 && bash ~/.config/hypr/utils.sh",
+    "on-click": "sleep 0.2 && bash ~/.config/rofi/run.sh fullscreen",
+    "on-click-right": "sleep 0.2 && bash ~/.config/hypr/utils.sh",
     "on-click-middle": "sleep 0.2 && bash ~/.config/waybar/scripts/dialog.sh float-big info",
-    "on-click-right": "sleep 0.2 && bash ~/.config/rofi/run.sh fullscreen"
   },
 
   // Notifications

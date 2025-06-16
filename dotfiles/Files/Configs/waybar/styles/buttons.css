@@ -17,7 +17,7 @@
 #battery:hover, #language:hover, #custom-workspace-logo:hover,
 #custom-logo:hover, #custom-hyprlogo:hover, #network:hover, #custom-system:hover
 {
-    transition: all .3s ease;
+    transition: all .5s ease;
     border: 0.8px rgba(255, 253, 253, 0.7) solid;
 }
 
@@ -37,7 +37,7 @@
 #taskbar, #window, #workspaces, #custom-workspace-logo
 {
     color: @text;
-    background: black;
+    /*background: black;*/
     border: 0.8px alpha(@text-dark, 0) solid;
 }
 
