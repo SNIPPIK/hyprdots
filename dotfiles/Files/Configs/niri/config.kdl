@@ -66,9 +66,12 @@ input {
 //######################################################################
 //### Output                                                         ###
 //######################################################################
+// Check `niri msg outputs`
 output "DP-2" {
     // Uncomment this line to disable this output.
     // off
+
+    variable-refresh-rate //on-demand=true
 
     // Resolution and, optionally, refresh rate of the output.
     // The format is "<width>x<height>" or "<width>x<height>@<refresh rate>".
@@ -269,17 +272,17 @@ animations {
 
     // Individual animations.
     workspace-switch {
-        spring damping-ratio=1.0 stiffness=1000 epsilon=0.0001
+        spring damping-ratio=1.0 stiffness=700 epsilon=0.0001
     }
 
     window-open {
         duration-ms 400
-        curve "ease-out-cubic"
+        curve "ease-out-expo"
     }
 
     window-close {
         duration-ms 400
-        curve "ease-out-cubic"
+        curve "ease-out-expo"
     }
 
     horizontal-view-movement {
@@ -287,11 +290,18 @@ animations {
     }
 
     window-movement {
-        spring damping-ratio=1.0 stiffness=800 epsilon=0.0001
+        spring damping-ratio=0.8 stiffness=800 epsilon=0.0001
     }
 
     window-resize {
-        spring damping-ratio=1.0 stiffness=800 epsilon=0.0001
+        spring damping-ratio=0.8 stiffness=800 epsilon=0.0001
+        custom-shader r"
+               vec4 resize_color(vec3 coords_curr_geo, vec3 size_curr_geo) {
+                   vec3 coords_tex_next = niri_geo_to_tex_next * coords_curr_geo;
+                   vec4 color = texture2D(niri_tex_next, coords_tex_next.st);
+                   return color;
+              }
+        "
     }
 
     config-notification-open-close {
@@ -315,21 +325,100 @@ animations {
 //######################################################################
 //### Windows rules                                                  ###
 //######################################################################
+// Only floating
 window-rule {
-    // This regular expression is intentionally made as specific as possible,
-    // since this is the default config, and we want no false positives.
-    // You can get away with just app-id="wezterm" if you want.
-    match app-id=r#"^org\.wezfurlong\.wezterm$"#
-    default-column-width {}
-}
-
-// Open the Firefox picture-in-picture player as floating by default.
-window-rule {
-    // This app-id regular expression will work for both:
-    // - host Firefox (app-id is "firefox")
-    // - Flatpak Firefox (app-id is "org.mozilla.firefox")
+    match app-id="steam"
+    match app-id="org.telegram.desktop"
+    match app-id="telegram-desktop"
+    match app-id="org.qbittorrent.qBittorrent"
     match app-id=r#"firefox$"# title="^Picture-in-Picture$"
     open-floating true
+}
+
+// Steam notification
+window-rule {
+    match app-id="steam" title=r#"^notificationtoasts_\d+_desktop$"#
+    default-floating-position x=10 y=10 relative-to="bottom-right"
+}
+
+// Network
+window-rule {
+    default-floating-position x=250 y=20 relative-to="top-right"
+    match app-id="nm-connection-editor"
+    open-floating true
+    min-width 800
+    min-height 400
+}
+
+// Pavucontrol (Audio control panel)
+window-rule {
+    default-floating-position x=70 y=20 relative-to="top-right"
+    match app-id="org.pulseaudio.pavucontrol"
+    open-floating true
+    min-width 1000
+    max-width 1000
+    min-height 400
+    max-height 400
+}
+
+// Bluetooth (Control panel)
+window-rule {
+    default-floating-position x=70 y=20 relative-to="top-right"
+    match app-id="blueberry.py"
+    open-floating true
+    min-width 600
+    max-width 600
+    min-height 400
+    max-height 400
+}
+
+// GUI Tack manager
+window-rule {
+    match title="^Ресурсы$"
+    open-floating true
+    min-width 1200
+    min-height 600
+}
+
+// Nautilus
+window-rule {
+    match app-id="org.gnome.Nautilus"
+    open-floating true
+
+    min-width 1200
+    min-height 600
+}
+
+window-rule {
+    match app-id="Alacritty"
+
+    focus-ring {
+         off
+    }
+}
+
+// Alacritty float
+window-rule {
+    match app-id="hyprdots-float"
+    match app-id="hyprdots-float-small"
+    open-floating true
+    focus-ring {
+         off
+    }
+
+    min-width 900
+    min-height 370
+}
+
+// Update menu
+window-rule {
+    match app-id="hyprdots-float-small"
+    focus-ring {
+         off
+    }
+
+    min-width 1200
+    min-height 450
 }
 
 // Example: block out two password managers from screen capture.
@@ -347,11 +436,9 @@ window-rule {
 // Example: enable rounded corners for all windows.
 // (This example rule is commented out with a "/-" in front.)
 window-rule {
-    geometry-corner-radius 5
+    geometry-corner-radius 8
     clip-to-geometry true
 }
-
-
 
 
 
@@ -413,11 +500,15 @@ spawn-at-startup "sh" "-c" "bash ~/.config/hypr/bin/ecosys/wallpaper.sh engine"
 //######################################################################
 environment {
     DISPLAY ":1"
+    QT_QPA_PLATFORM "wayland"
+    ELECTRON_OZONE_PLATFORM_HINT "auto"
 }
 
 cursor {
     xcursor-theme "FutureCyan"
     xcursor-size 20
+
+    hide-after-inactive-ms 5000
 }
 
 
@@ -441,8 +532,9 @@ binds {
     // shows a list of important hotkeys.
     Mod+Shift+Slash { show-hotkey-overlay; }
 
-    // Suggested binds for running programs: terminal, app launcher, screen locker.
-    Mod+Return hotkey-overlay-title="Open a Terminal: alacritty" { spawn "alacritty"; }
+    // Terminal
+    Mod+Return { spawn "alacritty"; }
+    Mod+Shift+Return { spawn "sh" "-c" "alacritty --class hyprdots-float"; }
 
     // File manager
     Mod+E { spawn "nautilus"; }
