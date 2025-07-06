@@ -1,6 +1,5 @@
 wayland
 wayland-protocols
-frog-protocols
 xorg-xwayland
 libdisplay-info
 xorg-xinput

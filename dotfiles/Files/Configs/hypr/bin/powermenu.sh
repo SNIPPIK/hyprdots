@@ -67,6 +67,10 @@ case ${chosen} in
 
     # Logout system
     "$logout")
+        # For hyprland
         hyprctl dispatch exit
+
+        # For niri
+        killall -u "$(whoami)"
     ;;
 esac

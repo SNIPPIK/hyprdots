@@ -54,6 +54,9 @@ echo Installing packages
 choice
 # Install packages
 bash $HOME/hyprdots/dotfiles/.installer/packages.sh
+
+# Install DE
+bash $HOME/hyprdots/dotfiles/.installer/de.sh
 # -----------------------------------------------------
 echo
 echo " __        __    _ _                                  "

@@ -40,6 +40,16 @@ echo "                   |_|                "
 echo "Removing unused flatpak application"
 flatpak uninstall --unused
 
+# Cleaning journal
+clear
+echo "     _             _     "
+echo "    / \   _ __ ___| |__  "
+echo "   / _ \ | '__/ __| '_ \ "
+echo "  / ___ \| | | (__| | | |"
+echo " /_/   \_\_|  \___|_| |_|"
+echo "Cleaning system journal"
+sudo journalctl --vacuum-size=100M
+
 # Arch installed packages
 clear
 echo "     _             _     "

@@ -1,0 +1,37 @@
+{
+  "niri/language": {
+    "format": " {short}"
+  },
+
+  "niri/window": {
+    "format": "<span foreground='#89b4fa'></span> | {title}",
+    "tooltip": false,
+    "max-length": 50,
+
+    // === Window Titles ===
+    "rewrite": {
+      // == Steam ==
+      "(.*)Steam(.*)": "<span foreground='#ffffff'></span> | Steam",
+
+      // == Terminal ==
+      "@(.*):(.*)": "<span foreground='#89b4fa'></span> | Terminal",
+      "(.*)@(.*):~": "<span foreground='#89b4fa'></span> | Terminal",
+
+      // == Media ==
+      "(.*)Spotify":
+      "<span foreground='#a6e3a1'></span> | Spotify",
+      "(.*)YouTube Music":
+      "<span foreground='#cf1818'></span> | YouTube Music",
+
+      // == Social ==
+      "vesktop":
+      "<span foreground='#89b4fa'></span> | Discord",
+      "(.*)Discord(.*)":
+      "<span foreground='#89b4fa'></span> | Discord $2",
+
+      // == Documents ==
+      "ONLYOFFICE Desktop Editors":
+      "<span foreground='#f38ba8'></span> | OnlyOffice"
+    }
+  }
+}

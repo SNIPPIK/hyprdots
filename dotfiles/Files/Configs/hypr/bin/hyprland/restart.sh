@@ -40,7 +40,7 @@ if [ "$1" = "panel-toggle" ]; then
     fi
 
     sleep 1s
-    hyprctl dispatch exec waybar
+    waybar &
 
     # Show error info
     if [ -z "$(ps -fC waybar | grep waybar | awk '{ print $8 }')r" ]; then
@@ -58,7 +58,7 @@ if [ "$1" = "panel-restart" ]; then
       hyprctl notify 1 3000 "rgb(ffffff)" "Panel | You has restarted panel"
     fi
 
-    sleep 1s && pkill "waybar" && hyprctl dispatch exec waybar
+    sleep 1s && pkill "waybar" && waybar &
     exit 0
   else
     # If need show information
@@ -67,7 +67,7 @@ if [ "$1" = "panel-restart" ]; then
     fi
 
     sleep 1s
-    hyprctl dispatch exec waybar
+    waybar &
 
     # Show error info
     if [ -z "$(ps -fC waybar | grep waybar | awk '{ print $8 }')r" ]; then

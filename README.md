@@ -1,14 +1,14 @@
 [<img align="right" alt="Avatar" width="150px" src="assets/hyprland.svg" />]()
 
-# DotFiles
-- [`Hyprland WIKI`](https://wiki.hyprland.org/)
+# DotFiles (Hyprland, Niri)
+- [`Hyprland WIKI`](https://wiki.hyprland.org/) | [`Niri WIKI`](https://github.com/YaLTeR/niri/wiki)
 - [`My wallpaper pack`](https://github.com/SNIPPIK/wallpapers)
 - [`decaycs/wallpapers`](https://github.com/decaycs/wallpapers)
 
 ## Installation
 The installation script is designed for a minimal [Arch Linux](https://wiki.archlinux.org/title/Arch_Linux) install, but **may** work on some [Arch-based distros](https://wiki.archlinux.org/title/Arch-based_distributions).
 While installing alongside another [DE](https://wiki.archlinux.org/title/Desktop_environment)/[WM](https://wiki.archlinux.org/title/Window_manager) should work, due to it being a heavily customized setup, it **will** conflict with your [GTK](https://wiki.archlinux.org/title/GTK) theme, [SDDM](https://wiki.archlinux.org/title/SDDM), etc. and is at your own risk.
-
+---
 > [!CAUTION]
 > All files are linked, deleting the directory hyprdots can lead to serious consequences\
 > The install script will auto install GPU drivers for AMD, NVIDIA, Intel is not supported in script\
@@ -24,7 +24,6 @@ While installing alongside another [DE](https://wiki.archlinux.org/title/Desktop
 > Window rules support only: `English`, `Russian`\
 > This config tested on notebook and desktop\
 > Auto configuration of monitors, left to right\
-> Hyprland animations can be changed in hyprland.conf\
 > Wallpapers directory is Pictures/Wallpapers
 
 # Install
@@ -40,17 +39,25 @@ bash ./install.sh
 ```shell
 dotsync
 ```
-
+---
 ## Dependencies
-Used for nice work dotfiles
-- `hyprland`, `hyprpaper`, `hypridle`, `hyprlock`, `waybar`, `rofi-wayland`, `hyprcursor`
-- `polkit-gnome`, `dunst`, `grim`, `sddm`, `starship`, `gnome-keyring`, `wl-clipboard`
+#### Global
+- `hypridle`, `hyprlock`, `waybar`, `rofi-wayland`,`polkit-gnome`, 
+- `dunst`, `grim`, `sddm`, `starship`, `gnome-keyring`, `wl-clipboard`
 - `otf-font-awesome`, `noto-fonts-emoji`, `ttf-nerd-fonts-symbols-mono`, `ttf-dejavu`
 - `pipewire-pulse`, `wireplumber`, `bluez`, `blueberry`, `pavucontrol`, `flatpak`
-- `gnome-software`, `nautilus`, `frog-protocols`
+- `gnome-software`, `nautilus`
 
+#### For Hyprland
+- `hyprland`, `hyprpicker`, `hyprcursor`, `hyprlang`, `hyprutils`,
+- `xdg-desktop-portal-hyprland`, `aquemarine`
+
+#### For Niri
+- `niri`, `xwayland-satellite`, `xdg-desktop-portal-gnome`
+---
 ## Images
-- Version 0.9.0
+- Version 0.10.0
+- The general style is similar, but the controls and operation of windows differ in Niri.
 - [`Backgroud wallpaper`](https://github.com/SNIPPIK/wallpapers/blob/main/Static/Fantasy/%5B4K%5D%20moon-sky.png?raw=true)
 <img align="" alt="image" width="1920" src="/assets/images/0.png" />
 <img align="" alt="image" width="1920" src="/assets/images/1.png" />

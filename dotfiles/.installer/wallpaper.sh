@@ -1,3 +1,5 @@
+echo "swww supported for niri, hyprland"
+echo "hyprpaper supported only hyprland"
 PS3='Please enter your choice: '
 options=("swww" "hyprpaper")
 select opt in "${options[@]}"

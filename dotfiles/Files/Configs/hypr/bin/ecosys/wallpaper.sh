@@ -24,19 +24,19 @@ function change_wallpaper() {
 
     # Unload wallpaper image
     sleep 2
-    swww clear-cache
+    swww clear-cache &
 
   # Selected hyprpaper engine
   elif [ "$engine" == "hyprpaper" ]; then
     for monitor in $(hyprctl monitors | grep 'Monitor' | awk '{ print $2 }'); do
          #Change wallpaper image
-         hyprctl hyprpaper preload "$1"
-         hyprctl hyprpaper wallpaper "$monitor,$1"
+         hyprpaper preload "$1" &
+         hyprpaper wallpaper "$monitor,$1" &
     done
 
     # Unload wallpaper image
     sleep 2
-    hyprctl hyprpaper unload all
+    hyprpaper unload all &
 
   # Not found wallpaper engine
   else
@@ -59,8 +59,8 @@ function restart_engine() {
         hyprctl notify 1 2000 "rgb(ffffff)" "Wallpaper Engine | Using $1"
      fi
 
-     hyprctl dispatch exec swww init
-     hyprctl dispatch exec swww-daemon
+     swww init &
+     swww-daemon &
 
    # Selected hyprpaper engine
    elif [ "$engine" == "hyprpaper" ]; then
@@ -72,7 +72,7 @@ function restart_engine() {
          hyprctl notify 1 2000 "rgb(ffffff)" "Wallpaper Engine | Using $1"
       fi
 
-      hyprctl dispatch exec hyprpaper
+      hyprpaper &
 
    # Not found wallpaper engine
    else

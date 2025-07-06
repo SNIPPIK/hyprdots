@@ -28,14 +28,18 @@
 
             // Hyprland load
             "~/.config/waybar/configuring/hyprland.jsonc",
-            "~/.config/waybar/configuring/custom.jsonc"
+            "~/.config/waybar/configuring/custom.jsonc",
+
+            // Niri load
+            "~/.config/waybar/configuring/niri.jsonc"
         ],
 
         // Modules Left
         "modules-left": [
             "custom/logo",
             "group/workspace",
-            "hyprland/window"
+            "hyprland/window",
+            "niri/window"
         ],
 
         // Modules Center
@@ -47,7 +51,11 @@
             "group/hyprgroup",
             "group/system",
 
+
             "hyprland/language",
+            "niri/language",
+
+
             "tray",
             "network",
             "group/audio",
@@ -165,11 +173,11 @@
             "on-click": "bash ~/.config/waybar/scripts/dialog.sh float weather",
             "on-click-right": "bash ~/.config/waybar/scripts/dialog.sh float weather"
         }
-    }
+    },
 
 
-    // Player (WIP)
-    ,{
+    // Player
+    {
         "name": "player",
         "layer": "bottom",
         "position": "bottom",
