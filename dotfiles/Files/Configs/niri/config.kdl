@@ -71,7 +71,8 @@ output "DP-2" {
     // Uncomment this line to disable this output.
     // off
 
-    variable-refresh-rate //on-demand=true
+    // VRR
+    //variable-refresh-rate on-demand=true
 
     // Resolution and, optionally, refresh rate of the output.
     // The format is "<width>x<height>" or "<width>x<height>@<refresh rate>".
@@ -108,7 +109,7 @@ output "DP-2" {
 //### Layout                                                         ###
 //######################################################################
 layout {
-    always-center-single-column
+    //always-center-single-column
 
     // Set gaps around windows in logical pixels.
     gaps 12
@@ -401,6 +402,7 @@ window-rule {
 window-rule {
     match app-id="hyprdots-float"
     match app-id="hyprdots-float-small"
+    match app-id="hyprdots-float-big"
     open-floating true
     focus-ring {
          off
@@ -408,6 +410,13 @@ window-rule {
 
     min-width 900
     min-height 370
+}
+
+// Alacritty float
+window-rule {
+    match app-id="hyprdots-float-big"
+    min-width 1200
+    min-height 800
 }
 
 // Update menu
@@ -577,8 +586,8 @@ binds {
     Mod+Q { close-window; }
 
     // Fast exit of niri
-    Mod+Shift+E { quit; }
-    Ctrl+Alt+Delete { quit; }
+    //Mod+Shift+E { quit; }
+    //Ctrl+Alt+Delete { quit; }
 
     // Open/close the Overview: a zoomed-out view of workspaces and windows.
     // You can also move the mouse into the top-left hot corner,
@@ -696,7 +705,7 @@ binds {
     // Mod+Ctrl+1 { move-window-to-workspace 1; }
 
     // Switches focus between the current and the previous workspace.
-    // Mod+Tab { focus-workspace-previous; }
+    //Mod+Tab { focus-workspace-previous; }
 
     // The following binds move the focused window in and out of a column.
     // If the window is alone, they will consume it into the nearby column to the side.
@@ -709,8 +718,8 @@ binds {
     // Expel the bottom window from the focused column to the right.
     Mod+Period { expel-window-from-column; }
 
-    // Mod+R { switch-preset-column-width; }
-    // Mod+Shift+R { switch-preset-window-height; }
+    //Mod+H { switch-preset-column-width; }
+    //Mod+Shift+H { switch-preset-window-height; }
     Mod+Ctrl+R { reset-window-height; }
 
     // Expand the focused column to space not taken up by other fully visible columns.
