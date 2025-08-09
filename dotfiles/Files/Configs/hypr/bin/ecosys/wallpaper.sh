@@ -148,14 +148,7 @@ function support_type() {
     if [ "$engine" == "swww" ]; then
 
         if [ "$1" == "random" ]; then
-            # Для swww случайный выбор из всех изображений и видео (если mpvpaper доступен)
-            find_expr="\( -iname '*.png' -o -iname '*.jpg' -o -iname '*.jpeg' -o -iname '*.gif' -o -iname '*.webp' -o -iname '*.tiff' -o -iname '*.avif' "
-            if [ "$can_show_videos" == true ]; then
-                find_expr+=" -o -iname '*.mp4' "
-            fi
-            find_expr+="\)"
-
-            random_background=$(find -L "$wallpaper_default_dir" -type f $find_expr | shuf -n 1)
+            random_background=$(find -L "$wallpaper_default_dir" -type f \( -iname '*.png' -o -iname '*.jpg' -o -iname '*.jpeg' \) | shuf -n 1)
             change_wallpaper "$random_background"
 
         elif [ "$1" == "select" ]; then
