@@ -152,7 +152,7 @@ function support_type() {
             change_wallpaper "$random_background"
 
         elif [ "$1" == "select" ]; then
-            preview_dir="/tmp/wallpaper_previews"
+            preview_dir="/home/$USER/.cache/wallpaper_previews"
             mkdir -p "$preview_dir"
             declare -A file_map
             rofi_input=""
