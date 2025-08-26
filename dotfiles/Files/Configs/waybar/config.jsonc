@@ -116,7 +116,7 @@
             "format-icons": {
                 "wifi": ["󰤯 ", "󰤟 ", "󰤢 ", "󰤢 ", "󰤨 "],
                 "disconnected": [""],
-                "ethernet": ["󰈀 "],
+                "ethernet": ["󰈀"],
                 "disabled": [""],
                 "linked": [""]
             },

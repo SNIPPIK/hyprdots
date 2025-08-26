@@ -1,4 +1,62 @@
 //######################################################################
+//### Environment for xdg-desktop-portal (XDP)                       ###
+//######################################################################
+spawn-at-startup "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
+
+//######################################################################
+//### AUTOSTART                                                      ###
+//###                                                                ###
+//######################################################################
+spawn-at-startup "hypridle"
+spawn-at-startup "dunst"
+spawn-at-startup "xwayland-satellite"
+spawn-at-startup "gnome-keyring-daemon --start --components=pkcs11,secrets"
+
+
+//######################################################################
+//### Polkit for GUI                                                 ###
+//######################################################################
+spawn-at-startup "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
+
+
+//######################################################################
+//### Panel                                                          ###
+//### Support: waybar                                                ###
+//######################################################################
+spawn-at-startup "waybar"
+
+
+//######################################################################
+//### Wallpaper engine                                               ###
+//### Support: swww, hyprpaper                                       ###
+//######################################################################
+spawn-at-startup "sh" "-c" "bash ~/.config/hypr/bin/ecosys/wallpaper.sh engine"
+
+
+//######################################################################
+//### Environment                                                    ###
+//### https://wiki.hyprland.org/Configuring/Environment-variables/   ###
+//######################################################################
+environment {
+    DISPLAY ":1"
+    QT_QPA_PLATFORM "wayland"
+    ELECTRON_OZONE_PLATFORM_HINT "auto"
+}
+cursor {
+    xcursor-theme "FutureCyan"
+    xcursor-size 20
+
+    hide-after-inactive-ms 15000
+}
+
+
+//######################################################################
+//### Screenshots                                                    ###
+//######################################################################
+screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
+
+
+//######################################################################
 //### Input                                                          ###
 //######################################################################
 input {
@@ -60,26 +118,16 @@ input {
 }
 
 
-
-
-
 //######################################################################
 //### Output                                                         ###
 //######################################################################
 // Check `niri msg outputs`
 output "DP-2" {
-    // Uncomment this line to disable this output.
-    // off
-
     // VRR
-    //variable-refresh-rate on-demand=true
+    //variable-refresh-rate on-demand=false
 
     // Resolution and, optionally, refresh rate of the output.
     // The format is "<width>x<height>" or "<width>x<height>@<refresh rate>".
-    // If the refresh rate is omitted, niri will pick the highest refresh rate
-    // for the resolution.
-    // If the mode is omitted altogether or is invalid, niri will pick one automatically.
-    // Run `niri msg outputs` while inside a niri instance to list all outputs and their modes.
     mode "2560x1080@200"
 
     // You can use integer or fractional scale, for example use 1.5 for 150% scale.
@@ -88,28 +136,21 @@ output "DP-2" {
     // Transform allows to rotate the output counter-clockwise, valid values are:
     // normal, 90, 180, 270, flipped, flipped-90, flipped-180 and flipped-270.
     transform "normal"
-
-    // Position of the output in the global coordinate space.
-    // This affects directional monitor actions like "focus-monitor-left", and cursor movement.
-    // The cursor can only move between directly adjacent outputs.
-    // Output scale and rotation has to be taken into account for positioning:
-    // outputs are sized in logical, or scaled, pixels.
-    // For example, a 3840×2160 output with scale 2.0 will have a logical size of 1920×1080,
-    // so to put another output directly adjacent to it on the right, set its x to 1920.
-    // If the position is unset or results in an overlap, the output is instead placed
-    // automatically.
-    //position x=1280 y=0
 }
 
 
-
+//######################################################################
+//### Overview                                                       ###
+//######################################################################
+overview {}
 
 
 //######################################################################
 //### Layout                                                         ###
 //######################################################################
 layout {
-    //always-center-single-column
+    background-color "transparent"
+    always-center-single-column
 
     // Set gaps around windows in logical pixels.
     gaps 12
@@ -167,49 +208,17 @@ layout {
         // - RGB hex: "#rgb", "#rgba", "#rrggbb", "#rrggbbaa"
         // - CSS-like notation: "rgb(255, 127, 0)", rgba(), hsl() and a few others.
 
-        // Color of the ring on the active monitor.
-        //active-color "#7fc8ff"
-
-        // Color of the ring on inactive monitors.
-        //inactive-color "#505050"
-
-        // You can also use gradients. They take precedence over solid colors.
-        // Gradients are rendered the same as CSS linear-gradient(angle, from, to).
-        // The angle is the same as in linear-gradient, and is optional,
-        // defaulting to 180 (top-to-bottom gradient).
-        // You can use any CSS linear-gradient tool on the web to set these up.
-        // Changing the color space is also supported, check the wiki for more info.
-        //
-        active-gradient from="#80c8ff" to="#bbddff" angle=45 in="srgb-linear"
-
-        // You can also color the gradient relative to the entire view
-        // of the workspace, rather than relative to just the window itself.
-        // To do that, set relative-to="workspace-view".
-        //
-        inactive-gradient from="#505050" to="#808080" angle=45 relative-to="workspace-view"
-    }
-
-    // You can also add a border. It's similar to the focus ring, but always visible.
-    border {
-        // The settings are the same as for the focus ring.
-        // If you enable the border, you probably want to disable the focus ring.
-        off
-
-        width 1
-        active-color "#ffc87f"
+        active-color "rgb(255, 255, 255, 0.5)"
         inactive-color "#505050"
 
         // Color of the border around windows that request your attention.
         urgent-color "#9b0000"
-
-        active-gradient from="#ffbb66" to="#ffc880" angle=45 relative-to="workspace-view"
-        inactive-gradient from="#505050" to="#808080" angle=45 relative-to="workspace-view"
     }
 
     // You can enable drop shadows for windows.
     shadow {
         // Uncomment the next line to enable shadows.
-        // on
+        on
 
         // By default, the shadow draws only around its window, and not behind it.
         // Uncomment this setting to make the shadow draw behind its window.
@@ -242,23 +251,13 @@ layout {
         // You can also change the shadow color and opacity.
         color "#0007"
     }
-
-    // Struts shrink the area occupied by windows, similarly to layer-shell panels.
-    // You can think of them as a kind of outer gaps. They are set in logical pixels.
-    // Left and right struts will cause the next window to the side to always be visible.
-    // Top and bottom struts will simply add outer gaps in addition to the area occupied by
-    // layer-shell panels and regular gaps.
-    struts {
-        // left 64
-        // right 64
-        // top 64
-        // bottom 64
-    }
 }
 
-
-
-
+// Разрешаем слою с namespace=wallpaper уходить в фон
+layer-rule {
+    match namespace="^(swww-daemon|mpvpaper|wallpaper)$"
+    place-within-backdrop true
+}
 
 //######################################################################
 //### Animations                                                     ###
@@ -269,40 +268,129 @@ animations {
     // off
 
     // Slow down all animations by this factor. Values below 1 speed them up instead.
-    slowdown 1.5
+    slowdown 1.7
 
-    // Individual animations.
-    workspace-switch {
-        spring damping-ratio=1.0 stiffness=700 epsilon=0.0001
-    }
-
+    // Open window
     window-open {
-        duration-ms 400
-        curve "ease-out-expo"
+     // off
+     duration-ms 1000
+     curve "ease-out-expo"
+     custom-shader r"
+            vec4 open_color(vec3 coords_geo, vec3 size_geo) {
+                vec3 coords_tex = niri_geo_to_tex * coords_geo;
+                vec4 color = texture2D(niri_tex, coords_tex.st);
+
+                vec2 size = size_geo.xy;
+                vec2 coords = (coords_geo.xy - vec2(0.5, 0.5)) * size * 2.0;
+
+                // Some padding for borders and shadows.
+                float pad = 8.0;
+                coords = coords + vec2(pad, pad);
+                size = size + vec2(pad, pad) * 2.0;
+
+                coords = coords / length(size);
+                float p = niri_clamped_progress;
+                if (p * p <= dot(coords, coords))
+                    color = vec4(0.0);
+
+                return color;
+            }
+     "
     }
 
+    // Close window
     window-close {
-        duration-ms 400
-        curve "ease-out-expo"
-    }
+        duration-ms 250
+        curve "linear"
 
-    horizontal-view-movement {
-        spring damping-ratio=1.0 stiffness=800 epsilon=0.0001
+        custom-shader r"
+            mat2 rotate(float angle) {
+                return mat2(cos(angle), -sin(angle), sin(angle), cos(angle));
+            }
+
+            vec4 close_color(vec3 coords_geo, vec3 size_geo) {
+                float progress = niri_clamped_progress * niri_clamped_progress;
+
+                vec2 coords = (coords_geo.xy - vec2(0.5, 1.0)) * size_geo.xy;
+
+                coords.y -= progress * 200.0;
+
+                float random = (niri_random_seed - 0.5) / 2.0;
+                random = sign(random) - random;
+                float max_angle = 0.05 * random;
+
+                float angle = progress * max_angle;
+                coords = rotate(angle) * coords;
+
+                coords_geo = vec3(coords / size_geo.xy + vec2(0.5, 1.0), 1.0);
+
+                vec3 coords_tex = niri_geo_to_tex * coords_geo;
+                vec4 color = texture2D(niri_tex, coords_tex.st);
+
+                return color * (1.0 - niri_clamped_progress);
+            }
+        "
     }
 
     window-movement {
         spring damping-ratio=0.8 stiffness=800 epsilon=0.0001
     }
 
+    // Individual animations.
+    workspace-switch {
+        spring damping-ratio=1.0 stiffness=700 epsilon=0.0001
+    }
+
     window-resize {
         spring damping-ratio=0.8 stiffness=800 epsilon=0.0001
         custom-shader r"
-               vec4 resize_color(vec3 coords_curr_geo, vec3 size_curr_geo) {
-                   vec3 coords_tex_next = niri_geo_to_tex_next * coords_curr_geo;
-                   vec4 color = texture2D(niri_tex_next, coords_tex_next.st);
-                   return color;
-              }
+            vec4 resize_color(vec3 coords_curr_geo, vec3 size_curr_geo) {
+                vec3 coords_next_geo = niri_curr_geo_to_next_geo * coords_curr_geo;
+                vec3 coords_prev_geo = niri_curr_geo_to_prev_geo * coords_curr_geo;
+
+                vec3 coords_crop = niri_geo_to_tex_next * coords_next_geo;
+                vec3 coords_stretch = niri_geo_to_tex_next * coords_curr_geo;
+                vec3 coords_stretch_prev = niri_geo_to_tex_prev * coords_curr_geo;
+
+                // We can crop if the current window size is smaller than the next window
+                // size. One way to tell is by comparing to 1.0 the X and Y scaling
+                // coefficients in the current-to-next transformation matrix.
+                bool can_crop_by_x = niri_curr_geo_to_next_geo[0][0] <= 1.0;
+                bool can_crop_by_y = niri_curr_geo_to_next_geo[1][1] <= 1.0;
+                bool crop = can_crop_by_x && can_crop_by_y;
+
+                vec4 color;
+
+                if (crop) {
+                    // However, when we crop, we also want to crop out anything outside the
+                    // current geometry. This is because the area of the shader is unspecified
+                    // and usually bigger than the current geometry, so if we don't fill pixels
+                    // outside with transparency, the texture will leak out.
+                    //
+                    // When stretching, this is not an issue because the area outside will
+                    // correspond to client-side decoration shadows, which are already supposed
+                    // to be outside.
+                    if (coords_curr_geo.x < 0.0 || 1.0 < coords_curr_geo.x ||
+                            coords_curr_geo.y < 0.0 || 1.0 < coords_curr_geo.y) {
+                        color = vec4(0.0);
+                    } else {
+                        color = texture2D(niri_tex_next, coords_crop.st);
+                        // color = texture2D(niri_tex_prev, (niri_geo_to_tex_prev * coords_prev_geo).st);
+                    }
+                } else {
+                    // If we can't crop, then crossfade.
+                    color = texture2D(niri_tex_next, coords_stretch.st);
+                    vec4 color_prev = texture2D(niri_tex_prev, coords_stretch_prev.st);
+                    color = mix(color_prev, color, niri_clamped_progress);
+                }
+
+                return color;
+            }
         "
+    }
+
+    horizontal-view-movement {
+        spring damping-ratio=1.0 stiffness=800 epsilon=0.0001
     }
 
     config-notification-open-close {
@@ -320,9 +408,6 @@ animations {
 }
 
 
-
-
-
 //######################################################################
 //### Windows rules                                                  ###
 //######################################################################
@@ -336,68 +421,49 @@ window-rule {
     open-floating true
 }
 
-// Steam notification
+//######################################################################
+//### Niri windows                                                   ###
+//######################################################################
+// Make transparent
 window-rule {
-    match app-id="steam" title=r#"^notificationtoasts_\d+_desktop$"#
-    default-floating-position x=10 y=10 relative-to="bottom-right"
+    match is-active=false
+    opacity 0.8
+}
+window-rule {
+    match is-active=true
+    opacity 0.95
+}
+window-rule {
+    geometry-corner-radius 5
+    clip-to-geometry true
 }
 
-// Network
+
+//######################################################################
+//### Niri Screencast                                                ###
+//######################################################################
+// Block out mako notifications from screencasts.
+layer-rule {
+    match namespace="^notifications$"
+    block-out-from "screencast"
+}
+// Block out password managers from screencasts.
 window-rule {
-    default-floating-position x=250 y=20 relative-to="top-right"
-    match app-id="nm-connection-editor"
-    open-floating true
-    min-width 800
-    min-height 400
+    match app-id=r#"^org\.keepassxc\.KeePassXC$"#
+    match app-id=r#"^org\.gnome\.World\.Secrets$"#
+    block-out-from "screencast"
 }
 
-// Pavucontrol (Audio control panel)
-window-rule {
-    default-floating-position x=70 y=20 relative-to="top-right"
-    match app-id="org.pulseaudio.pavucontrol"
-    open-floating true
-    min-width 1000
-    max-width 1000
-    min-height 400
-    max-height 400
-}
 
-// Bluetooth (Control panel)
-window-rule {
-    default-floating-position x=70 y=20 relative-to="top-right"
-    match app-id="blueberry.py"
-    open-floating true
-    min-width 600
-    max-width 600
-    min-height 400
-    max-height 400
-}
-
-// GUI Tack manager
-window-rule {
-    match title="^Ресурсы$"
-    open-floating true
-    min-width 1200
-    min-height 600
-}
-
-// Nautilus
-window-rule {
-    match app-id="org.gnome.Nautilus"
-    open-floating true
-
-    min-width 1200
-    min-height 600
-}
-
+//######################################################################
+//### Alacritty rules                                                ###
+//######################################################################
 window-rule {
     match app-id="Alacritty"
-
     focus-ring {
          off
     }
 }
-
 // Alacritty float
 window-rule {
     match app-id="hyprdots-float"
@@ -411,14 +477,12 @@ window-rule {
     min-width 900
     min-height 370
 }
-
 // Alacritty float
 window-rule {
     match app-id="hyprdots-float-big"
     min-width 1200
     min-height 800
 }
-
 // Update menu
 window-rule {
     match app-id="hyprdots-float-small"
@@ -430,107 +494,56 @@ window-rule {
     min-height 450
 }
 
-// Example: block out two password managers from screen capture.
-// (This example rule is commented out with a "/-" in front.)
-/-window-rule {
-    match app-id=r#"^org\.keepassxc\.KeePassXC$"#
-    match app-id=r#"^org\.gnome\.World\.Secrets$"#
 
-    block-out-from "screen-capture"
-
-    // Use this instead if you want them visible on third-party screenshot tools.
-    // block-out-from "screencast"
-}
-
-// Example: enable rounded corners for all windows.
-// (This example rule is commented out with a "/-" in front.)
+//######################################################################
+//### System                                                         ###
+//######################################################################
+// Network
 window-rule {
-    geometry-corner-radius 8
-    clip-to-geometry true
+    default-floating-position x=250 y=20 relative-to="top-right"
+    match app-id="nm-connection-editor"
+    open-floating true
+    min-width 800
+    min-height 400
 }
-
-
-
-//######################################################################
-//### Environment for xdg-desktop-portal (XDP)                       ###
-//######################################################################
-//spawn-at-startup "sh" "-c" "bash ~/.config/hypr/bin/hyprland/xdph.sh xdp"
-spawn-at-startup "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
-
-
-
-
-
-//######################################################################
-//### AUTOSTART                                                      ###
-//###                                                                ###
-//######################################################################
-spawn-at-startup "hypridle"
-spawn-at-startup "dunst"
-spawn-at-startup "xwayland-satellite"
-spawn-at-startup "gnome-keyring-daemon --start --components=pkcs11,secrets"
-
-
-
-
-
-//######################################################################
-//### Polkit for GUI                                                 ###
-//######################################################################
-spawn-at-startup "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
-
-
-
-
-
-//######################################################################
-//### Panel                                                          ###
-//### Support: waybar                                                ###
-//######################################################################
-spawn-at-startup "waybar"
-
-
-
-
-
-//######################################################################
-//### Wallpaper engine                                               ###
-//### Support: swww, hyprpaper                                       ###
-//######################################################################
-spawn-at-startup "sh" "-c" "bash ~/.config/hypr/bin/ecosys/wallpaper.sh engine"
-
-
-
-
-
-//######################################################################
-//### Environment                                                    ###
-//### https://wiki.hyprland.org/Configuring/Environment-variables/   ###
-//######################################################################
-environment {
-    DISPLAY ":1"
-    QT_QPA_PLATFORM "wayland"
-    ELECTRON_OZONE_PLATFORM_HINT "auto"
+// Pavucontrol (Audio control panel)
+window-rule {
+    default-floating-position x=70 y=20 relative-to="top-right"
+    match app-id="org.pulseaudio.pavucontrol"
+    open-floating true
+    min-width 1000
+    max-width 1000
+    min-height 400
+    max-height 400
 }
-
-cursor {
-    xcursor-theme "FutureCyan"
-    xcursor-size 20
-
-    hide-after-inactive-ms 5000
+// Bluetooth (Control panel)
+window-rule {
+    default-floating-position x=70 y=20 relative-to="top-right"
+    match app-id="blueberry.py"
+    open-floating true
+    min-width 600
+    max-width 600
+    min-height 400
+    max-height 400
 }
+// GUI Task manager
+window-rule {
+    match title="^Ресурсы$"
+    open-floating true
+    min-width 1200
+    min-height 600
+}
+// Nautilus
+window-rule {
+    match app-id="org.gnome.Nautilus"
+    open-floating true
 
-
-
-
-
+    min-width 1200
+    min-height 600
+}
 //######################################################################
-//### Screenshots                                                    ###
+//### Windows rules enc                                              ###
 //######################################################################
-screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
-
-
-
 
 
 //######################################################################
