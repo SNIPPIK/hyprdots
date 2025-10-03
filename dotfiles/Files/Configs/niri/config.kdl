@@ -9,7 +9,6 @@ spawn-at-startup "dbus-update-activation-environment --systemd WAYLAND_DISPLAY X
 //######################################################################
 spawn-at-startup "hypridle"
 spawn-at-startup "dunst"
-spawn-at-startup "xwayland-satellite"
 spawn-at-startup "gnome-keyring-daemon --start --components=pkcs11,secrets"
 
 
@@ -123,12 +122,17 @@ input {
 //######################################################################
 // Check `niri msg outputs`
 output "DP-2" {
+    //focus-at-startup
+
     // VRR
     //variable-refresh-rate on-demand=false
 
     // Resolution and, optionally, refresh rate of the output.
     // The format is "<width>x<height>" or "<width>x<height>@<refresh rate>".
     mode "2560x1080@200"
+
+    // Set the position of the output in the global coordinate space.
+    //position x=2560 y=0
 
     // You can use integer or fractional scale, for example use 1.5 for 150% scale.
     scale 1
@@ -268,14 +272,14 @@ animations {
     // off
 
     // Slow down all animations by this factor. Values below 1 speed them up instead.
-    slowdown 1.7
+    slowdown 1.5
 
     // Open window
     window-open {
-     // off
-     duration-ms 1000
-     curve "ease-out-expo"
-     custom-shader r"
+        // off
+        duration-ms 450
+        curve "ease-out-expo"
+        custom-shader r"
             vec4 open_color(vec3 coords_geo, vec3 size_geo) {
                 vec3 coords_tex = niri_geo_to_tex * coords_geo;
                 vec4 color = texture2D(niri_tex, coords_tex.st);
@@ -295,39 +299,37 @@ animations {
 
                 return color;
             }
-     "
+        "
     }
 
     // Close window
     window-close {
-        duration-ms 250
-        curve "linear"
+        duration-ms 300
+        curve "ease-out-expo"
 
         custom-shader r"
-            mat2 rotate(float angle) {
-                return mat2(cos(angle), -sin(angle), sin(angle), cos(angle));
-            }
-
             vec4 close_color(vec3 coords_geo, vec3 size_geo) {
-                float progress = niri_clamped_progress * niri_clamped_progress;
-
-                vec2 coords = (coords_geo.xy - vec2(0.5, 1.0)) * size_geo.xy;
-
-                coords.y -= progress * 200.0;
-
-                float random = (niri_random_seed - 0.5) / 2.0;
-                random = sign(random) - random;
-                float max_angle = 0.05 * random;
-
-                float angle = progress * max_angle;
-                coords = rotate(angle) * coords;
-
-                coords_geo = vec3(coords / size_geo.xy + vec2(0.5, 1.0), 1.0);
-
                 vec3 coords_tex = niri_geo_to_tex * coords_geo;
                 vec4 color = texture2D(niri_tex, coords_tex.st);
 
-                return color * (1.0 - niri_clamped_progress);
+                vec2 size = size_geo.xy;
+                vec2 coords = (coords_geo.xy - vec2(0.5, 0.5)) * size * 2.0;
+
+                // Немного паддинга для теней/рамок
+                float pad = 8.0;
+                coords = coords + vec2(pad, pad);
+                size = size + vec2(pad, pad) * 2.0;
+
+                coords = coords / length(size);
+                float p = niri_clamped_progress;
+
+                // --- CLOSE MASK ---
+                // В начале (p=0) видно всё, в конце (p=1) всё схлопнулось.
+                if ((1.0 - p) * (1.0 - p) <= dot(coords, coords)) {
+                    color = vec4(0.0);
+                }
+
+                return color;
             }
         "
     }
@@ -338,7 +340,7 @@ animations {
 
     // Individual animations.
     workspace-switch {
-        spring damping-ratio=1.0 stiffness=700 epsilon=0.0001
+        spring damping-ratio=1.0 stiffness=500 epsilon=0.0001
     }
 
     window-resize {
@@ -394,7 +396,7 @@ animations {
     }
 
     config-notification-open-close {
-        spring damping-ratio=0.6 stiffness=1000 epsilon=0.001
+        spring damping-ratio=1.0 stiffness=1000 epsilon=0.01
     }
 
     screenshot-ui-open {
@@ -421,39 +423,28 @@ window-rule {
     open-floating true
 }
 
+window-rule {
+    match app-id="steam" title=r#"^notificationtoasts_\d+_desktop$"#
+    default-floating-position x=10 y=10 relative-to="bottom-right"
+    open-focused false
+}
+
 //######################################################################
 //### Niri windows                                                   ###
 //######################################################################
 // Make transparent
-window-rule {
+/-window-rule {
     match is-active=false
     opacity 0.8
 }
-window-rule {
+/-window-rule {
     match is-active=true
-    opacity 0.95
+    opacity 0.98
 }
 window-rule {
     geometry-corner-radius 5
     clip-to-geometry true
 }
-
-
-//######################################################################
-//### Niri Screencast                                                ###
-//######################################################################
-// Block out mako notifications from screencasts.
-layer-rule {
-    match namespace="^notifications$"
-    block-out-from "screencast"
-}
-// Block out password managers from screencasts.
-window-rule {
-    match app-id=r#"^org\.keepassxc\.KeePassXC$"#
-    match app-id=r#"^org\.gnome\.World\.Secrets$"#
-    block-out-from "screencast"
-}
-
 
 //######################################################################
 //### Alacritty rules                                                ###
@@ -542,7 +533,7 @@ window-rule {
     min-height 600
 }
 //######################################################################
-//### Windows rules enc                                              ###
+//### Windows rules end                                              ###
 //######################################################################
 
 
@@ -550,24 +541,26 @@ window-rule {
 //### Key binds                                                      ###
 //######################################################################
 binds {
-    // Mod-Shift-/, which is usually the same as Mod-?,
-    // shows a list of important hotkeys.
-    Mod+Shift+Slash { show-hotkey-overlay; }
+    // Help
+    Mod+H hotkey-overlay-title="All binds" { show-hotkey-overlay; }
+
+    // Fast lock
+    Ctrl+Alt+Return hotkey-overlay-title="Lock PC" { spawn "hyprlock"; }
 
     // Terminal
-    Mod+Return { spawn "alacritty"; }
-    Mod+Shift+Return { spawn "sh" "-c" "alacritty --class hyprdots-float"; }
+    Mod+Return hotkey-overlay-title="Open terminal" { spawn "alacritty"; }
+    Mod+Shift+Return hotkey-overlay-title="Open float terminal" { spawn "sh" "-c" "alacritty --class hyprdots-float"; }
 
     // File manager
-    Mod+E { spawn "nautilus"; }
+    Mod+E hotkey-overlay-title="Open file manager" { spawn "nautilus"; }
 
     // Rofi
-    Mod+R { spawn "rofi" "-show" "drun" "-theme" "windows/compact.rasi"; }
-    Mod+Shift+R { spawn "rofi" "-show" "drun" "-theme" "windows/fullscreen.rasi"; }
+    Mod+R hotkey-overlay-title="Open left table application" { spawn "rofi" "-show" "drun" "-theme" "windows/compact.rasi"; }
+    Mod+Shift+R hotkey-overlay-title="Open center table application" { spawn "rofi" "-show" "drun" "-theme" "windows/fullscreen.rasi"; }
 
     // Wallpapers
-    Mod+W { spawn "sh" "-c" "bash ~/.config/hypr/bin/ecosys/wallpaper.sh random"; }
-    Mod+Shift+W { spawn "sh" "-c" "bash ~/.config/hypr/bin/ecosys/wallpaper.sh select"; }
+    Mod+W hotkey-overlay-title="Select random wallpaper" { spawn "sh" "-c" "bash ~/.config/hypr/bin/ecosys/wallpaper.sh random"; }
+    Mod+Shift+W hotkey-overlay-title="Open wallpaper selector"{ spawn "sh" "-c" "bash ~/.config/hypr/bin/ecosys/wallpaper.sh select"; }
 
     // Volume
     XF86AudioRaiseVolume { spawn "sh" "-c" "bash ~/.config/hypr/bin/tools/audio.sh volume_up"; }
@@ -587,8 +580,8 @@ binds {
 
     // Panel toggle
     // +Shift restart
-    Mod+F11 { spawn "sh" "-c" "bash ~/.config/hypr/bin/hyprland/restart.sh panel-toggle show"; }
-    Mod+Shift+F11 { spawn "sh" "-c" "bash ~/.config/hypr/bin/hyprland/restart.sh panel-restart show"; }
+    Mod+F11 hotkey-overlay-title="Close/Open panel" { spawn "sh" "-c" "bash ~/.config/hypr/bin/hyprland/restart.sh panel-toggle show"; }
+    Mod+Shift+F11 hotkey-overlay-title="Reload panel" { spawn "sh" "-c" "bash ~/.config/hypr/bin/hyprland/restart.sh panel-restart show"; }
 
     // Screenshots
     Print { screenshot-screen; }
@@ -599,8 +592,7 @@ binds {
     Mod+Q { close-window; }
 
     // Fast exit of niri
-    //Mod+Shift+E { quit; }
-    //Ctrl+Alt+Delete { quit; }
+    Ctrl+Alt+Delete { quit; }
 
     // Open/close the Overview: a zoomed-out view of workspaces and windows.
     // You can also move the mouse into the top-left hot corner,
@@ -608,7 +600,7 @@ binds {
     Mod+O repeat=false { toggle-overview; }
 
     // Move the focused window between the floating and the tiling layout.
-    Mod+F       { toggle-window-floating; }
+    Mod+F hotkey-overlay-title="Swith float/tiling window"      { toggle-window-floating; }
     Mod+Shift+F { switch-focus-between-floating-and-tiling; }
 
     // Windows moving

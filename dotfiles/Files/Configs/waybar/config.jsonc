@@ -9,8 +9,8 @@
 [
     {
         "name": "mainbar",
-        "layer": "top",
-        "position": "top",
+        "layer": "top",    // top, bottom
+        "position": "top", // top, bottom
         "mod": "dock",
         "height": 31,
         "exclusive": true,
@@ -128,7 +128,7 @@
             "on-click-right": "sleep 0.1 && nm-connection-editor"
         },
 
-        // hypridle switcher
+        // idle manager switcher
         "idle_inhibitor": {
             "format": "{icon}",
             "format-icons": {
