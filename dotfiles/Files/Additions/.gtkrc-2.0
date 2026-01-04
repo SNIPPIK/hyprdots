@@ -1,21 +1,23 @@
-gtk-enable-animations=1
-gtk-primary-button-warps-slider=1
-gtk-sound-theme-name="ocean"
 # DO NOT EDIT! This file will be overwritten by nwg-look.
 # Any customization should be done in ~/.gtkrc-2.0.mine instead.
 
+include "/home/snippik/.gtkrc-2.0.mine"
 gtk-theme-name="Fluent"
-gtk-icon-theme-name="adwaita"
-gtk-font-name="JetBrainsMono Nerd,  10"
-gtk-cursor-theme-name="FutureCyan"
-gtk-cursor-theme-size=20
-gtk-toolbar-style=3
+gtk-icon-theme-name="(process:100027): dconf-WARNING **: 15:03:52.992: unable to open named profile (/usr/share/dconf/profile/cosmic): using the null configuration.
+'Adwaita'"
+gtk-font-name="(process:100028): dconf-WARNING **: 15:03:52.994: unable to open named profile (/usr/share/dconf/profile/cosmic): using the null configuration.
+'Adwaita Sans 11'"
+gtk-cursor-theme-name="(process:100029): dconf-WARNING **: 15:03:52.997: unable to open named profile (/usr/share/dconf/profile/cosmic): using the null configuration.
+'Adwaita'"
+gtk-cursor-theme-size=24
+gtk-toolbar-style=GTK_TOOLBAR_ICONS
 gtk-toolbar-icon-size=GTK_ICON_SIZE_LARGE_TOOLBAR
-gtk-button-images=1
-gtk-menu-images=1
-gtk-enable-event-sounds=1
+gtk-button-images=0
+gtk-menu-images=0
+gtk-enable-event-sounds=0
 gtk-enable-input-feedback-sounds=0
 gtk-xft-antialias=1
 gtk-xft-hinting=1
-gtk-xft-hintstyle="hintslight"
-gtk-xft-rgba="rgb"
+gtk-xft-hintstyle="hintnone"
+gtk-xft-rgba="(process:100035): dconf-WARNING **: 15:03:53.009: unable to open named profile (/usr/share/dconf/profile/cosmic): using the null configuration.
+'rgb'"

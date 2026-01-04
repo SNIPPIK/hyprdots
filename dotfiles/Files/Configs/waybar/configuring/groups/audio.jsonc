@@ -63,7 +63,7 @@
     "tooltip-format-connected": " Bluetooth information\n - {controller_alias}\t{controller_address}\n\nDevices\n{device_enumerate}",
     "tooltip-format-enumerate-connected": " - {device_alias}\t{device_address}",
     "tooltip-format-enumerate-connected-battery": " - {device_alias}\t{device_address}\t{icon} | {device_battery_percentage}%",
-    "on-click": "blueberry",
-    "on-click-right": "blueberry"
+    "on-click": "python ~/.config/waybar/bluetooth.py",
+    "on-click-right": "python ~/.config/waybar/bluetooth.py"
   }
 }

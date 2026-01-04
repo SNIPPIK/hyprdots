@@ -10,6 +10,8 @@ spawn-at-startup "dbus-update-activation-environment --systemd WAYLAND_DISPLAY X
 spawn-at-startup "hypridle"
 spawn-at-startup "dunst"
 spawn-at-startup "gnome-keyring-daemon --start --components=pkcs11,secrets"
+spawn-at-startup "gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'"
+spawn-at-startup "xwayland-satellite"
 
 
 //######################################################################
@@ -130,6 +132,7 @@ output "DP-2" {
     // Resolution and, optionally, refresh rate of the output.
     // The format is "<width>x<height>" or "<width>x<height>@<refresh rate>".
     mode "2560x1080@200"
+    //mode custom=true "3840x2160@50"
 
     // Set the position of the output in the global coordinate space.
     //position x=2560 y=0
@@ -139,6 +142,12 @@ output "DP-2" {
 
     // Transform allows to rotate the output counter-clockwise, valid values are:
     // normal, 90, 180, 270, flipped, flipped-90, flipped-180 and flipped-270.
+    transform "normal"
+}
+
+output "HDMI-A-1" {
+    mode "1920x1080@144.001"
+    scale 1
     transform "normal"
 }
 
@@ -277,7 +286,7 @@ animations {
     // Open window
     window-open {
         // off
-        duration-ms 450
+        duration-ms 600
         curve "ease-out-expo"
         custom-shader r"
             vec4 open_color(vec3 coords_geo, vec3 size_geo) {
@@ -304,7 +313,7 @@ animations {
 
     // Close window
     window-close {
-        duration-ms 300
+        duration-ms 400
         curve "ease-out-expo"
 
         custom-shader r"
@@ -510,7 +519,7 @@ window-rule {
 // Bluetooth (Control panel)
 window-rule {
     default-floating-position x=70 y=20 relative-to="top-right"
-    match app-id="blueberry.py"
+    match title="^Bluetooth Manager$"
     open-floating true
     min-width 600
     max-width 600
@@ -556,7 +565,6 @@ binds {
 
     // Rofi
     Mod+R hotkey-overlay-title="Open left table application" { spawn "rofi" "-show" "drun" "-theme" "windows/compact.rasi"; }
-    Mod+Shift+R hotkey-overlay-title="Open center table application" { spawn "rofi" "-show" "drun" "-theme" "windows/fullscreen.rasi"; }
 
     // Wallpapers
     Mod+W hotkey-overlay-title="Select random wallpaper" { spawn "sh" "-c" "bash ~/.config/hypr/bin/ecosys/wallpaper.sh random"; }
@@ -590,6 +598,9 @@ binds {
 
     // Kill window
     Mod+Q { close-window; }
+
+    // PowerMenu
+    Mod+grave { spawn "sh" "-c" "bash ~/.config/hypr/bin/powermenu.sh"; }
 
     // Fast exit of niri
     Ctrl+Alt+Delete { quit; }

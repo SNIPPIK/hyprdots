@@ -152,6 +152,7 @@
         "name": "weather",
         "layer": "bottom",
         "position": "bottom",
+        "mod": "dock",
         "margin-right": 15,
         "margin-bottom": 25,
 

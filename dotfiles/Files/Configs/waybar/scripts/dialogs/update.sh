@@ -6,7 +6,7 @@ echo "  / ___ \| | | (__| | | |"
 echo " /_/   \_\_|  \___|_| |_|"
 echo "Updating the system and synchronizing with arch repositories"
 sudo pacman -Syyu
-sleep 0.2s
+sleep 2s
 
 # Update aur packages
 clear
@@ -30,7 +30,7 @@ then
 fi
 # Update aur packages
 yay -Syu
-sleep 0.2s
+sleep 2s
 
 # Update flatpak packages
 clear
@@ -42,6 +42,14 @@ echo " |_|   |_|\__,_|\__| .__/ \__,_|_|\_\ "
 echo "                   |_|                "
 echo "Updating flatpak"
 flatpak update
+sleep 2s
+
+
+sudo reflector \
+  --protocol https \
+  --latest 20 \
+  --sort rate \
+  --save /etc/pacman.d/mirrorlist
 
 # Press enter
 echo " "

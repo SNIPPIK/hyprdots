@@ -36,7 +36,7 @@
 window.mainbar#waybar
 {
     transition: all .3s ease;
-    background: rgba(0, 0, 0, 0.90);
+    background: rgba(0, 0, 0, 0.70);
 }
 
 window#waybar

@@ -9,14 +9,9 @@
 
 /*****----- Configuration -----*****/
 configuration {
-	modi:                       "drun,run,filebrowser,window";
+	modi:                       "drun";
     show-icons:                 true;
-    display-drun:               "";
-    display-run:                "";
-    display-filebrowser:        "";
-    display-window:             "";
-	drun-display-format:        "{name}";
-	window-format:              "{w} · {c} · {t}";
+	drun-display-format:        "{name}\n[<span weight='light' size='small'><i>{exec}</i></span>]";
 }
 
 /*****----- Global Properties -----*****/
@@ -25,15 +20,15 @@ configuration {
 
 /*****----- Main Window -----*****/
 window {
-    /* properties for window widget */
+/* properties for window widget */
     transparency:                "real";
-    location:                    west;
-    anchor:                      west;
+    location:                    north;
+    anchor:                      north;
     fullscreen:                  false;
-    width:                       20%;
-    height:                      99%;
-    x-offset:                    5px;
-    y-offset:                    0px;
+    width:                       45%;
+    height:                      55%;
+    x-offset:                    0px;
+    y-offset:                    10px;
 
     /* properties for all widgets */
     enabled:                     true;
@@ -48,22 +43,37 @@ mainbox {
     spacing:                     0px;
     background-color:            transparent;
     orientation:                 vertical;
-    children:                    [ "inputbar", "listbox", "mode-switcher" ];
+    children:                    [ "inputbar", "message", "listview" ];
 }
 
-listbox {
-    spacing:                     15px;
-    padding:                     15px;
+listview {
+    enabled:                     true;
+    columns:                     2;
+    lines:                       10;
+    cycle:                       true;
+    dynamic:                     true;
+    scrollbar:                   true;
+    layout:                      vertical;
+    reverse:                     false;
+    fixed-height:                true;
+    fixed-columns:               true;
+
+    spacing:                     5px;
+    margin:                      0px;
+    padding:                     2px;
+    border:                      0px solid;
+    border-radius:               0px;
+    border-color:                @border-colour;
     background-color:            transparent;
-    orientation:                 vertical;
-    children:                    [ "message", "listview" ];
+    text-color:                  @foreground-colour;
+    cursor:                      "default";
 }
 
 /*****----- Inputbar -----*****/
 inputbar {
     enabled:                     true;
     spacing:                     10px;
-    padding:                     50px 60px;
+    padding:                     20px 10px;
     background-color:            transparent;
     background-image:            url("~/Pictures/Wallpapers/hyprland.png", width);
     text-color:                  @foreground;
@@ -93,45 +103,6 @@ entry {
 dummy {
     expand:                      true;
     background-color:            transparent;
-}
-
-/*****----- Mode Switcher -----*****/
-mode-switcher {
-    enabled:                     true;
-    padding:                     15px;
-    spacing:                     10px;
-    background-color:            transparent;
-    text-color:                  @foreground;
-}
-button {
-    padding:                     12px;
-    border-radius:               12px;
-    background-color:            @background-alt;
-    text-color:                  inherit;
-    cursor:                      pointer;
-}
-button selected {
-    background-color:            @selected;
-    text-color:                  @foreground;
-}
-
-/*****----- Listview -----*****/
-listview {
-    enabled:                     true;
-    columns:                     1;
-    lines:                       10;
-    cycle:                       true;
-    dynamic:                     true;
-    scrollbar:                   false;
-    layout:                      vertical;
-    reverse:                     false;
-    fixed-height:                true;
-    fixed-columns:               true;
-
-    spacing:                     10px;
-    background-color:            transparent;
-    text-color:                  @foreground;
-    cursor:                      "default";
 }
 
 /*****----- Elements -----*****/
@@ -175,6 +146,7 @@ element-icon {
     cursor:                      inherit;
 }
 element-text {
+    padding:                     5px;
     background-color:            transparent;
     text-color:                  inherit;
     cursor:                      inherit;

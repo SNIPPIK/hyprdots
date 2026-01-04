@@ -1,6 +1,7 @@
 /*****----- Configuration -----*****/
 configuration {
     show-icons:                 true;
+    drun-display-format:        "{name}\n[<span weight='light' size='small'><i>{exec}</i></span>]";
 }
 
 /*****----- Global Properties -----*****/
@@ -13,7 +14,7 @@ window {
     location:                    center;
     anchor:                      center;
     fullscreen:                  false;
-    width:                       40%;
+    width:                       50%;
     x-offset:                    0px;
     y-offset:                    0px;
 
@@ -30,11 +31,6 @@ window {
 /*****----- Main Box -----*****/
 mainbox {
     enabled:                     true;
-    spacing:                     10px;
-    margin:                      0px;
-    padding:                     20px;
-    border:                      0px solid;
-    border-radius:               0px 0px 0px 0px;
     border-color:                @selected;
     background-color:            transparent;
     children:                    [ "inputbar", "listview" ];
@@ -45,17 +41,23 @@ inputbar {
     enabled:                     true;
     spacing:                     10px;
     padding:                     20px 30px;
-    border-radius:               15px;
+    border-radius:               0px;
     background-color:            transparent;
     text-color:                  @foreground;
     background-image:            url("~/Pictures/Wallpapers/hyprland.png", width);
-    children:                    [ "prompt" ];
+    children:                    [ "entry" ];
 }
 
-prompt {
+entry {
     enabled:                     true;
-    background-color:            inherit;
+    expand:                      true;
+    padding:                     7px 7px;
+    border-radius:               5px;
+    background-color:            @background-alt;
     text-color:                  inherit;
+    cursor:                      text;
+    placeholder:                 "Search";
+    placeholder-color:           inherit;
 }
 
 /*****----- Listview -----*****/
@@ -65,7 +67,7 @@ listview {
     lines:                       3;
     cycle:                       true;
     dynamic:                     true;
-    scrollbar:                   true;
+    scrollbar:                   false;
     layout:                      vertical;
     reverse:                     false;
     fixed-height:                true;
@@ -73,7 +75,7 @@ listview {
 
     spacing:                     5px;
     margin:                      0px;
-    padding:                     0px;
+    padding:                     2px 2px 2px 2px;
     border:                      0px solid;
     border-radius:               15px;
     border-color:                @selected;
@@ -130,10 +132,16 @@ element selected.active {
 
 element-icon {
     background-color:            transparent;
-    size:                        160px;
+    size:                        18%;
     cursor:                      inherit;
 }
 
 element-text {
-    enabled:                     false;
+    enabled:                     true;
+    padding:                     5px;
+    background-color:            transparent;
+    text-color:                  inherit;
+    cursor:                      inherit;
+    vertical-align:              0.5;
+    horizontal-align:            0.5;
 }

@@ -3,15 +3,13 @@ HOME=~/
 
 # Define options
 options=(
-    "Power menu"
-    "Update System"
-    "Delete unused packages"
-    "Toggle gamemode"
-    "[Select] Wallpaper"
-    "[Random] Wallpaper"
-    "[Restart] Wallpaper"
-    "[Keybinds] Hyprland"
-    "[Restart] Hyprland"
+    " Power menu"
+    " Update System"
+    "󰏖 Delete unused packages"
+    " Toggle gamemode"
+    " [Select] Wallpaper"
+    " [Random] Wallpaper"
+    " [Restart] Wallpaper"
 )
 
 # Define corresponding commands
@@ -23,9 +21,6 @@ commands=(
     "$HOME/.config/hypr/bin/ecosys/wallpaper.sh select"
     "$HOME/.config/hypr/bin/ecosys/wallpaper.sh random"
     "$HOME/.config/hypr/bin/ecosys/wallpaper.sh engine"
-    "$HOME/.config/waybar/scripts/dialog.sh float keybindings"
-    "$HOME/.config/hypr/bin/hyprland/restart.sh show"
-
 )
 
 # Show Rofi menu
