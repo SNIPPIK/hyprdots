@@ -500,7 +500,7 @@ window-rule {
 //######################################################################
 // Network
 window-rule {
-    default-floating-position x=250 y=20 relative-to="top-right"
+    default-floating-position x=250 y=20 relative-to="bottom-right"
     match app-id="nm-connection-editor"
     open-floating true
     min-width 800
@@ -508,7 +508,7 @@ window-rule {
 }
 // Pavucontrol (Audio control panel)
 window-rule {
-    default-floating-position x=70 y=20 relative-to="top-right"
+    default-floating-position x=70 y=20 relative-to="bottom-right"
     match app-id="org.pulseaudio.pavucontrol"
     open-floating true
     min-width 1000
@@ -518,7 +518,7 @@ window-rule {
 }
 // Bluetooth (Control panel)
 window-rule {
-    default-floating-position x=70 y=20 relative-to="top-right"
+    default-floating-position x=70 y=20 relative-to="bottom-right"
     match title="^Bluetooth Manager$"
     open-floating true
     min-width 600

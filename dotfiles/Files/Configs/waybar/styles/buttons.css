@@ -8,16 +8,23 @@
 #custom-logo, #custom-pacman, #custom-version, #custom-hyprland, #custom-workspace-logo,
 #custom-hyprlogo, #pulseaudio, #bluetooth, #network, #custom-system, #cpu,
 #memory, #disk, #workspaces, #taskbar, #window, #custom-gpu,
-#power-profiles-daemon, #mpris, #clock, #custom-notifications
+#power-profiles-daemon, #mpris, #clock, #custom-notifications,
+
+
+#custom-power
 {
     margin: 3px 0px;
-    padding: 3px 10px;
+    padding: 1px 10px;
+    border: 0.8px alpha(@text-dark, 0) solid;
 }
 
-#battery:hover, #language:hover, #custom-workspace-logo:hover,
-#custom-logo:hover, #custom-hyprlogo:hover, #network:hover, #custom-system:hover
+#custom-wallpaper:hover, #temperature:hover, #battery:hover, #language:hover, #idle_inhibitor:hover,
+#custom-logo:hover, #custom-pacman:hover, #custom-version:hover, #custom-hyprland:hover, #custom-workspace-logo:hover,
+#custom-hyprlogo:hover, #pulseaudio:hover, #bluetooth:hover, #network:hover, #custom-system:hover, #cpu:hover,
+#memory:hover, #disk:hover, #workspaces:hover, #taskbar:hover, #window:hover, #custom-gpu:hover,
+#power-profiles-daemon:hover, #mpris:hover,
+#custom-power:hover
 {
-    transition: all .5s ease;
     border: 0.8px rgba(255, 253, 253, 0.7) solid;
 }
 
@@ -26,40 +33,6 @@
     margin-right: 5px;
 }
 
-
-/*
-   ___     _           _         _   _
-  / __|___| |___ _ _  | |__ _  _| |_| |_ ___ _ _  ___
- | (__/ _ \ / _ \ '_| | '_ \ || |  _|  _/ _ \ ' \(_-<
-  \___\___/_\___/_|   |_.__/\_,_|\__|\__\___/_||_/__/
-*/
-#custom-wallpaper, #battery, #language, #custom-logo, #custom-hyprlogo, #network, #custom-system,
-#taskbar, #window, #workspaces, #custom-workspace-logo
-{
-    color: @text;
-    /*background: black;*/
-    border: 0.8px alpha(@text-dark, 0) solid;
-}
-
-#mpris {
-    background: alpha(@background, 0.85);
-    background: alpha(@background, 0.85);
-}
-
-#custom-wallpaper, #battery, #language, #custom-logo, #custom-hyprlogo, #network, #custom-system,
-#taskbar, #window, #tray, #custom-weather, #mpris, #custom-workspace-logo
-{
-    text-shadow: 0px 0px 2px rgba(0, 0, 0, 1);
-}
-
-#tray, #workspaces, #taskbar
-{
-    color: @text;
-    background: @background-waybar;
-    background: alpha(@background, 0.85);
-}
-
-
 /*
    ___        _                ___     _
   / __|  _ __| |_ ___ _ __    / __|___| |___ _ _
@@ -67,24 +40,16 @@
   \___\_,_/__/\__\___/_|_|_|  \___\___/_\___/_|
 */
 #cpu, #memory, #disk, #custom-pacman, #temperature, #idle_inhibitor, #custom-gpu, #clock, #custom-notifications,
-#pulseaudio, #bluetooth, #custom-version, #custom-hyprland, #network.alt, #power-profiles-daemon,
-#custom-player-backward, #custom-player-play, #custom-player-forward, #custom-player-info
+#pulseaudio, #bluetooth, #custom-version, #custom-hyprland, #network.alt, #power-profiles-daemon, #custom-player-info,
+
+#custom-logo, #network, #language
 {
-    color: @nord_dark_font;
-    background: alpha(@background-light, .9);
+    color: @text;
+    background: @background-waybar;
+    background: alpha(@background-waybar, 0.85);
 }
 
-#cpu, #memory, #disk, #custom-pacman, #temperature, #idle_inhibitor, #custom-gpu,
-#pulseaudio, #bluetooth, #custom-version, #custom-hyprland, #network.alt, #power-profiles-daemon
-{
-    border: 0.8px alpha(@nord_bg_blue, 0.5) solid;
-}
 
-#clock, #custom-notifications
-{
-    border-bottom: 0.8px alpha(@nord_dark_font, 0.5) solid;
-    border-top: 0.8px alpha(@nord_dark_font, 0.5) solid;
-}
 
 
 /*
@@ -101,6 +66,8 @@
 {
     border-radius: 0.4em;
 }
+
+
 
 
 /*
@@ -120,6 +87,9 @@
     border-bottom-right-radius: 0.4em;
 }
 
+
+
+
 /*
    ___                     _         _   _
  / __|_ __  __ _ __ ___  | |__ _  _| |_| |_ ___ _ _  ___
@@ -132,7 +102,10 @@
 #custom-logo, #custom-pacman, #custom-version, #custom-hyprland, #pulseaudio, #custom-workspace-logo,
 #bluetooth, #network, #custom-system, #cpu, #memory, #disk, #custom-gpu, #power-profiles-daemon,
 #window, #workspaces        { margin-left: 4px; }
-#custom-logo                { padding: 0px 15px; margin-left: 5px; }
+#custom-logo                { padding: 0px 20px; margin-left: 5px; }
+
+
+
 
 /*
    ___         _             _         _   _
@@ -144,60 +117,4 @@
 {
     margin: 3px 0px;
     padding: 0px 10px;
-}
-
-
-
-/*
-   ___        _               ___ _        _
-  / __|  _ __| |_ ___ _ __   / __| |_ _  _| |___
- | (_| || (_-<  _/ _ \ '  \  \__ \  _| || | / -_)
-  \___\_,_/__/\__\___/_|_|_| |___/\__|\_, |_\___|
-                                      |__/
-*/
-#custom-hyprlogo
-{
-    background-image: image(url("./hyprland.svg"));
-    background-size: 13px 17px;
-    background-repeat: no-repeat;
-    background-position: center;
-}
-
-
-/*
-   ___     _ _   _         _    ___     _
-  / __|_ _(_) |_(_)__ __ _| |  / __|___| |___ _ _
- | (__| '_| |  _| / _/ _` | | | (__/ _ \ / _ \ '_|
-  \___|_| |_|\__|_\__\__,_|_|  \___\___/_\___/_|
- */
-#memory.critical, #cpu.critical, #temperature.critical, #battery.critical
-{ color: red; }
-
-
-/*
-  _  _              ___    _ _
- | || |_  _ _ __ _ |_ _|__| | |___
- | __ | || | '_ \ '_| |/ _` | / -_)
- |_||_|\_, | .__/_||___\__,_|_\___|
-       |__/|_|
-*/
-#idle_inhibitor.deactivated { color: #0c0c0c;; }
-#idle_inhibitor.activated { color: red; }
-
-/*
-  ___       _   _        _
- | _ ) __ _| |_| |_ __ _| |_ _  _
- | _ \/ _` |  _|  _/ _` |  _| || |
- |___/\__,_|\__|\__\__,_|\__|\_, |
-                             |__/
-*/
-#battery.charging { color: #26A65B; }
-#battery.warning:not(.charging) { color: #ffbe61; }
-#battery.critical:not(.charging) {
-    color: red;
-    animation-name: blink;
-    animation-duration: 0.5s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
 }

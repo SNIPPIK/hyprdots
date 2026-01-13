@@ -10,9 +10,10 @@
     {
         "name": "mainbar",
         "layer": "top",    // top, bottom
-        "position": "top", // top, bottom
+        "position": "bottom", // top, bottom
         "mod": "dock",
         "height": 31,
+        "margin": 3,
         "exclusive": true,
         "passthrough": false,
         "gtk-layer-shell": true,
@@ -51,12 +52,12 @@
             "group/hyprgroup",
             "group/system",
 
+            "tray",
 
             "hyprland/language",
             "niri/language",
 
 
-            "tray",
             "network",
             "group/audio",
             "battery",
@@ -66,8 +67,9 @@
 
         // Clock
         "clock": {
-            "format": "{:L%H:%M} ",
-            "format-alt": " {:L%a, %b %d, %Y (%R)} ",
+            "interval": 1,
+            "format": "{:L%H:%M:%S} ",
+            "format-alt": " {:L%a, %b %d, %Y (%R:%S)} ",
             "tooltip-format": "<tt><small>{calendar}</small></tt>",
             "calendar": {
                 "mode"          : "year",
@@ -124,7 +126,7 @@
             "max-length": 50,
             "interval": 5,
 
-            "on-click-middle": "bash ~/.config/rofi/wifi.sh",
+            "on-click-middle": "sleep 0.1 && nm-connection-editor",
             "on-click-right": "sleep 0.1 && nm-connection-editor"
         },
 
@@ -151,17 +153,22 @@
     {
         "name": "weather",
         "layer": "bottom",
-        "position": "bottom",
+        "position": "top",
         "mod": "dock",
         "margin-right": 15,
-        "margin-bottom": 25,
+        "margin-top": 25,
 
         "exclusive": false,
 
         // Load Modules
         "include": [],
 
+        "modules-left": [
+          "niri/window"
+        ],
+
         "modules-right": [
+            "niri/window",
             "custom/weather"
         ],
 
@@ -182,8 +189,11 @@
         "name": "player",
         "layer": "bottom",
         "position": "bottom",
-        "margin-bottom": 10,
         "exclusive": false,
+
+        "modules-left": [
+          "niri/window"
+        ],
 
         "modules-center": [
             "image#album-art",
@@ -194,7 +204,7 @@
         "mpris": {
             "interval": 7,
 
-            "format": "{artist} - {title}\t{player_icon}\n{album}\t{status_icon}\n{position}/{length}",
+            "format": "{artist} - {title}\t{player_icon}\n- {position}/{length}",
             "tooltip-format": "{player_icon} {artist} - {title}\n{status_icon} {position}/{length}",
 
             "player-icons": {

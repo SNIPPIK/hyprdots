@@ -1,9 +1,10 @@
 /* -----------------------------------------------------
  * Background Colors
  * ----------------------------------------------------- */
-@define-color background-waybar rgba(17, 17, 27, 0.9);
-@define-color background-light #D8DEE9;
-@define-color background #282828;
+@define-color background-waybar rgba(0, 0, 0, 0.70);
+@define-color background-light rgba(94, 129, 172, 0.5);
+@define-color background-toolkit #282828;
+@define-color background rgba(0, 0, 0, 0.7);
 
 
 /* -----------------------------------------------------
@@ -12,9 +13,18 @@
 @define-color text #D8DEE9;
 @define-color text-dark #0c0c0c;
 @define-color nord_dark_font #434C5E;
+@define-color nord_bg_blue rgba(94, 129, 172, 0.5);
 
 /* -----------------------------------------------------
  * Workspace Colors
  * ----------------------------------------------------- */
 @define-color workspace-color-active #ABE9B3;
 @define-color workspace-color-not-active gray;
+
+/* -----------------------------------------------------
+ * Status
+ * ----------------------------------------------------- */
+@define-color disable gray;
+@define-color activated #26A65B;
+@define-color warning #ffbe61;
+@define-color critical red;

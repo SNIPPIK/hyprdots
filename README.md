@@ -57,9 +57,9 @@ dotsync
 - `niri`, `xwayland-satellite`, `xdg-desktop-portal-gnome`
 ---
 ## Images
-- Version 0.10.0
+- Version 0.11.0 | Automatically close the panel if the window is inactive
 - The general style is similar, but the controls and operation of windows differ in Niri.
-- [`Backgroud wallpaper`](https://github.com/SNIPPIK/wallpapers/blob/main/Static/Fantasy/%5B4K%5D%20moon-sky.png?raw=true)
+- [`Backgroud wallpaper`](https://github.com/SNIPPIK/wallpapers/blob/main/Static/Anime/%5B4K%5D%20frieren-beyong-journeys-end.jpg?raw=true)
 <img align="" alt="image" width="1920" src="/assets/images/0.png" />
 <img align="" alt="image" width="1920" src="/assets/images/1.png" />
 <img align="" alt="image" width="1920" src="/assets/images/2.png" />
@@ -69,8 +69,6 @@ dotsync
 <img align="" alt="image" width="1920" src="/assets/images/6.png" />
 <img align="" alt="image" width="1920" src="/assets/images/7.png" />
 <img align="" alt="image" width="1920" src="/assets/images/8.png" />
-<img align="" alt="image" width="1920" src="/assets/images/9.png" />
-<img align="" alt="image" width="1920" src="/assets/images/10.png" />
 
 
 ### Demonstration videos (archive)

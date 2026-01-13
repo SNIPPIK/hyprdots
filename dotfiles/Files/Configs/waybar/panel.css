@@ -1,0 +1,79 @@
+/* -----------------------------------------------------
+ * Solo window
+ * ----------------------------------------------------- */
+window.weather#waybar #window,
+window.player#waybar #window
+
+{
+    opacity: 0;
+}
+
+
+/* Только одно тайловое окно — средний размер */
+window.player#waybar.solo #mpris,
+window.player#waybar.solo #image,
+window.weather#waybar.solo #custom-weather
+{
+    opacity: 0;
+    min-width: 0;
+    min-height: 0;
+    padding: 0;
+    margin: 0;
+    background: transparent;
+    border: none;
+    color: transparent;
+    font-size: 0;
+
+    transition: opacity 0.7s cubic-bezier(0.165, 0.84, 0.44, 1),
+    padding 0.7s cubic-bezier(0.165, 0.84, 0.44, 1),
+    transform 0.7s cubic-bezier(0.165, 0.84, 0.44, 1);
+    animation-timing-function: steps(64);
+}
+
+/* -----------------------------------------------------
+ * Empty window
+ * ----------------------------------------------------- */
+/* Пустой workspace — сворачиваем панель / уменьшаем padding */
+window.mainbar#waybar.empty {
+    background: transparent;
+    transition: all 0.7s ease;
+}
+
+/* === Отключаем элементы при пустом экране === */
+window.mainbar#waybar.empty #cpu,
+window.mainbar#waybar.empty #custom-gpu,
+window.mainbar#waybar.empty #memory,
+window.mainbar#waybar.empty #disk,
+window.mainbar#waybar.empty #network,
+window.mainbar#waybar.empty #window,
+
+window.mainbar#waybar.empty #pulseaudio,
+window.mainbar#waybar.empty #group-audio,
+window.mainbar#waybar.empty #bluetooth,
+
+window.mainbar#waybar.empty #language,
+window.mainbar#waybar.empty #power-profiles-daemon,
+window.mainbar#waybar.empty #tray,
+window.mainbar#waybar.empty #workspace,
+window.mainbar#waybar.empty #idle_inhibitor,
+
+window.mainbar#waybar.empty #custom-system,
+window.mainbar#waybar.empty #custom-hyprlogo,
+window.mainbar#waybar.empty #custom-pacman,
+window.mainbar#waybar.empty #custom-version,
+window.mainbar#waybar.empty #custom-logo
+{
+    opacity: 0;
+    min-width: 0;
+    min-height: 0;
+    padding: 0;
+    margin: 0;
+    background: transparent;
+    border: none;
+    color: transparent;
+    font-size: 0;
+
+    transition: opacity 0.7s cubic-bezier(0.165, 0.84, 0.44, 1),
+    padding 0.7s cubic-bezier(0.165, 0.84, 0.44, 1),
+    transform 0.7s cubic-bezier(0.165, 0.84, 0.44, 1);
+}

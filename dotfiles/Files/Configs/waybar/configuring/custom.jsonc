@@ -7,7 +7,7 @@
 
     "on-click": "sleep 0.2 && bash ~/.config/rofi/run.sh compact",
     "on-click-right": "sleep 0.2 && bash ~/.config/hypr/utils.sh",
-    "on-click-middle": "sleep 0.2 && bash ~/.config/waybar/scripts/dialog.sh float-big info",
+    "on-click-middle": "sleep 0.2 && bash ~/.config/waybar/scripts/dialog.sh float-big info"
   },
 
   // Notifications

@@ -10,6 +10,11 @@
  * ----------------------------------------------------- */
 @import "styles/workspace.css";
 
+/* -----------------------------------------------------
+ * Panel
+ * ----------------------------------------------------- */
+@import "panel.css";
+
 /*
   __  __      _        ___ _        _
  |  \/  |__ _(_)_ _   / __| |_ _  _| |___
@@ -21,11 +26,35 @@
     font-family: "JetBrainsMono Nerd Font", cursive;
     font-weight: bold;
     font-size: 12px;
-    min-height: 0;
+    min-height: 25px;
 }
+
+window#waybar
+{
+    transition: all .3s ease;
+    all:unset;
+}
+
 #language, #pulseaudio {
     font-family: Noto Sans, FiraCode Nerd Font Mono, sans-serif;
 }
+
+
+/* === Tray === */
+#tray, #workspaces, #taskbar {
+    background: @background-waybar;
+    background: alpha(@background-waybar, 0.95);
+}
+#tray > widget {
+    transition: all 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+#tray > widget:hover {
+    border-bottom: 1px solid white;
+}
+#tray > .needs-attention {
+    border-bottom: 3px solid @warning;
+}
+/* === Tray === */
 
 /*
   ___               _          _
@@ -36,13 +65,14 @@
 window.mainbar#waybar
 {
     transition: all .3s ease;
-    background: rgba(0, 0, 0, 0.70);
+    background: @background-waybar;
+    background: alpha(@background-waybar, 0.95);
+    border-radius: 5px;
 }
 
-window#waybar
-{
-    transition: all .3s ease;
-    all:unset;
+#mpris {
+    background: alpha(@background-waybar, 0.85);
+    background: alpha(@background-waybar, 0.85);
 }
 
 /*
@@ -64,16 +94,67 @@ window#waybar
 */
 tooltip, tooltip label {
     color: @text;
-    background: @background;
+    background: @background-toolkit;
     margin: 0.2em 0.3em 0.2em 0.3em;
-}
-
-tooltip {
-    padding: 2px;
-    border: 2px solid alpha(@background, .5);
 }
 
 tooltip label {
     font-family: "JetBrainsMono Nerd Font", cursive;
     font-size: 14px;
+}
+
+
+
+/*
+   ___        _               ___ _        _
+  / __|  _ __| |_ ___ _ __   / __| |_ _  _| |___
+ | (_| || (_-<  _/ _ \ '  \  \__ \  _| || | / -_)
+  \___\_,_/__/\__\___/_|_|_| |___/\__|\_, |_\___|
+                                      |__/
+*/
+#custom-hyprlogo
+{
+    background-image: image(url("./styles/hyprland.svg"));
+    background-size: 13px 17px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
+/*
+   ___     _ _   _         _    ___     _
+  / __|_ _(_) |_(_)__ __ _| |  / __|___| |___ _ _
+ | (__| '_| |  _| / _/ _` | | | (__/ _ \ / _ \ '_|
+  \___|_| |_|\__|_\__\__,_|_|  \___\___/_\___/_|
+ */
+#memory.critical, #cpu.critical, #temperature.critical, #battery.critical
+{ color: red; }
+
+
+/*
+  _  _              ___    _ _
+ | || |_  _ _ __ _ |_ _|__| | |___
+ | __ | || | '_ \ '_| |/ _` | / -_)
+ |_||_|\_, | .__/_||___\__,_|_\___|
+       |__/|_|
+*/
+#idle_inhibitor.deactivated { color: @disabled; }
+#idle_inhibitor.activated { color: @activated; }
+
+/*
+  ___       _   _        _
+ | _ ) __ _| |_| |_ __ _| |_ _  _
+ | _ \/ _` |  _|  _/ _` |  _| || |
+ |___/\__,_|\__|\__\__,_|\__|\_, |
+                             |__/
+*/
+#battery.charging { color: @activated; }
+#battery.warning:not(.charging) { color: @warning; }
+#battery.critical:not(.charging) {
+    color: @critical;
+    animation-name: blink;
+    animation-duration: 3.0s;
+    animation-timing-function: steps(12);
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
 }
