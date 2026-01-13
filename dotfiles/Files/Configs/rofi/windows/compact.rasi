@@ -22,7 +22,7 @@ configuration {
 window {
 /* properties for window widget */
     transparency:                "real";
-    location:                    southeast;
+    location:                    north;
     fullscreen:                  false;
     width:                       45%;
     height:                      55%;
