@@ -26,6 +26,7 @@
 #custom-power:hover
 {
     border: 0.8px rgba(255, 253, 253, 0.7) solid;
+    transition: all 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 #clock

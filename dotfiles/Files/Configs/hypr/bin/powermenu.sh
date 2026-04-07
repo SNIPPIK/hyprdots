@@ -71,6 +71,9 @@ case ${chosen} in
         hyprctl dispatch exit
 
         # For niri
-        killall -u "$(whoami)"
+        killall -u "niri"
+
+        session=`loginctl session-status | head -n 1 | awk '{print $1}'`
+        loginctl terminate-session $session
     ;;
 esac

@@ -11,7 +11,7 @@ spawn-at-startup "hypridle"
 spawn-at-startup "dunst"
 spawn-at-startup "gnome-keyring-daemon --start --components=pkcs11,secrets"
 spawn-at-startup "gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'"
-spawn-at-startup "xwayland-satellite"
+//spawn-at-startup "xwayland-satellite"
 
 
 //######################################################################
@@ -146,6 +146,7 @@ output "DP-2" {
 }
 
 output "HDMI-A-1" {
+    off
     mode "1920x1080@144.001"
     scale 1
     transform "normal"
@@ -268,7 +269,7 @@ layout {
 
 // Разрешаем слою с namespace=wallpaper уходить в фон
 layer-rule {
-    match namespace="^(swww-daemon|mpvpaper|wallpaper)$"
+    match namespace="^(swww-daemon|mpvpaper|wallpaper|awww-daemon)$"
     place-within-backdrop true
 }
 
@@ -521,10 +522,10 @@ window-rule {
     default-floating-position x=70 y=20 relative-to="bottom-right"
     match title="^Bluetooth Manager$"
     open-floating true
-    min-width 600
-    max-width 600
-    min-height 400
-    max-height 400
+    min-width 400
+    max-width 400
+    min-height 500
+    max-height 500
 }
 // GUI Task manager
 window-rule {

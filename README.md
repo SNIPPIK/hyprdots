@@ -27,6 +27,19 @@ While installing alongside another [DE](https://wiki.archlinux.org/title/Desktop
 > Wallpapers directory is Pictures/Wallpapers  
 > If you need live wallpapers in mp4, please install `yay -S mpvpaper`, wallpaper script is supported
 
+
+> [!TIP]
+> If wireless devices don't connect  
+> `sudo nano /etc/bluetooth/main.conf`
+> ```txt
+> [General]
+> ControllerMode = dual
+> Privacy = device
+> JustWorksRepairing = always
+> FastConnectable = true
+> ```  
+> Run `sudo systemctl restart bluetooth`, then everything should work
+
 # Install
 - To install, execute the following commands:
 ```shell

@@ -20,8 +20,8 @@ SWWW_FPS_WALLPAPER=50           # FPS для плавности перехода
 # Определяем движок: swww, hyprpaper или "install" (нет)
 function find_engine() {
     if command -v pacman >/dev/null 2>&1; then
-        if pacman -Qs swww >/dev/null 2>&1; then
-            echo "swww"
+        if pacman -Qs awww >/dev/null 2>&1; then
+            echo "awww"
             return
         elif pacman -Qs hyprpaper >/dev/null 2>&1; then
             echo "hyprpaper"
@@ -64,12 +64,12 @@ function change_wallpaper() {
     fi
 
     # Работа с выбранным движком
-    if [ "$engine" == "swww" ]; then
-        swww img "$wallpaper_path" --transition-fps $SWWW_FPS_WALLPAPER
+    if [ "$engine" == "awww" ]; then
+        awww img "$wallpaper_path" --transition-fps $SWWW_FPS_WALLPAPER
 
         # Освобождаем кеш спустя 2 секунды (для экономии памяти)
         sleep 2
-        swww clear-cache &
+        awww clear-cache &
 
     elif [ "$engine" == "hyprpaper" ]; then
         # Для каждого монитора устанавливаем обои
@@ -92,15 +92,14 @@ function change_wallpaper() {
 
 # Функция рестарта движка обоев
 function restart_engine() {
-    if [ "$engine" == "swww" ]; then
-        if pgrep -x swww >/dev/null; then
-            pkill swww
+    if [ "$engine" == "awww" ]; then
+        if pgrep -x awww >/dev/null; then
+            pkill awww
             hyprctl notify 1 2000 "rgb(ffffff)" "Wallpaper Engine | Restarting swww"
         else
             hyprctl notify 1 2000 "rgb(ffffff)" "Wallpaper Engine | Starting swww"
         fi
-        swww init &
-        swww-daemon &
+        awww-daemon &
 
     elif [ "$engine" == "hyprpaper" ]; then
         if pgrep -x hyprpaper >/dev/null; then
@@ -145,7 +144,7 @@ function support_type() {
         can_show_videos=false
     fi
 
-    if [ "$engine" == "swww" ]; then
+    if [ "$engine" == "awww" ]; then
 
         if [ "$1" == "random" ]; then
             random_background=$(find -L "$wallpaper_default_dir" -type f \( -iname '*.png' -o -iname '*.jpg' -o -iname '*.jpeg' \) | shuf -n 1)

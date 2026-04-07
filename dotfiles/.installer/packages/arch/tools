@@ -14,3 +14,4 @@ gnome-software
 power-profiles-daemon
 hypridle
 hyprlock
+python-dbus
