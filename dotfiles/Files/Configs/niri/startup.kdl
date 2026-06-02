@@ -1,0 +1,33 @@
+//######################################################################
+//### Environment for xdg-desktop-portal (XDP)                       ###
+//######################################################################
+spawn-at-startup "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
+
+//######################################################################
+//### AUTOSTART                                                      ###
+//###                                                                ###
+//######################################################################
+spawn-at-startup "hypridle"
+spawn-at-startup "dunst"
+spawn-at-startup "gnome-keyring-daemon --start --components=pkcs11,secrets"
+spawn-at-startup "gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'"
+
+
+//######################################################################
+//### Polkit for GUI                                                 ###
+//######################################################################
+spawn-at-startup "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
+
+
+//######################################################################
+//### Panel                                                          ###
+//### Support: waybar                                                ###
+//######################################################################
+spawn-at-startup "waybar"
+
+
+//######################################################################
+//### Wallpaper engine                                               ###
+//### Support: swww, hyprpaper                                       ###
+//######################################################################
+spawn-at-startup "sh" "-c" "bash ~/.config/hypr/bin/ecosys/wallpaper.sh engine"

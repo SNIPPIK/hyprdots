@@ -1,0 +1,30 @@
+// Check `niri msg outputs`
+output "DP-2" {
+    focus-at-startup
+
+    // VRR
+    variable-refresh-rate on-demand=true
+    //variable-refresh-rate
+
+    // Resolution and, optionally, refresh rate of the output.
+    // The format is "<width>x<height>" or "<width>x<height>@<refresh rate>".
+    mode "2560x1080@200"
+    //mode custom=true "2560x1080@210"
+
+    // Set the position of the output in the global coordinate space.
+    //position x=2560 y=0
+
+    // You can use integer or fractional scale, for example use 1.5 for 150% scale.
+    scale 1
+
+    // Transform allows to rotate the output counter-clockwise, valid values are:
+    // normal, 90, 180, 270, flipped, flipped-90, flipped-180 and flipped-270.
+    transform "normal"
+}
+
+output "HDMI-A-1" {
+    //off
+    mode "1920x1080@144.001"
+    scale 1
+    transform "normal"
+}

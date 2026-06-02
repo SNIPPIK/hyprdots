@@ -1,6 +1,6 @@
 {
   "niri/language": {
-    "format": " {short}"
+    "format": "{short}"
   },
 
   "niri/window": {

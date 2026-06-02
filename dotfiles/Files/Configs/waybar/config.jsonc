@@ -13,7 +13,7 @@
         "position": "bottom", // top, bottom
         "mod": "dock",
         "height": 31,
-        "margin": 3,
+        "margin": 1,
         "exclusive": true,
         "passthrough": false,
         "gtk-layer-shell": true,
@@ -58,8 +58,8 @@
             "niri/language",
 
 
-            "network",
             "group/audio",
+            "network",
             "battery",
             "custom/notifications",
             "clock"

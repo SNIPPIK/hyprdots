@@ -31,7 +31,7 @@
 
 window#waybar
 {
-    transition: all .3s ease;
+    transition: all 1s ease;
     all:unset;
 }
 
@@ -157,4 +157,22 @@ tooltip label {
     animation-timing-function: steps(12);
     animation-iteration-count: infinite;
     animation-direction: alternate;
+}
+
+/*
+  ___         _       _             _    _         _
+ | _ \_  _ __| |_ ___(_)___   ___ _| |__(_)___ _ _| |__
+ |  _/ || (_-<  _/ _ \ / -_) / -_) _` | / -_) ' \  _/ _ \
+ |_|  \_, /__/\__\___/_\___| \___\__,_|_\___|_||_\__\___/
+      |__/
+*/
+window.mainbar#waybar.empty {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    transition: all 1s ease;
+}
+
+window.mainbar#waybar.empty * {
+    min-width: 0;
 }
