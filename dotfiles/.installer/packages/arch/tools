@@ -15,3 +15,5 @@ power-profiles-daemon
 hypridle
 hyprlock
 python-dbus
+brightnessctl
+7zip

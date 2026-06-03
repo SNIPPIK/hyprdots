@@ -28,6 +28,6 @@ spawn-at-startup "waybar"
 
 //######################################################################
 //### Wallpaper engine                                               ###
-//### Support: swww, hyprpaper                                       ###
+//### Support: swww/awww, hyprpaper                                  ###
 //######################################################################
 spawn-at-startup "sh" "-c" "bash ~/.config/hypr/bin/ecosys/wallpaper.sh engine"

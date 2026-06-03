@@ -1,12 +1,12 @@
-echo "swww supported for niri, hyprland"
+echo "awww supported for niri, hyprland"
 echo "hyprpaper supported only hyprland"
 PS3='Please enter your choice: '
 options=("swww" "hyprpaper")
 select opt in "${options[@]}"
 do
     case $opt in
-        "swww")
-            echo "Installing swww engine!"
+        "awww/swww")
+            echo "Installing awww engine!"
             sudo pacman -S swww
             break
             ;;

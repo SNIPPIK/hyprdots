@@ -24,7 +24,7 @@ window {
     transparency:                "real";
     location:                    north;
     fullscreen:                  false;
-    width:                       45%;
+    width:                       65%;
     height:                      55%;
     x-offset:                    0px;
     y-offset:                    10px;

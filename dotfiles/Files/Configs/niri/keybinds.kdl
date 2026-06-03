@@ -3,7 +3,7 @@ binds {
     Mod+H hotkey-overlay-title="All binds" { show-hotkey-overlay; }
 
     // Fast lock
-    Ctrl+Alt+Return hotkey-overlay-title="Lock PC" { spawn "hyprlock"; }
+    Mod+L hotkey-overlay-title="Lock PC" { spawn "hyprlock"; }
 
     // Terminal
     Mod+Return hotkey-overlay-title="Open terminal" { spawn "alacritty"; }
@@ -25,11 +25,19 @@ binds {
     XF86AudioMute { spawn "sh" "-c" "bash ~/.config/hypr/bin/tools/audio.sh volume_mute"; }
     XF86AudioMicMute { spawn "sh" "-c" "bash ~/.config/hypr/bin/tools/audio.sh micro_mute"; }
 
+    // Light Modes
+    XF86MonBrightnessDown { spawn "sh" "-c" "brightnessctl s 10%-"; }
+    XF86MonBrightnessUp { spawn "sh" "-c" "brightnessctl s +10%"; }
+
     // Player
     XF86AudioPlay { spawn "sh" "-c" "bash ~/.config/hypr/bin/tools/audio.sh play_pause"; }
     XF86AudioPause { spawn "sh" "-c" "bash ~/.config/hypr/bin/tools/audio.sh play_pause"; }
     XF86AudioNext { spawn "sh" "-c" "bash ~/.config/hypr/bin/tools/audio.sh next_track"; }
     XF86AudioPrev { spawn "sh" "-c" "bash ~/.config/hypr/bin/tools/audio.sh prev_track"; }
+
+    // Lock
+    XF86ScreenSaver { spawn "hyprlock"; }
+    XF86Sleep { spawn "hyprlock"; }
 
     // FullScreen mode
     Mod+Alt+Return { maximize-column; }
