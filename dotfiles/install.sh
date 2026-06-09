@@ -106,25 +106,8 @@ choice
 bash $HOME/hyprdots/dotfiles/.installer/themes.sh
 
 # Run sudo commands
-echo Install sddm theme neon
-sudo 7z x $sddm_path -o/usr/share/sddm/themes/
-echo
-
-# Create directory
-if [ ! -d  /etc/sddm.conf.d/ ]; then
-  sudo mkdir /etc/sddm.conf.d/
-fi
-
-# Check theme
-if [ ! -f /etc/sddm.conf.d/theme.conf.user ]; then
-  sudo echo "[Theme]
-  Current=neon" > "/etc/sddm.conf.d/theme.conf.user"
-else
-  echo "You are using a different theme in SDDM"
-  echo "To change the theme, edit the file -> /etc/sddm.conf.d/theme.conf.user"
-  echo "[Theme]"
-  echo "Current=neon"
-fi
+echo Install sddm theme SilentSDDM
+git clone -b main --depth=1 https://github.com/uiriansan/SilentSDDM && cd SilentSDDM && ./install.sh
 # -----------------------------------------------------
 echo
 echo "  ____            _                      _   _  "
@@ -142,5 +125,7 @@ do
   sudo systemctl enable "$name"
   sudo systemctl start "$name"
 done
+
+gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
 # -----------------------------------------------------
 echo "Installing the ended!"

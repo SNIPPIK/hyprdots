@@ -15,7 +15,7 @@ alias ff='fastfetch'
 # -----------------------------------------------------
 # SYSTEM
 # -----------------------------------------------------
-# mkinitcpioe
+# mkinitcpio
 alias mkinitcpio='sudo nano /etc/mkinitcpio.conf && mkinitcpio'
 
 # Grub
@@ -24,7 +24,7 @@ alias grub-update='sudo grub-mkconfig -o /boot/grub/grub.cfg'
 
 # Power menu
 alias shutdown='systemctl poweroff'
-alias session-logout='hyprctl dispatch exit'
+alias session-logout='killall -u $USER'
 alias session-lock='loginctl lock-session && playerctl --all-players pause'
 
 # Drivers
@@ -36,6 +36,9 @@ alias nvidia-close='sudo pacman -Syu nvidia && sudo pacman -Rc nvidia-open'
 # Packet manager
 alias pacman='sudo pacman'
 alias aur='yay'
+
+# Setter avatars
+alias avatar='sudo bash ~/.config/hypr/bin/tools/avatar.sh'
 
 # -----------------------------------------------------
 # DEVELOPMENT

@@ -2,15 +2,15 @@ binds {
     // Help
     Mod+H hotkey-overlay-title="All binds" { show-hotkey-overlay; }
 
-    // Fast lock
-    Mod+L hotkey-overlay-title="Lock PC" { spawn "hyprlock"; }
-
     // Terminal
-    Mod+Return hotkey-overlay-title="Open terminal" { spawn "alacritty"; }
-    Mod+Shift+Return hotkey-overlay-title="Open float terminal" { spawn "sh" "-c" "alacritty --class hyprdots-float"; }
+    Mod+Return hotkey-overlay-title="Open terminal" { spawn "sh" "-c" "alacritty | kitty"; }
+    Mod+Shift+Return hotkey-overlay-title="Open float terminal" { spawn "sh" "-c" "alacritty --class hyprdots-float | kitty --class hyprdots-float"; }
 
     // File manager
-    Mod+E hotkey-overlay-title="Open file manager" { spawn "nautilus"; }
+    Mod+E hotkey-overlay-title="Open file manager" { spawn "sh" "-c" "dolphin | nautilus | nemo | thunar | kitty | fish"; }
+
+    // Browser
+    Mod+B hotkey-overlay-title="Open browser" { spawn "sh" "-c" "google-chrome-stable | zen-browser | firefox | brave | chromium | microsoft-edge-stable | opera | librewolf"; }
 
     // Rofi
     Mod+R hotkey-overlay-title="Open left table application" { spawn "rofi" "-show" "drun" "-theme" "windows/compact.rasi"; }
@@ -56,7 +56,7 @@ binds {
     Mod+Q { close-window; }
 
     // PowerMenu
-    Mod+grave { spawn "sh" "-c" "bash ~/.config/hypr/bin/powermenu.sh"; }
+    Mod+F12 { spawn "sh" "-c" "bash ~/.config/hypr/bin/powermenu.sh"; }
 
     // Fast exit of niri
     Ctrl+Alt+Delete { quit; }

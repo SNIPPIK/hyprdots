@@ -31,7 +31,7 @@ output "HDMI-A-1" {
 
 // Laptop
 output "eDP-1" {
-    mode "2560x1600@60"
+    mode "2560x1600@120" // 50, 60, 120
     variable-refresh-rate
     scale 1.3
 }

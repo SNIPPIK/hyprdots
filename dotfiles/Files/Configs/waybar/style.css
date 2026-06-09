@@ -35,7 +35,7 @@ window#waybar
     all:unset;
 }
 
-#language, #pulseaudio {
+#pulseaudio {
     font-family: Noto Sans, FiraCode Nerd Font Mono, sans-serif;
 }
 

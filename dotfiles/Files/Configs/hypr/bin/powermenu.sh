@@ -53,7 +53,7 @@ case ${chosen} in
     "$lock")
         sleep 0.3s
         loginctl lock-session
-    	  playerctl --all-players pause
+    	playerctl --all-players pause
     ;;
 
     # Sleep system
