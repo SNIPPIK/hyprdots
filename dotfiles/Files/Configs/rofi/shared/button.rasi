@@ -4,13 +4,14 @@ element {
     spacing:                     0px;
     margin:                      0px;
     padding:                     45px 10px 60px 10px;
-    border:                      0px solid;
+    border:                      1px solid; /* Добавлен тонкий контур кнопкам */
     border-radius:               20px;
-    border-color:                @selected;
-    background-color:            @background-element;
-    text-color:                  @foreground;
+    border-color:                rgba(255, 255, 255, 0.05);
+    background-color:            rgba(30, 31, 34, 0.3); /* normal-background */
+    text-color:                  var(text-color);
     cursor:                      pointer;
 }
+
 element-text {
     font:                        "feather bold 32";
     background-color:            transparent;
@@ -19,19 +20,29 @@ element-text {
     vertical-align:              0.5;
     horizontal-align:            0.5;
 }
-element selected.normal {
-    background-color:            var(selected);
-    text-color:                  var(selected-alt);
+
+element normal.normal {
+    background-color:            rgba(30, 31, 34, 0.3);
+    text-color:                  var(text-color);
 }
+
+/* Состояние при наведении или выборе стрелками */
+element selected.normal {
+    background-color:            var(bg-selected); /* Ваша переменная bg-selected */
+    text-color:                  var(text-selected); /* Ваша переменная text-selected */
+    border-color:                var(accent-color);  /* Подсветка границ бирюзовым цветом */
+}
+
 
 /*****----- Message -----*****/
 message {
     margin:                      0px;
-    background-color:            white/5%;
-    text-color:                  white;
+    background-color:            transparent;
+    text-color:                  var(text-color);
 }
+
 textbox {
-    text-color:                  white;
+    text-color:                  var(text-color);
     vertical-align:              0.5;
     horizontal-align:            0.5;
     blink:                       true;
@@ -39,7 +50,12 @@ textbox {
 
     spacing:                     10px;
     padding:                     20px 20px;
-    background-color:            @background;
+
+    /* Затемняющая полупрозрачная подложка, чтобы текст читался поверх обоев hyprland.png */
+    background-color:            rgba(20, 20, 24, 0.6);
     background-image:            url("~/Pictures/Wallpapers/hyprland.png", width);
-    border-radius:               5px;
+
+    border:                      1px solid;
+    border-color:                var(border-color);
+    border-radius:               12px; /* Чуть более мягкое скругление для гармонии с кнопками */
 }

@@ -1,10 +1,7 @@
 /**
  *
- * Author : Aditya Shakya (adi1090x)
- * Github : @adi1090x
- * 
- * Rofi Theme File
- * Rofi Version: 1.7.3
+ * Author : SNIPPIK
+ * Github : @SNIPPIK
  **/
 
 /*****----- Configuration -----*****/
@@ -24,6 +21,8 @@ window {
     anchor:                      center;
     fullscreen:                  false;
     width:                       500px;
+    border:                      0px solid ; /* Элегантный тонкий контур */
+    border-color:                var(border-color);
     border-radius:               20px;
     margin:                      20px;
 
@@ -38,8 +37,27 @@ mainbox {
     padding:                     20px;
     border:                      0px solid;
     border-radius:               20px;
-    background-color:            @background;
+    background-color:            var(background);
     children:                    [ "message", "listview" ];
+}
+
+/*****----- Message -----*****/
+message {
+    margin:                      0px;
+    padding:                     0px;
+    background-color:            transparent;
+    text-color:                  var(foreground);
+}
+
+textbox {
+    padding:                     15px;
+    border:                      1px solid;
+    border-color:                rgba(255, 255, 255, 0.05);
+    border-radius:               12px;      /* Скругление под общую геометрию */
+    background-color:            rgba(30, 31, 34, 0.3); /* Легкий темный фон для текста вопроса */
+    text-color:                  var(foreground);
+    vertical-align:              0.5;
+    horizontal-align:            0.5;       /* Текст вопроса строго по центру */
 }
 
 /*****----- Listview -----*****/
@@ -53,9 +71,42 @@ listview {
     reverse:                     false;
     fixed-height:                true;
     fixed-columns:               true;
-    
-    spacing:                     30px;
+
+    spacing:                     30px;      /* Хороший зазор между двумя кнопками */
     background-color:            transparent;
-    text-color:                  @foreground;
+    text-color:                  var(foreground);
     cursor:                      "default";
+}
+
+/*****----- Elements -----*****/
+element {
+    enabled:                     true;
+    padding:                     15px 10px; /* Высокие, удобные для клика кнопки */
+    border:                      1px solid;
+    border-radius:               12px;      /* Аккуратные скругленные кнопки */
+    border-color:                rgba(255, 255, 255, 0.03);
+    background-color:            var(background-alt); /* Изначальный фон кнопки */
+    text-color:                  var(foreground);
+    cursor:                      pointer;
+}
+
+element normal.normal {
+    background-color:            var(background-alt);
+    text-color:                  var(foreground);
+}
+
+/* Состояние кнопок Да/Нет при наведении или выборе клавиатурой */
+element selected.normal {
+    background-color:            var(bg-selected);   /* Ваш сине-серый Nord */
+    text-color:                  var(text-selected); /* Белый текст */
+    border-color:                var(accent-color);  /* Тонкая бирюзовая рамка */
+}
+
+element-text {
+    background-color:            transparent;
+    text-color:                  inherit;
+    cursor:                      inherit;
+    vertical-align:              0.5;
+    horizontal-align:            0.5;       /* Центрируем текст внутри кнопок */
+    font:                        "JetBrains Mono Bold 14"; /* Четкий, читаемый шрифт кнопок */
 }

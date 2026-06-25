@@ -1,17 +1,11 @@
-echo "hyprpaper supported only hyprland"
 PS3='Please enter your choice: '
-options=("swww" "hyprpaper")
+options=("swww")
 select opt in "${options[@]}"
 do
     case $opt in
         "swww")
             echo "Installing awww engine!"
             sudo pacman -S swww
-            break
-            ;;
-        "hyprpaper")
-            echo "Installing hyprpaper engine!"
-            sudo pacman -S hyprpaper
             break
             ;;
         *) echo "invalid option $REPLY";;

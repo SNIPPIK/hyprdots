@@ -1,12 +1,12 @@
 /**
  *
- * Author : Aditya Shakya (adi1090x)
- * Github : @adi1090x
+ * Author : SNIPPIK
+ * Github : @SNIPPIK
  *
  * Fonts
  *
  **/
 
 * {
-    font:   "JetBrainsMono Nerd Font 10";
+    font: "JetBrains Mono 11";
 }

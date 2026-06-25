@@ -3,12 +3,9 @@
 
 include "/home/snippik/.gtkrc-2.0.mine"
 gtk-theme-name="Fluent"
-gtk-icon-theme-name="(process:100027): dconf-WARNING **: 15:03:52.992: unable to open named profile (/usr/share/dconf/profile/cosmic): using the null configuration.
-'Adwaita'"
-gtk-font-name="(process:100028): dconf-WARNING **: 15:03:52.994: unable to open named profile (/usr/share/dconf/profile/cosmic): using the null configuration.
-'Adwaita Sans 11'"
-gtk-cursor-theme-name="(process:100029): dconf-WARNING **: 15:03:52.997: unable to open named profile (/usr/share/dconf/profile/cosmic): using the null configuration.
-'Adwaita'"
+gtk-icon-theme-name="Adwaita"
+gtk-font-name="Adwaita Sans 11"
+gtk-cursor-theme-name="Adwaita"
 gtk-cursor-theme-size=24
 gtk-toolbar-style=GTK_TOOLBAR_ICONS
 gtk-toolbar-icon-size=GTK_ICON_SIZE_LARGE_TOOLBAR

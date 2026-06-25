@@ -1,13 +1,15 @@
-// Only floating
+// Global floating
 window-rule {
     match app-id="steam"
     match app-id="org.telegram.desktop"
     match app-id="telegram-desktop"
     match app-id="org.qbittorrent.qBittorrent"
     match app-id=r#"firefox$"# title="^Picture-in-Picture$"
+    match app-id="org.gnome.DiskUtility"
     open-floating true
 }
 
+// Steam notification
 window-rule {
     match app-id="steam" title=r#"^notificationtoasts_\d+_desktop$"#
     default-floating-position x=10 y=10 relative-to="bottom-right"
@@ -17,15 +19,6 @@ window-rule {
 //######################################################################
 //### Niri windows                                                   ###
 //######################################################################
-// Make transparent
-/-window-rule {
-    match is-active=false
-    opacity 0.8
-}
-/-window-rule {
-    match is-active=true
-    opacity 0.98
-}
 window-rule {
     geometry-corner-radius 5
     clip-to-geometry true
@@ -39,7 +32,13 @@ window-rule {
     focus-ring {
          off
     }
+
+
+    background-effect {
+        blur true
+    }
 }
+
 // Alacritty float
 window-rule {
     match app-id="hyprdots-float"
@@ -53,6 +52,7 @@ window-rule {
     min-width 900
     min-height 300
 }
+
 // Alacritty float
 window-rule {
     match app-id="hyprdots-float-big"
@@ -83,6 +83,7 @@ window-rule {
     min-width 800
     min-height 400
 }
+
 // Pavucontrol (Audio control panel)
 window-rule {
     default-floating-position x=70 y=20 relative-to="bottom-right"
@@ -93,6 +94,7 @@ window-rule {
     min-height 400
     max-height 400
 }
+
 // Bluetooth (Control panel)
 window-rule {
     default-floating-position x=70 y=20 relative-to="bottom-right"
@@ -103,18 +105,52 @@ window-rule {
     min-height 500
     max-height 500
 }
+
 // GUI Task manager
 window-rule {
-    match title="^Ресурсы$"
+    match app-id="net.nokyan.Resources"
     open-floating true
     min-width 1200
     min-height 600
 }
+
 // Nautilus
 window-rule {
     match app-id="org.gnome.Nautilus"
     open-floating true
 
+    min-width 1200
+    min-height 600
+}
+
+// Gnome Disks
+window-rule {
+    match app-id="org.gnome.DiskUtility"
+    min-width 1200
+    min-height 600
+}
+
+
+//######################################################################
+//### VPN                                                            ###
+//######################################################################
+
+// Happ
+window-rule {
+    match app-id="Happ"
+    open-floating true
+    min-width 700
+    min-height 600
+}
+
+//######################################################################
+//### Code editors                                                   ###
+//######################################################################
+
+// OSS
+window-rule {
+    match app-id="code-oss"
+    open-floating true
     min-width 1200
     min-height 600
 }

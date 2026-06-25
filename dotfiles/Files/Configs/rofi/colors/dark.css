@@ -1,25 +1,28 @@
 /* -----------------------------------------------------
+ * Объединенная цветовая палитра (Nord / Carbon-like)
+ * ----------------------------------------------------- */
+
+/* -----------------------------------------------------
  * Background Colors
  * ----------------------------------------------------- */
-@define-color background-waybar rgba(0, 0, 0, 0.70);
-@define-color background-light rgba(94, 129, 172, 0.5);
-@define-color background-toolkit #282828;
-@define-color background rgba(0, 0, 0, 0.7);
-
+@define-color background-waybar rgba(20, 20, 24, 0.85); /* Темный полупрозрачный фон */
+@define-color background-light rgba(58, 76, 96, 0.9);   /* Цвет выделенного пункта */
+@define-color background-toolkit rgba(30, 31, 34, 0.5);  /* Дополнительный темный элемент */
+@define-color background rgba(20, 20, 24, 0.85);        /* Основной фон */
 
 /* -----------------------------------------------------
  * Text Colors
  * ----------------------------------------------------- */
-@define-color text #D8DEE9;
-@define-color text-dark #0c0c0c;
-@define-color nord_dark_font #434C5E;
-@define-color nord_bg_blue rgba(94, 129, 172, 0.5);
+@define-color text #E5E9F0;                             /* Основной текст */
+@define-color text-dark #141418;                        /* Затемненный текст */
+@define-color nord_dark_font #5E6D80;                   /* Вспомогательный текст */
+@define-color nord_bg_blue rgba(58, 76, 96, 0.9);       /* Акцентный цвет выделения */
 
 /* -----------------------------------------------------
- * Workspace Colors
+ * Workspace Colors / Status
  * ----------------------------------------------------- */
-@define-color workspace-color-active #ABE9B3;
-@define-color workspace-color-not-active gray;
+@define-color workspace-color-active #88C0D0;           /* Акцент (Nord Cyan) */
+@define-color workspace-color-not-active rgba(136, 192, 208, 0.3); /* Цвет рамок/подсказок */
 
 /* -----------------------------------------------------
  * Status

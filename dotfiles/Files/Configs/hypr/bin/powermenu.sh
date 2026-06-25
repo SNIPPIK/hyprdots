@@ -53,7 +53,7 @@ case ${chosen} in
     "$lock")
         sleep 0.3s
         loginctl lock-session
-    	playerctl --all-players pause
+    	  playerctl --all-players pause
     ;;
 
     # Sleep system
@@ -62,14 +62,10 @@ case ${chosen} in
         sleep 0.3s
         systemctl suspend
         sleep 2s
-        hyprctl dispatch dpms off
     ;;
 
     # Logout system
     "$logout")
-        # For hyprland
-        hyprctl dispatch exit
-
         # For niri
         killall -u "$USER"
     ;;

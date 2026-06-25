@@ -1,8 +1,10 @@
 {
   // System
   "custom/system": {
-    "format": "",
-    "tooltip-format": "System information",
+    "format": " {}",
+    "return-type": "string",
+    "tooltip-format": "DotFiles version",
+    "exec": "sleep 0.1 && cat ~/hyprdots/dotfiles/version",
     "interval" : "once"
   },
 

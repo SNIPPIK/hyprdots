@@ -22,14 +22,10 @@
         // Load Modules
         "include": [
             // Group load
+            "~/.config/waybar/configuring/custom.jsonc",
             "~/.config/waybar/configuring/groups/workspace.jsonc",
             "~/.config/waybar/configuring/groups/audio.jsonc",
-            "~/.config/waybar/configuring/groups/hyprutils.jsonc",
             "~/.config/waybar/configuring/groups/system.jsonc",
-
-            // Hyprland load
-            "~/.config/waybar/configuring/hyprland.jsonc",
-            "~/.config/waybar/configuring/custom.jsonc",
 
             // Niri load
             "~/.config/waybar/configuring/niri.jsonc"
@@ -38,8 +34,7 @@
         // Modules Left
         "modules-left": [
             "custom/logo",
-            "group/workspace",
-            "hyprland/window",
+            //"group/workspace",
             "niri/window"
         ],
 
@@ -49,12 +44,9 @@
 
         // Modules Right
         "modules-right": [
-            "group/hyprgroup",
             "group/system",
 
             "tray",
-
-            "hyprland/language",
             "niri/language",
 
 
@@ -95,11 +87,10 @@
 
         // Battery
         "battery": {
-            "interval": 45,
             "states": {
                 "good": 80,
-                "warning": 30,
-                "critical": 15
+                "warning": 35,
+                "critical": 20
             },
             "format": "{icon} {capacity}%",
             "format-alt": "{icon} {time}",
@@ -108,7 +99,9 @@
 
             "format-icons": ["", "", "", "", ""],
             //"format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
-            "bat-compatibility": true
+            "bat-compatibility": true,
+
+            "tooltip-format": " {capacity}%\n -  Time:\t{time}\n -  Power:\t{power} watts\n -  Cycles:\t{cycles}"
         },
 
         // Network
@@ -116,7 +109,7 @@
             "format": "{icon}",
             "format-alt": " <span foreground='#99ffdd'> {bandwidthDownBytes}</span>   <span foreground='#ffcc66'> {bandwidthUpBytes}</span>",
             "format-icons": {
-                "wifi": ["󰤯 ", "󰤟 ", "󰤢 ", "󰤢 ", "󰤨 "],
+                "wifi": ["󰤯", "󰤟", "󰤢", "󰤢", "󰤨"],
                 "disconnected": [""],
                 "ethernet": ["󰈀"],
                 "disabled": [""],
@@ -128,18 +121,6 @@
 
             "on-click-middle": "sleep 0.1 && nm-connection-editor",
             "on-click-right": "sleep 0.1 && nm-connection-editor"
-        },
-
-        // idle manager switcher
-        "idle_inhibitor": {
-            "format": "{icon}",
-            "format-icons": {
-                "activated": "",
-                "deactivated": ""
-            },
-
-            "tooltip-format-activated": "{icon} Idle manager\n - Status: deactivated",
-            "tooltip-format-deactivated": "{icon} Idle manager\n - Status: activated"
         },
 
         // System tray

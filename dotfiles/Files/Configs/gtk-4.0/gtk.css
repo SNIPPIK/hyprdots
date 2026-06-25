@@ -1,0 +1,169 @@
+/* -----------------------------------------------------
+ * GTK 4 Nord/Carbon Glass — финальная версия
+ * ----------------------------------------------------- */
+@define-color bg_color            rgba(20, 20, 24, 0.85);
+@define-color bg_color_solid      #141418;
+@define-color bg_element          rgba(30, 31, 34, 0.6);
+@define-color bg_selected         rgba(58, 76, 96, 0.9);
+@define-color text_color          #E5E9F0;
+@define-color text_selected       #FFFFFF;
+@define-color accent_color        #88C0D0;
+@define-color border_color        rgba(136, 192, 208, 0.25);
+@define-color critical_color      #E06C75;
+
+* {
+    font-family: "JetBrains Mono 11", serif;
+    font-weight: bold;
+}
+
+/* Окна */
+window {
+    background-color: @bg_color_solid;
+    color: @text_color;
+}
+
+window.high {
+    background: greenyellow;
+}
+
+dialog {
+    color: white;
+}
+
+/* Headerbar */
+headerbar {
+    background-color: @bg_color;
+    border-bottom: 1px solid @border_color;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.05);
+    padding: 6px;
+}
+headerbar label.title { color: @accent_color; }
+
+windowcontrols button {
+    border-radius: 100%;
+    padding: 6px;
+    background: transparent;
+}
+windowcontrols button:hover { background: rgba(255,255,255,0.08); }
+windowcontrols button.close:hover { background: @critical_color; color: white; }
+
+/* Кнопки */
+button {
+    background: @bg_element;
+    color: @text_color;
+    border-radius: 8px;
+    padding: 2px 14px;
+    margin-left: 2px;
+    margin-right: 2px;
+    transition: all 0.3s cubic-bezier(0.1,1,0.1,1);
+}
+button:hover {
+    background: @bg_selected;
+    border-color: @accent_color;
+    color: @text_selected;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+}
+button:active, button:checked {
+    background: @accent_color;
+    color: @bg_color_solid;
+}
+
+/* Слайдеры */
+scale, scale trough, scale highlight, scale slider {
+    all: unset;
+}
+scale {
+    margin: 8px 0;
+    min-height: 20px;
+}
+scale trough {
+    background: rgba(20,20,24,0.6);
+    border-radius: 4px;
+    min-height: 6px;
+    min-width: 1px;
+}
+scale highlight {
+    background: rgba(136,192,208,0.5);
+    border-radius: 4px;
+}
+scale slider {
+    background: @text_color;
+    border: 1px solid @border_color;
+    border-radius: 20px;
+    min-width: 14px;
+    min-height: 14px;
+    margin-top: -4px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.4);
+    transition: background 0.2s, transform 0.2s;
+}
+scale slider:hover {
+    background: @accent_color;
+    box-shadow: 0 0 8px rgba(136,192,208,0.6);
+    transform: scale(1.15);
+}
+
+/* Индикаторы уровня */
+levelbar trough {
+    background: rgba(20,20,24,0.8);
+    border-radius: 6px;
+    min-height: 12px;
+}
+levelbar block.low  { background: #A3BE8C; }
+levelbar block.high { background: #EBCB8B; }
+levelbar block.full { background: #BF616A; }
+
+/* Списки */
+row, listrow {
+    background: transparent;
+    padding: 2px;
+}
+row:hover, listrow:hover { background: rgba(255,255,255,0.03); }
+row:selected, listrow:selected { background: @bg_selected; color: @text_selected; }
+
+/* Поля ввода */
+entry {
+    background: rgba(20,20,24,0.6);
+    border: 1px solid rgba(255,255,255,0.05);
+    border-radius: 8px;
+    padding: 0px 10px;
+    color: @text_color;
+}
+
+/* Скроллбары */
+scrollbar slider {
+    background: rgba(255,255,255,0.05);
+    border-radius: 100px;
+    min-width: 6px;
+}
+scrollbar slider:hover { background: @accent_color; }
+
+/* ===== NAUTILUS — исправлено ===== */
+/* Убираем только двойные рамки, но не трогаем размеры */
+.nautilus-window .frame,
+.nautilus-window separator,
+.nautilus-window border {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+/* Тонкая линия между панелями */
+.nautilus-window splitview > box:first-child {
+    border-right: 1px solid @border_color;
+}
+
+/* Восстанавливаем нормальные отступы и пропорции */
+paned, splitview {
+    padding: 0;
+    margin: 0;
+}
+paned separator {
+    background: white;
+    min-width: 0px;
+    min-height: 0px;
+}
+paned > box {
+    /* даём системе самой управлять размерами */
+    min-width: 0;
+    min-height: 0;
+}

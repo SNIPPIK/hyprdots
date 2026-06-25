@@ -1,7 +1,7 @@
 [<img align="right" alt="Avatar" width="150px" src="assets/hyprland.svg" />]()
 
-# DotFiles (Hyprland, Niri)
-- [`Hyprland WIKI`](https://wiki.hyprland.org/) | [`Niri WIKI`](https://github.com/YaLTeR/niri/wiki)
+# DotFiles (Niri)
+- [`Niri WIKI`](https://github.com/YaLTeR/niri/wiki)
 - [`My wallpaper pack`](https://github.com/SNIPPIK/wallpapers)
 - [`decaycs/wallpapers`](https://github.com/decaycs/wallpapers)
 
@@ -12,8 +12,7 @@ While installing alongside another [DE](https://wiki.archlinux.org/title/Desktop
 > [!CAUTION]
 > All files are linked, deleting the directory hyprdots can lead to serious consequences\
 > The install script will auto install GPU drivers for AMD, NVIDIA, Intel is not supported in script\
-> The script will install dark theme gtk, sddm, grub. If you have a bootloader other grub installed, then it is better not to use hyprdots\
-> The current bitmap files were created for the (2560x1080) - 21:9 format, I'm not sure that everything will work as it should at lower resolutions
+> The script will install dark theme gtk, sddm.
 
 
 > [!IMPORTANT]
@@ -62,17 +61,13 @@ dotsync
 - `pipewire-pulse`, `wireplumber`, `bluez`, `blueberry`, `pavucontrol`, `flatpak`
 - `gnome-software`, `nautilus`
 
-#### For Hyprland
-- `hyprland`, `hyprpicker`, `hyprcursor`, `hyprlang`, `hyprutils`,
-- `xdg-desktop-portal-hyprland`, `aquemarine`
-
 #### For Niri
 - `niri`, `xwayland-satellite`, `xdg-desktop-portal-gnome`
 ---
 ## Images
-- Version 0.11.0 | Automatically close the panel if the window is inactive
+- Version 0.13 | Automatically close the panel if the window is inactive
 - The general style is similar, but the controls and operation of windows differ in Niri.
-- [`Backgroud wallpaper`](https://github.com/SNIPPIK/wallpapers/blob/main/Static/Anime/%5B4K%5D%20frieren-beyong-journeys-end.jpg?raw=true)
+- [`Backgroud wallpaper`](https://github.com/SNIPPIK/wallpapers/blob/main/Static/Fantasy/%5B4K%5D%20Fantasy-Mountain.png?raw=true)
 <img align="" alt="image" width="1920" src="/assets/images/0.png" />
 <img align="" alt="image" width="1920" src="/assets/images/1.png" />
 <img align="" alt="image" width="1920" src="/assets/images/2.png" />
@@ -80,8 +75,6 @@ dotsync
 <img align="" alt="image" width="1920" src="/assets/images/4.png" />
 <img align="" alt="image" width="1920" src="/assets/images/5.png" />
 <img align="" alt="image" width="1920" src="/assets/images/6.png" />
-<img align="" alt="image" width="1920" src="/assets/images/7.png" />
-<img align="" alt="image" width="1920" src="/assets/images/8.png" />
 
 
 ### Demonstration videos (archive)

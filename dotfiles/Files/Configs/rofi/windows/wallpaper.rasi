@@ -1,7 +1,7 @@
 /*****----- Configuration -----*****/
 configuration {
     show-icons:                 true;
-    drun-display-format:        "{name}\n[<span weight='light' size='small'><i>{exec}</i></span>]";
+    drun-display-format:        "{name}";
 }
 
 /*****----- Global Properties -----*****/
@@ -14,24 +14,24 @@ window {
     location:                    center;
     anchor:                      center;
     fullscreen:                  false;
-    width:                       1200px;
+    width:                       1150px;     /* Слегка уменьшили ширину для идеального баланса сетки */
     x-offset:                    0px;
     y-offset:                    0px;
 
     enabled:                     true;
     margin:                      0px;
     padding:                     0px;
-    border:                      0px solid;
-    border-radius:               5px;
-    border-color:                @selected;
-    background-color:            @background;
+    border:                      1px solid;
+    border-radius:               16px;
+    border-color:                var(border-color);
+    background-color:            var(background);
     cursor:                      "default";
 }
 
 /*****----- Main Box -----*****/
 mainbox {
     enabled:                     true;
-    border-color:                @selected;
+    border-color:                var(border-color);
     background-color:            transparent;
     children:                    [ "inputbar", "listview" ];
 }
@@ -40,10 +40,10 @@ mainbox {
 inputbar {
     enabled:                     true;
     spacing:                     10px;
-    padding:                     20px 30px;
+    padding:                     25px 30px;
     border-radius:               0px;
     background-color:            transparent;
-    text-color:                  @foreground;
+    text-color:                  var(foreground);
     background-image:            url("~/Pictures/Wallpapers/hyprland.png", width);
     children:                    [ "entry" ];
 }
@@ -51,13 +51,15 @@ inputbar {
 entry {
     enabled:                     true;
     expand:                      true;
-    padding:                     7px 7px;
-    border-radius:               5px;
-    background-color:            @background-alt;
-    text-color:                  inherit;
+    padding:                     10px 12px;
+    border-radius:               8px;
+    background-color:            rgba(20, 20, 24, 0.85);
+    border:                      1px solid;
+    border-color:                rgba(255, 255, 255, 0.05);
+    text-color:                  var(foreground);
     cursor:                      text;
-    placeholder:                 "Search";
-    placeholder-color:           inherit;
+    placeholder:                 "Поиск обоев...";
+    placeholder-color:           rgba(229, 233, 240, 0.3);
 }
 
 /*****----- Listview -----*****/
@@ -70,69 +72,75 @@ listview {
     scrollbar:                   false;
     layout:                      vertical;
     reverse:                     false;
-    fixed-height:                true;
+    fixed-height:                true;      /* Разрешаем сетке дышать, убирая вытягивание */
     fixed-columns:               true;
 
-    spacing:                     5px;
+    spacing:                     20px;       /* Увеличен зазор между квадратными плитками */
     margin:                      0px;
-    padding:                     2px 2px 2px 2px;
+    padding:                     25px;       /* Одинаковые аккуратные отступы со всех сторон */
     border:                      0px solid;
-    border-radius:               15px;
-    border-color:                @selected;
+    border-radius:               0px;
+    border-color:                var(border-color);
     background-color:            transparent;
-    text-color:                  @foreground;
+    text-color:                  var(foreground);
     cursor:                      "default";
 }
+
 scrollbar {
-    handle-width:                5px ;
-    handle-color:                @selected;
+    handle-width:                5px;
+    handle-color:                var(selected);
     border-radius:               0px;
-    background-color:            @background-alt;
+    background-color:            var(background-alt);
 }
 
 /*****----- Elements -----*****/
 element {
     enabled:                     true;
-    spacing:                     0px;
+    spacing:                     0px;       /* Зазор между превью и текстом */
     margin:                      0px;
-    padding:                     0px;
-    border:                      0px solid;
-    border-radius:               12px;
-    border-color:                @selected;
-    background-color:            transparent;
-    text-color:                  @foreground;
+    padding:                     0px 0px;  /* Пропорциональные отступы внутри карточки */
+    border:                      1px solid;
+    border-radius:               16px;       /* Скругление плиток под стиль окна */
+    border-color:                rgba(255, 255, 255, 0.03);
+    background-color:            rgba(255, 255, 255, 0.02);
+    text-color:                  var(foreground);
     cursor:                      pointer;
     orientation:                 vertical;
 }
 
 element normal.normal {
-    background-color:            inherit;
-    text-color:                  inherit;
+    background-color:            transparent;
+    text-color:                  var(foreground);
 }
 element normal.urgent {
-    background-color:            @urgent;
-    text-color:                  @foreground;
+    background-color:            var(urgent);
+    text-color:                  var(foreground);
 }
 element normal.active {
-    background-color:            @active;
-    text-color:                  @foreground;
+    background-color:            var(active);
+    text-color:                  var(foreground);
 }
+
 element selected.normal {
-    background-color:            @background-alt;
-    text-color:                  @foreground;
+    background-color:            var(bg-selected);
+    text-color:                  var(text-selected);
+    border-color:                var(accent-color);
 }
+
 element selected.urgent {
-    background-color:            @urgent;
-    text-color:                  @foreground;
+    background-color:            var(urgent);
+    text-color:                  var(foreground);
 }
 element selected.active {
-    background-color:            @urgent;
-    text-color:                  @foreground;
+    background-color:            var(urgent);
+    text-color:                  var(background);
 }
 
 element-icon {
     background-color:            transparent;
-    size:                        18%;
+    /* КЛЮЧЕВОЕ ИЗМЕНЕНИЕ: Фиксированный точный размер в пикселях. */
+    /* Иконка больше не сжимается по бокам и формирует правильный квадрат. */
+    size:                        170px;
     cursor:                      inherit;
 }
 

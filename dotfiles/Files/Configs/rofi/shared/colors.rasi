@@ -1,45 +1,34 @@
-/*****----- Global Properties -----*****/
-/**
- *
- * Author : Aditya Shakya (adi1090x)
- * Github : @adi1090x
- *
- * Colors
- **/
+/* -----------------------------------------------------
+ * Объединенная цветовая палитра для шаблонов
+ * ----------------------------------------------------- */
 
 * {
-    background:         rgba(49, 51, 56, 0.85);
-    background-element: rgba(30, 31, 34, 1);
-    background-alt:     rgba(0, 0, 0, 0.90);
-    foreground:         #FFFFFFFF;
-    selected:           black;
-    selected-alt:       white;
-    active:             rgba(255, 255, 255, 0.75);
-    urgent:             #E06C75FF;
+    /* Цветовая палитра (Nord / Carbon-like) */
+    bg-color:            rgba(20, 20, 24, 0.85); /* Темный полупрозрачный фон */
+    bg-selected:         rgba(58, 76, 96, 0.9);   /* Цвет выделенного пункта */
+    text-color:          #E5E9F0;                /* Основной текст */
+    text-selected:       #FFFFFF;                /* Текст выделенного пункта */
+    accent-color:        #88C0D0;                /* Акцент (рамка/подсказка) */
+    border-color:        rgba(136, 192, 208, 0.3);
 }
 
 * {
-    border-colour:               var(selected);
-    handle-colour:               var(selected);
-    background-colour:           var(background);
-    foreground-colour:           var(foreground);
-    alternate-background:        var(background-alt);
-    normal-background:           var(background-element);
-    normal-foreground:           var(foreground);
-    urgent-background:           var(urgent);
-    urgent-foreground:           var(background);
-    active-background:           var(active);
-    active-foreground:           var(background);
-    selected-normal-background:  var(selected);
-    selected-normal-foreground:  var(foreground);
-    selected-urgent-background:  var(active);
-    selected-urgent-foreground:  var(foreground);
-    selected-active-background:  var(urgent);
-    selected-active-foreground:  var(background);
-    alternate-normal-background: var(background-element);
-    alternate-normal-foreground: var(foreground);
-    alternate-urgent-background: var(urgent);
-    alternate-urgent-foreground: var(background);
-    alternate-active-background: var(active);
-    alternate-active-foreground: var(background);
+    /* Перенаправляем переменные на новые цвета */
+    background:                  var(bg-color);
+    background-alt:              rgba(30, 31, 34, 0.5);
+    foreground:                  var(text-color);
+    selected:                    var(bg-selected);
+    active:                      var(accent-color);
+    urgent:                      var(border-color);
+
+    border-colour:               var(border-color);
+    handle-colour:               var(bg-selected);
+    background-colour:           var(bg-color);
+    foreground-colour:           var(text-color);
+
+    normal-background:           rgba(30, 31, 34, 0.3);
+    normal-foreground:           var(text-color);
+
+    selected-normal-background:  var(bg-selected);
+    selected-normal-foreground:  var(text-selected);
 }

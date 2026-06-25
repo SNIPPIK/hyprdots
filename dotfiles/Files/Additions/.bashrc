@@ -35,6 +35,7 @@ alias nvidia-close='sudo pacman -Syu nvidia && sudo pacman -Rc nvidia-open'
 
 # Packet manager
 alias pacman='sudo pacman'
+alias apt='sudo pacman'
 alias aur='yay'
 
 # Setter avatars

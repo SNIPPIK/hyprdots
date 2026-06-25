@@ -39,6 +39,9 @@ binds {
     XF86ScreenSaver { spawn "hyprlock"; }
     XF86Sleep { spawn "hyprlock"; }
 
+    // TouchPad
+    XF86TouchpadToggle { spawn "hyprlock"; }
+
     // FullScreen mode
     Mod+Alt+Return { maximize-column; }
     Alt+Return { fullscreen-window; }
@@ -54,9 +57,11 @@ binds {
 
     // Kill window
     Mod+Q { close-window; }
+    // Kill window on touchpad
+    Mod+TouchpadScrollUp { close-window; }
 
     // PowerMenu
-    Mod+F12 { spawn "sh" "-c" "bash ~/.config/hypr/bin/powermenu.sh"; }
+    Mod+Escape hotkey-overlay-title="Power menu" { spawn "sh" "-c" "bash ~/.config/hypr/bin/powermenu.sh"; }
 
     // Fast exit of niri
     Ctrl+Alt+Delete { quit; }
@@ -67,8 +72,8 @@ binds {
     Mod+O repeat=false { toggle-overview; }
 
     // Move the focused window between the floating and the tiling layout.
-    Mod+F hotkey-overlay-title="Swith float/tiling window"      { toggle-window-floating; }
-    Mod+Shift+F { switch-focus-between-floating-and-tiling; }
+    Mod+F hotkey-overlay-title="Switch float/tiling window"      { toggle-window-floating; }
+    Mod+Shift+F hotkey-overlay-title="Switch focus float/tiling window" { switch-focus-between-floating-and-tiling; }
 
     // Windows moving
     Mod+Left  { focus-column-left; }
@@ -173,9 +178,6 @@ binds {
     Mod+Ctrl+8 { move-column-to-workspace 8; }
     Mod+Ctrl+9 { move-column-to-workspace 9; }
 
-    // Alternatively, there are commands to move just a single window:
-    // Mod+Ctrl+1 { move-window-to-workspace 1; }
-
     // Switches focus between the current and the previous workspace.
     //Mod+Tab { focus-workspace-previous; }
 
@@ -218,19 +220,6 @@ binds {
     Mod+Shift+Minus { set-window-height "-10%"; }
     Mod+Shift+Equal { set-window-height "+10%"; }
 
-    // Toggle tabbed column display mode.
-    // Windows in this column will appear as vertical tabs,
-    // rather than stacked on top of each other.
-    //Mod+W { toggle-column-tabbed-display; }
-
-    // Actions to switch layouts.
-    // Note: if you uncomment these, make sure you do NOT have
-    // a matching layout switch hotkey configured in xkb options above.
-    // Having both at once on the same hotkey will break the switching,
-    // since it will switch twice upon pressing the hotkey (once by xkb, once by niri).
-    // Mod+Space       { switch-layout "next"; }
-    // Mod+Shift+Space { switch-layout "prev"; }
-
     // Applications such as remote-desktop clients and software KVM switches may
     // request that niri stops processing the keyboard shortcuts defined here
     // so they may, for example, forward the key presses as-is to a remote machine.
@@ -239,9 +228,9 @@ binds {
     //
     // The allow-inhibiting=false property can be applied to other binds as well,
     // which ensures niri always processes them, even when an inhibitor is active.
-    Mod+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
+    Mod+Shift+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
 
     // Powers off the monitors. To turn them back on, do any input like
     // moving the mouse or pressing any other key.
-    //Mod+Shift+P { power-off-monitors; }
+    Mod+Shift+P { power-off-monitors; }
 }

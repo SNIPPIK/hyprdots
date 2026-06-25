@@ -6,10 +6,10 @@ options=(
     " Power menu"
     " Update System"
     "󰏖 Delete unused packages"
-    " Toggle gamemode"
     " [Select] Wallpaper"
     " [Random] Wallpaper"
     " [Restart] Wallpaper"
+    " [Mode] Select monitor size"
 )
 
 # Define corresponding commands
@@ -17,10 +17,10 @@ commands=(
     "$HOME/.config/hypr/bin/powermenu.sh"
     "$HOME/.config/waybar/scripts/dialog.sh float update"
     "$HOME/.config/waybar/scripts/dialog.sh float unused"
-    "$HOME/.config/hypr/bin/tools/gamemode.sh"
     "$HOME/.config/hypr/bin/ecosys/wallpaper.sh select"
     "$HOME/.config/hypr/bin/ecosys/wallpaper.sh random"
-    "$HOME/.config/hypr/bin/ecosys/wallpaper.sh engine"
+    "$HOME/.config/hypr/bin/ecosys/wallpaper.sh engine",
+    "$HOME/.config/niri/sh/output.sh"
 )
 
 # Show Rofi menu

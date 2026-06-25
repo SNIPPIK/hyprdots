@@ -1,27 +1,24 @@
+/* -----------------------------------------------------
+ *  ___                       _       
+ * |_ _|_ __  _ __  ___ _ _ _| |_ ___ 
+ *  | || '  \| '_ \/ _ \ '_|  _|_-<_-<
+ * |___|_|_|_| .__/\___/_|  \__/__/__/
+ *           |_|                      
+ * Импорты внешних модулей и палитры
+ * ----------------------------------------------------- */
 @import "../rofi/colors/dark.css";
-
-/* -----------------------------------------------------
- * Buttons
- * ----------------------------------------------------- */
 @import "styles/buttons.css";
-
-/* -----------------------------------------------------
- * Workspace
- * ----------------------------------------------------- */
 @import "styles/workspace.css";
-
-/* -----------------------------------------------------
- * Panel
- * ----------------------------------------------------- */
 @import "panel.css";
 
-/*
-  __  __      _        ___ _        _
- |  \/  |__ _(_)_ _   / __| |_ _  _| |___
- | |\/| / _` | | ' \  \__ \  _| || | / -_)
- |_|  |_\__,_|_|_||_| |___/\__|\_, |_\___|
-                               |__/
-*/
+/* -----------------------------------------------------
+ *   ___  _   _             
+ *  / _ \| |_| |_ _  _ _ __ 
+ * | (_) |  _|  _| || | '_ \
+ *  \___/ \__|\__|\_,_| .__/
+ *                    |_|   
+ * Глобальные параметры и Шрифты
+ * ----------------------------------------------------- */
 * {
     font-family: "JetBrainsMono Nerd Font", cursive;
     font-weight: bold;
@@ -29,150 +26,170 @@
     min-height: 25px;
 }
 
-window#waybar
-{
+window#waybar {
     transition: all 1s ease;
-    all:unset;
+    all: unset;
 }
 
+/* Фикс шрифта звукового модуля для корректного отображения иконок */
 #pulseaudio {
-    font-family: Noto Sans, FiraCode Nerd Font Mono, sans-serif;
+    font-family: "Noto Sans", "FiraCode Nerd Font Mono", sans-serif;
 }
 
-
-/* === Tray === */
-#tray, #workspaces, #taskbar {
+/* -----------------------------------------------------
+ *  _____             
+ * |_   _| _ __ _ _  _ 
+ *   | || '_/ _` | || |
+ *   |_||_| \__,_|\_, |
+ *                |__/ 
+ * Системный трей (Tray Selector)
+ * ----------------------------------------------------- */
+#workspaces, #taskbar {
     background: @background-waybar;
     background: alpha(@background-waybar, 0.95);
 }
+
+#tray {
+    background: @background-waybar;
+    /* Эффект матового стекла (Glassmorphism), как у остальных модулей */
+    background: alpha(@background-waybar, 0.75);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05), 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Настройка самих иконок внутри трея */
 #tray > widget {
+    margin: 0px 3px;
+    padding: 2px 6px;
+    border: 1px solid transparent;
+    /* Ваша плавная анимация возвращения иконки в исходное состояние */
     transition: all 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
-#tray > widget:hover {
-    border-bottom: 1px solid white;
-}
-#tray > .needs-attention {
-    border-bottom: 3px solid @warning;
-}
-/* === Tray === */
 
-/*
-  ___               _          _
- | _ \__ _ _ _  ___| |  __ ___| |___ _ _
- |  _/ _` | ' \/ -_) | / _/ _ \ / _ \ '_|
- |_| \__,_|_||_\___|_| \__\___/_\___/_|
-*/
-window.mainbar#waybar
-{
-    transition: all .3s ease;
+/* Мягкий аккуратный ховер для каждой иконки в трее */
+#tray > widget:hover {
+    border-bottom: 1px solid @workspace-color-active;
+    /* Легкое подсвечивание иконки при наведении */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Модули или приложения в трее, требующие немедленного внимания */
+#tray > .needs-attention {
+    background: alpha(@warning, 0.15);
+    border-color: alpha(@warning, 0.4);
+    animation: pulse-warning 2s infinite ease-in-out;
+}
+
+/* -----------------------------------------------------
+ *  ___                 _ 
+ * | _ \__ _ _ _  ___  | |
+ * |  _/ _` | ' \/ -_) | |
+ * |_| \__,_|_||_\___| |_|
+ * Настройки основного контейнера панели
+ * ----------------------------------------------------- */
+window.mainbar#waybar {
+    transition: all 0.3s ease;
     background: @background-waybar;
     background: alpha(@background-waybar, 0.95);
-    border-radius: 5px;
+    border-radius: 5px; /* Увеличено с 5px для более мягкого вида */
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
+/* Контейнер музыкального плеера */
 #mpris {
     background: alpha(@background-waybar, 0.85);
-    background: alpha(@background-waybar, 0.85);
 }
 
-/*
-  ___                       ___     _
- | _ \_____ __ _____ _ _   / __|___| |___ _ _ ___
- |  _/ _ \ V  V / -_) '_| | (__/ _ \ / _ \ '_(_-<
- |_| \___/\_/\_/\___|_|    \___\___/_\___/_| /__/
-*/
-#power-profiles-daemon.performance { color: darkcyan;   }
-#power-profiles-daemon.balanced    { color: darkorange; }
-#power-profiles-daemon.power-saver { color: green;      }
+/* -----------------------------------------------------
+ *  ___                       
+ * | _ \_____ __ _____ _ _    
+ * |  _/ _ \ V  V / -_) '_|   
+ * |_| \___/\_/\_/\___|_|     
+ * Профили питания (Power Profiles)
+ * ----------------------------------------------------- */
+#power-profiles-daemon.performance { color: #88C0D0; } /* Переведено на Nord Cyan */
+#power-profiles-daemon.balanced    { color: #ffbe61; } /* Переведено на ваш @warning */
+#power-profiles-daemon.power-saver { color: #26A65B; } /* Переведено на ваш @activated */
 
-/*
-  _____         _ _   _
- |_   _|__  ___| | |_(_)_ __
-   | |/ _ \/ _ \ |  _| | '_ \
-   |_|\___/\___/_|\__|_| .__/
-                       |_|
-*/
-tooltip, tooltip label {
-    color: @text;
-    background: @background-toolkit;
-    margin: 0.2em 0.3em 0.2em 0.3em;
+/* -----------------------------------------------------
+ *  ___ _        _              
+ * / __| |_ __ _| |_ _  _ ___ __
+ * \__ \  _/ _` |  _| || (_-</ _|
+ * |___/\__\__,_|\__|\_,_/__/\__|
+ * Системные состояния (Battery, CPU, Memory)
+ * ----------------------------------------------------- */
+
+/* Критическая нагрузка или разряд батареи */
+#memory.critical, #cpu.critical, #temperature.critical, #battery.critical {
+    color: @critical;
+    font-weight: 900;
 }
 
-tooltip label {
-    font-family: "JetBrainsMono Nerd Font", cursive;
-    font-size: 14px;
-}
+/* Блокировщик сна (Idle Inhibitor) */
+#idle_inhibitor.deactivated { color: @workspace-color-not-active; }
+#idle_inhibitor.activated   { color: @activated; }
 
-
-
-/*
-   ___        _               ___ _        _
-  / __|  _ __| |_ ___ _ __   / __| |_ _  _| |___
- | (_| || (_-<  _/ _ \ '  \  \__ \  _| || | / -_)
-  \___\_,_/__/\__\___/_|_|_| |___/\__|\_, |_\___|
-                                      |__/
-*/
-#custom-hyprlogo
-{
-    background-image: image(url("./styles/hyprland.svg"));
-    background-size: 13px 17px;
-    background-repeat: no-repeat;
-    background-position: center;
-}
-
-
-/*
-   ___     _ _   _         _    ___     _
-  / __|_ _(_) |_(_)__ __ _| |  / __|___| |___ _ _
- | (__| '_| |  _| / _/ _` | | | (__/ _ \ / _ \ '_|
-  \___|_| |_|\__|_\__\__,_|_|  \___\___/_\___/_|
- */
-#memory.critical, #cpu.critical, #temperature.critical, #battery.critical
-{ color: red; }
-
-
-/*
-  _  _              ___    _ _
- | || |_  _ _ __ _ |_ _|__| | |___
- | __ | || | '_ \ '_| |/ _` | / -_)
- |_||_|\_, | .__/_||___\__,_|_\___|
-       |__/|_|
-*/
-#idle_inhibitor.deactivated { color: @disabled; }
-#idle_inhibitor.activated { color: @activated; }
-
-/*
-  ___       _   _        _
- | _ ) __ _| |_| |_ __ _| |_ _  _
- | _ \/ _` |  _|  _/ _` |  _| || |
- |___/\__,_|\__|\__\__,_|\__|\_, |
-                             |__/
-*/
+/* Состояния батареи */
 #battery.charging { color: @activated; }
 #battery.warning:not(.charging) { color: @warning; }
 #battery.critical:not(.charging) {
     color: @critical;
     animation-name: blink;
-    animation-duration: 3.0s;
-    animation-timing-function: steps(12);
+    animation-duration: 2.5s; /* Сделано чуть быстрее и плавнее */
+    animation-timing-function: ease-in-out; /* Плавное мерцание вместо steps(12) */
     animation-iteration-count: infinite;
     animation-direction: alternate;
 }
 
-/*
-  ___         _       _             _    _         _
- | _ \_  _ __| |_ ___(_)___   ___ _| |__(_)___ _ _| |__
- |  _/ || (_-<  _/ _ \ / -_) / -_) _` | / -_) ' \  _/ _ \
- |_|  \_, /__/\__\___/_\___| \___\__,_|_\___|_||_\__\___/
-      |__/
-*/
+/* -----------------------------------------------------
+ *  _____             _ _   _      
+ * |_   _|__  ___  __| | |_(_)_ __ 
+ *   | |/ _ \/ _ \/ _` |  _| | '_ \
+ *   |_|\___/\___/\__,_|\__|_| .__/
+ *                           |_|   
+ * Подсказки при наведении (Tooltips)
+ * ----------------------------------------------------- */
+tooltip, tooltip label {
+    color: @text;
+    background: @background-toolkit; /* Использует ваш фирменный #282828 */
+}
+
+tooltip {
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    padding: 6px 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+tooltip label {
+    font-family: "JetBrainsMono Nerd Font", sans-serif;
+    font-size: 13px; /* Оптимальный размер текста подсказки */
+}
+
+/* -----------------------------------------------------
+ *    _        _                 
+ *   /_\  __ _| |_(_)_ _____ _ _ 
+ *  / _ \/ _` |  _| \ V / -_) '_|
+ * /_/ \_\__,_|\__|_|\_/\___|_|  
+ * Скрытие панели при пустом рабочем столе (.empty)
+ * ----------------------------------------------------- */
 window.mainbar#waybar.empty {
     background: transparent;
-    border: none;
+    border: 1px solid transparent;
     box-shadow: none;
-    transition: all 1s ease;
+    transition: all 0.5s cubic-bezier(0.4, 0.0, 0.2, 1);
 }
 
 window.mainbar#waybar.empty * {
     min-width: 0;
+}
+
+
+
+/* Анимация мягкой пульсации для критических уведомлений в трее */
+@keyframes pulse-warning {
+    0%   { border-color: alpha(@warning, 0.2); }
+    50%  { border-color: alpha(@warning, 0.6); }
+    100% { border-color: alpha(@warning, 0.2); }
 }
