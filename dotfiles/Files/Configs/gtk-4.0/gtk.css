@@ -129,14 +129,6 @@ entry {
     color: @text_color;
 }
 
-/* Скроллбары */
-scrollbar slider {
-    background: rgba(255,255,255,0.05);
-    border-radius: 100px;
-    min-width: 6px;
-}
-scrollbar slider:hover { background: @accent_color; }
-
 /* ===== NAUTILUS — исправлено ===== */
 /* Убираем только двойные рамки, но не трогаем размеры */
 .nautilus-window .frame,
