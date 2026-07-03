@@ -1,7 +1,7 @@
 {
   "systemCmd": "checkupdates 2>/dev/null",
   "aurCmd": "paru -Qua 2>/dev/null",
-  "updateCmd": "alacritty -e bash -c 'echo \"Updating System...\";yay; flatpak update; read -n 1 -p \"Press any key to exit...\"'",
+  "updateCmd": "alacritty --class hyprdots-float-small -e bash ~/.config/niri/sh/pacman/update.sh && alacritty --class hyprdots-float-small -e bash ~/.config/niri/sh/pacman/unused.sh",
   "aurHomepageCmd": "LC_ALL=C yay -Si {id} 2>/dev/null | awk '/^URL/ {print $3}'",
   "flatpak": true,
   "noctalia": true,

@@ -1,4 +1,4 @@
-[<img align="right" alt="Avatar" width="150px" src="assets/hyprland.svg" />]()
+[<img align="right" alt="Avatar" width="150px" src="assets/niri.svg" />]()
 
 # DotFiles (Niri)
 - [`Niri WIKI`](https://github.com/YaLTeR/niri/wiki)
@@ -21,10 +21,8 @@ While installing alongside another [DE](https://wiki.archlinux.org/title/Desktop
 
 > [!TIP]
 > Window rules support only: `English`, `Russian`  
-> This config tested on notebook and desktop  
-> Auto configuration of monitors, left to right  
-> Wallpapers directory is Pictures/Wallpapers  
-> If you need live wallpapers in mp4, please install `yay -S mpvpaper`, wallpaper script is supported
+> This config tested on notebook and desktop    
+> Wallpapers directory is Pictures/Wallpapers   
 
 
 > [!TIP]
@@ -55,14 +53,16 @@ dotsync
 ---
 ## Dependencies
 #### Global
-- `hypridle`, `hyprlock`, `waybar`, `rofi-wayland`,`polkit-gnome`, 
-- `dunst`, `grim`, `sddm`, `starship`, `gnome-keyring`, `wl-clipboard`
+- `grim`, `sddm`, `starship`, `gnome-keyring`, `wl-clipboard`
 - `otf-font-awesome`, `noto-fonts-emoji`, `ttf-nerd-fonts-symbols-mono`, `ttf-dejavu`
 - `pipewire-pulse`, `wireplumber`, `bluez`, `blueberry`, `pavucontrol`, `flatpak`
 - `gnome-software`, `nautilus`
 
 #### For Niri
 - `niri`, `xwayland-satellite`, `xdg-desktop-portal-gnome`
+
+#### AUR
+- `Noctalia`
 ---
 ## Images
 - Version 0.13 | Automatically close the panel if the window is inactive

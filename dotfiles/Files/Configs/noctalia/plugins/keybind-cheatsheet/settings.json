@@ -1,6 +1,137 @@
 {
   "cheatsheetData": [
     {
+      "title": "Noctalia",
+      "binds": [
+        {
+          "keys": "Super + H",
+          "desc": "All binds",
+          "_verb": "spawn-sh",
+          "_mods": "Super",
+          "_mainKey": "H"
+        },
+        {
+          "keys": "Super + Escape",
+          "desc": "Session Menu: noctalia sessionMenu",
+          "_verb": "spawn-sh",
+          "_mods": "Super",
+          "_mainKey": "Escape"
+        },
+        {
+          "keys": "Super + R",
+          "desc": "Open App Launcher: noctalia launcher",
+          "_verb": "spawn-sh",
+          "_mods": "Super",
+          "_mainKey": "R"
+        },
+        {
+          "keys": "Super + W",
+          "desc": "Open Wallpaper Selector: noctalia wallpaper random",
+          "_verb": "spawn-sh",
+          "_mods": "Super",
+          "_mainKey": "W"
+        },
+        {
+          "keys": "Super + Shift + W",
+          "desc": "Open Wallpaper Selector: noctalia wallpaper toggle",
+          "_verb": "spawn-sh",
+          "_mods": "Super+Shift",
+          "_mainKey": "W"
+        },
+        {
+          "keys": "Vol Up",
+          "desc": "FN Up Volume",
+          "_verb": "spawn-sh",
+          "_mods": "",
+          "_mainKey": "XF86AudioRaiseVolume"
+        },
+        {
+          "keys": "Vol Down",
+          "desc": "FN Down Volume",
+          "_verb": "spawn-sh",
+          "_mods": "",
+          "_mainKey": "XF86AudioLowerVolume"
+        },
+        {
+          "keys": "Mute",
+          "desc": "FN Mute Audio",
+          "_verb": "spawn-sh",
+          "_mods": "",
+          "_mainKey": "XF86AudioMute"
+        },
+        {
+          "keys": "Mic Mute",
+          "desc": "FN Mute Microphone",
+          "_verb": "spawn-sh",
+          "_mods": "",
+          "_mainKey": "XF86AudioMicMute"
+        },
+        {
+          "keys": "Bright Up",
+          "desc": "FN Up Brightness",
+          "_verb": "spawn-sh",
+          "_mods": "",
+          "_mainKey": "XF86MonBrightnessUp"
+        },
+        {
+          "keys": "Bright Down",
+          "desc": "FN Down Brightness",
+          "_verb": "spawn-sh",
+          "_mods": "",
+          "_mainKey": "XF86MonBrightnessDown"
+        },
+        {
+          "keys": "Next",
+          "desc": "FN Music Skip",
+          "_verb": "spawn-sh",
+          "_mods": "",
+          "_mainKey": "XF86AudioNext"
+        },
+        {
+          "keys": "Prev",
+          "desc": "FN Music Prev",
+          "_verb": "spawn-sh",
+          "_mods": "",
+          "_mainKey": "XF86AudioPrev"
+        },
+        {
+          "keys": "Play",
+          "desc": "FN Music Play",
+          "_verb": "spawn-sh",
+          "_mods": "",
+          "_mainKey": "XF86AudioPlay"
+        },
+        {
+          "keys": "Pause",
+          "desc": "FN Music Pause",
+          "_verb": "spawn-sh",
+          "_mods": "",
+          "_mainKey": "XF86AudioPause"
+        },
+        {
+          "keys": "XF86ScreenSaver",
+          "desc": "Lock Screen: noctalia lock",
+          "_verb": "spawn-sh",
+          "_mods": "",
+          "_mainKey": "XF86ScreenSaver"
+        },
+        {
+          "keys": "XF86Sleep",
+          "desc": "Lock Screen: noctalia lock",
+          "_verb": "spawn-sh",
+          "_mods": "",
+          "_mainKey": "XF86Sleep"
+        },
+        {
+          "keys": "XF86TouchpadToggle",
+          "desc": "Lock Screen: noctalia lock",
+          "_verb": "spawn-sh",
+          "_mods": "",
+          "_mainKey": "XF86TouchpadToggle"
+        }
+      ]
+    },
+    {
       "title": "Applications",
       "binds": [
         {
@@ -32,132 +163,6 @@
           "_mainKey": "B"
         },
         {
-          "keys": "Super + R",
-          "desc": "Open left table application",
-          "_verb": "spawn",
-          "_mods": "Super",
-          "_mainKey": "R"
-        },
-        {
-          "keys": "Super + W",
-          "desc": "Select random wallpaper",
-          "_verb": "spawn",
-          "_mods": "Super",
-          "_mainKey": "W"
-        },
-        {
-          "keys": "Super + Shift + W",
-          "desc": "Open wallpaper selector",
-          "_verb": "spawn",
-          "_mods": "Super+Shift",
-          "_mainKey": "W"
-        },
-        {
-          "keys": "Vol Up",
-          "desc": "Run: sh",
-          "_verb": "spawn",
-          "_mods": "",
-          "_mainKey": "XF86AudioRaiseVolume"
-        },
-        {
-          "keys": "Vol Down",
-          "desc": "Run: sh",
-          "_verb": "spawn",
-          "_mods": "",
-          "_mainKey": "XF86AudioLowerVolume"
-        },
-        {
-          "keys": "Mute",
-          "desc": "Run: sh",
-          "_verb": "spawn",
-          "_mods": "",
-          "_mainKey": "XF86AudioMute"
-        },
-        {
-          "keys": "Mic Mute",
-          "desc": "Run: sh",
-          "_verb": "spawn",
-          "_mods": "",
-          "_mainKey": "XF86AudioMicMute"
-        },
-        {
-          "keys": "Bright Down",
-          "desc": "Run: sh",
-          "_verb": "spawn",
-          "_mods": "",
-          "_mainKey": "XF86MonBrightnessDown"
-        },
-        {
-          "keys": "Bright Up",
-          "desc": "Run: sh",
-          "_verb": "spawn",
-          "_mods": "",
-          "_mainKey": "XF86MonBrightnessUp"
-        },
-        {
-          "keys": "Play",
-          "desc": "Run: sh",
-          "_verb": "spawn",
-          "_mods": "",
-          "_mainKey": "XF86AudioPlay"
-        },
-        {
-          "keys": "Pause",
-          "desc": "Run: sh",
-          "_verb": "spawn",
-          "_mods": "",
-          "_mainKey": "XF86AudioPause"
-        },
-        {
-          "keys": "Next",
-          "desc": "Run: sh",
-          "_verb": "spawn",
-          "_mods": "",
-          "_mainKey": "XF86AudioNext"
-        },
-        {
-          "keys": "Prev",
-          "desc": "Run: sh",
-          "_verb": "spawn",
-          "_mods": "",
-          "_mainKey": "XF86AudioPrev"
-        },
-        {
-          "keys": "XF86ScreenSaver",
-          "desc": "Run: hyprlock",
-          "_verb": "spawn",
-          "_mods": "",
-          "_mainKey": "XF86ScreenSaver"
-        },
-        {
-          "keys": "XF86Sleep",
-          "desc": "Run: hyprlock",
-          "_verb": "spawn",
-          "_mods": "",
-          "_mainKey": "XF86Sleep"
-        },
-        {
-          "keys": "XF86TouchpadToggle",
-          "desc": "Run: hyprlock",
-          "_verb": "spawn",
-          "_mods": "",
-          "_mainKey": "XF86TouchpadToggle"
-        },
-        {
-          "keys": "Super + F11",
-          "desc": "Close/Open panel",
-          "_verb": "spawn",
-          "_mods": "Super",
-          "_mainKey": "F11"
-        },
-        {
-          "keys": "Super + Shift + F11",
-          "desc": "Reload panel",
-          "_verb": "spawn",
-          "_mods": "Super+Shift",
-          "_mainKey": "F11"
-        },
-        {
           "keys": "PrtSc",
           "desc": "Screenshot fullscreen",
           "_verb": "spawn",
@@ -170,13 +175,6 @@
           "_verb": "spawn",
           "_mods": "Super",
           "_mainKey": "Print"
-        },
-        {
-          "keys": "Super + Escape",
-          "desc": "Power menu",
-          "_verb": "spawn",
-          "_mods": "Super",
-          "_mainKey": "Escape"
         }
       ]
     },
@@ -579,13 +577,6 @@
           "_verb": "previous-window",
           "_mods": "Super+Shift",
           "_mainKey": "grave"
-        },
-        {
-          "keys": "Super + H",
-          "desc": "All binds",
-          "_verb": "show-hotkey-overlay",
-          "_mods": "Super",
-          "_mainKey": "H"
         },
         {
           "keys": "Super + O",

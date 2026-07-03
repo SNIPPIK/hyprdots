@@ -21,7 +21,7 @@ echo "                                              |___/             "
 # -----------------------------------------------------
 # Check root user
 if [ "$USER" = "root" ]; then
-    echo "Do not use root in this script, login in with another account"
+    echo "Do not use root in this script, login in with another user"
     exit 0
 fi
 

@@ -59,16 +59,6 @@ bash $HOME/hyprdots/dotfiles/.installer/packages.sh
 bash $HOME/hyprdots/dotfiles/.installer/de.sh
 # -----------------------------------------------------
 echo
-echo " __        __    _ _                                  "
-echo " \ \      / /_ _| | |_ __   __ _ _ __   ___ _ __ ___  "
-echo "  \ \ /\ / / _' | | | '_ \ / _' | '_ \ / _ \ '__/ __| "
-echo "   \ V  V / (_| | | | |_) | (_| | |_) |  __/ |  \__ \ "
-echo "    \_/\_/ \__,_|_|_| .__/ \__,_| .__/ \___|_|  |___/ "
-echo "                    |_|         |_|                   "
-echo Your need choice wallpaper engine
-bash $HOME/hyprdots/dotfiles/.installer/wallpaper.sh
-# -----------------------------------------------------
-echo
 echo "   ____ ____  _   _  "
 echo "  / ___|  _ \| | | | "
 echo " | |  _| |_) | | | | "
@@ -107,6 +97,7 @@ bash $HOME/hyprdots/dotfiles/.installer/themes.sh
 
 # Run sudo commands
 echo Install sddm theme SilentSDDM
+choice
 git clone -b main --depth=1 https://github.com/uiriansan/SilentSDDM && cd SilentSDDM && ./install.sh
 # -----------------------------------------------------
 echo
@@ -126,11 +117,14 @@ do
   sudo systemctl start "$name"
 done
 
+# -----------------------------------------------------
 
 # Install YAY (AUR)
+echo Installing yay AUR - downloader
 sudo pacman -S --needed git base-devel && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
 
 sleep 2
+echo Install Noctalia
 yay -S noctalia-shell
 
 # Set dark theme

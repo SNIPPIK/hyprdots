@@ -64,7 +64,7 @@
         "mouseWheelAction": "none",
         "mouseWheelWrap": true,
         "outerCorners": true,
-        "position": "top",
+        "position": "bottom",
         "reverseScroll": false,
         "rightClickAction": "controlCenter",
         "rightClickCommand": "",
@@ -180,13 +180,19 @@
                     "id": "plugin:arch-updater"
                 },
                 {
+                    "displayMode": "onhover",
+                    "iconColor": "none",
+                    "id": "Network",
+                    "textColor": "none"
+                },
+                {
                     "deviceNativePath": "__default__",
                     "displayMode": "graphic-clean",
                     "hideIfIdle": false,
                     "hideIfNotDetected": true,
                     "id": "Battery",
-                    "showNoctaliaPerformance": false,
-                    "showPowerProfiles": false
+                    "showNoctaliaPerformance": true,
+                    "showPowerProfiles": true
                 },
                 {
                     "hideWhenZero": false,
@@ -199,7 +205,7 @@
                 {
                     "clockColor": "none",
                     "customFont": "",
-                    "formatHorizontal": "HH:mm ddd, MMM dd",
+                    "formatHorizontal": "HH:mm",
                     "formatVertical": "HH mm - dd MM",
                     "id": "Clock",
                     "tooltipFormat": "HH:mm ddd, MMM dd",
@@ -312,7 +318,7 @@
     "desktopWidgets": {
         "enabled": true,
         "gridSnap": true,
-        "gridSnapScale": false,
+        "gridSnapScale": true,
         "monitorWidgets": [
             {
                 "name": "DP-2",
@@ -337,6 +343,23 @@
                         "showBackground": true,
                         "x": 41,
                         "y": 82
+                    }
+                ]
+            },
+            {
+                "name": "eDP-1",
+                "widgets": [
+                    {
+                        "hideMode": "visible",
+                        "id": "MediaPlayer",
+                        "roundedCorners": true,
+                        "showAlbumArt": true,
+                        "showBackground": true,
+                        "showButtons": true,
+                        "showVisualizer": true,
+                        "visualizerType": "linear",
+                        "x": 864,
+                        "y": 32
                     }
                 ]
             }
@@ -382,7 +405,7 @@
         "animationDisabled": false,
         "animationSpeed": 1,
         "autoStartAuth": false,
-        "avatarImage": "/home/snippik/Pictures/Avatars/IrGLu5U4X1I.jpg",
+        "avatarImage": "/home/snippik/.face.icon",
         "boxRadiusRatio": 1,
         "clockFormat": "hh\\nmm",
         "clockStyle": "custom",
@@ -486,10 +509,10 @@
     "network": {
         "bluetoothAutoConnect": true,
         "bluetoothDetailsViewMode": "grid",
-        "bluetoothHideUnnamedDevices": false,
+        "bluetoothHideUnnamedDevices": true,
         "bluetoothRssiPollIntervalMs": 60000,
         "bluetoothRssiPollingEnabled": false,
-        "disableDiscoverability": false,
+        "disableDiscoverability": true,
         "networkPanelView": "wifi",
         "wifiDetailsViewMode": "grid"
     },
