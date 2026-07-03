@@ -1,8 +1,6 @@
-waybar
 nm-connection-editor
 nautilus
 polkit-gnome
-dunst
 pacman-contrib
 sddm
 fastfetch
@@ -12,8 +10,6 @@ wl-clipboard
 flatpak
 gnome-software
 power-profiles-daemon
-hypridle
-hyprlock
 python-dbus
 brightnessctl
 7zip

@@ -84,6 +84,10 @@ input {
     // focus-follows-mouse max-scroll-amount="0%"
 }
 
+hotkey-overlay {
+    skip-at-startup
+}
+
 //######################################################################
 //### Layout                                                         ###
 //######################################################################
@@ -188,3 +192,5 @@ layout {
         color "#0007"
     }
 }
+
+include "./noctalia.kdl"

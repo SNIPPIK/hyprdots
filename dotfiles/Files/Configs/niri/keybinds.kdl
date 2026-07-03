@@ -1,123 +1,118 @@
 binds {
     // Help
-    Mod+H hotkey-overlay-title="All binds" { show-hotkey-overlay; }
-
-    // Terminal
-    Mod+Return hotkey-overlay-title="Open terminal" { spawn "sh" "-c" "alacritty | kitty"; }
-    Mod+Shift+Return hotkey-overlay-title="Open float terminal" { spawn "sh" "-c" "alacritty --class hyprdots-float | kitty --class hyprdots-float"; }
-
-    // File manager
-    Mod+E hotkey-overlay-title="Open file manager" { spawn "sh" "-c" "dolphin | nautilus | nemo | thunar | kitty | fish"; }
-
-    // Browser
-    Mod+B hotkey-overlay-title="Open browser" { spawn "sh" "-c" "google-chrome-stable | zen-browser | firefox | brave | chromium | microsoft-edge-stable | opera | librewolf"; }
-
-    // Rofi
-    Mod+R hotkey-overlay-title="Open left table application" { spawn "rofi" "-show" "drun" "-theme" "windows/compact.rasi"; }
-
-    // Wallpapers
-    Mod+W hotkey-overlay-title="Select random wallpaper" { spawn "sh" "-c" "bash ~/.config/hypr/bin/ecosys/wallpaper.sh random"; }
-    Mod+Shift+W hotkey-overlay-title="Open wallpaper selector"{ spawn "sh" "-c" "bash ~/.config/hypr/bin/ecosys/wallpaper.sh select"; }
-
-    // Volume
-    XF86AudioRaiseVolume { spawn "sh" "-c" "bash ~/.config/hypr/bin/tools/audio.sh volume_up"; }
-    XF86AudioLowerVolume { spawn "sh" "-c" "bash ~/.config/hypr/bin/tools/audio.sh volume_down"; }
-    XF86AudioMute { spawn "sh" "-c" "bash ~/.config/hypr/bin/tools/audio.sh volume_mute"; }
-    XF86AudioMicMute { spawn "sh" "-c" "bash ~/.config/hypr/bin/tools/audio.sh micro_mute"; }
-
-    // Light Modes
-    XF86MonBrightnessDown { spawn "sh" "-c" "brightnessctl s 10%-"; }
-    XF86MonBrightnessUp { spawn "sh" "-c" "brightnessctl s +10%"; }
-
-    // Player
-    XF86AudioPlay { spawn "sh" "-c" "bash ~/.config/hypr/bin/tools/audio.sh play_pause"; }
-    XF86AudioPause { spawn "sh" "-c" "bash ~/.config/hypr/bin/tools/audio.sh play_pause"; }
-    XF86AudioNext { spawn "sh" "-c" "bash ~/.config/hypr/bin/tools/audio.sh next_track"; }
-    XF86AudioPrev { spawn "sh" "-c" "bash ~/.config/hypr/bin/tools/audio.sh prev_track"; }
-
-    // Lock
-    XF86ScreenSaver { spawn "hyprlock"; }
-    XF86Sleep { spawn "hyprlock"; }
-
-    // TouchPad
-    XF86TouchpadToggle { spawn "hyprlock"; }
-
-    // FullScreen mode
-    Mod+Alt+Return { maximize-column; }
-    Alt+Return { fullscreen-window; }
-
-    // Panel toggle
-    // +Shift restart
-    Mod+F11 hotkey-overlay-title="Close/Open panel" { spawn "sh" "-c" "bash ~/.config/hypr/bin/hyprland/restart.sh panel-toggle show"; }
-    Mod+Shift+F11 hotkey-overlay-title="Reload panel" { spawn "sh" "-c" "bash ~/.config/hypr/bin/hyprland/restart.sh panel-restart show"; }
-
-    // Screenshots
-    Print hotkey-overlay-title="Screenshot fullscreen" { spawn "sh" "-c" "bash ~/.config/hypr/bin/ecosys/screenshot.sh fullscreen"; }
-    Mod+Print hotkey-overlay-title="Screenshot region" { spawn "sh" "-c" "bash ~/.config/hypr/bin/ecosys/screenshot.sh region"; }
-
-    // Kill window
-    Mod+Q { close-window; }
-    // Kill window on touchpad
-    Mod+TouchpadScrollUp { close-window; }
+    Mod+H                               hotkey-overlay-title="All binds" { spawn-sh "qs -c noctalia-shell ipc call plugin:keybind-cheatsheet toggle"; }
 
     // PowerMenu
-    Mod+Escape hotkey-overlay-title="Power menu" { spawn "sh" "-c" "bash ~/.config/hypr/bin/powermenu.sh"; }
+    Mod+Escape                          hotkey-overlay-title="Session Menu: noctalia sessionMenu" { spawn-sh "qs -c noctalia-shell ipc call sessionMenu toggle"; }
+
+    // Terminal
+    Mod+Return                          hotkey-overlay-title="Open terminal" { spawn "sh" "-c" "alacritty | kitty"; }
+    Mod+Shift+Return                    hotkey-overlay-title="Open float terminal" { spawn "sh" "-c" "alacritty --class hyprdots-float | kitty --class hyprdots-float"; }
+
+    // File manager
+    Mod+E                               hotkey-overlay-title="Open file manager" { spawn "sh" "-c" "dolphin | nautilus | nemo | thunar | kitty | fish"; }
+
+    // Browser
+    Mod+B                               hotkey-overlay-title="Open browser" { spawn "sh" "-c" "google-chrome-stable | zen-browser | firefox | brave | chromium | microsoft-edge-stable | opera | librewolf"; }
+
+    // Rofi
+    Mod+R                               hotkey-overlay-title="Open App Launcher: noctalia launcher" { spawn-sh "qs -c noctalia-shell ipc call launcher toggle"; }
+
+    // Wallpapers
+    Mod+W                               hotkey-overlay-title="Open Wallpaper Selector: noctalia wallpaper random" { spawn-sh "qs -c noctalia-shell ipc call wallpaper random"; }
+    Mod+Shift+W                         hotkey-overlay-title="Open Wallpaper Selector: noctalia wallpaper toggle" { spawn-sh "qs -c noctalia-shell ipc call wallpaper toggle"; }
+
+    // Volume
+    XF86AudioRaiseVolume                hotkey-overlay-title="FN Up Volume" allow-when-locked=true { spawn-sh "qs -c noctalia-shell ipc call volume increase"; }
+    XF86AudioLowerVolume                hotkey-overlay-title="FN Down Volume" allow-when-locked=true { spawn-sh "qs -c noctalia-shell ipc call volume decrease"; }
+    XF86AudioMute                       hotkey-overlay-title="FN Mute Audio" allow-when-locked=true { spawn-sh "qs -c noctalia-shell ipc call volume muteOutput"; }
+    XF86AudioMicMute                    hotkey-overlay-title="FN Mute Microphone" allow-when-locked=true { spawn-sh "qs -c noctalia-shell ipc call volume muteInput"; }
+
+    // Light Modes
+    XF86MonBrightnessUp                 hotkey-overlay-title="FN Up Brightness" allow-when-locked=true { spawn-sh "qs -c noctalia-shell ipc call brightness increase"; }
+    XF86MonBrightnessDown               hotkey-overlay-title="FN Down Brightness" allow-when-locked=true { spawn-sh "qs -c noctalia-shell ipc call brightness decrease"; }
+
+    // Player
+    XF86AudioNext                       hotkey-overlay-title="FN Music Skip" allow-when-locked=true { spawn-sh "qs -c noctalia-shell ipc call media next"; }
+    XF86AudioPrev                       hotkey-overlay-title="FN Music Prev" allow-when-locked=true { spawn-sh "qs -c noctalia-shell ipc call media previous"; }
+    XF86AudioPlay                       hotkey-overlay-title="FN Music Play" allow-when-locked=true { spawn-sh "qs -c noctalia-shell ipc call media playPause"; }
+    XF86AudioPause                      hotkey-overlay-title="FN Music Pause" allow-when-locked=true { spawn-sh "qs -c noctalia-shell ipc call media playPause"; }
+
+    // Lock
+    XF86ScreenSaver                     hotkey-overlay-title="Lock Screen: noctalia lock" { spawn-sh "qs -c noctalia-shell ipc call lockScreen lock"; }
+    XF86Sleep                           hotkey-overlay-title="Lock Screen: noctalia lock" { spawn-sh "qs -c noctalia-shell ipc call lockScreen lock"; }
+
+    // TouchPad
+    XF86TouchpadToggle                  hotkey-overlay-title="Lock Screen: noctalia lock" { spawn-sh "qs -c noctalia-shell ipc call lockScreen lock"; }
+
+    // FullScreen mode
+    Mod+Alt+Return                      { maximize-column; }
+    Alt+Return                          { fullscreen-window; }
+
+    // Screenshots
+    Print                               hotkey-overlay-title="Screenshot fullscreen" { spawn "sh" "-c" "bash ~/.config/niri/sh/screenshot.sh fullscreen"; }
+    Mod+Print                           hotkey-overlay-title="Screenshot region" { spawn "sh" "-c" "bash ~/.config/niri/sh/screenshot.sh region"; }
+
+    // Kill window
+    Mod+Q                               { close-window; }
+    // Kill window on touchpad
+    Mod+TouchpadScrollUp                { close-window; }
 
     // Fast exit of niri
-    Ctrl+Alt+Delete { quit; }
+    Ctrl+Alt+Delete                     { quit; }
 
     // Open/close the Overview: a zoomed-out view of workspaces and windows.
     // You can also move the mouse into the top-left hot corner,
     // or do a four-finger swipe up on a touchpad.
-    Mod+O repeat=false { toggle-overview; }
+    Mod+O repeat=false                  { toggle-overview; }
 
     // Move the focused window between the floating and the tiling layout.
-    Mod+F hotkey-overlay-title="Switch float/tiling window"      { toggle-window-floating; }
-    Mod+Shift+F hotkey-overlay-title="Switch focus float/tiling window" { switch-focus-between-floating-and-tiling; }
+    Mod+F                               hotkey-overlay-title="Switch float/tiling window"      { toggle-window-floating; }
+    Mod+Shift+F                         hotkey-overlay-title="Switch focus float/tiling window" { switch-focus-between-floating-and-tiling; }
 
     // Windows moving
-    Mod+Left  { focus-column-left; }
-    Mod+Down  { focus-window-down; }
-    Mod+Up    { focus-window-up; }
-    Mod+Right { focus-column-right; }
+    Mod+Left                            { focus-column-left; }
+    Mod+Down                            { focus-window-down; }
+    Mod+Up                              { focus-window-up; }
+    Mod+Right                           { focus-column-right; }
 
-    Mod+A { focus-column-left; }
-    Mod+D { focus-column-right; }
+    Mod+A                               { focus-column-left; }
+    Mod+D                               { focus-column-right; }
 
-    Mod+Ctrl+Left  { move-column-left; }
-    Mod+Ctrl+Down  { move-window-down; }
-    Mod+Ctrl+Up    { move-window-up; }
-    Mod+Ctrl+Right { move-column-right; }
+    Mod+Ctrl+Left                       { move-column-left; }
+    Mod+Ctrl+Down                       { move-window-down; }
+    Mod+Ctrl+Up                         { move-window-up; }
+    Mod+Ctrl+Right                      { move-column-right; }
 
     // Fast moving in space
-    Mod+Home { focus-column-first; }
-    Mod+End  { focus-column-last; }
-    Mod+Ctrl+Home { move-column-to-first; }
-    Mod+Ctrl+End  { move-column-to-last; }
+    Mod+Home                            { focus-column-first; }
+    Mod+End                             { focus-column-last; }
+    Mod+Ctrl+Home                       { move-column-to-first; }
+    Mod+Ctrl+End                        { move-column-to-last; }
 
-    Mod+Shift+Left  { focus-monitor-left; }
-    Mod+Shift+Down  { focus-monitor-down; }
-    Mod+Shift+Up    { focus-monitor-up; }
-    Mod+Shift+Right { focus-monitor-right; }
+    Mod+Shift+Left                      { focus-monitor-left; }
+    Mod+Shift+Down                      { focus-monitor-down; }
+    Mod+Shift+Up                        { focus-monitor-up; }
+    Mod+Shift+Right                     { focus-monitor-right; }
 
-    Mod+Shift+Ctrl+Left  { move-column-to-monitor-left; }
-    Mod+Shift+Ctrl+Down  { move-column-to-monitor-down; }
-    Mod+Shift+Ctrl+Up    { move-column-to-monitor-up; }
-    Mod+Shift+Ctrl+Right { move-column-to-monitor-right; }
+    Mod+Shift+Ctrl+Left                 { move-column-to-monitor-left; }
+    Mod+Shift+Ctrl+Down                 { move-column-to-monitor-down; }
+    Mod+Shift+Ctrl+Up                   { move-column-to-monitor-up; }
+    Mod+Shift+Ctrl+Right                { move-column-to-monitor-right; }
 
-    Mod+Page_Down      { focus-workspace-down; }
-    Mod+Page_Up        { focus-workspace-up; }
-    Mod+U              { focus-workspace-down; }
-    Mod+I              { focus-workspace-up; }
-    Mod+Ctrl+Page_Down { move-column-to-workspace-down; }
-    Mod+Ctrl+Page_Up   { move-column-to-workspace-up; }
-    Mod+Ctrl+U         { move-column-to-workspace-down; }
-    Mod+Ctrl+I         { move-column-to-workspace-up; }
+    Mod+Page_Down                       { focus-workspace-down; }
+    Mod+Page_Up                         { focus-workspace-up; }
+    Mod+U                               { focus-workspace-down; }
+    Mod+I                               { focus-workspace-up; }
+    Mod+Ctrl+Page_Down                  { move-column-to-workspace-down; }
+    Mod+Ctrl+Page_Up                    { move-column-to-workspace-up; }
+    Mod+Ctrl+U                          { move-column-to-workspace-down; }
+    Mod+Ctrl+I                          { move-column-to-workspace-up; }
 
-    Mod+Shift+Page_Down { move-workspace-down; }
-    Mod+Shift+Page_Up   { move-workspace-up; }
-    Mod+Shift+U         { move-workspace-down; }
-    Mod+Shift+I         { move-workspace-up; }
+    Mod+Shift+Page_Down                 { move-workspace-down; }
+    Mod+Shift+Page_Up                   { move-workspace-up; }
+    Mod+Shift+U                         { move-workspace-down; }
+    Mod+Shift+I                         { move-workspace-up; }
 
     // You can bind mouse wheel scroll ticks using the following syntax.
     // These binds will change direction based on the natural-scroll setting.
@@ -125,22 +120,22 @@ binds {
     // To avoid scrolling through workspaces really fast, you can use
     // the cooldown-ms property. The bind will be rate-limited to this value.
     // You can set a cooldown on any bind, but it's most useful for the wheel.
-    Mod+WheelScrollDown      cooldown-ms=150 { focus-workspace-down; }
-    Mod+WheelScrollUp        cooldown-ms=150 { focus-workspace-up; }
-    Mod+Ctrl+WheelScrollDown cooldown-ms=150 { move-column-to-workspace-down; }
-    Mod+Ctrl+WheelScrollUp   cooldown-ms=150 { move-column-to-workspace-up; }
+    Mod+WheelScrollDown                 cooldown-ms=150 { focus-workspace-down; }
+    Mod+WheelScrollUp                   cooldown-ms=150 { focus-workspace-up; }
+    Mod+Ctrl+WheelScrollDown            cooldown-ms=150 { move-column-to-workspace-down; }
+    Mod+Ctrl+WheelScrollUp              cooldown-ms=150 { move-column-to-workspace-up; }
 
-    Mod+WheelScrollRight      { focus-column-right; }
-    Mod+WheelScrollLeft       { focus-column-left; }
-    Mod+Ctrl+WheelScrollRight { move-column-right; }
-    Mod+Ctrl+WheelScrollLeft  { move-column-left; }
+    Mod+WheelScrollRight                { focus-column-right; }
+    Mod+WheelScrollLeft                 { focus-column-left; }
+    Mod+Ctrl+WheelScrollRight           { move-column-right; }
+    Mod+Ctrl+WheelScrollLeft            { move-column-left; }
 
     // Usually scrolling up and down with Shift in applications results in
     // horizontal scrolling; these binds replicate that.
-    Mod+Shift+WheelScrollDown      { focus-column-right; }
-    Mod+Shift+WheelScrollUp        { focus-column-left; }
-    Mod+Ctrl+Shift+WheelScrollDown { move-column-right; }
-    Mod+Ctrl+Shift+WheelScrollUp   { move-column-left; }
+    Mod+Shift+WheelScrollDown           { focus-column-right; }
+    Mod+Shift+WheelScrollUp             { focus-column-left; }
+    Mod+Ctrl+Shift+WheelScrollDown      { move-column-right; }
+    Mod+Ctrl+Shift+WheelScrollUp        { move-column-left; }
 
     // Similarly, you can bind touchpad scroll "ticks".
     // Touchpad scrolling is continuous, so for these binds it is split into
@@ -148,8 +143,8 @@ binds {
     // These binds are also affected by touchpad's natural-scroll, so these
     // example binds are "inverted", since we have natural-scroll enabled for
     // touchpads by default.
-    // Mod+TouchpadScrollDown { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.02+"; }
-    // Mod+TouchpadScrollUp   { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.02-"; }
+    // Mod+TouchpadScrollDown           { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.02+"; }
+    // Mod+TouchpadScrollUp             { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.02-"; }
 
     // You can refer to workspaces by index. However, keep in mind that
     // niri is a dynamic workspace system, so these commands are kind of

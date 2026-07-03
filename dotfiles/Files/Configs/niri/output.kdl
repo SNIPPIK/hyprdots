@@ -21,17 +21,3 @@ output "DP-2" {
     // normal, 90, 180, 270, flipped, flipped-90, flipped-180 and flipped-270.
     transform "normal"
 }
-
-output "HDMI-A-1" {
-    //off
-    mode "1920x1080@144.001"
-    scale 1
-    transform "normal"
-}
-
-// Laptop
-output "eDP-1" {
-    mode "2560x1600@60" // 50, 60, 120
-    variable-refresh-rate
-    scale 1.3
-}

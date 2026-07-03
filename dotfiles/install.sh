@@ -126,6 +126,14 @@ do
   sudo systemctl start "$name"
 done
 
+
+# Install YAY (AUR)
+sudo pacman -S --needed git base-devel && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
+
+sleep 2
+yay -S noctalia-shell
+
+# Set dark theme
 gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
 # -----------------------------------------------------
 echo "Installing the ended!"

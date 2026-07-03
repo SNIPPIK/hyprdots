@@ -4,7 +4,8 @@ overview {
 
 // Разрешаем слою с namespace=wallpaper уходить в фон
 layer-rule {
-    match namespace="^(swww-daemon|mpvpaper|wallpaper|awww-daemon)$"
+    match namespace="^noctalia-wallpaper*"
+    match namespace="^(swww-daemon|mpvpaper|wallpaper|awww-daemon|noctalia-wallpaper)$"
     place-within-backdrop true
 }
 
