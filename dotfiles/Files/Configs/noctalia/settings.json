@@ -349,18 +349,6 @@
             {
                 "name": "eDP-1",
                 "widgets": [
-                    {
-                        "hideMode": "visible",
-                        "id": "MediaPlayer",
-                        "roundedCorners": true,
-                        "showAlbumArt": true,
-                        "showBackground": true,
-                        "showButtons": true,
-                        "showVisualizer": true,
-                        "visualizerType": "linear",
-                        "x": 864,
-                        "y": 32
-                    }
                 ]
             }
         ],
@@ -507,7 +495,7 @@
         "weatherTaliaMascotAlways": false
     },
     "network": {
-        "bluetoothAutoConnect": true,
+        "bluetoothAutoConnect": false,
         "bluetoothDetailsViewMode": "grid",
         "bluetoothHideUnnamedDevices": true,
         "bluetoothRssiPollIntervalMs": 60000,

@@ -50,8 +50,9 @@ binds {
     Alt+Return                          { fullscreen-window; }
 
     // Screenshots
-    Print                               hotkey-overlay-title="Screenshot fullscreen" { spawn "sh" "-c" "bash ~/.config/niri/sh/screenshot.sh fullscreen"; }
-    Mod+Print                           hotkey-overlay-title="Screenshot region" { spawn "sh" "-c" "bash ~/.config/niri/sh/screenshot.sh region"; }
+    Print                               hotkey-overlay-title="Screenshot fullscreen" { screenshot-screen; }
+    Mod+Print                           hotkey-overlay-title="Screenshot region" { screenshot; }
+    Alt+Print                           hotkey-overlay-title="Screenshot window" { screenshot-window; }
 
     // Kill window
     Mod+Q                               { close-window; }
