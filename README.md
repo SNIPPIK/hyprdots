@@ -69,19 +69,12 @@ dotsync
 - Version 0.13
 - The general style is similar, but the controls and operation of windows differ in Niri.
 - [`Backgroud wallpaper`](https://github.com/SNIPPIK/wallpapers/blob/main/Static/Art/%5B4K%5D%20cotages-river.png?raw=true)
-<img align="" alt="image" width="1920" src="/assets/images/0.png" />
-<img align="" alt="image" width="1920" src="/assets/images/1.png" />
-<img align="" alt="image" width="1920" src="/assets/images/2.png" />
-<img align="" alt="image" width="1920" src="/assets/images/3.png" />
-<img align="" alt="image" width="1920" src="/assets/images/4.png" />
-<img align="" alt="image" width="1920" src="/assets/images/5.png" />
-<img align="" alt="image" width="1920" src="/assets/images/6.png" />
-<img align="" alt="image" width="1920" src="/assets/images/7.png" />
-<img align="" alt="image" width="1920" src="/assets/images/8.png" />
-<img align="" alt="image" width="1920" src="/assets/images/9.png" />
-<img align="" alt="image" width="1920" src="/assets/images/10.png" />
-<img align="" alt="image" width="1920" src="/assets/images/11.png" />
 
+  |                                                                                                                         |                                                                                                                         |                                                                                                                           |                                                                                                                           |
+  |-------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------|
+  | <a href="/assets/images/0.png" target="_blank"><img align="" alt="image" width="1920" src="/assets/images/0.png" /></a> | <a href="/assets/images/1.png" target="_blank"><img align="" alt="image" width="1920" src="/assets/images/1.png" /></a> | <a href="/assets/images/2.png" target="_blank"><img align="" alt="image" width="1920" src="/assets/images/2.png" /></a>   | <a href="/assets/images/3.png" target="_blank"><img align="" alt="image" width="1920" src="/assets/images/3.png" /></a>   |
+  | <a href="/assets/images/4.png" target="_blank"><img align="" alt="image" width="1920" src="/assets/images/4.png" /></a> | <a href="/assets/images/5.png" target="_blank"><img align="" alt="image" width="1920" src="/assets/images/5.png" /></a> | <a href="/assets/images/6.png" target="_blank"><img align="" alt="image" width="1920" src="/assets/images/6.png" /></a>   | <a href="/assets/images/7.png" target="_blank"><img align="" alt="image" width="1920" src="/assets/images/7.png" /></a>   |
+  | <a href="/assets/images/8.png" target="_blank"><img align="" alt="image" width="1920" src="/assets/images/8.png" /></a> | <a href="/assets/images/9.png" target="_blank"><img align="" alt="image" width="1920" src="/assets/images/9.png" /></a> | <a href="/assets/images/10.png" target="_blank"><img align="" alt="image" width="1920" src="/assets/images/10.png" /></a> | <a href="/assets/images/11.png" target="_blank"><img align="" alt="image" width="1920" src="/assets/images/11.png" /></a> |
 
 ## ✨ What you get
 - 🚀 One-command installation
