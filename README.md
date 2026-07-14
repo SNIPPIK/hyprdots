@@ -66,7 +66,7 @@ dotsync
 - `Noctalia`
 ---
 ## Images
-- Version 0.13 | Automatically close the panel if the window is inactive
+- Version 0.13
 - The general style is similar, but the controls and operation of windows differ in Niri.
 - [`Backgroud wallpaper`](https://github.com/SNIPPIK/wallpapers/blob/main/Static/Art/%5B4K%5D%20cotages-river.png?raw=true)
 <img align="" alt="image" width="1920" src="/assets/images/0.png" />
