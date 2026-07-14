@@ -53,9 +53,10 @@ dotsync
 ---
 ## Dependencies
 #### Global
-- `grim`, `sddm`, `starship`, `gnome-keyring`, `wl-clipboard`
+- `quickshell`
+- `sddm`, `starship`, `gnome-keyring`, `wl-clipboard`
 - `otf-font-awesome`, `noto-fonts-emoji`, `ttf-nerd-fonts-symbols-mono`, `ttf-dejavu`
-- `pipewire-pulse`, `wireplumber`, `bluez`, `blueberry`, `pavucontrol`, `flatpak`
+- `pipewire-pulse`, `wireplumber`, `bluez`, `pavucontrol`, `flatpak`
 - `gnome-software`, `nautilus`
 
 #### For Niri
@@ -67,7 +68,7 @@ dotsync
 ## Images
 - Version 0.13 | Automatically close the panel if the window is inactive
 - The general style is similar, but the controls and operation of windows differ in Niri.
-- [`Backgroud wallpaper`](https://github.com/SNIPPIK/wallpapers/blob/main/Static/Fantasy/%5B4K%5D%20Fantasy-Mountain.png?raw=true)
+- [`Backgroud wallpaper`](https://github.com/SNIPPIK/wallpapers/blob/main/Static/Art/%5B4K%5D%20cotages-river.png?raw=true)
 <img align="" alt="image" width="1920" src="/assets/images/0.png" />
 <img align="" alt="image" width="1920" src="/assets/images/1.png" />
 <img align="" alt="image" width="1920" src="/assets/images/2.png" />
@@ -75,6 +76,27 @@ dotsync
 <img align="" alt="image" width="1920" src="/assets/images/4.png" />
 <img align="" alt="image" width="1920" src="/assets/images/5.png" />
 <img align="" alt="image" width="1920" src="/assets/images/6.png" />
+<img align="" alt="image" width="1920" src="/assets/images/7.png" />
+<img align="" alt="image" width="1920" src="/assets/images/8.png" />
+<img align="" alt="image" width="1920" src="/assets/images/9.png" />
+<img align="" alt="image" width="1920" src="/assets/images/10.png" />
+<img align="" alt="image" width="1920" src="/assets/images/11.png" />
+
+
+## ✨ What you get
+- 🚀 One-command installation
+- 🖥️ Complete Quickshell desktop shell
+- ⚙️ Integrated Settings application
+- 🔔 Notification Center with customizable sounds
+- 📶 Wi-Fi & Bluetooth management
+- 🎵 Music player (MPRIS)
+- 🌄 Wallpaper manager
+- 📦 Update Center
+- 🧩 Desktop widgets
+- ⌨️ Hotkey viewer
+- 🔒 Polkit authentication
+- 🎮 Proton launcher (`proton-run`)
+- 🎨 GTK & SDDM themes
 
 
 ### Demonstration videos (archive)

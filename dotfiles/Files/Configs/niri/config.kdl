@@ -174,16 +174,16 @@ layout {
         // window. These will also remove client-side shadows if the window
         // draws any.
         //
-        // draw-behind-window true
+        draw-behind-window true
 
         // You can change how shadows look. The values below are in logical
         // pixels and match the CSS box-shadow properties.
 
         // Softness controls the shadow blur radius.
-        softness 30
+        softness 5
 
         // Spread expands the shadow.
-        spread 5
+        spread 2
 
         // Offset moves the shadow relative to the window.
         offset x=0 y=5

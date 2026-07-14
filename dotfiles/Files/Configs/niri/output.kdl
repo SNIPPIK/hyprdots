@@ -21,3 +21,11 @@ output "DP-2" {
     // normal, 90, 180, 270, flipped, flipped-90, flipped-180 and flipped-270.
     transform "normal"
 }
+
+// Laptop
+output "eDP-1" {
+    focus-at-startup
+    variable-refresh-rate on-demand=true
+    mode "2560x1600@60"
+    scale 1.3
+}

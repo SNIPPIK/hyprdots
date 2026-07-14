@@ -888,7 +888,13 @@ Item {
         "keys": fullKey,
         "desc": undescribed ? "" : rawDesc,
         "bindId": bindId,
-        "undescribed": undescribed
+        "undescribed": undescribed,
+        // Decomposed fields so mergeSequentialBindsInCategories() can collapse
+        // runs of consecutive numeric binds (e.g. Super+1..9). __lua binds share
+        // an empty verb, which is fine — descTemplate still disambiguates them.
+        "_mainKey": String(b.key),
+        "_mods": mods.join("+"),
+        "_verb": ""
       });
     }
 
@@ -915,6 +921,10 @@ Item {
       categories.push({ "title": undescTitle, "binds": undesc });
     }
 
+    // Apply the "merge sequential" setting here too — the hyprctl path previously
+    // skipped it, so the toggle had no effect for Hyprland (hyprctl-sourced) binds.
+    if (pluginApi?.pluginSettings?.mergeSequentialBinds ?? true)
+      categories = mergeSequentialBindsInCategories(categories);
     saveToDb(categories);
     isCurrentlyParsing = false;
     clearParsingData();

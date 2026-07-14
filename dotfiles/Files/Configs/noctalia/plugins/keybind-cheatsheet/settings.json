@@ -161,20 +161,6 @@
           "_verb": "spawn",
           "_mods": "Super",
           "_mainKey": "B"
-        },
-        {
-          "keys": "PrtSc",
-          "desc": "Screenshot fullscreen",
-          "_verb": "spawn",
-          "_mods": "",
-          "_mainKey": "Print"
-        },
-        {
-          "keys": "Super + PrtSc",
-          "desc": "Screenshot region",
-          "_verb": "spawn",
-          "_mods": "Super",
-          "_mainKey": "Print"
         }
       ]
     },
@@ -508,6 +494,32 @@
       ]
     },
     {
+      "title": "Screenshots",
+      "binds": [
+        {
+          "keys": "PrtSc",
+          "desc": "Screenshot fullscreen",
+          "_verb": "screenshot-screen",
+          "_mods": "",
+          "_mainKey": "Print"
+        },
+        {
+          "keys": "Super + PrtSc",
+          "desc": "Screenshot region",
+          "_verb": "screenshot",
+          "_mods": "Super",
+          "_mainKey": "Print"
+        },
+        {
+          "keys": "Alt + PrtSc",
+          "desc": "Screenshot window",
+          "_verb": "screenshot-window",
+          "_mods": "Alt",
+          "_mainKey": "Print"
+        }
+      ]
+    },
+    {
       "title": "System",
       "binds": [
         {
@@ -811,6 +823,15 @@
   "keyTextNumeric": "",
   "keyTextMouse": "",
   "keyTextDefault": "",
+  "keyColorMod2": "",
+  "keyColorMod3": "",
+  "keyColorMod5": "",
+  "keyTextMod2": "",
+  "keyTextMod3": "",
+  "keyTextMod5": "",
+  "keyLabelMod2": "",
+  "keyLabelMod3": "",
+  "keyLabelMod5": "",
   "descriptionTextColor": "",
   "bindOverrides": {}
 }

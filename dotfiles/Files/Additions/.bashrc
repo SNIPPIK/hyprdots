@@ -52,6 +52,35 @@ alias dotsync="bash ~/.cache/sync.sh"
 eval "$(starship init bash)"
 
 # -----------------------------------------------------
+# Proton exec
+# -----------------------------------------------------
+proton-run() {
+    local prefix_path="$HOME/.wine"
+    local steam_path="$HOME/.local/share/Steam"
+    mkdir -p "$prefix_path"
+
+    # Поиск самой свежей версии Proton в официальной папке и в compatibilitytools.d
+    local proton_path=$(find "$steam_path/compatibilitytools.d" \
+                             "$steam_path/steamapps/common" \
+                             "$HOME/Protons" \
+                             -maxdepth 3 -type f -name "proton" 2>/dev/null | sort -V | tail -n 1)
+
+    # Проверка на наличие Proton
+    if [ -z "$proton_path" ]; then
+        echo "Ошибка: Proton не найден ни в common, ни в compatibilitytools.d, ~/Protons!"
+        return 1
+    fi
+
+    echo "Используется Proton: $proton_path"
+    echo "Префикс: $prefix_path"
+
+    # Запуск с передачей обязательных переменных окружения для обхода проверок Steam
+    STEAM_COMPAT_CLIENT_INSTALL_PATH="$steam_path" \
+    STEAM_COMPAT_DATA_PATH="$prefix_path" \
+    "$proton_path" run "$@"
+}
+
+# -----------------------------------------------------
 # RUN FASTFETCH
 # -----------------------------------------------------
 ff
