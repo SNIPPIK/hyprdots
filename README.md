@@ -76,21 +76,6 @@ dotsync
   | <a href="/assets/images/4.png" target="_blank"><img align="" alt="image" width="1920" src="/assets/images/4.png" /></a> | <a href="/assets/images/5.png" target="_blank"><img align="" alt="image" width="1920" src="/assets/images/5.png" /></a> | <a href="/assets/images/6.png" target="_blank"><img align="" alt="image" width="1920" src="/assets/images/6.png" /></a>   | <a href="/assets/images/7.png" target="_blank"><img align="" alt="image" width="1920" src="/assets/images/7.png" /></a>   |
   | <a href="/assets/images/8.png" target="_blank"><img align="" alt="image" width="1920" src="/assets/images/8.png" /></a> | <a href="/assets/images/9.png" target="_blank"><img align="" alt="image" width="1920" src="/assets/images/9.png" /></a> | <a href="/assets/images/10.png" target="_blank"><img align="" alt="image" width="1920" src="/assets/images/10.png" /></a> | <a href="/assets/images/11.png" target="_blank"><img align="" alt="image" width="1920" src="/assets/images/11.png" /></a> |
 
-## ✨ What you get
-- 🚀 One-command installation
-- 🖥️ Complete Quickshell desktop shell
-- ⚙️ Integrated Settings application
-- 🔔 Notification Center with customizable sounds
-- 📶 Wi-Fi & Bluetooth management
-- 🎵 Music player (MPRIS)
-- 🌄 Wallpaper manager
-- 📦 Update Center
-- 🧩 Desktop widgets
-- ⌨️ Hotkey viewer
-- 🔒 Polkit authentication
-- 🎮 Proton launcher (`proton-run`)
-- 🎨 GTK & SDDM themes
-
 
 ### Demonstration videos (archive)
 <details close>
