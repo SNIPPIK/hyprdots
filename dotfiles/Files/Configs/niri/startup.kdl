@@ -1,3 +1,6 @@
+// VRAM Fix autostart
+spawn-at-startup "niri-focused-booster"
+
 //######################################################################
 //### Environment for xdg-desktop-portal (XDP)                       ###
 //######################################################################

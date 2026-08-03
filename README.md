@@ -37,6 +37,18 @@ While installing alongside another [DE](https://wiki.archlinux.org/title/Desktop
 > ```  
 > Run `sudo systemctl restart bluetooth`, then everything should work
 
+---
+## `VRAM Fix and CachyOS Repository`
+- [CachyOS Guide](https://wiki.cachyos.org/features/optimized_repos/#adding-our-repositories-to-an-existing-arch-linux-install)
+- Need Kernel (zen or cachyos), recommended using proton in cachyos
+- #### Auto Setup Base
+  ```shell
+  yay -S dmemcg-booster niri-focused-booster &&
+  sudo systemctl enable --now dmemcg-booster-system.service &&
+  pacman -S proton-cachyos-native
+  ```
+---
+
 # Install
 - To install, execute the following commands:
 ```shell
