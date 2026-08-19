@@ -1,2 +1,9 @@
 .idea
 dotfiles/SilentSDDM
+/dotfiles/Files/State/noctalia/usage_counts.json
+/dotfiles/Files/State/noctalia/screen_time.json
+/dotfiles/Files/State/noctalia/recently_used.json
+/dotfiles/Files/State/noctalia/notification_history.json
+/dotfiles/Files/State/noctalia/plugin-cache/
+/dotfiles/Files/State/noctalia/community-templates/
+/dotfiles/Files/State/noctalia/clipboard/

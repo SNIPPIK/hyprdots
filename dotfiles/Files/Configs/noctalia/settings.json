@@ -6,7 +6,7 @@
         "clipboardWrapText": true,
         "customLaunchPrefix": "",
         "customLaunchPrefixEnabled": false,
-        "density": "comfortable",
+        "density": "default",
         "enableClipPreview": true,
         "enableClipboardChips": true,
         "enableClipboardHistory": false,
@@ -62,10 +62,10 @@
         "monitors": [
         ],
         "mouseWheelAction": "none",
-        "mouseWheelWrap": true,
+        "mouseWheelWrap": false,
         "outerCorners": true,
         "position": "bottom",
-        "reverseScroll": false,
+        "reverseScroll": true,
         "rightClickAction": "controlCenter",
         "rightClickCommand": "",
         "rightClickFollowMouse": true,
@@ -270,11 +270,11 @@
                 "id": "audio-card"
             },
             {
-                "enabled": false,
+                "enabled": true,
                 "id": "brightness-card"
             },
             {
-                "enabled": true,
+                "enabled": false,
                 "id": "weather-card"
             },
             {
@@ -301,9 +301,6 @@
             ],
             "right": [
                 {
-                    "id": "Notifications"
-                },
-                {
                     "id": "PowerProfile"
                 },
                 {
@@ -311,6 +308,9 @@
                 },
                 {
                     "id": "NightLight"
+                },
+                {
+                    "id": "DarkMode"
                 }
             ]
         }
@@ -323,27 +323,6 @@
             {
                 "name": "DP-2",
                 "widgets": [
-                    {
-                        "hideMode": "hidden",
-                        "id": "MediaPlayer",
-                        "roundedCorners": true,
-                        "scale": 1.0236953813891643,
-                        "showAlbumArt": true,
-                        "showBackground": true,
-                        "showButtons": true,
-                        "showVisualizer": true,
-                        "visualizerType": "linear",
-                        "x": 41,
-                        "y": 164
-                    },
-                    {
-                        "id": "Weather",
-                        "roundedCorners": true,
-                        "scale": 1,
-                        "showBackground": true,
-                        "x": 41,
-                        "y": 82
-                    }
                 ]
             },
             {
@@ -393,7 +372,7 @@
         "animationDisabled": false,
         "animationSpeed": 1,
         "autoStartAuth": false,
-        "avatarImage": "/home/snippik/.face.icon",
+        "avatarImage": "/home/snippik/Pictures/Avatars/78539c46-d3b7-45a4-9d9c-9ce8a7b6770b.png",
         "boxRadiusRatio": 1,
         "clockFormat": "hh\\nmm",
         "clockStyle": "custom",
@@ -479,7 +458,7 @@
         "suspendTimeout": 1800
     },
     "location": {
-        "analogClockInCalendar": false,
+        "analogClockInCalendar": true,
         "autoLocate": false,
         "firstDayOfWeek": -1,
         "hideWeatherCityName": false,
@@ -487,15 +466,15 @@
         "name": "",
         "showCalendarEvents": true,
         "showCalendarWeather": true,
-        "showWeekNumberInCalendar": false,
-        "use12hourFormat": false,
+        "showWeekNumberInCalendar": true,
+        "use12hourFormat": true,
         "useFahrenheit": false,
         "weatherEnabled": false,
         "weatherShowEffects": true,
         "weatherTaliaMascotAlways": false
     },
     "network": {
-        "bluetoothAutoConnect": false,
+        "bluetoothAutoConnect": true,
         "bluetoothDetailsViewMode": "grid",
         "bluetoothHideUnnamedDevices": true,
         "bluetoothRssiPollIntervalMs": 60000,
@@ -653,8 +632,8 @@
         "memWarningThreshold": 80,
         "swapCriticalThreshold": 90,
         "swapWarningThreshold": 80,
-        "tempCriticalThreshold": 90,
-        "tempWarningThreshold": 80,
+        "tempCriticalThreshold": 80,
+        "tempWarningThreshold": 75,
         "useCustomColors": false,
         "warningColor": ""
     },
@@ -679,10 +658,6 @@
             {
                 "enabled": true,
                 "id": "gtk"
-            },
-            {
-                "enabled": true,
-                "id": "alacritty"
             }
         ],
         "enableUserTheming": false
@@ -723,7 +698,7 @@
         "showHiddenFiles": false,
         "skipStartupTransition": true,
         "solidColor": "#1a1a2e",
-        "sortOrder": "name",
+        "sortOrder": "date_desc",
         "transitionDuration": 1500,
         "transitionEdgeSmoothness": 0.05,
         "transitionType": [

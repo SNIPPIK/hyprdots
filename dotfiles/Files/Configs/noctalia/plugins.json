@@ -22,6 +22,10 @@
         "polkit-agent": {
             "enabled": true,
             "sourceUrl": "https://github.com/noctalia-dev/noctalia-plugins"
+        },
+        "video-wallpaper": {
+            "enabled": false,
+            "sourceUrl": "https://github.com/noctalia-dev/noctalia-plugins"
         }
     },
     "version": 2

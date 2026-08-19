@@ -192,5 +192,3 @@ layout {
         color "#0007"
     }
 }
-
-include "./noctalia.kdl"

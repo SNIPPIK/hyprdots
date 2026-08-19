@@ -38,6 +38,8 @@ alias pacman='sudo pacman'
 alias apt='sudo pacman'
 alias aur='yay'
 
+alias ntfs='sudo ntfsfix -d'
+
 # Setter avatars
 alias avatar='sudo bash ~/.config/hypr/bin/tools/avatar.sh'
 
@@ -47,11 +49,6 @@ alias avatar='sudo bash ~/.config/hypr/bin/tools/avatar.sh'
 alias dotsync="bash ~/.cache/sync.sh"
 
 # -----------------------------------------------------
-# Wg importer
-# -----------------------------------------------------
-alias wg-import="nmcli connection import type wireguard file $@"
-
-# -----------------------------------------------------1
 # START STARSHIP
 # -----------------------------------------------------
 eval "$(starship init bash)"

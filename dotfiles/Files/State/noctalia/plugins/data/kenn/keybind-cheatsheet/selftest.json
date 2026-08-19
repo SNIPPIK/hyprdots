@@ -1,0 +1,25 @@
+{
+  "cases": {
+    "hypr_conf": {
+      "actualCount": 5,
+      "expectedCount": 5,
+      "passed": true
+    },
+    "hypr_lua": {
+      "actualCount": 4,
+      "expectedCount": 4,
+      "passed": true
+    },
+    "mango": {
+      "actualCount": 9,
+      "expectedCount": 9,
+      "passed": true
+    },
+    "niri": {
+      "actualCount": 5,
+      "expectedCount": 5,
+      "passed": true
+    }
+  },
+  "passed": true
+}

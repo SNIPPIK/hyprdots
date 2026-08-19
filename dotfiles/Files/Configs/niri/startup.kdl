@@ -1,6 +1,3 @@
-// VRAM Fix autostart
-spawn-at-startup "niri-focused-booster"
-
 //######################################################################
 //### Environment for xdg-desktop-portal (XDP)                       ###
 //######################################################################
@@ -18,5 +15,4 @@ spawn-at-startup "sh" "-c" "gsettings set org.gnome.desktop.interface color-sche
 //### Panel                                                          ###
 //### Support: noctalia                                              ###
 //######################################################################
-spawn-sh-at-startup "qs -c noctalia-shell"
-spawn-sh-at-startup "qs -c noctalia-shell ipc call plugin:keybind-cheatsheet toggle"
+spawn-sh-at-startup "noctalia"

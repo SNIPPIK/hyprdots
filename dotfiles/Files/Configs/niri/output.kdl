@@ -27,5 +27,13 @@ output "eDP-1" {
     focus-at-startup
     variable-refresh-rate on-demand=true
     mode "2560x1600@60"
+    scale 1
+}
+
+// Laptop
+output "eDP-1" {
+    focus-at-startup
+    variable-refresh-rate on-demand=true
+    mode "2560x1600@60"
     scale 1.3
 }
