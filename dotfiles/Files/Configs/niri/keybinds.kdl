@@ -1,6 +1,6 @@
 binds {
     // Help
-    Mod+H                               hotkey-overlay-title="All binds" { spawn-sh "noctalia msg panel-toggle kenn/keybind-cheatsheet:cheatsheet"; }
+    Mod+K                               hotkey-overlay-title="All binds" { spawn-sh "noctalia msg panel-toggle kenn/keybind-cheatsheet:cheatsheet"; }
 
     // PowerMenu
     Mod+Escape                          hotkey-overlay-title="Session Menu: noctalia sessionMenu" { spawn-sh "noctalia msg panel-open session"; }
@@ -15,7 +15,7 @@ binds {
     // Browser
     Mod+B                               hotkey-overlay-title="Open browser" { spawn "sh" "-c" "google-chrome-stable | zen-browser | firefox | brave | chromium | microsoft-edge-stable | opera | librewolf"; }
 
-    // Rofi
+    // Launcher
     Mod+R                               hotkey-overlay-title="Open App Launcher: noctalia launcher" { spawn-sh "noctalia msg panel-open launcher"; }
 
     // Wallpapers

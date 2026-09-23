@@ -7,7 +7,7 @@ enable_sounds = true
 order = [ "polibar" ]
 
     [bar.polibar]
-    background_opacity = 0.69999998435378075
+    background_opacity = 0.74999998323619366
     center = []
     end = [
         "tray",
@@ -26,9 +26,12 @@ order = [ "polibar" ]
     radius = 0
     radius_bottom_left = 10
     radius_bottom_right = 10
-    start = [ "launcher", "control-center", "active_window" ]
+    start = [ "launcher", "clipboard", "control-center", "active_window" ]
     thickness = 32
     widget_spacing = 10
+
+[battery.device."/org/freedesktop/UPower/devices/headset_dev_14_6C_27_2B_EA_99"]
+warning_threshold = 20
 
 [calendar]
 enabled = true
@@ -65,13 +68,14 @@ widget_order = [
     "lockscreen-widget-0000000000000003",
     "lockscreen-widget-0000000000000004",
     "lockscreen-widget-0000000000000005",
-    "lockscreen-widget-0000000000000006"
+    "lockscreen-widget-0000000000000006",
+    "lockscreen-widget-0000000000000007"
 ]
 
     [lockscreen_widgets.grid]
     cell_size = 16
     major_interval = 4
-    visible = false
+    visible = true
 
     [lockscreen_widgets.widget."lockscreen-login-box@DP-2"]
     box_height = 196.0
@@ -104,7 +108,7 @@ widget_order = [
     box_height = 196.0
     box_width = 810.0
     cx = 960.0
-    cy = 898.0
+    cy = 954.0
     output = "HDMI-A-1"
     placement_height = 1080.0
     placement_width = 1920.0
@@ -129,9 +133,9 @@ widget_order = [
 
     [lockscreen_widgets.widget."lockscreen-login-box@eDP-1"]
     box_height = 196.0
-    box_width = 810.0
-    cx = 985.0
-    cy = 1049.0
+    box_width = 976.0
+    cx = 1280.0
+    cy = 1490.0
     output = "eDP-1"
     placement_height = 1600.0
     placement_width = 2560.0
@@ -191,21 +195,21 @@ widget_order = [
         background = false
 
     [lockscreen_widgets.widget.lockscreen-widget-0000000000000004]
-    box_height = 224.0
-    box_width = 608.0
-    cx = 984.5
-    cy = 151.5
+    box_height = 336.0
+    box_width = 912.0
+    cx = 1280.0
+    cy = 184.0
     output = "eDP-1"
     placement_height = 1600.0
     placement_width = 2560.0
-    rotation = 0.0
+    rotation = -0.0
     type = "clock"
 
     [lockscreen_widgets.widget.lockscreen-widget-0000000000000005]
     box_height = 96.0
     box_width = 416.0
-    cx = 984.5
-    cy = 327.5
+    cx = 1280.0
+    cy = 416.0
     output = "eDP-1"
     placement_height = 1600.0
     placement_width = 2560.0
@@ -215,8 +219,8 @@ widget_order = [
     [lockscreen_widgets.widget.lockscreen-widget-0000000000000006]
     box_height = 0.0
     box_width = 0.0
-    cx = 984.5
-    cy = 615.5
+    cx = 1280.0
+    cy = 800.0
     output = "eDP-1"
     placement_height = 1600.0
     placement_width = 2560.0
@@ -225,6 +229,17 @@ widget_order = [
 
         [lockscreen_widgets.widget.lockscreen-widget-0000000000000006.settings]
         background = false
+
+    [lockscreen_widgets.widget.lockscreen-widget-0000000000000007]
+    box_height = 336.0
+    box_width = 960.0
+    cx = 960.0
+    cy = 188.0
+    output = "HDMI-A-1"
+    placement_height = 1080.0
+    placement_width = 1920.0
+    rotation = 0.0
+    type = "clock"
 
 [notification]
 layer = "overlay"
@@ -259,6 +274,41 @@ polkit_agent = true
     launcher_position = "auto"
     open_near_click_control_center = true
     open_near_click_launcher = true
+
+    [[shell.session.actions]]
+    action = "lock"
+    countdown_seconds = 3.0
+    enabled = true
+    shortcut = "1"
+    variant = "default"
+
+    [[shell.session.actions]]
+    action = "logout"
+    countdown_seconds = 3.0
+    enabled = true
+    shortcut = "2"
+    variant = "default"
+
+    [[shell.session.actions]]
+    action = "lock_and_suspend"
+    countdown_seconds = 3.0
+    enabled = true
+    shortcut = "3"
+    variant = "default"
+
+    [[shell.session.actions]]
+    action = "reboot"
+    countdown_seconds = 5.0
+    enabled = true
+    shortcut = "4"
+    variant = "default"
+
+    [[shell.session.actions]]
+    action = "shutdown"
+    countdown_seconds = 5.0
+    enabled = true
+    shortcut = "5"
+    variant = "destructive"
 
 [theme]
 builtin = "Noctalia"
